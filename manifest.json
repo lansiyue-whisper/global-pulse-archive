@@ -1,0 +1,30 @@
+{
+  "name": "Global Pulse Archive",
+  "short_name": "Pulse",
+  "description": "世界音乐、民族音乐与全球电子音乐的智能档案 App。",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#111310",
+  "theme_color": "#0b0d12",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

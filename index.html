@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b0d12" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Pulse" />
+    <title>Global Pulse Archive</title>
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="icon" href="./app-icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#library" aria-label="Global Pulse Archive">
+        <span class="brand-mark">GP</span>
+        <span>Global Pulse Archive</span>
+      </a>
+      <nav class="nav-links" aria-label="主要导航">
+        <a href="#pulse">Pulse App</a>
+        <a href="#library">音乐库</a>
+        <a href="#ai-tools">AI 工具</a>
+        <a href="#albums">专辑档案</a>
+        <a href="#submit">上传 Demo</a>
+        <a href="#events">活动</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="workspace" id="library">
+        <div class="hero-panel">
+          <div class="hero-copy">
+            <p class="eyebrow">world music · ethnic music · global electronic</p>
+            <h1>Global Pulse 音乐智能档案 App</h1>
+            <p>
+              收集世界音乐、民族音乐与全球电子声音，也为 DJ、制作人和 digger 提供智能搜歌、
+              场景排歌、曲库分析、Demo 上传和活动线索。
+            </p>
+          </div>
+          <div class="quick-stats" aria-label="资料概览">
+            <span><strong id="statAlbums">0</strong>专辑</span>
+            <span><strong id="statRegions">0</strong>地区</span>
+            <span><strong id="statDemos">0</strong>Demo</span>
+          </div>
+        </div>
+
+        <section class="app-shell" id="pulse" aria-label="Pulse App 功能">
+          <div class="phone-preview">
+            <div class="phone-status">
+              <span>PULSE</span>
+              <span>23:23</span>
+            </div>
+            <div class="pulse-screen">
+              <div class="pulse-title">
+                <p>music.link · dj.gemini</p>
+                <h2>PULSE</h2>
+              </div>
+              <div id="pulseModes" class="pulse-grid"></div>
+            </div>
+          </div>
+
+          <div class="app-copy">
+            <div class="section-heading">
+              <p>app concept</p>
+              <h2>不只是资料库，也是 DJ 和音乐人的智能工作台</h2>
+            </div>
+            <div id="aiFeatureGrid" class="ai-feature-grid"></div>
+          </div>
+        </section>
+
+        <section class="ai-tools" id="ai-tools" aria-label="AI 音乐工具">
+          <div class="section-heading row-heading">
+            <div>
+              <p>sonic intelligence</p>
+              <h2>AI 音乐分析与场景排歌</h2>
+            </div>
+            <button id="runAnalysis" type="button" class="secondary-button">生成分析</button>
+          </div>
+          <div class="tool-grid">
+            <form id="aiSearchForm" class="ai-search-card">
+              <label>
+                <span>说一句你想找的音乐</span>
+                <input id="aiSearchInput" type="text" placeholder="比如：傍晚开车的 Afro house，带一点部落鼓和迷幻感" />
+              </label>
+              <button type="submit">智能搜歌</button>
+            </form>
+            <div id="analysisOutput" class="analysis-output"></div>
+          </div>
+        </section>
+
+        <section class="control-band" aria-label="资料库筛选">
+          <label class="search-field">
+            <span>搜索</span>
+            <input id="searchInput" type="search" placeholder="专辑、音乐人、地区、风格" />
+          </label>
+          <div class="segmented" aria-label="风格筛选">
+            <button class="active" type="button" data-filter="all">全部</button>
+            <button type="button" data-filter="downtempo">Downtempo</button>
+            <button type="button" data-filter="psychill">Psychill</button>
+            <button type="button" data-filter="psybient">Psybient</button>
+            <button type="button" data-filter="afro house">Afro House</button>
+            <button type="button" data-filter="afro techno">Afro Techno</button>
+            <button type="button" data-filter="singeli">Singeli</button>
+            <button type="button" data-filter="gqom">Gqom</button>
+            <button type="button" data-filter="global bass">Global Bass</button>
+            <button type="button" data-filter="organic downtempo">Organic Downtempo</button>
+            <button type="button" data-filter="folktronica">Folktronica</button>
+            <button type="button" data-filter="reissue">Reissue</button>
+            <button type="button" data-filter="ethnic">民族音乐</button>
+          </div>
+        </section>
+
+        <section class="content-grid">
+          <aside class="atlas-panel" aria-label="地区索引">
+            <div class="section-heading">
+              <p>regions</p>
+              <h2>声音地图</h2>
+            </div>
+            <div id="regionList" class="region-list"></div>
+          </aside>
+
+          <section class="library-panel" id="albums" aria-label="专辑档案">
+            <div class="section-heading row-heading">
+              <div>
+                <p>archive</p>
+                <h2>专辑与文化档案</h2>
+              </div>
+              <button id="resetFilters" type="button" class="icon-button" aria-label="重置筛选" title="重置筛选">↺</button>
+            </div>
+            <div id="albumGrid" class="album-grid"></div>
+          </section>
+        </section>
+      </section>
+
+      <section class="source-band" aria-label="外部来源采集">
+        <div class="section-heading">
+          <p>sources</p>
+          <h2>外部音乐链接采集</h2>
+        </div>
+        <form id="sourceForm" class="source-form">
+          <label>
+            <span>平台</span>
+            <select id="sourcePlatform">
+              <option>Bandcamp</option>
+              <option>SoundCloud</option>
+              <option>Resident Advisor</option>
+              <option>自定义来源</option>
+            </select>
+          </label>
+          <label>
+            <span>链接</span>
+            <input id="sourceUrl" type="url" placeholder="https://..." required />
+          </label>
+          <label>
+            <span>标签</span>
+            <input id="sourceTags" type="text" placeholder="afro house, kenya, label" />
+          </label>
+          <button type="submit">加入待整理</button>
+        </form>
+        <div id="sourceQueue" class="source-queue"></div>
+      </section>
+
+      <section class="submit-band" id="submit">
+        <div class="section-heading">
+          <p>community</p>
+          <h2>音乐人 Demo 上传</h2>
+        </div>
+        <form id="demoForm" class="demo-form">
+          <label>
+            <span>音乐人 / 厂牌</span>
+            <input id="artistName" type="text" placeholder="名称" required />
+          </label>
+          <label>
+            <span>作品名</span>
+            <input id="trackTitle" type="text" placeholder="单曲或 EP 名称" required />
+          </label>
+          <label>
+            <span>风格</span>
+            <select id="demoGenre">
+              <option>Downtempo</option>
+              <option>Psychill</option>
+              <option>Afro House</option>
+              <option>Afro Techno</option>
+              <option>民族音乐采样</option>
+              <option>Hybrid Bass</option>
+            </select>
+          </label>
+          <label>
+            <span>地区</span>
+            <input id="demoRegion" type="text" placeholder="城市 / 国家 / 社群" required />
+          </label>
+          <label class="wide">
+            <span>试听链接</span>
+            <input id="demoLink" type="url" placeholder="SoundCloud、Bandcamp、私密试听链接" required />
+          </label>
+          <label class="wide">
+            <span>文化背景</span>
+            <textarea id="demoStory" rows="4" placeholder="采样来源、乐器、语言、合作社群、现场语境"></textarea>
+          </label>
+          <button type="submit">提交到本地审核池</button>
+        </form>
+        <div id="demoList" class="demo-list"></div>
+      </section>
+
+      <section class="events-band" id="events">
+        <div class="section-heading row-heading">
+          <div>
+            <p>calendar</p>
+            <h2>全球音乐活动</h2>
+          </div>
+          <button id="togglePast" type="button" class="secondary-button">隐藏巡演线索</button>
+        </div>
+        <div id="eventGrid" class="event-grid"></div>
+      </section>
+    </main>
+
+    <dialog id="albumDialog">
+      <button id="closeDialog" class="icon-button close-button" aria-label="关闭" title="关闭">×</button>
+      <div id="dialogContent"></div>
+    </dialog>
+
+    <nav class="bottom-app-nav" aria-label="App 底部导航">
+      <a href="#pulse">Pulse</a>
+      <a href="#ai-tools">AI</a>
+      <a href="#albums">Archive</a>
+      <a href="#submit">Demo</a>
+    </nav>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
