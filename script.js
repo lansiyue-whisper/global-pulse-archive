@@ -404,6 +404,72 @@ const aiFeatures = [
   }
 ];
 
+const musicResources = [
+  {
+    title: "SoundCloud: Afro House",
+    platform: "SoundCloud",
+    category: "afro house",
+    url: "https://soundcloud.com/tags/afro%20house",
+    note: "适合挖 DJ set、未发行 demo、独立制作人与厂牌上传。"
+  },
+  {
+    title: "SoundCloud: Psychill",
+    platform: "SoundCloud",
+    category: "psychill",
+    url: "https://soundcloud.com/tags/psychill",
+    note: "适合寻找 psybient、chillout stage、长混音与旅行场景音乐。"
+  },
+  {
+    title: "Bandcamp: Downtempo",
+    platform: "Bandcamp",
+    category: "downtempo",
+    url: "https://bandcamp.com/tag/downtempo",
+    note: "适合购买和支持独立音乐人，保留专辑语境与说明文字。"
+  },
+  {
+    title: "Bandcamp: Gqom",
+    platform: "Bandcamp",
+    category: "gqom",
+    url: "https://bandcamp.com/tag/gqom",
+    note: "南非 club 声音线索，适合和 afro techno 分开整理。"
+  },
+  {
+    title: "Free Music Archive",
+    platform: "FMA",
+    category: "creative commons",
+    url: "https://freemusicarchive.org/genre/International/",
+    note: "开放授权音乐索引，使用前仍需逐条确认许可证。"
+  },
+  {
+    title: "Jamendo World",
+    platform: "Jamendo",
+    category: "creative commons",
+    url: "https://www.jamendo.com/start",
+    note: "独立音乐平台，可按 mood、genre、license 继续筛选。"
+  },
+  {
+    title: "Internet Archive Live / Global",
+    platform: "Internet Archive",
+    category: "archive",
+    url: "https://archive.org/details/audio",
+    note: "适合公共领域、田野录音、现场录音和历史资料挖掘。"
+  },
+  {
+    title: "ccMixter",
+    platform: "ccMixter",
+    category: "remix stems",
+    url: "https://ccmixter.org/",
+    note: "适合寻找可 remix 的人声、乐器和 Creative Commons 素材。"
+  },
+  {
+    title: "Pixabay Music",
+    platform: "Pixabay",
+    category: "royalty-free",
+    url: "https://pixabay.com/music/search/world/",
+    note: "适合 UI、视频和 demo 的免版税音乐线索。"
+  }
+];
+
 let activeFilter = "all";
 let showFieldNotes = true;
 
@@ -430,6 +496,7 @@ const aiSearchForm = document.querySelector("#aiSearchForm");
 const aiSearchInput = document.querySelector("#aiSearchInput");
 const analysisOutput = document.querySelector("#analysisOutput");
 const runAnalysis = document.querySelector("#runAnalysis");
+const resourceGrid = document.querySelector("#resourceGrid");
 
 const getStored = (key, fallback) => {
   try {
@@ -608,6 +675,21 @@ function renderEvents() {
             <span>${event.date}</span>
           </div>
         </article>
+      `
+    )
+    .join("");
+}
+
+function renderResources() {
+  resourceGrid.innerHTML = musicResources
+    .map(
+      (resource) => `
+        <a class="resource-card" href="${resource.url}" target="_blank" rel="noreferrer">
+          <span>${resource.platform}</span>
+          <strong>${resource.title}</strong>
+          <em>${resource.category}</em>
+          <p>${resource.note}</p>
+        </a>
       `
     )
     .join("");
@@ -872,6 +954,7 @@ if ("serviceWorker" in navigator && location.protocol !== "file:") {
 
 renderPulseApp();
 buildAnalysis();
+renderResources();
 renderRegions();
 renderAlbums();
 renderSources();
