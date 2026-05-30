@@ -413,11 +413,32 @@ const musicResources = [
     note: "适合挖 DJ set、未发行 demo、独立制作人与厂牌上传。"
   },
   {
+    title: "SoundCloud: Afro Techno",
+    platform: "SoundCloud",
+    category: "afro techno",
+    url: "https://soundcloud.com/search?q=afro%20techno",
+    note: "适合追踪 DJ set、club edit 和非洲节奏进入 techno 系统的混音线索。"
+  },
+  {
+    title: "SoundCloud: Organic House",
+    platform: "SoundCloud",
+    category: "organic house",
+    url: "https://soundcloud.com/tags/organic%20house",
+    note: "适合找沙漠、安第斯、中东旋律与慢速 house 的混合方向。"
+  },
+  {
     title: "SoundCloud: Psychill",
     platform: "SoundCloud",
     category: "psychill",
     url: "https://soundcloud.com/tags/psychill",
     note: "适合寻找 psybient、chillout stage、长混音与旅行场景音乐。"
+  },
+  {
+    title: "SoundCloud: Field Recordings",
+    platform: "SoundCloud",
+    category: "field recording",
+    url: "https://soundcloud.com/tags/field%20recording",
+    note: "适合收集自然录音、城市声景和可作为文化背景研究的声音素材。"
   },
   {
     title: "Bandcamp: Downtempo",
@@ -427,11 +448,123 @@ const musicResources = [
     note: "适合购买和支持独立音乐人，保留专辑语境与说明文字。"
   },
   {
+    title: "Bandcamp: Afro House",
+    platform: "Bandcamp",
+    category: "afro house",
+    url: "https://bandcamp.com/tag/afro-house",
+    note: "适合查找厂牌发行、独立 EP 和可直接购买支持的舞曲资源。"
+  },
+  {
+    title: "Bandcamp: Afro Techno",
+    platform: "Bandcamp",
+    category: "afro techno",
+    url: "https://bandcamp.com/tag/afro-techno",
+    note: "适合连接泛非 club、工业低频、percussion techno 和地下厂牌。"
+  },
+  {
     title: "Bandcamp: Gqom",
     platform: "Bandcamp",
     category: "gqom",
     url: "https://bandcamp.com/tag/gqom",
     note: "南非 club 声音线索，适合和 afro techno 分开整理。"
+  },
+  {
+    title: "Bandcamp: Singeli",
+    platform: "Bandcamp",
+    category: "singeli",
+    url: "https://bandcamp.com/tag/singeli",
+    note: "坦桑尼亚高速电子街区声音入口，适合追踪 Nyege Nyege 相关发行。"
+  },
+  {
+    title: "Bandcamp: Psybient",
+    platform: "Bandcamp",
+    category: "psybient",
+    url: "https://bandcamp.com/tag/psybient",
+    note: "适合扩充 psychill、ambient、downtempo 和 psychedelic 之间的资料。"
+  },
+  {
+    title: "Bandcamp: Field Recordings",
+    platform: "Bandcamp",
+    category: "field recording",
+    url: "https://bandcamp.com/tag/field-recordings",
+    note: "适合寻找有说明文字、地理线索和录音语境的声音专辑。"
+  },
+  {
+    title: "Nyege Nyege Tapes",
+    platform: "Bandcamp",
+    category: "east african club",
+    url: "https://nyegenyegetapes.bandcamp.com/",
+    note: "东非电子、singeli、传统/实验混合与泛非地下舞曲的重要厂牌入口。"
+  },
+  {
+    title: "Hakuna Kulala",
+    platform: "Bandcamp",
+    category: "experimental club",
+    url: "https://hakunakulala.bandcamp.com/",
+    note: "更偏 club、rap、noise、bass 和实验电子的东非/泛非厂牌线索。"
+  },
+  {
+    title: "Shika Shika",
+    platform: "Bandcamp",
+    category: "organic electronic",
+    url: "https://shikashika.bandcamp.com/",
+    note: "生态、民间根源、拉美电子与公益项目结合，适合做文化专题。"
+  },
+  {
+    title: "Wonderwheel Recordings",
+    platform: "Bandcamp",
+    category: "global bass",
+    url: "https://wonderwheelrecordings.bandcamp.com/",
+    note: "Brooklyn 出发的 global dancefloor 厂牌，连接 tropical、dub、Latin 和 house。"
+  },
+  {
+    title: "ZZK Records",
+    platform: "Bandcamp",
+    category: "latin electronic",
+    url: "https://zzkrecords.bandcamp.com/",
+    note: "拉美电子、cumbia digital、安第斯与实验 club 的重要入口。"
+  },
+  {
+    title: "Sahel Sounds",
+    platform: "Bandcamp",
+    category: "sahel guitar",
+    url: "https://sahelsounds.bandcamp.com/",
+    note: "西非 Sahel 吉他、田野录音、电影和艺术家合作项目资料。"
+  },
+  {
+    title: "Awesome Tapes From Africa",
+    platform: "Bandcamp",
+    category: "cassette archive",
+    url: "https://awesometapesfromafrica.bandcamp.com/",
+    note: "非洲磁带文化与授权再版入口，适合补历史档案和 DJ digging 线索。"
+  },
+  {
+    title: "Habibi Funk",
+    platform: "Bandcamp",
+    category: "arab funk",
+    url: "https://habibifunkrecords.bandcamp.com/",
+    note: "阿拉伯 funk、jazz、soul 和电影配乐再版，适合补充中东/北非历史声音。"
+  },
+  {
+    title: "Glitterbeat Records",
+    platform: "Official",
+    category: "contemporary global",
+    url: "https://glitterbeat.com/artists/",
+    note: "当代全球音乐、跨文化合作和 roots experimental 的艺人目录。"
+  },
+  {
+    title: "Analog Africa",
+    platform: "Official",
+    category: "reissue",
+    url: "https://analogafrica.com/",
+    note: "非洲、拉美历史音乐再版厂牌，适合建立按年代和地区的资料索引。"
+  },
+  {
+    title: "Sublime Frequencies",
+    platform: "Official",
+    category: "field archive",
+    url: "https://www.sublimefrequencies.com/",
+    note: "田野录音、广播、民间音乐与边缘声音档案，适合做声音民族志入口。"
   },
   {
     title: "Free Music Archive",
@@ -441,11 +574,25 @@ const musicResources = [
     note: "开放授权音乐索引，使用前仍需逐条确认许可证。"
   },
   {
+    title: "Free Music Archive: Electronic",
+    platform: "FMA",
+    category: "creative commons",
+    url: "https://freemusicarchive.org/genre/Electronic/",
+    note: "适合找可授权的电子音乐线索，后续可按 license、mood、BPM 做二次整理。"
+  },
+  {
     title: "Jamendo World",
     platform: "Jamendo",
     category: "creative commons",
     url: "https://www.jamendo.com/start",
     note: "独立音乐平台，可按 mood、genre、license 继续筛选。"
+  },
+  {
+    title: "Ektoplazm",
+    platform: "Creative Commons",
+    category: "psy / downtempo",
+    url: "https://ektoplazm.com/",
+    note: "Psytrance、psychill、psybient 和 downtempo 的 Creative Commons 发行档案。"
   },
   {
     title: "Internet Archive Live / Global",
@@ -455,6 +602,13 @@ const musicResources = [
     note: "适合公共领域、田野录音、现场录音和历史资料挖掘。"
   },
   {
+    title: "Internet Archive: 78 RPM",
+    platform: "Internet Archive",
+    category: "historical archive",
+    url: "https://archive.org/details/georgeblood",
+    note: "历史唱片数字化档案，可用于研究旧录音、民间旋律和再版线索。"
+  },
+  {
     title: "ccMixter",
     platform: "ccMixter",
     category: "remix stems",
@@ -462,11 +616,39 @@ const musicResources = [
     note: "适合寻找可 remix 的人声、乐器和 Creative Commons 素材。"
   },
   {
+    title: "Wikimedia Commons Audio",
+    platform: "Wikimedia",
+    category: "public media",
+    url: "https://commons.wikimedia.org/wiki/Category:Audio_files",
+    note: "公共媒体音频入口，适合找公共领域或开放授权的历史声音资料。"
+  },
+  {
     title: "Pixabay Music",
     platform: "Pixabay",
     category: "royalty-free",
     url: "https://pixabay.com/music/search/world/",
     note: "适合 UI、视频和 demo 的免版税音乐线索。"
+  },
+  {
+    title: "Pixabay: Ethnic Music",
+    platform: "Pixabay",
+    category: "royalty-free",
+    url: "https://pixabay.com/music/search/ethnic/",
+    note: "适合为 App demo、预告视频和视觉页面寻找免版税背景音乐。"
+  },
+  {
+    title: "Resident Advisor: Africa",
+    platform: "RA",
+    category: "events",
+    url: "https://ra.co/events",
+    note: "活动信息入口，可按城市继续筛选 afro house、club、festival 和 DJ set。"
+  },
+  {
+    title: "Worldwide FM",
+    platform: "Radio",
+    category: "radio archive",
+    url: "https://worldwidefm.net/",
+    note: "全球音乐电台节目、DJ set 和访谈入口，适合做每周 digger 清单。"
   }
 ];
 

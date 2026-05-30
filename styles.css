@@ -71,7 +71,7 @@ a {
   top: 0;
   z-index: 50;
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto auto 1fr;
   align-items: center;
   gap: 24px;
   padding: 18px clamp(18px, 4vw, 58px);
@@ -97,6 +97,20 @@ a {
   color: #08090b;
   background: var(--acid);
   border-radius: 50%;
+}
+
+.version-pill {
+  justify-self: start;
+  min-height: 30px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 10px;
+  color: #08090b;
+  background: var(--acid);
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 950;
+  letter-spacing: 0.04em;
 }
 
 .nav-links {
