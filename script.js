@@ -679,6 +679,7 @@ const aiSearchInput = document.querySelector("#aiSearchInput");
 const analysisOutput = document.querySelector("#analysisOutput");
 const runAnalysis = document.querySelector("#runAnalysis");
 const resourceGrid = document.querySelector("#resourceGrid");
+const pageViews = document.querySelectorAll("[data-page]");
 
 const getStored = (key, fallback) => {
   try {
@@ -689,6 +690,31 @@ const getStored = (key, fallback) => {
 };
 
 const setStored = (key, value) => localStorage.setItem(key, JSON.stringify(value));
+
+const routeAliases = {
+  "": "home",
+  home: "home",
+  library: "home",
+  pulse: "pulse",
+  "ai-tools": "ai",
+  ai: "ai",
+  resources: "resources",
+  albums: "archive",
+  archive: "archive",
+  submit: "submit",
+  events: "events",
+  sources: "sources"
+};
+
+function showPage(route = "home") {
+  const page = routeAliases[route.replace("#", "")] || "home";
+  pageViews.forEach((view) => {
+    view.classList.toggle("is-active", view.dataset.page === page);
+    if (view.dataset.page === page) view.classList.add("is-visible");
+  });
+  document.body.dataset.page = page;
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
 
 let sources = getStored("globalPulseSourcesV2", [
   {
@@ -1109,7 +1135,8 @@ pulseModesGrid.addEventListener("click", (event) => {
   filterButtons.forEach((filterButton) => filterButton.classList.toggle("active", filterButton.dataset.filter === mode.filter));
   renderAlbums();
   buildAnalysis(mode.prompt);
-  document.querySelector("#albums").scrollIntoView({ behavior: "smooth", block: "start" });
+  location.hash = "archive";
+  showPage("archive");
 });
 
 aiSearchForm.addEventListener("submit", (event) => {
@@ -1128,6 +1155,7 @@ analysisOutput.addEventListener("click", (event) => {
   activeFilter = "all";
   filterButtons.forEach((filterButton) => filterButton.classList.toggle("active", filterButton.dataset.filter === "all"));
   renderAlbums();
+  showPage("archive");
   openAlbum(albumIndex);
 });
 
@@ -1190,6 +1218,8 @@ if ("serviceWorker" in navigator && location.protocol !== "file:") {
   navigator.serviceWorker.register("./sw.js").catch(() => {});
 }
 
+window.addEventListener("hashchange", () => showPage(location.hash.slice(1)));
+
 renderPulseApp();
 buildAnalysis();
 renderResources();
@@ -1199,3 +1229,4 @@ renderAlbums();
 renderSources();
 renderDemos();
 renderEvents();
+showPage(location.hash.slice(1));

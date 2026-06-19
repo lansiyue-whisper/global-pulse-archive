@@ -9,7 +9,7 @@
     <title>Global Pulse Archive</title>
     <link rel="manifest" href="./manifest.json" />
     <link rel="icon" href="./app-icon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="./styles.css?v=20260619-refined" />
+    <link rel="stylesheet" href="./styles.css?v=20260619-pages" />
   </head>
   <body>
     <div class="page-loader" aria-hidden="true">
@@ -18,22 +18,22 @@
     </div>
     <div class="cursor-orb" aria-hidden="true"></div>
     <header class="topbar">
-      <a class="brand" href="#library" aria-label="Global Pulse Archive">
+      <a class="brand" href="#home" aria-label="Global Pulse Archive">
         <span class="brand-mark">GP</span>
         <span>Global Pulse Archive</span>
       </a>
-      <span class="version-pill">EDITORIAL UI · 06.19</span>
+      <span class="version-pill">PAGE SYSTEM · 06.19</span>
       <nav class="nav-links" aria-label="主要导航">
         <a href="#pulse">Pulse</a>
         <a href="#resources">Resources</a>
-        <a href="#albums">Archive</a>
+        <a href="#archive">Archive</a>
         <a href="#submit">Submit</a>
       </nav>
     </header>
 
     <main>
       <section class="workspace" id="library">
-        <div class="hero-panel" data-parallax>
+        <div class="hero-panel is-active" id="home" data-page="home" data-parallax>
           <div class="hero-copy">
             <p class="eyebrow">world music · ethnic music · global electronic</p>
             <h1>
@@ -44,6 +44,28 @@
               收集世界音乐、民族音乐与全球电子声音，也为 DJ、制作人和 digger 提供智能搜歌、
               场景排歌、曲库分析、Demo 上传和活动线索。
             </p>
+            <div class="home-gateway" aria-label="主要入口">
+              <a href="#pulse">
+                <span>01</span>
+                <strong>Pulse</strong>
+                <em>场景排歌</em>
+              </a>
+              <a href="#resources">
+                <span>02</span>
+                <strong>Resources</strong>
+                <em>公开音乐入口</em>
+              </a>
+              <a href="#archive">
+                <span>03</span>
+                <strong>Archive</strong>
+                <em>专辑与文化档案</em>
+              </a>
+              <a href="#submit">
+                <span>04</span>
+                <strong>Submit</strong>
+                <em>上传 Demo</em>
+              </a>
+            </div>
           </div>
           <div class="quick-stats" aria-label="资料概览">
             <span><strong id="statAlbums">0</strong>专辑</span>
@@ -52,7 +74,7 @@
           </div>
         </div>
 
-        <section class="app-shell reveal-block" id="pulse" aria-label="Pulse App 功能">
+        <section class="app-shell reveal-block" id="pulse" data-page="pulse" aria-label="Pulse App 功能">
           <div class="phone-preview">
             <div class="phone-status">
               <span>PULSE</span>
@@ -76,7 +98,7 @@
           </div>
         </section>
 
-        <section class="ai-tools reveal-block" id="ai-tools" aria-label="AI 音乐工具">
+        <section class="ai-tools reveal-block" id="ai-tools" data-page="ai" aria-label="AI 音乐工具">
           <div class="section-heading row-heading">
             <div>
               <p>sonic intelligence</p>
@@ -96,7 +118,7 @@
           </div>
         </section>
 
-        <section class="control-band reveal-block" aria-label="资料库筛选">
+        <section class="control-band reveal-block" data-page="archive" aria-label="资料库筛选">
           <label class="search-field">
             <span>搜索</span>
             <input id="searchInput" type="search" placeholder="专辑、音乐人、地区、风格" />
@@ -118,7 +140,7 @@
           </div>
         </section>
 
-        <section class="music-resources-band reveal-block" id="resources" aria-label="音乐资源池">
+        <section class="music-resources-band reveal-block" id="resources" data-page="resources" aria-label="音乐资源池">
           <div class="section-heading row-heading">
             <div>
               <p>legal listening pool</p>
@@ -129,7 +151,7 @@
           <div id="resourceGrid" class="resource-grid"></div>
         </section>
 
-        <section class="content-grid reveal-block">
+        <section class="content-grid reveal-block" id="archive" data-page="archive">
           <aside class="atlas-panel" aria-label="地区索引">
             <div class="section-heading">
               <p>regions</p>
@@ -151,7 +173,7 @@
         </section>
       </section>
 
-      <section class="source-band reveal-block" aria-label="外部来源采集">
+      <section class="source-band reveal-block" data-page="sources" aria-label="外部来源采集">
         <div class="section-heading">
           <p>sources</p>
           <h2>外部音乐链接采集</h2>
@@ -179,7 +201,7 @@
         <div id="sourceQueue" class="source-queue"></div>
       </section>
 
-      <section class="submit-band reveal-block" id="submit">
+      <section class="submit-band reveal-block" id="submit" data-page="submit">
         <div class="section-heading">
           <p>community</p>
           <h2>音乐人 Demo 上传</h2>
@@ -221,7 +243,7 @@
         <div id="demoList" class="demo-list"></div>
       </section>
 
-      <section class="events-band reveal-block" id="events">
+      <section class="events-band reveal-block" id="events" data-page="events">
         <div class="section-heading row-heading">
           <div>
             <p>calendar</p>
@@ -240,11 +262,11 @@
 
     <nav class="bottom-app-nav" aria-label="App 底部导航">
       <a href="#pulse">Pulse</a>
-      <a href="#ai-tools">AI</a>
+      <a href="#ai">AI</a>
       <a href="#resources">Dig</a>
-      <a href="#albums">Archive</a>
+      <a href="#archive">Archive</a>
     </nav>
 
-    <script src="./script.js?v=20260619-refined"></script>
+    <script src="./script.js?v=20260619-pages"></script>
   </body>
 </html>
