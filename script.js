@@ -708,6 +708,7 @@ const routeAliases = {
 
 function showPage(route = "home") {
   const page = routeAliases[route.replace("#", "")] || "home";
+  document.body.classList.add("is-routed");
   pageViews.forEach((view) => {
     view.classList.toggle("is-active", view.dataset.page === page);
     if (view.dataset.page === page) view.classList.add("is-visible");
@@ -1230,3 +1231,4 @@ renderSources();
 renderDemos();
 renderEvents();
 showPage(location.hash.slice(1));
+document.body.classList.add("is-ready");
