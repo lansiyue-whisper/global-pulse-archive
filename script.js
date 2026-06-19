@@ -864,9 +864,9 @@ function renderEvents() {
 
 function renderResources() {
   resourceGrid.innerHTML = musicResources
-    .map(
-      (resource) => `
-        <a class="resource-card" href="${resource.url}" target="_blank" rel="noreferrer">
+        .map(
+          (resource) => `
+        <a class="resource-card" href="${resource.url}" target="_blank" rel="noreferrer" data-category="${resource.category}">
           <span>${resource.platform}</span>
           <strong>${resource.title}</strong>
           <em>${resource.category}</em>
@@ -1103,6 +1103,7 @@ pulseModesGrid.addEventListener("click", (event) => {
   if (!button) return;
   const mode = pulseModes.find((item) => item.id === button.dataset.mode);
   if (!mode) return;
+  pulseModesGrid.querySelectorAll(".pulse-card").forEach((card) => card.classList.toggle("is-selected", card === button));
   activeFilter = mode.filter;
   searchInput.value = "";
   filterButtons.forEach((filterButton) => filterButton.classList.toggle("active", filterButton.dataset.filter === mode.filter));
@@ -1130,6 +1131,61 @@ analysisOutput.addEventListener("click", (event) => {
   openAlbum(albumIndex);
 });
 
+function setupMotion() {
+  const cursor = document.querySelector(".cursor-orb");
+  const parallaxTarget = document.querySelector("[data-parallax]");
+  const revealBlocks = document.querySelectorAll(".reveal-block");
+
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add("is-visible");
+      });
+    },
+    { threshold: 0.14 }
+  );
+
+  revealBlocks.forEach((block) => revealObserver.observe(block));
+
+  if (cursor && window.matchMedia("(pointer: fine)").matches) {
+    let x = window.innerWidth / 2;
+    let y = window.innerHeight / 2;
+    let tx = x;
+    let ty = y;
+
+    window.addEventListener("pointermove", (event) => {
+      tx = event.clientX;
+      ty = event.clientY;
+      if (parallaxTarget) {
+        const px = (event.clientX / window.innerWidth - 0.5) * 18;
+        const py = (event.clientY / window.innerHeight - 0.5) * 18;
+        parallaxTarget.style.setProperty("--mx", `${px}px`);
+        parallaxTarget.style.setProperty("--my", `${py}px`);
+      }
+    });
+
+    document.addEventListener("pointerover", (event) => {
+      if (event.target.closest("a, button, input, select, textarea, .album-card, .resource-card")) {
+        cursor.classList.add("is-active");
+      }
+    });
+
+    document.addEventListener("pointerout", (event) => {
+      if (event.target.closest("a, button, input, select, textarea, .album-card, .resource-card")) {
+        cursor.classList.remove("is-active");
+      }
+    });
+
+    const tick = () => {
+      x += (tx - x) * 0.18;
+      y += (ty - y) * 0.18;
+      cursor.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`;
+      requestAnimationFrame(tick);
+    };
+    tick();
+  }
+}
+
 if ("serviceWorker" in navigator && location.protocol !== "file:") {
   navigator.serviceWorker.register("./sw.js").catch(() => {});
 }
@@ -1137,6 +1193,7 @@ if ("serviceWorker" in navigator && location.protocol !== "file:") {
 renderPulseApp();
 buildAnalysis();
 renderResources();
+setupMotion();
 renderRegions();
 renderAlbums();
 renderSources();

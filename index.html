@@ -9,15 +9,20 @@
     <title>Global Pulse Archive</title>
     <link rel="manifest" href="./manifest.json" />
     <link rel="icon" href="./app-icon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="./styles.css?v=20260601-unveil" />
+    <link rel="stylesheet" href="./styles.css?v=20260619-motion" />
   </head>
   <body>
+    <div class="page-loader" aria-hidden="true">
+      <span>Global Pulse</span>
+      <strong>00</strong>
+    </div>
+    <div class="cursor-orb" aria-hidden="true"></div>
     <header class="topbar">
       <a class="brand" href="#library" aria-label="Global Pulse Archive">
         <span class="brand-mark">GP</span>
         <span>Global Pulse Archive</span>
       </a>
-      <span class="version-pill">UNVEIL-INSPIRED · 06.01</span>
+      <span class="version-pill">MOTION STUDY · 06.19</span>
       <nav class="nav-links" aria-label="主要导航">
         <a href="#pulse">Pulse App</a>
         <a href="#library">音乐库</a>
@@ -31,10 +36,14 @@
 
     <main>
       <section class="workspace" id="library">
-        <div class="hero-panel">
+        <div class="hero-panel" data-parallax>
           <div class="hero-copy">
             <p class="eyebrow">world music · ethnic music · global electronic</p>
-            <h1>Global Pulse 音乐智能档案 App</h1>
+            <h1>
+              <span>Global</span>
+              <span>Pulse</span>
+              <span>Archive</span>
+            </h1>
             <p>
               收集世界音乐、民族音乐与全球电子声音，也为 DJ、制作人和 digger 提供智能搜歌、
               场景排歌、曲库分析、Demo 上传和活动线索。
@@ -47,7 +56,7 @@
           </div>
         </div>
 
-        <section class="app-shell" id="pulse" aria-label="Pulse App 功能">
+        <section class="app-shell reveal-block" id="pulse" aria-label="Pulse App 功能">
           <div class="phone-preview">
             <div class="phone-status">
               <span>PULSE</span>
@@ -71,7 +80,7 @@
           </div>
         </section>
 
-        <section class="ai-tools" id="ai-tools" aria-label="AI 音乐工具">
+        <section class="ai-tools reveal-block" id="ai-tools" aria-label="AI 音乐工具">
           <div class="section-heading row-heading">
             <div>
               <p>sonic intelligence</p>
@@ -91,7 +100,7 @@
           </div>
         </section>
 
-        <section class="control-band" aria-label="资料库筛选">
+        <section class="control-band reveal-block" aria-label="资料库筛选">
           <label class="search-field">
             <span>搜索</span>
             <input id="searchInput" type="search" placeholder="专辑、音乐人、地区、风格" />
@@ -113,7 +122,7 @@
           </div>
         </section>
 
-        <section class="music-resources-band" id="resources" aria-label="音乐资源池">
+        <section class="music-resources-band reveal-block" id="resources" aria-label="音乐资源池">
           <div class="section-heading row-heading">
             <div>
               <p>legal listening pool</p>
@@ -124,7 +133,7 @@
           <div id="resourceGrid" class="resource-grid"></div>
         </section>
 
-        <section class="content-grid">
+        <section class="content-grid reveal-block">
           <aside class="atlas-panel" aria-label="地区索引">
             <div class="section-heading">
               <p>regions</p>
@@ -146,7 +155,7 @@
         </section>
       </section>
 
-      <section class="source-band" aria-label="外部来源采集">
+      <section class="source-band reveal-block" aria-label="外部来源采集">
         <div class="section-heading">
           <p>sources</p>
           <h2>外部音乐链接采集</h2>
@@ -174,7 +183,7 @@
         <div id="sourceQueue" class="source-queue"></div>
       </section>
 
-      <section class="submit-band" id="submit">
+      <section class="submit-band reveal-block" id="submit">
         <div class="section-heading">
           <p>community</p>
           <h2>音乐人 Demo 上传</h2>
@@ -216,7 +225,7 @@
         <div id="demoList" class="demo-list"></div>
       </section>
 
-      <section class="events-band" id="events">
+      <section class="events-band reveal-block" id="events">
         <div class="section-heading row-heading">
           <div>
             <p>calendar</p>
@@ -240,6 +249,6 @@
       <a href="#albums">Archive</a>
     </nav>
 
-    <script src="./script.js?v=20260601-unveil"></script>
+    <script src="./script.js?v=20260619-motion"></script>
   </body>
 </html>
