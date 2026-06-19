@@ -1394,6 +1394,81 @@ body::before {
   z-index: 1;
 }
 
+.hero-slides {
+  position: absolute;
+  right: clamp(18px, 5vw, 86px);
+  bottom: clamp(130px, 15vw, 210px);
+  width: min(34vw, 420px);
+  aspect-ratio: 0.86;
+  border-radius: 999px 999px 28px 28px;
+  overflow: hidden;
+  opacity: 0.92;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-slides::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 22% 18%, rgba(255, 255, 255, 0.36), transparent 27%),
+    linear-gradient(180deg, rgba(14, 18, 14, 0.03), rgba(14, 18, 14, 0.28));
+  z-index: 2;
+}
+
+.hero-slides span {
+  position: absolute;
+  inset: 0;
+  background-position: center;
+  background-size: cover;
+  opacity: 0;
+  transform: scale(1.04);
+  filter: saturate(0.92) contrast(1.03);
+  animation: heroSlideBreath 21s ease-in-out infinite;
+}
+
+.hero-slides span:nth-child(1) {
+  background-image: url("https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1000&q=82");
+}
+
+.hero-slides span:nth-child(2) {
+  background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=82");
+  animation-delay: 7s;
+}
+
+.hero-slides span:nth-child(3) {
+  background-image: url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1000&q=82");
+  animation-delay: 14s;
+}
+
+@keyframes heroSlideBreath {
+  0% {
+    opacity: 0;
+    transform: scale(1.04);
+    filter: saturate(0.86) brightness(0.92) contrast(1.02);
+  }
+
+  10%,
+  32% {
+    opacity: 1;
+    transform: scale(1.11);
+    filter: saturate(1.02) brightness(1.06) contrast(1.04);
+  }
+
+  43%,
+  100% {
+    opacity: 0;
+    transform: scale(1.16);
+    filter: saturate(0.84) brightness(0.9) contrast(1.02);
+  }
+}
+
+.hero-panel::before {
+  display: none;
+}
+
 body.is-routed [data-page] {
   display: none !important;
 }
@@ -1676,6 +1751,14 @@ dialog {
 }
 
 @media (max-width: 900px) {
+  .hero-slides {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: min(76vw, 330px);
+    margin: 28px 0 0 auto;
+  }
+
   .hero-copy p:last-child {
     margin-left: 0;
   }
@@ -1701,5 +1784,16 @@ dialog {
   .album-card button {
     width: 100%;
     margin-top: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-slides span {
+    animation: none;
+  }
+
+  .hero-slides span:first-child {
+    opacity: 1;
+    transform: none;
   }
 }

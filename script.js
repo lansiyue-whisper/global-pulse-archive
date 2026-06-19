@@ -193,6 +193,136 @@ const albums = [
       "网站可把 psychill 与 psybient 分开：前者更接近 chillout 舞台和旅行文化，后者偏环境、科幻和深听。两者都需要避免把文化声音变成无出处采样。",
     source: "label / festival research leads",
     sourceUrl: "https://ultimae.bandcamp.com/"
+  },
+  {
+    title: "Amapiano / South African Log Drum Path",
+    artist: "Kabza De Small / DJ Maphorisa / scene references",
+    region: "South Africa",
+    year: "2010s-now",
+    genres: ["amapiano", "afro house", "deep house"],
+    cover: "https://images.unsplash.com/photo-1508973379184-7517410fb0bc?auto=format&fit=crop&w=900&q=80",
+    summary: "Amapiano 以 log drum、柔软键盘和长段 groove 构成南非流行与舞池的重要当代路径。",
+    culture:
+      "它和 townships、舞蹈挑战、taxi/街区传播、vocal collaboration 关系很强。整理时适合把 dance、producer tag、歌手和城市网络放在同一档案里。",
+    source: "Bandcamp / SoundCloud tags and South African scene leads",
+    sourceUrl: "https://bandcamp.com/tag/amapiano"
+  },
+  {
+    title: "Kuduro / Lisbon-Angola Club Dossier",
+    artist: "Príncipe / Angolan and Lisbon scene references",
+    region: "Luanda / Lisbon",
+    year: "1990s-now",
+    genres: ["kuduro", "global bass", "experimental club"],
+    cover: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=900&q=80",
+    summary: "Kuduro 从安哥拉街区舞蹈与电子鼓机能量发展出高冲击 club 语法，也影响了 Lisbon bass 场景。",
+    culture:
+      "它的身体性很重要：舞步、MC、派对系统和移民社区共同构成声音。网站可以把它放在葡语非洲与欧洲地下 club 的交叉节点。",
+    source: "Príncipe catalogue / Kuduro listening leads",
+    sourceUrl: "https://principediscos.bandcamp.com/"
+  },
+  {
+    title: "Digital Cumbia / ZZK Path",
+    artist: "ZZK Records / Chancha Via Circuito references",
+    region: "Argentina / Latin America",
+    year: "2000s-now",
+    genres: ["cumbia digital", "global bass", "organic downtempo"],
+    cover: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=80",
+    summary: "Digital cumbia 把拉美 cumbia、低频、dub、电子制作和安第斯/亚马逊线索连接成新的舞池语言。",
+    culture:
+      "这类内容适合按地区节奏、传统乐器、舞池速度和社群合作方式继续拆分，避免把拉美声音做成单一热带标签。",
+    source: "ZZK Records catalogue",
+    sourceUrl: "https://zzkrecords.bandcamp.com/"
+  },
+  {
+    title: "Gnawa Electronic / Morocco Deep Trance Path",
+    artist: "Hassan Wargui / Moroccan fusion references",
+    region: "Morocco / Maghreb",
+    year: "2010s-now",
+    genres: ["gnawa electronic", "ethnic", "downtempo"],
+    cover: "https://images.unsplash.com/photo-1528657249085-c569d3d8609d?auto=format&fit=crop&w=900&q=80",
+    summary: "Gnawa 的 guembri、qraqeb、呼应式声乐和 trance 结构，与 dub、downtempo、house 相遇后很适合深听和夜场过渡。",
+    culture:
+      "整理此类作品要尊重 Gnawa 的疗愈/仪式背景，记录乐手、乐器和合作关系，而不是只把 qraqeb 当成异域打击乐音色。",
+    source: "Bandcamp / SoundCloud Gnawa electronic leads",
+    sourceUrl: "https://bandcamp.com/tag/gnawa"
+  },
+  {
+    title: "Dabke Club / Levantine Bass Path",
+    artist: "Omar Souleyman / Levant club references",
+    region: "Syria / Lebanon / Levant diaspora",
+    year: "2000s-now",
+    genres: ["dabke", "global bass", "experimental club"],
+    cover: "https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=900&q=80",
+    summary: "Dabke 的婚礼键盘、mijwez、快速手鼓和合成器旋律进入电子舞池后，形成强烈的 Levant club 线索。",
+    culture:
+      "这类档案要保留婚礼、移民社群、语言和区域政治背景，不要只把它当作快节奏 club edit。它也能连接 Arab funk 和当代中东电子。",
+    source: "Bandcamp / SoundCloud Dabke leads",
+    sourceUrl: "https://bandcamp.com/tag/dabke"
+  },
+  {
+    title: "Anatolian Psych / Modern Edits Path",
+    artist: "Altin Gun / Anatolian rock and edit references",
+    region: "Turkey / diaspora",
+    year: "1960s-now",
+    genres: ["anatolian psych", "reissue", "ethnic"],
+    cover: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=900&q=80",
+    summary: "Anatolian psych 连接土耳其民间旋律、电吉他、迷幻摇滚和当代 edit / downtempo 场景。",
+    culture:
+      "它适合建立历史线：民歌旋律、70 年代摇滚、移民社群唱片、再版厂牌和当代 DJ edit 如何互相影响。",
+    source: "Bandcamp Anatolian psych tag / reissue leads",
+    sourceUrl: "https://bandcamp.com/tag/anatolian-psych"
+  },
+  {
+    title: "Maloya Electronic / Indian Ocean Path",
+    artist: "La Reunion and Indian Ocean references",
+    region: "Reunion Island / Indian Ocean",
+    year: "2010s-now",
+    genres: ["maloya electronic", "ethnic", "experimental club"],
+    cover: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80",
+    summary: "Maloya 的 call-and-response、kayamb、rouler 鼓和岛屿历史，与 bass、dub、house 结合后形成很特别的印度洋电子线索。",
+    culture:
+      "这个方向需要记录克里奥尔语言、劳动/抵抗历史和岛屿社群，而不是只用‘tribal’描述节奏。适合放进本土文化感更强的专题页。",
+    source: "Bandcamp Maloya / Indian Ocean listening leads",
+    sourceUrl: "https://bandcamp.com/tag/maloya"
+  },
+  {
+    title: "Ethio-Jazz Reissue / Addis Groove Path",
+    artist: "Mulatu Astatke / Ethiopiques adjacent references",
+    region: "Ethiopia / diaspora",
+    year: "1960s-now",
+    genres: ["ethio-jazz", "reissue", "ethnic"],
+    cover: "https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=900&q=80",
+    summary: "Ethio-jazz 的五声音阶、铜管、funk bassline 和爵士编制，是世界音乐再版与 downtempo DJ set 的重要历史入口。",
+    culture:
+      "它能帮助网站从当代电子往回连接历史唱片、国家电台、电影配乐和 diaspora 演出网络，是很适合做深档案的方向。",
+    source: "Bandcamp Ethio-jazz / reissue leads",
+    sourceUrl: "https://bandcamp.com/tag/ethio-jazz"
+  },
+  {
+    title: "Highlife / Disco Reissue Path",
+    artist: "Analog Africa / Soundway adjacent references",
+    region: "Ghana / Nigeria / West Africa",
+    year: "1970s-now",
+    genres: ["highlife", "afro disco", "reissue"],
+    cover: "https://images.unsplash.com/photo-1494232410401-ad00d5433cfa?auto=format&fit=crop&w=900&q=80",
+    summary: "Highlife、Afro disco 和城市乐队录音常被当代 DJ 用作 warm-up、edit 和全球舞池资料。",
+    culture:
+      "再版资料应记录乐队、原唱片公司、录音城市、授权状态和 liner notes。它能让网站的音乐资源从新歌扩展到历史乐队生态。",
+    source: "Analog Africa / Soundway reissue leads",
+    sourceUrl: "https://analogafrica.com/"
+  },
+  {
+    title: "Balearic Global Downtempo Path",
+    artist: "Music From Memory / leftfield sunset references",
+    region: "Mediterranean / global",
+    year: "1980s-now",
+    genres: ["downtempo", "balearic", "reissue"],
+    cover: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=80",
+    summary: "Balearic 不是单一节拍，而是一种开放的 sunset listening 方式：dub、ambient、folk、new age、soft percussion 都可以共存。",
+    culture:
+      "这个条目适合连接海岛 club、慢速 DJ、再版文化和当代 chillout。它也能作为 psychill 之外更轻盈的慢速入口。",
+    source: "Music From Memory catalogue",
+    sourceUrl: "https://music-from-memory.bandcamp.com/"
   }
 ];
 
@@ -324,6 +454,46 @@ const listeningSources = {
   },
   "Psychill / Psybient Listening Path": {
     url: "https://ultimae.bandcamp.com/",
+    type: "link"
+  },
+  "Amapiano / South African Log Drum Path": {
+    url: "https://soundcloud.com/tags/amapiano",
+    type: "soundcloud"
+  },
+  "Kuduro / Lisbon-Angola Club Dossier": {
+    url: "https://principediscos.bandcamp.com/",
+    type: "link"
+  },
+  "Digital Cumbia / ZZK Path": {
+    url: "https://zzkrecords.bandcamp.com/",
+    type: "link"
+  },
+  "Gnawa Electronic / Morocco Deep Trance Path": {
+    url: "https://soundcloud.com/search?q=gnawa%20electronic",
+    type: "soundcloud"
+  },
+  "Dabke Club / Levantine Bass Path": {
+    url: "https://soundcloud.com/search?q=dabke%20electronic",
+    type: "soundcloud"
+  },
+  "Anatolian Psych / Modern Edits Path": {
+    url: "https://bandcamp.com/tag/anatolian-psych",
+    type: "link"
+  },
+  "Maloya Electronic / Indian Ocean Path": {
+    url: "https://bandcamp.com/tag/maloya",
+    type: "link"
+  },
+  "Ethio-Jazz Reissue / Addis Groove Path": {
+    url: "https://bandcamp.com/tag/ethio-jazz",
+    type: "link"
+  },
+  "Highlife / Disco Reissue Path": {
+    url: "https://analogafrica.com/",
+    type: "link"
+  },
+  "Balearic Global Downtempo Path": {
+    url: "https://music-from-memory.bandcamp.com/",
     type: "link"
   }
 };
@@ -649,6 +819,139 @@ const musicResources = [
     category: "radio archive",
     url: "https://worldwidefm.net/",
     note: "全球音乐电台节目、DJ set 和访谈入口，适合做每周 digger 清单。"
+  },
+  {
+    title: "SoundCloud: Amapiano",
+    platform: "SoundCloud",
+    category: "amapiano",
+    url: "https://soundcloud.com/tags/amapiano",
+    note: "南非 log drum、vocal house 和街区舞池线索，适合找 DJ set 与 demo。"
+  },
+  {
+    title: "SoundCloud: Kuduro",
+    platform: "SoundCloud",
+    category: "kuduro",
+    url: "https://soundcloud.com/tags/kuduro",
+    note: "安哥拉和 Lisbon bass 的高能舞曲入口，可继续挖 Príncipe 相关艺人。"
+  },
+  {
+    title: "SoundCloud: Dabke Electronic",
+    platform: "SoundCloud",
+    category: "dabke",
+    url: "https://soundcloud.com/search?q=dabke%20electronic",
+    note: "Levant 婚礼键盘、mijwez 与 club edit 的搜索入口。"
+  },
+  {
+    title: "SoundCloud: Gnawa Electronic",
+    platform: "SoundCloud",
+    category: "gnawa electronic",
+    url: "https://soundcloud.com/search?q=gnawa%20electronic",
+    note: "摩洛哥 Gnawa 与 dub、downtempo、house 融合的试听线索。"
+  },
+  {
+    title: "Bandcamp: Amapiano",
+    platform: "Bandcamp",
+    category: "amapiano",
+    url: "https://bandcamp.com/tag/amapiano",
+    note: "适合查找南非当代 house、vocal collaboration 和 club release。"
+  },
+  {
+    title: "Bandcamp: Kuduro",
+    platform: "Bandcamp",
+    category: "kuduro",
+    url: "https://bandcamp.com/tag/kuduro",
+    note: "适合连接安哥拉电子、葡语非洲和 Lisbon underground club。"
+  },
+  {
+    title: "Bandcamp: Cumbia Digital",
+    platform: "Bandcamp",
+    category: "cumbia digital",
+    url: "https://bandcamp.com/tag/cumbia-digital",
+    note: "拉美电子、global bass 与 cumbia 低频融合的入口。"
+  },
+  {
+    title: "Bandcamp: Dabke",
+    platform: "Bandcamp",
+    category: "dabke",
+    url: "https://bandcamp.com/tag/dabke",
+    note: "叙利亚、黎巴嫩及 diaspora 场景线索，可补中东舞曲分类。"
+  },
+  {
+    title: "Bandcamp: Gnawa",
+    platform: "Bandcamp",
+    category: "gnawa electronic",
+    url: "https://bandcamp.com/tag/gnawa",
+    note: "摩洛哥 Gnawa 传统、融合与当代电子作品的继续挖掘入口。"
+  },
+  {
+    title: "Bandcamp: Anatolian Psych",
+    platform: "Bandcamp",
+    category: "anatolian psych",
+    url: "https://bandcamp.com/tag/anatolian-psych",
+    note: "土耳其迷幻、民歌旋律、再版和现代 edit 的资料入口。"
+  },
+  {
+    title: "Bandcamp: Maloya",
+    platform: "Bandcamp",
+    category: "maloya electronic",
+    url: "https://bandcamp.com/tag/maloya",
+    note: "Reunion Island 和印度洋社群声音，适合补本土文化感更强的条目。"
+  },
+  {
+    title: "Bandcamp: Ethio Jazz",
+    platform: "Bandcamp",
+    category: "ethio-jazz",
+    url: "https://bandcamp.com/tag/ethio-jazz",
+    note: "埃塞俄比亚 jazz、funk、再版与当代乐队资料入口。"
+  },
+  {
+    title: "Music From Memory",
+    platform: "Bandcamp",
+    category: "balearic",
+    url: "https://music-from-memory.bandcamp.com/",
+    note: "Balearic、ambient、leftfield pop 和再版资料，适合做慢速深听路径。"
+  },
+  {
+    title: "Príncipe",
+    platform: "Bandcamp",
+    category: "kuduro",
+    url: "https://principediscos.bandcamp.com/",
+    note: "Lisbon underground club 厂牌，连接 kuduro、batida 和葡语非洲电子。"
+  },
+  {
+    title: "Bongo Joe Records",
+    platform: "Bandcamp",
+    category: "reissue",
+    url: "https://bongojoe.bandcamp.com/",
+    note: "再版、全球独立音乐和 hybrid folk 入口，适合补历史与当代之间的桥。"
+  },
+  {
+    title: "Ostinato Records",
+    platform: "Bandcamp",
+    category: "reissue",
+    url: "https://ostinatorecords.bandcamp.com/",
+    note: "非洲、加勒比、印度洋和 diaspora 历史声音再版资料。"
+  },
+  {
+    title: "Soundway Records",
+    platform: "Bandcamp",
+    category: "afro disco",
+    url: "https://soundwayrecords.bandcamp.com/",
+    note: "Highlife、Afro disco、Latin 和 tropical reissue 的重要资源池。"
+  },
+  {
+    title: "Mais Um",
+    platform: "Bandcamp",
+    category: "brazilian global",
+    url: "https://maisum.bandcamp.com/",
+    note: "巴西当代声音、roots、club 和实验音乐的厂牌入口。"
+  },
+  {
+    title: "Galletas Calientes",
+    platform: "Bandcamp",
+    category: "latin electronic",
+    url: "https://galletascalientesrecords.bandcamp.com/",
+    note: "Cumbia、tropical bass、Latin electronic 和全球舞池连接点。"
   }
 ];
 

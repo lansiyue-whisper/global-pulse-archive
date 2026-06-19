@@ -1,4 +1,4 @@
-const CACHE_NAME = "global-pulse-v9-20260619-natural-home";
+const CACHE_NAME = "global-pulse-v10-20260619-breathing-archive";
 const CORE_ASSETS = [
   "./",
   "./index.html",
