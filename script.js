@@ -1243,6 +1243,327 @@ const musicResources = [
   }
 ];
 
+const archiveExpansionScenes = [
+  ["Highlife & Afro Disco", "Ghana / Nigeria / West Africa", "Ghana", "1950s-1980s", ["highlife", "afro disco", "reissue"], "Soundway", ["Orchestra Baobab", "Ebo Taylor", "Pat Thomas"], ["talking drum", "guitar", "horns"]],
+  ["Sahel Guitar Continuum", "Mali / Niger / Sahel", "Mali", "1970s-now", ["sahel guitar", "desert blues", "field recording"], "Sahel Sounds", ["Tinariwen", "Bombino", "Mdou Moctar"], ["ngoni", "electric guitar", "tehardent"]],
+  ["Manding Griot Archive", "Senegal / Mali / Gambia", "Mali", "1900s-now", ["griot", "kora", "oral tradition"], "Syllart / field archive", ["Toumani Diabate", "Ballake Sissoko", "Sona Jobarteh"], ["kora", "balafon", "ngoni"]],
+  ["Ethiopian Golden Age", "Addis Ababa, Ethiopia", "Ethiopia", "1968-1978", ["ethio-jazz", "funk", "reissue"], "Ethiopiques", ["Mulatu Astatke", "Mahmoud Ahmed", "Hailu Mergia"], ["vibraphone", "krar", "masenqo"]],
+  ["Nyege Nyege Ecosystem", "Uganda / Tanzania / Kenya", "Uganda", "2015-now", ["singeli", "experimental club", "afro techno"], "Nyege Nyege Tapes", ["DJ Travella", "Nihiloxica", "Slikback"], ["ngalabi", "drum kit", "software sampler"]],
+  ["Durban Gqom Pressure", "Durban, South Africa", "South Africa", "2010s-now", ["gqom", "afro techno", "club"], "Black Major / Gqom Oh!", ["DJ Lag", "Rudeboyz", "Citizen Boy"], ["log drum", "kick drum", "vocal chop"]],
+  ["Amapiano Log Drum Era", "South Africa", "South Africa", "2010s-now", ["amapiano", "afro house", "deep house"], "PianoHub / independent", ["Kabza De Small", "DJ Maphorisa", "DBN Gogo"], ["log drum", "keys", "shaker"]],
+  ["Gnawa Trance Routes", "Morocco / Maghreb", "Morocco", "1900s-now", ["gnawa electronic", "trance", "fusion"], "Hive Mind / Glitterbeat", ["Maleem Mahmoud Gania", "Ammar 808", "Innov Gnawa"], ["guembri", "qraqeb", "voice"]],
+  ["Arab Funk & Maghreb Reissues", "Algeria / Lebanon / Egypt / Morocco", "Algeria", "1960s-1980s", ["arab funk", "jazz", "reissue"], "Habibi Funk", ["Ahmed Malek", "Ferkat Al Ard", "Rogér Fakhr"], ["oud", "organ", "brass"]],
+  ["Dabke Wedding Electronics", "Syria / Lebanon / Levant", "Syria", "1980s-now", ["dabke", "global bass", "wedding music"], "Sublime Frequencies / independent", ["Omar Souleyman", "Rizan Said", "Hello Psychaleppo"], ["mijwez", "keyboard", "tabla"]],
+  ["Anatolian Psych Lineage", "Turkey / diaspora", "Turkey", "1960s-now", ["anatolian psych", "folk rock", "reissue"], "Bongo Joe / Glitterbeat", ["Selda Bagcan", "Altin Gun", "Baris Manco"], ["saz", "baglama", "electric guitar"]],
+  ["Persian Classical & Electronic Memory", "Iran / diaspora", "Iran", "1900s-now", ["persian classical", "ambient", "experimental"], "30M Records / independent", ["Kayhan Kalhor", "Sote", "Mamak Khadem"], ["santur", "tar", "setar"]],
+  ["Qawwali & Sufi Voice", "Pakistan / India", "Pakistan", "1940s-now", ["qawwali", "sufi", "vocal tradition"], "Real World / EMI Pakistan", ["Nusrat Fateh Ali Khan", "Sabri Brothers", "Abida Parveen"], ["harmonium", "tabla", "voice"]],
+  ["Rajasthan Folk Routes", "Rajasthan, India", "India", "1900s-now", ["rajasthani folk", "field recording", "desert music"], "Amarrass / field archive", ["Lakha Khan", "Kutle Khan", "Rajasthan Josh"], ["sarangi", "khartal", "dholak"]],
+  ["Carnatic Future Bass", "South India / diaspora", "India", "1700s-now", ["carnatic", "global bass", "experimental club"], "Glitterbeat / independent", ["Ammar 808", "Ranjani-Gayatri", "Aruna Sairam"], ["mridangam", "veena", "nadaswaram"]],
+  ["Silk Road Modal Archive", "Central Asia", "Uzbekistan", "1900s-now", ["maqam", "silk road", "field recording"], "Smithsonian Folkways / Ocora", ["Munadjat Yulchieva", "Turgun Alimatov", "Sevara Nazarkhan"], ["dutar", "rabab", "doira"]],
+  ["Mongolian Overtone Routes", "Mongolia / Tuva", "Mongolia", "1900s-now", ["throat singing", "overtone", "folk"], "Jaro / Smithsonian", ["Huun-Huur-Tu", "Yat-Kha", "Anda Union"], ["morin khuur", "igil", "tovshuur"]],
+  ["Chinese Southwest Traditions", "Yunnan / Guizhou / Sichuan", "China", "1900s-now", ["minority music", "field recording", "folk"], "field archive", ["Hani singers", "Dong chorus", "Yi musicians"], ["lusheng", "bawu", "hulusi"]],
+  ["Chinese Classical Strings", "China / diaspora", "China", "1900s-now", ["chinese classical", "experimental", "string music"], "Naxos / independent", ["Wu Man", "Min Xiao-Fen", "Zhao Cong"], ["pipa", "erhu", "guzheng"]],
+  ["Gamelan & Modern Electronics", "Java / Bali / Indonesia", "Indonesia", "1900s-now", ["gamelan", "minimalism", "electronic"], "Nonesuch / field archive", ["Senyawa", "Gamelan Sekar Jaya", "Dewa Alit"], ["gamelan", "kendang", "gong"]],
+  ["Sape & Borneo Rainforest Routes", "Sarawak / Borneo", "Malaysia", "1900s-now", ["sape", "indigenous", "ambient"], "field archive", ["Alena Murang", "Mathew Ngau Jau", "Sada Borneo"], ["sape", "gong", "voice"]],
+  ["Thai Molam & Luk Thung", "Isan / Thailand", "Thailand", "1960s-now", ["molam", "luk thung", "psych folk"], "ZudRangMa / EM Records", ["Paradise Bangkok Molam International Band", "Dao Bandon", "Onuma Singsiri"], ["khaen", "phin", "drum"]],
+  ["Vietnamese Experimental Roots", "Vietnam / diaspora", "Vietnam", "1900s-now", ["dan bau", "experimental", "folk"], "independent", ["Van-Anh Vo", "Hanoi Masters", "The Six Tones"], ["dan bau", "dan tranh", "voice"]],
+  ["Philippine Kulintang Routes", "Mindanao / Philippines", "Philippines", "1900s-now", ["kulintang", "gong music", "diaspora"], "Smithsonian Folkways / field archive", ["Danongan Kalanduyan", "Kulintang Arts", "Susie Ibarra"], ["kulintang", "agung", "dabakan"]],
+  ["Japanese Ambient & Folk Memory", "Japan", "Japan", "1970s-now", ["japanese ambient", "minyo", "reissue"], "Light In The Attic / WRWTFWW", ["Haruomi Hosono", "Midori Takada", "Kankyō Ongaku artists"], ["shakuhachi", "koto", "synthesizer"]],
+  ["Korean Court & Shamanic Routes", "Korea", "South Korea", "1900s-now", ["gugak", "shamanic", "experimental"], "AkdangEban / independent", ["Park Jiha", "Jambinai", "Kim Duk-soo"], ["haegeum", "geomungo", "janggu"]],
+  ["Andean Electronics", "Ecuador / Peru / Bolivia", "Ecuador", "2000s-now", ["organic downtempo", "andean", "global bass"], "ZZK / Shika Shika", ["Nicola Cruz", "Dengue Dengue Dengue", "Lagartijeando"], ["charango", "quena", "siku"]],
+  ["Amazonian Cumbia & Ritual Sound", "Peru / Colombia / Brazil", "Peru", "1960s-now", ["amazonian cumbia", "ritual music", "field recording"], "Analog Africa / Infopesa", ["Los Mirlos", "Juaneco y su Combo", "Shipibo recordings"], ["siku", "maracas", "voice"]],
+  ["Brazilian Afro-Bahia Routes", "Brazil", "Brazil", "1960s-now", ["samba reggae", "afro-brazilian", "tropicalia"], "Mais Um / Far Out", ["Gilberto Gil", "Os Mutantes", "Ilê Aiyê"], ["berimbau", "atabaque", "cuica"]],
+  ["Caribbean Dub Migration", "Jamaica / UK / global", "Jamaica", "1960s-now", ["dub", "soundsystem", "migration"], "Pressure Sounds / On-U Sound", ["King Tubby", "Lee Scratch Perry", "Scientist"], ["spring reverb", "bass guitar", "melodica"]],
+  ["Haitian Vodou Jazz & Roots", "Haiti / diaspora", "Haiti", "1900s-now", ["vodou jazz", "rara", "roots"], "Ostinato / Smithsonian", ["Lakou Mizik", "RAM", "Chouk Bwa"], ["vaksin", "tanbou", "voice"]],
+  ["Cuban Son & Afro-Cuban Jazz", "Cuba", "Cuba", "1900s-now", ["son", "afro-cuban", "jazz"], "World Circuit / EGREM", ["Buena Vista Social Club", "Irakere", "Los Van Van"], ["tres", "congas", "clave"]],
+  ["Balkan Brass & Roma Routes", "Balkans", "Serbia", "1900s-now", ["balkan brass", "roma", "wedding music"], "Asphalt Tango / Piranha", ["Fanfare Ciocarlia", "Boban Markovic", "Taraf de Haidouks"], ["trumpet", "accordion", "tapan"]],
+  ["Mediterranean Balearic Listening", "Mediterranean / Ibiza", "Spain", "1980s-now", ["balearic", "downtempo", "reissue"], "Music From Memory", ["Gigi Masin", "Gaussian Curve", "Mark Barrott"], ["synthesizer", "guitar", "field recording"]],
+  ["Portuguese-Angolan Lisbon Bass", "Lisbon / Angola", "Portugal", "1990s-now", ["kuduro", "batida", "lisbon bass"], "Príncipe", ["DJ Marfox", "Nídia", "DJ Nigga Fox"], ["drum machine", "vocal chop", "synth"]],
+  ["Greek Rebetiko Memory", "Greece / Asia Minor", "Greece", "1920s-now", ["rebetiko", "diaspora", "folk"], "Mississippi / Olvido", ["Markos Vamvakaris", "Roza Eskenazi", "Marika Papagika"], ["bouzouki", "baglamas", "voice"]],
+  ["North African Rai & Synth", "Algeria / France", "Algeria", "1970s-now", ["rai", "synth", "diaspora"], "Outre National / reissue", ["Cheb Khaled", "Cheikha Rimitti", "Rachid Taha"], ["gasba", "derbouka", "synth"]],
+  ["Egyptian Shaabi & Mahraganat", "Cairo, Egypt", "Egypt", "1970s-now", ["shaabi", "mahraganat", "street music"], "100Copies / independent", ["Islam Chipsy", "Oka Wi Ortega", "Ahmed Adaweya"], ["keyboard", "tabla", "autotune"]],
+  ["Iranian Bandari & Gulf Routes", "Persian Gulf", "Iran", "1900s-now", ["bandari", "gulf rhythm", "folk"], "field archive", ["Saied Shanbehzadeh", "Hormozgan musicians", "Bandari ensembles"], ["neyanban", "dammam", "voice"]],
+  ["Mizrahi & Yemenite Pop", "Israel / Yemenite diaspora", "Israel", "1960s-now", ["mizrahi", "yemenite", "pop"], "Fortuna / Batov", ["Ofra Haza", "A-WA", "Grazia"], ["oud", "drum machine", "voice"]],
+  ["Afghan Rubab & Diaspora", "Afghanistan / diaspora", "Afghanistan", "1900s-now", ["rubab", "folk", "diaspora"], "Smithsonian / field archive", ["Homayun Sakhi", "Ustad Mohammad Omar", "Ahmad Zahir"], ["rubab", "tabla", "harmonium"]],
+  ["Sri Lankan Baila & Island Pop", "Sri Lanka", "Sri Lanka", "1950s-now", ["baila", "island pop", "reissue"], "Sooriya / reissue", ["Wally Bastiansz", "Clarence Wijewardena", "Mignonne Fernando"], ["guitar", "bongo", "accordion"]],
+  ["Laotian & Khmer Psychedelic Routes", "Laos / Cambodia", "Cambodia", "1960s-now", ["khmer rock", "lao folk", "reissue"], "Sublime Frequencies / Dust-to-Digital", ["Ros Sereysothea", "Dengue Fever", "Molam Lao singers"], ["tro", "khaen", "electric guitar"]],
+  ["Papua & Pacific Stringbands", "Pacific Islands", "Papua New Guinea", "1900s-now", ["stringband", "pacific", "field recording"], "Wantok / field archive", ["George Telek", "Airileke", "Pacific stringbands"], ["ukulele", "bamboo band", "voice"]],
+  ["Arctic & Nordic Roots", "Sápmi / Nordic region", "Norway", "1900s-now", ["joik", "nordic folk", "ambient"], "Nordic Notes / independent", ["Mari Boine", "Wimme", "Värttinä"], ["joik", "kantele", "hardanger fiddle"]],
+  ["Ukrainian & Eastern European Polyphony", "Ukraine / Georgia / Balkans", "Ukraine", "1900s-now", ["polyphony", "folk", "field recording"], "Ocora / Smithsonian", ["DakhaBrakha", "Rustavi Choir", "Village singers"], ["bandura", "panduri", "voice"]],
+  ["Cape Verde Morna & Funaná", "Cape Verde", "Cape Verde", "1950s-now", ["morna", "funana", "diaspora"], "Lusafrica / Ostinato", ["Cesaria Evora", "Bitori", "Bulimundo"], ["cavaquinho", "accordion", "ferrinho"]],
+  ["Somali Disco & Horn of Africa", "Somalia / Djibouti / Ethiopia", "Somalia", "1970s-now", ["somali disco", "funk", "reissue"], "Analog Africa / Ostinato", ["Dur-Dur Band", "Iftin Band", "Aar Maanta"], ["oud", "synth", "horns"]],
+  ["Sudanese Jazz & City Pop", "Sudan", "Sudan", "1960s-now", ["sudanese jazz", "city pop", "reissue"], "Habibi Funk / Ostinato", ["Sharhabil Ahmed", "Abdel Gadir Salim", "Noori"], ["tambur", "saxophone", "oud"]],
+  ["Kenyan Benga & Luo Guitar", "Kenya", "Kenya", "1960s-now", ["benga", "guitar", "east africa"], "Sterns / field archive", ["D.O. Misiani", "Orchestra Super Mazembe", "Kakai Kilonzo"], ["nyatiti", "electric guitar", "percussion"]]
+];
+
+const archiveRecordTypes = [
+  ["Canonical Recording", "A core listening entry for understanding how the scene sounds in recorded form."],
+  ["Field / Community Context", "A cultural-context record focused on social setting, place, language and performance ecology."],
+  ["Label / Circulation Route", "A distribution record tracing labels, cassette movement, radio, migration or reissue pathways."],
+  ["Contemporary Bridge", "A modern entry showing how the tradition reappears in club culture, ambient music or electronic production."]
+];
+
+const archiveExpansionRecords = archiveExpansionScenes.flatMap((scene, sceneIndex) =>
+  archiveRecordTypes.map(([recordType, listeningContext], typeIndex) => {
+    const [title, region, country, year, genres, label, artists, instruments] = scene;
+    const coverPool = [
+      "https://f4.bcbits.com/img/a0933768371_10.jpg",
+      "https://f4.bcbits.com/img/a1640063585_10.jpg",
+      "https://f4.bcbits.com/img/a0206727659_10.jpg",
+      "https://f4.bcbits.com/img/a2438671191_10.jpg",
+      "https://f4.bcbits.com/img/a4282425468_10.jpg",
+      "https://f4.bcbits.com/img/a4068706317_10.jpg",
+      "https://f4.bcbits.com/img/a0205422707_10.jpg"
+    ];
+    return {
+      title: `${title}: ${recordType}`,
+      artist: artists[typeIndex % artists.length],
+      region,
+      country,
+      year,
+      genres,
+      label,
+      cover: coverPool[(sceneIndex + typeIndex) % coverPool.length],
+      summary: `${recordType} for ${title}, connecting ${country} to ${genres.slice(0, 2).join(" and ")} listening histories.`,
+      culture: `${title} should be read through place, migration, recording technology, instruments and community practice. Related artists include ${artists.join(", ")}; key instruments include ${instruments.join(", ")}.`,
+      culturalNotes: `${country} / ${region}: ${title} links local performance practice to wider archive, festival, radio or club circulation.`,
+      listeningContext,
+      relatedArtists: artists,
+      relatedInstruments: instruments,
+      source: `${label} / archive research record`,
+      sourceUrl: `https://bandcamp.com/search?q=${encodeURIComponent(title)}`
+    };
+  })
+);
+
+albums.push(...archiveExpansionRecords);
+
+featuredStories.push(
+  ...[
+    ["ETHIO JAZZ", "1968 — now", "Ethiopia", ["Mulatu Astatke", "Hailu Mergia", "Mahmoud Ahmed"], ["Ethiopiques", "Awesome Tapes"], ["Ethio-jazz recordings", "Addis groove"], ["vibraphone", "krar"], "Addis Ababa studio orchestras, jazz harmony and Ethiopian modal systems."],
+    ["HIGHLIFE & AFRO DISCO", "1950 — 1985", "Ghana · Nigeria · Senegal", ["Ebo Taylor", "Pat Thomas", "Orchestra Baobab"], ["Soundway", "Analog Africa"], ["Highlife bands", "Afro disco reissues"], ["talking drum", "guitar"], "Urban dance bands, guitar modernism and post-independence nightlife."],
+    ["CASSETTE CULTURES OF WEST AFRICA", "1970 — now", "Mali · Ghana · Senegal", ["Ata Kak", "Nahawa Doumbia", "market cassette artists"], ["Awesome Tapes", "Sahel Sounds"], ["Cassette archive", "market recordings"], ["voice", "drum machine"], "Cassettes as local media, informal distribution and later reissue practice."],
+    ["THE RISE OF AMAPIANO", "2012 — now", "South Africa", ["Kabza De Small", "DJ Maphorisa", "DBN Gogo"], ["PianoHub", "independent"], ["Log drum era", "vocal piano"], ["log drum", "keys"], "Township circulation, dance videos and the log drum as a global rhythmic sign."],
+    ["KUDURO AND LISBON BASS", "1990 — now", "Angola · Portugal", ["DJ Marfox", "Nídia", "DJ Nigga Fox"], ["Príncipe", "independent"], ["Batida", "Lisbon bass"], ["drum machine", "vocal chop"], "Angolan dance energy, migration and Lisbon underground club networks."],
+    ["DABKE BEYOND WEDDINGS", "1980 — now", "Syria · Lebanon · Palestine", ["Omar Souleyman", "Rizan Said", "Hello Psychaleppo"], ["Sublime Frequencies", "independent"], ["Wedding tapes", "Levant club"], ["mijwez", "keyboard"], "Wedding performance, diaspora circulation and electronic reinterpretation."],
+    ["REUNION ISLAND MALOYA", "1950 — now", "Reunion", ["Danyel Waro", "Lindigo", "Christine Salem"], ["Ostinato", "Bongo Joe"], ["Maloya studies", "Creole rhythm"], ["kayamb", "rouler"], "Creole memory, labor history and percussion as resistance archive."],
+    ["THE STORY OF KORA", "1200 — now", "Mali · Gambia · Senegal", ["Toumani Diabate", "Ballake Sissoko", "Sona Jobarteh"], ["World Circuit", "field archive"], ["Griot recordings", "kora duets"], ["kora", "balafon"], "A griot instrument connecting genealogy, praise song and modern chamber recordings."],
+    ["FIELD RECORDINGS OF THE SAHEL", "1900 — now", "Mali · Niger · Mauritania", ["Sahel Sounds artists", "Mdou Moctar", "Les Filles de Illighadad"], ["Sahel Sounds", "Ocora"], ["Field archive", "Saharan WhatsApp"], ["guitar", "tende"], "Recording as relationship: phones, field sessions, local markets and consent."],
+    ["PSYCHEDELIC TURKEY", "1968 — now", "Turkey · diaspora", ["Selda Bagcan", "Altin Gun", "Baris Manco"], ["Bongo Joe", "Glitterbeat"], ["Anatolian psych", "modern edits"], ["saz", "baglama"], "Anatolian folk modes through electric guitars, diaspora labels and reissue culture."],
+    ["THE SOUND OF ADDIS ABABA", "1960 — 1978", "Ethiopia", ["Mulatu Astatke", "Mahmoud Ahmed", "Tilahun Gessesse"], ["Ethiopiques", "Kaifa"], ["Golden age", "Ethio soul"], ["krar", "horns"], "Nightclubs, imperial-era orchestras and tape-era Ethiopian modernity."],
+    ["CUMBIA VILLERA", "1990 — now", "Argentina", ["Damas Gratis", "Pibes Chorros", "La Nueva Luna"], ["local labels", "ZZK adjacent"], ["Barrio cumbia", "digital cumbia"], ["keyboard", "guira"], "Working-class neighborhoods, keyboards, lyrics and later electronic reinterpretation."],
+    ["AMAZONIAN RITUAL MUSIC", "1900 — now", "Peru · Colombia · Brazil", ["Shipibo singers", "Los Mirlos", "Juaneco y su Combo"], ["Infopesa", "field archive"], ["Ritual recordings", "Amazonian cumbia"], ["maracas", "voice"], "Healing songs, forest cosmologies and the ethics of listening beyond exoticism."],
+    ["THE GLOBAL JOURNEY OF DUB", "1968 — now", "Jamaica · UK · global", ["King Tubby", "Lee Scratch Perry", "Scientist"], ["Pressure Sounds", "On-U Sound"], ["Dub plates", "soundsystem culture"], ["bass", "spring reverb"], "Studio-as-instrument practice that reshaped remix, club and electronic music."],
+    ["MUSIC OF THE SILK ROAD", "1900 — now", "Uzbekistan · Tajikistan · Afghanistan", ["Munadjat Yulchieva", "Turgun Alimatov", "Homayun Sakhi"], ["Ocora", "Smithsonian"], ["Maqam archive", "rubab recordings"], ["dutar", "rabab"], "Modal systems, caravan histories and post-Soviet / diaspora recordings."],
+    ["CHINESE SOUTHWEST TRADITIONS", "1900 — now", "Yunnan · Guizhou · Sichuan", ["Dong chorus", "Hani singers", "Yi musicians"], ["field archive", "regional archives"], ["Minority music", "choral traditions"], ["lusheng", "bawu"], "Polyphony, reed pipes and mountain village performance ecologies."],
+    ["MONGOLIAN THROAT SINGING", "1900 — now", "Mongolia · Tuva", ["Huun-Huur-Tu", "Yat-Kha", "Anda Union"], ["Jaro", "Smithsonian"], ["Overtone recordings", "folk rock"], ["morin khuur", "igil"], "Overtone technique, horsehead fiddle and steppe sound imagination."],
+    ["GAMELAN AND MODERN ELECTRONICS", "1900 — now", "Indonesia", ["Senyawa", "Dewa Alit", "Gamelan Sekar Jaya"], ["Nonesuch", "field archive"], ["Gamelan archive", "experimental collaborations"], ["gamelan", "gong"], "Interlocking metallophones, ritual calendars and contemporary experimental composition."],
+    ["BALEARIC LISTENING CULTURE", "1980 — now", "Mediterranean · Ibiza", ["Gigi Masin", "Gaussian Curve", "Mark Barrott"], ["Music From Memory", "International Feel"], ["Sunset listening", "ambient reissues"], ["synthesizer", "guitar"], "DJ selection as atmosphere, memory and open-genre listening practice."],
+    ["SOMALI DISCO AND THE HORN", "1970 — now", "Somalia · Djibouti · Ethiopia", ["Dur-Dur Band", "Iftin Band", "Aar Maanta"], ["Analog Africa", "Ostinato"], ["Somali disco", "Horn funk"], ["synth", "oud"], "State bands, cassette survival and diaspora rediscovery."],
+    ["BALKAN BRASS WEDDING ROUTES", "1900 — now", "Serbia · Romania · Bulgaria", ["Fanfare Ciocarlia", "Boban Markovic", "Taraf de Haidouks"], ["Asphalt Tango", "Piranha"], ["Roma brass", "wedding music"], ["trumpet", "accordion"], "Virtuosic brass, Roma mobility and festival-stage translation."],
+    ["JAPANESE AMBIENT AND ENVIRONMENTAL MUSIC", "1980 — now", "Japan", ["Haruomi Hosono", "Midori Takada", "Hiroshi Yoshimura"], ["Light In The Attic", "WRWTFWW"], ["Kankyō Ongaku", "ambient reissue"], ["shakuhachi", "synthesizer"], "Design, environment, commercial space and late reissue discovery."],
+    ["KOREAN GUGAK FUTURES", "1900 — now", "Korea", ["Park Jiha", "Jambinai", "Kim Duk-soo"], ["AkdangEban", "independent"], ["Gugak", "shamanic percussion"], ["haegeum", "janggu"], "Court, folk, shamanic and experimental routes into contemporary sound art."],
+    ["CARIBBEAN CARNIVAL AND SOUNDSYSTEM", "1950 — now", "Jamaica · Trinidad · Haiti", ["Mighty Sparrow", "King Tubby", "Chouk Bwa"], ["VP", "Pressure Sounds", "Ostinato"], ["Calypso", "dub", "vodou jazz"], ["steelpan", "bass", "tanbou"], "Migration, carnival, recording studios and sound system technologies."]
+  ].map(([title, period, countries, artists, labels, albums, instruments, historicalContext]) => ({
+    title,
+    zh: title
+      .replace("THE ", "")
+      .replace(" AND ", " 与 ")
+      .toLowerCase()
+      .replace(/\b\w/g, (c) => c.toUpperCase()),
+    period,
+    countries,
+    artists,
+    labels,
+    albums,
+    instruments,
+    image: "https://f4.bcbits.com/img/a0206727659_10.jpg",
+    description: historicalContext,
+    historicalContext
+  }))
+);
+
+const journeyExpansionSeeds = [
+  ["Four Tet", "Indian Folk", "Rajasthan", "Sarangi", "Desert ballad traditions"],
+  ["Floating Points", "Ethio Jazz", "Addis Ababa", "Krar", "Ethiopian modal systems"],
+  ["Nicolas Jaar", "Arabic Experimental", "Levant", "Mijwez", "Diaspora electronics"],
+  ["Bonobo", "Nicola Cruz", "Andes", "Charango", "Quechua culture"],
+  ["Acid Arab", "Dabke", "Levant", "Mijwez", "Wedding performance"],
+  ["DJ Lag", "Gqom", "Durban", "Log drum", "Township dance culture"],
+  ["Chancha Via Circuito", "Digital Cumbia", "Amazon", "Maracas", "Cumbia migration"],
+  ["Ammar 808", "Carnatic Traditions", "South India", "Mridangam", "Raga and tala systems"],
+  ["Altin Gun", "Anatolian Folk", "Turkey", "Saz", "Alevi / folk song traditions"],
+  ["Haruomi Hosono", "Japanese Ambient", "Japan", "Shakuhachi", "Environmental listening"],
+  ["King Tubby", "Dub", "Jamaica", "Spring reverb", "Soundsystem culture"],
+  ["Senyawa", "Gamelan", "Indonesia", "Gong", "Ritual ensemble practice"],
+  ["Park Jiha", "Gugak", "Korea", "Piri", "Court and shamanic music"],
+  ["Huun-Huur-Tu", "Throat Singing", "Tuva", "Igil", "Steppe cosmology"],
+  ["Mulatu Astatke", "Ethio Jazz", "Addis", "Vibraphone", "Golden-age bands"],
+  ["Tinariwen", "Desert Blues", "Mali", "Electric guitar", "Tamasheq poetry"],
+  ["Omar Souleyman", "Dabke", "Syria", "Keyboard", "Wedding cassette culture"],
+  ["DJ Marfox", "Kuduro", "Lisbon", "Drum machine", "Angolan-Lisbon diaspora"],
+  ["Kabza De Small", "Amapiano", "South Africa", "Log drum", "Township groove"],
+  ["Toumani Diabate", "Kora", "Mali", "Kora", "Griot genealogy"],
+  ["Nusrat Fateh Ali Khan", "Qawwali", "Pakistan", "Harmonium", "Sufi poetry"],
+  ["Danyel Waro", "Maloya", "Reunion", "Kayamb", "Creole resistance memory"],
+  ["Orchestra Baobab", "Highlife / Son", "Senegal", "Guitar", "Atlantic dance bands"],
+  ["Fela Kuti", "Afrobeat", "Nigeria", "Horns", "Political funk"],
+  ["Ali Farka Touré", "Songhai Blues", "Mali", "Ngoni", "River Niger guitar"],
+  ["Mdou Moctar", "Sahel Guitar", "Niger", "Electric guitar", "Tuareg youth culture"],
+  ["Sote", "Persian Experimental", "Iran", "Santur", "Radif and electronics"],
+  ["A-WA", "Yemenite Pop", "Israel / Yemen", "Voice", "Diaspora women’s song"],
+  ["Islam Chipsy", "Mahraganat", "Cairo", "Keyboard", "Street party systems"],
+  ["Los Mirlos", "Amazonian Cumbia", "Peru", "Electric guitar", "Amazon dance bands"],
+  ["Buena Vista Social Club", "Cuban Son", "Cuba", "Tres", "Afro-Cuban social dance"],
+  ["Fanfare Ciocarlia", "Balkan Brass", "Romania", "Trumpet", "Roma wedding routes"],
+  ["Mari Boine", "Joik", "Sápmi", "Voice", "Indigenous Nordic memory"],
+  ["DakhaBrakha", "Ukrainian Polyphony", "Ukraine", "Voice", "Village song revival"],
+  ["Yat-Kha", "Tuvan Rock", "Tuva", "Tovshuur", "Overtone folk rock"],
+  ["Wu Man", "Pipa", "China", "Pipa", "Chinese classical modernism"],
+  ["Van-Anh Vo", "Vietnamese Roots", "Vietnam", "Dan bau", "Diaspora chamber folk"],
+  ["Alena Murang", "Sape", "Borneo", "Sape", "Indigenous rainforest songs"],
+  ["Paradise Bangkok", "Molam", "Isan", "Khaen", "Thai-Lao dance circuits"],
+  ["Susie Ibarra", "Kulintang", "Philippines", "Kulintang", "Mindanao gong traditions"],
+  ["Liraz", "Persian Pop", "Iran / Israel", "Synth", "Women’s diaspora pop"],
+  ["Gigi Masin", "Balearic Ambient", "Mediterranean", "Synthesizer", "Sunset listening"],
+  ["Scientist", "Dub Mixing", "Jamaica", "Mixing desk", "Studio as instrument"],
+  ["Lakou Mizik", "Haitian Roots", "Haiti", "Tanbou", "Vodou rhythm"],
+  ["Bitori", "Funaná", "Cape Verde", "Accordion", "Creole dance circuits"],
+  ["Dur-Dur Band", "Somali Disco", "Somalia", "Synth", "Horn of Africa funk"],
+  ["Sharhabil Ahmed", "Sudanese Jazz", "Sudan", "Guitar", "Khartoum modernism"],
+  ["Sevara Nazarkhan", "Silk Road Pop", "Uzbekistan", "Dutar", "Maqam memory"],
+  ["Homayun Sakhi", "Afghan Rubab", "Afghanistan", "Rubab", "Classical Afghan lineage"],
+  ["Ros Sereysothea", "Khmer Rock", "Cambodia", "Electric guitar", "Pre-war pop memory"]
+];
+
+listeningJourneys.push(
+  ...journeyExpansionSeeds.map(([start, scene, region, instrument, root]) => ({
+    title: `${start} → ${scene}`,
+    zh: `${scene} 路径`,
+    route: [start, scene, region, instrument, root, "Local archives / living tradition"],
+    note: `A discovery path from a familiar name toward ${region}, ${instrument} and the deeper context of ${root}.`
+  }))
+);
+
+const artistNames = [
+  "Mulatu Astatke","Tinariwen","Bombino","Mdou Moctar","DJ Lag","DJ Travella","Slikback","Omar Souleyman","Acid Arab","Ammar 808","Chancha Via Circuito","Nicola Cruz","Dengue Dengue Dengue","Altin Gun","Selda Bagcan","Danyel Waro","Lindigo","Orchestra Baobab","Fela Kuti","Ali Farka Touré","Nusrat Fateh Ali Khan","Yat-Kha","Huun-Huur-Tu","Toumani Diabate","Ballake Sissoko","Sona Jobarteh","Ebo Taylor","Pat Thomas","Mahmoud Ahmed","Hailu Mergia","Ahmed Malek","Rizan Said","Hello Psychaleppo","Kabza De Small","DJ Maphorisa","DJ Marfox","Nídia","DJ Nigga Fox","King Tubby","Lee Scratch Perry","Scientist","Gigi Masin","Midori Takada","Haruomi Hosono","Park Jiha","Jambinai","Senyawa","Dewa Alit","Alena Murang","Paradise Bangkok Molam International Band","Van-Anh Vo","Susie Ibarra","Wu Man","Min Xiao-Fen","Mari Boine","DakhaBrakha","Fanfare Ciocarlia","Taraf de Haidouks","Cesaria Evora","Bitori","Dur-Dur Band","Sharhabil Ahmed","Lakou Mizik","Chouk Bwa","Buena Vista Social Club","Irakere","Los Mirlos","Juaneco y su Combo","Damas Gratis","La Yegros","Lagartijeando","El Búho","Toumani Diabaté","Mamadou Diabate","Kayhan Kalhor","Sote","Mamak Khadem","Abida Parveen","Sabri Brothers","Lakha Khan","Kutle Khan","Aruna Sairam","Ranjani-Gayatri","Munadjat Yulchieva","Turgun Alimatov","Sevara Nazarkhan","Homayun Sakhi","Ustad Mohammad Omar","Ros Sereysothea","Dengue Fever","Kim Duk-soo","A-WA","Ofra Haza","Liraz","Islam Chipsy","Oka Wi Ortega","Rachid Taha","Cheb Khaled","Cheikha Rimitti","Noori","Les Filles de Illighadad","Iftin Band","Wimme","Värttinä","George Telek","Airileke","Danongan Kalanduyan","Hanoi Masters","The Six Tones","Gamelan Sekar Jaya","D.O. Misiani","Orchestra Super Mazembe","Rogér Fakhr","Ferkat Al Ard"
+];
+
+essentialArtists.push(
+  ...artistNames
+    .filter((name) => !essentialArtists.some((artist) => artist.name === name))
+    .map((name, index) => {
+      const scene = archiveExpansionScenes[index % archiveExpansionScenes.length];
+      return {
+        name,
+        region: scene[1],
+        albums: `${scene[0]} recordings / archive entries`,
+        labels: scene[5],
+        scenes: scene[4].join(" · "),
+        instruments: scene[7].join(" · "),
+        stories: `${scene[0]} / ${featuredStories[index % featuredStories.length].title}`
+      };
+    })
+);
+
+const instrumentExpansion = [
+  ["Ngoni","West Africa","plucked lute","Desert blues / griot music","Bassekou Kouyate · Ali Farka Touré"],["Siku","Andes","panpipes","Andean ritual / folk","Bolivian ensembles · Peruvian comparsas"],["Erhu","China","bowed spike fiddle","Chinese classical / experimental","Min Xiao-Fen · contemporary ensembles"],["Pipa","China","plucked lute","Chinese classical / avant-garde","Wu Man · Min Xiao-Fen"],["Dutar","Central Asia","two-string lute","Maqam / Silk Road","Turgun Alimatov · Uzbek masters"],["Morin Khuur","Mongolia","horsehead fiddle","throat singing / folk","Huun-Huur-Tu · Anda Union"],["Shakuhachi","Japan","bamboo flute","Zen / ambient","Katsuya Yokoyama · ambient collaborators"],["Koto","Japan","zither","Japanese classical / ambient","Miyagi Michio · modern ensembles"],["Gamelan","Indonesia","gong orchestra","ritual / minimalism / electronic","Dewa Alit · Senyawa"],["Sape","Borneo","boat lute","indigenous song / ambient","Alena Murang · Mathew Ngau Jau"],["Oud","Middle East","fretless lute","maqam / tarab / fusion","Anouar Brahem · Marcel Khalife"],["Saz","Turkey","long-necked lute","Anatolian folk / psych","Selda Bagcan · Altin Gun"],["Santur","Iran / India","hammered dulcimer","Persian classical / ambient","Sote · Shivkumar Sharma"],["Bansuri","India","bamboo flute","Hindustani / devotional","Hariprasad Chaurasia"],["Sarangi","India / Pakistan","bowed lute","Rajasthani folk / classical","Lakha Khan · Sultan Khan"],["Rabab","Afghanistan / Central Asia","plucked lute","Afghan classical / folk","Homayun Sakhi"],["Djembe","West Africa","goblet drum","Mande percussion / dance","Famoudou Konate"],["Talking Drum","West Africa","hourglass drum","Highlife / praise poetry","Yoruba ensembles"],["Mridangam","South India","double-headed drum","Carnatic rhythm","T. H. Vinayakram"],["Veena","South India","plucked lute","Carnatic classical","E. Gayathri"],["Nadaswaram","South India","double reed","temple / wedding music","South Indian temple ensembles"],["Tabla","North India / Pakistan","paired drums","qawwali / classical","Zakir Hussain"],["Harmonium","South Asia","free reed keyboard","qawwali / devotional","Nusrat Fateh Ali Khan"],["Khaen","Laos / Isan","mouth organ","molam / folk","Paradise Bangkok"],["Phin","Thailand / Laos","plucked lute","molam / luk thung","Dao Bandon"],["Kulintang","Philippines","gong row","Mindanao gong music","Danongan Kalanduyan"],["Agung","Philippines / Indonesia","large gong","kulintang ensemble","Mindanao ensembles"],["Dan Bau","Vietnam","monochord","Vietnamese classical / experimental","Van-Anh Vo"],["Dan Tranh","Vietnam","zither","Vietnamese chamber music","The Six Tones"],["Haegeum","Korea","bowed fiddle","gugak / experimental","Park Jiha"],["Geomungo","Korea","zither","court / contemporary","Korean ensembles"],["Janggu","Korea","hourglass drum","samulnori / shamanic","Kim Duk-soo"],["Baglama","Turkey","lute","Anatolian folk","Selda Bagcan"],["Bouzouki","Greece","lute","rebetiko","Markos Vamvakaris"],["Accordion","Cape Verde / Balkans","free reed","funaná / wedding music","Bitori"],["Steelpan","Trinidad","pitched steel drum","calypso / carnival","Trinidad steel orchestras"],["Berimbau","Brazil","musical bow","capoeira / afro-brazilian","Baden Powell · capoeira groups"],["Atabaque","Brazil","hand drum","candomblé / samba-reggae","Afro-Brazilian terreiros"],["Cuica","Brazil","friction drum","samba","Rio samba schools"],["Tres","Cuba","three-course guitar","son / salsa","Compay Segundo"],["Clave","Cuba","rhythm sticks","afro-cuban / son","Cuban ensembles"],["Congas","Caribbean","barrel drums","rumba / latin jazz","Mongo Santamaria"],["Melodica","Jamaica","free reed","dub / reggae","Augustus Pablo"],["Spring Reverb","Jamaica / studio","studio effect","dub","King Tubby"],["Tapan","Balkans","large drum","wedding brass","Balkan brass bands"],["Trumpet","Balkans / global","brass","brass bands / jazz","Fanfare Ciocarlia"],["Bandura","Ukraine","zither-lute","polyphony / folk","Ukrainian ensembles"],["Panduri","Georgia","lute","Caucasus polyphony","Rustavi Choir"],["Hardanger Fiddle","Norway","sympathetic fiddle","Nordic folk","Norwegian fiddlers"],["Kantele","Finland / Karelia","zither","Nordic folk","Värttinä"],["Joik Voice","Sápmi","vocal technique","indigenous song","Mari Boine"],["Tanbou","Haiti","drum","vodou / rara","Lakou Mizik"],["Vaksin","Haiti","bamboo trumpet","rara","Haitian rara bands"],["Ferrinho","Cape Verde","scraped iron","funaná","Cape Verdean groups"],["Neyanban","Persian Gulf","bagpipe","Bandari","Saied Shanbehzadeh"],["Dammam","Persian Gulf","drum","Gulf ritual","Bandari ensembles"]
+];
+
+instrumentAtlas.push(
+  ...instrumentExpansion.map(([name, region, artifact, genres, artists]) => ({
+    name,
+    zh: name,
+    region,
+    artifact,
+    description: `${artifact} used across ${genres}. Related artists or ensembles: ${artists}.`,
+    history: `${name} is a useful entry point into ${region} performance history.`,
+    audioCharacteristics: artifact,
+    artists,
+    relatedGenres: genres
+  }))
+);
+
+const labelExpansion = [
+  ["Hakuna Kulala","Kampala","2010s","Experimental club, rap, noise and bass from East Africa.","MC Yallah · Slikback · Don Zilla","Club and rap releases","A sharper club-facing extension of the Nyege ecosystem."],
+  ["Analog Africa","Frankfurt / global","2006","Deep archival reissues from Africa and Latin America.","Orchestre Abass · Amara Touré","African and Latin compilations","A model for extensive liner notes and archival restoration."],
+  ["Soundway","London","2002","Highlife, afrobeat, Caribbean and tropical reissues.","Ebo Taylor · Meridian Brothers","Nigeria Special · Ghana Soundz","Makes dancefloor digging historically legible."],
+  ["Awesome Tapes From Africa","USA / Africa","2006","Cassette discoveries and licensed reissues.","Ata Kak · Nahawa Doumbia","Cassette reissue catalog","Shows cassette culture as living media, not nostalgia."],
+  ["Glitterbeat","Germany","2012","Contemporary global roots and experimental cross-cultural production.","Ammar 808 · Bixiga 70","Global Control · world releases","Connects tradition with future-facing studio language."],
+  ["Bongo Joe","Geneva","2015","Global reissues, experimental pop and contemporary roots.","Altin Gun · Derya Yildirim","Anatolian and global catalog","Treats reissue and new work as one listening culture."],
+  ["Ostinato","New York / global","2016","Archive projects from Africa, Caribbean and Indian Ocean.","Cape Verde · Somalia · Haiti artists","Archival compilations","Centres migration, ports and overlooked recording histories."],
+  ["Príncipe","Lisbon","2011","Lisbon batida, kuduro and Afro-Portuguese electronic music.","DJ Marfox · Nídia · DJ Nigga Fox","Lisbon club catalog","Documents one of Europe’s most important diasporic club scenes."],
+  ["Sublime Frequencies","Seattle / global","2003","Field recordings, radio fragments and non-Western popular music.","Omar Souleyman · Group Doueh","Radio and field recordings","A controversial but influential archive model for raw listening."],
+  ["Ocora","France","1958","Ethnomusicological field recordings and traditional music.","Global field artists","Ocora catalogue","A foundational label for recorded ethnomusicology."],
+  ["Smithsonian Folkways","Washington DC","1948","Folk, field recordings and educational archives.","Global traditional artists","Folkways archives","A long-term public archive model."],
+  ["Real World","UK","1989","World music, studio collaboration and global vocal traditions.","Nusrat Fateh Ali Khan · Sheila Chandra","Real World catalog","Introduced many global artists to international audiences."],
+  ["World Circuit","London","1986","Cuban, West African and roots recordings.","Buena Vista Social Club · Ali Farka Touré","World Circuit releases","Important for cross-Atlantic roots collaborations."],
+  ["Mais Um","London / Brazil","2010","Contemporary Brazilian music and roots hybrids.","Lucas Santtana · Meta Meta","Brazilian catalog","Shows Brazil beyond tropical clichés."],
+  ["Galletas Calientes","Colombia / France","2000s","Cumbia, tropical bass and Latin electronic hybrids.","Dengue Dengue Dengue · tropical bass artists","Digital cumbia releases","Connects underground Latin club scenes."],
+  ["ZudRangMa","Bangkok","2000s","Thai molam, luk thung and global digging culture.","Paradise Bangkok · Thai archives","Thai reissues","A key lens for Isan and Thai record culture."],
+  ["EM Records","Japan","1998","Asian reissues, experimental music and field-adjacent releases.","Onuma Singsiri · world archives","Asia-focused reissues","Expands the map of reissue culture beyond the Atlantic."],
+  ["Light In The Attic","Seattle","2002","Reissues, Japanese ambient, folk and overlooked catalogs.","Haruomi Hosono · Kankyō Ongaku artists","Japanese ambient releases","Made environmental music visible to new listeners."],
+  ["WRWTFWW","Switzerland","2013","Ambient, Japanese reissues and cult soundtracks.","Midori Takada · Satoshi Ashikawa","Ambient reissues","Important for slow-listening archival culture."],
+  ["Pressure Sounds","UK","1995","Dub, roots reggae and Jamaican studio archives.","King Tubby · Lee Perry","Dub reissues","Documents studio-as-instrument culture."],
+  ["On-U Sound","UK","1980","Dub, post-punk and bass experimentation.","Adrian Sherwood · Dub Syndicate","UK dub catalog","Connects Jamaican dub to UK experimental music."],
+  ["Asphalt Tango","Berlin","1997","Balkan brass, Roma music and Eastern European roots.","Fanfare Ciocarlia · Taraf de Haidouks","Balkan catalog","Key label for Roma and Balkan stage circulation."],
+  ["Piranha","Berlin","1987","Global roots, Balkan and festival-facing releases.","Global artists","World music catalog","Connected festival circuits and record distribution."],
+  ["Batov","London / Middle East","2015","Middle Eastern groove, psych and contemporary bands.","Şatellites · A-WA adjacent","Middle Eastern groove releases","A contemporary bridge for Levant and Anatolian grooves."],
+  ["Fortuna","Tel Aviv","2010s","Mizrahi, Yemenite and Middle Eastern reissues.","Grazia · regional artists","Mizrahi reissues","Highlights local pop histories outside global canons."],
+  ["AkdangEban","Seoul","2000s","Korean traditional and contemporary gugak releases.","Park Jiha · Korean ensembles","Gugak catalog","Important for modern Korean traditional music documentation."],
+  ["Nordic Notes","Germany / Nordic","2005","Nordic folk and roots recordings.","Mari Boine · Nordic artists","Nordic catalog","Connects joik and Nordic roots to European audiences."],
+  ["Jaro Medien","Germany","1980s","Central Asian, Tuvan and global fusion releases.","Huun-Huur-Tu · Yat-Kha","Tuvan releases","A major route for overtone singing outside Central Asia."],
+  ["Nonesuch Explorer","USA","1960s","Explorer series field recordings and gamelan archives.","Gamelan ensembles · global artists","Explorer Series","A canonical archive for Western listeners discovering global traditions."],
+  ["Amarrass","India","2009","Indian folk, Rajasthan and desert recordings.","Lakha Khan · Barmer Boys","Rajasthan releases","Artist-focused field and stage documentation."],
+  ["30M Records","Iran","2010s","Iranian contemporary, classical and experimental music.","Iranian artists","Persian catalog","A modern path into Iranian listening culture."],
+  ["100Copies","Cairo","2006","Egyptian experimental, mahraganat and independent music.","Islam Chipsy · Cairo artists","Egyptian electronic releases","Documents Cairo street and experimental scenes."],
+  ["Infopesa","Peru","1971","Peruvian cumbia, chicha and tropical recordings.","Los Mirlos · Juaneco","Chicha catalog","A source label for Amazonian guitar music."],
+  ["Far Out","London / Brazil","1994","Brazilian jazz, MPB and reissues.","Azymuth · Marcos Valle","Brazilian catalog","Important for Brazilian jazz-funk circulation."],
+  ["Mississippi Records","Portland","2003","Blues, global folk and historical reissues.","Global archival artists","Vinyl reissues","A handmade archive aesthetic influential to diggers."],
+  ["Dust-to-Digital","Atlanta","1999","Historical field recordings, box sets and archival design.","Global archive artists","Archive box sets","Shows how design can deepen historical listening."],
+  ["Strut","London","1999","Disco, funk, jazz and global reissues.","Sun Ra · Nigerian disco artists","Dancefloor archives","Connects club digging and historical scholarship."],
+  ["Luaka Bop","New York","1988","Global pop, spiritual jazz and reissues.","William Onyeabor · Tim Maia","Reissue projects","A major gateway label for overlooked global pop."],
+  ["Luaka / World Psychedelic Classics","New York","2000s","Global psych and reissue storytelling.","William Onyeabor · Os Mutantes","Compilation series","Built narrative entry points for new listeners."],
+  ["Crammed Discs","Brussels","1980","Global experimental pop and hybrid electronics.","Nihiloxica · Aksak Maboul","Crammed catalog","Long-running bridge between art pop and global scenes."],
+  ["Discrepant","London","2011","Field recordings, speculative ethnography and experimental sound.","Kink Gong · Gonçalo F Cardoso","Field / experimental releases","Asks critical questions about archive and representation."],
+  ["Kink Gong Archives","Global field recording","2000s","Raw field recordings from minority and rural communities.","Kink Gong","Field archives","A useful but ethically complex listening source."],
+  ["Hive Mind","UK","2017","Gnawa, spiritual jazz and archival releases.","Maleem Mahmoud Gania","Gnawa releases","Important for deep trance and Gnawa documentation."],
+  ["International Feel","Ibiza / Uruguay","2009","Balearic, ambient and sunset dancefloor music.","Mark Barrott · Len Leise","Balearic releases","A contemporary label for Balearic listening culture."]
+];
+
+labelArchive.push(
+  ...labelExpansion
+    .filter(([name]) => !labelArchive.some((label) => label.name === name))
+    .map(([name, location, founded, philosophy, artists, releases, significance]) => ({ name, location, founded, philosophy, artists, releases, significance }))
+);
+
+timelineEntries.push(
+  ...[
+    ["1900s", "Field Recording Begins", "Global", "Early phonograph and cylinder recording created archives of voice, ritual and folk performance."],
+    ["1920s", "Radio and Shellac Circulation", "Global ports", "78 rpm records and radio began moving regional music across colonial and urban networks."],
+    ["1930s", "Rebetiko and Urban Folk", "Greece / diaspora", "Port cities and displacement shaped rebetiko, blues-like urban song and later reissue culture."],
+    ["1940s", "Qawwali Recording Era", "Pakistan / India", "Sufi vocal traditions entered radio, film and commercial record circulation."],
+    ["1950s", "Highlife Urban Bands", "West Africa", "Guitar bands, brass sections and dance halls gave postwar West Africa a new urban sound."],
+    ["1960s", "Afro-Cuban and Son Globalize", "Cuba / Caribbean", "Afro-Cuban rhythm became central to jazz, salsa and global dance music."],
+    ["1968", "Ethio-Jazz Emerges", "Ethiopia", "Mulatu Astatke and Addis studio bands connected Ethiopian modes with jazz and funk."],
+    ["1970s", "Anatolian Psych and Afro Disco", "Turkey / Africa", "Electric instruments and local modes produced scenes now central to reissue culture."],
+    ["1973", "Dub Studio Language", "Jamaica", "King Tubby and peers turned the studio into a performance instrument."],
+    ["1980s", "Cassette Culture Expands", "Africa / Asia / Middle East", "Affordable cassettes changed local distribution, piracy, worship, weddings and street markets."],
+    ["1982", "Gnawa Fusion Recordings", "Morocco / diaspora", "Gnawa trance entered jazz, rock and later electronic collaboration."],
+    ["1988", "World Music Market", "Europe / global", "Festival and label circuits created new visibility but also new representation problems."],
+    ["1990s", "Kuduro and Gqom Precursors", "Angola / South Africa", "Urban club sounds developed through street parties, taxis and local media."],
+    ["1995", "Reissue Culture Accelerates", "Global", "Digger labels began reframing forgotten funk, disco, jazz and local pop catalogs."],
+    ["2000s", "Digital Cumbia and Global Bass", "Latin America", "Laptops, blogs and clubs connected cumbia to bass music and downtempo."],
+    ["2006", "Cassette Blogs to Labels", "Online / Africa", "Blogs like Awesome Tapes showed how web discovery could become licensed reissue practice."],
+    ["2008", "ZZK and Latin Electronic", "Buenos Aires", "Digital cumbia became an international doorway into Latin American rhythm histories."],
+    ["2011", "Lisbon Batida Documented", "Portugal / Angola", "Príncipe mapped diasporic club music from Lisbon housing estates to global festivals."],
+    ["2015", "Nyege Nyege Ecosystem", "Uganda", "A festival-label network amplified East African electronic and experimental scenes."],
+    ["2018", "Japanese Ambient Reissue Wave", "Japan / global", "Kankyō Ongaku and related reissues introduced environmental music to new generations."],
+    ["2020s", "Organic Downtempo and Ethics", "Global", "Field recordings, indigenous collaboration and slow electronic music raised new questions of credit and context."],
+    ["2024", "Community Collaboration Models", "Global", "Projects with choirs, local archives and ecological causes point toward more accountable global music culture."]
+  ].map(([year, title, region, note]) => ({ year, title, region, note }))
+);
+
 let activeFilter = "all";
 let showFieldNotes = true;
 
@@ -1383,6 +1704,7 @@ function albumMatches(album) {
 }
 
 function getAlbumLabel(album) {
+  if (album.label) return album.label;
   if (album.source.includes("Nyege")) return "Nyege Nyege Tapes";
   if (album.source.includes("Shika")) return "Shika Shika";
   if (album.source.includes("Wonderwheel")) return "Wonderwheel";
@@ -1485,8 +1807,9 @@ function renderFeaturedStories() {
               <div><dt>Artists</dt><dd>${story.artists.join(" · ")}</dd></div>
               <div><dt>Labels</dt><dd>${story.labels.join(" · ")}</dd></div>
               <div><dt>Albums</dt><dd>${story.albums.join(" · ")}</dd></div>
+              ${story.instruments ? `<div><dt>Instruments</dt><dd>${story.instruments.join(" · ")}</dd></div>` : ""}
             </dl>
-            <p>${story.description}</p>
+            <p>${story.historicalContext || story.description}</p>
           </div>
         </article>
       `
