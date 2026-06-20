@@ -9,7 +9,7 @@
     <title>Global Pulse Archive</title>
     <link rel="manifest" href="./manifest.json" />
     <link rel="icon" href="./app-icon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="./styles.css?v=20260620-story-atlas" />
+    <link rel="stylesheet" href="./styles.css?v=20260620-living-museum" />
   </head>
   <body>
     <div class="page-loader" aria-hidden="true">
@@ -22,7 +22,7 @@
         <span class="brand-mark">GP</span>
         <span>Global Pulse Archive</span>
       </a>
-      <span class="version-pill">STORY ATLAS · 06.20</span>
+      <span class="version-pill">LIVING MUSEUM · 06.20</span>
       <nav class="nav-links" aria-label="主要导航">
         <a href="#stories">Stories</a>
         <a href="#atlas">Atlas</a>
@@ -105,6 +105,26 @@
           <div id="listeningJourneys" class="journey-grid"></div>
         </section>
 
+        <section class="timeline-band reveal-block" id="timeline" data-pages="home archive" aria-label="Historical Timeline">
+          <div class="section-heading row-heading">
+            <div>
+              <p>historical context</p>
+              <h2>TIMELINE</h2>
+            </div>
+          </div>
+          <div id="timelineGrid" class="timeline-grid"></div>
+        </section>
+
+        <section class="artists-band reveal-block" id="artists" data-pages="home archive" aria-label="Essential Artists">
+          <div class="section-heading row-heading">
+            <div>
+              <p>people first</p>
+              <h2>ESSENTIAL ARTISTS</h2>
+            </div>
+          </div>
+          <div id="artistGrid" class="artist-grid"></div>
+        </section>
+
         <section class="sound-atlas-band reveal-block" id="atlas" data-pages="home archive" aria-label="Sound Atlas">
           <div class="section-heading row-heading">
             <div>
@@ -172,6 +192,16 @@
             </div>
             <div id="albumGrid" class="album-grid"></div>
           </section>
+        </section>
+
+        <section class="labels-band reveal-block" id="labels" data-pages="home resources archive" aria-label="Label Archive">
+          <div class="section-heading row-heading">
+            <div>
+              <p>labels as cultural engines</p>
+              <h2>LABEL ARCHIVE</h2>
+            </div>
+          </div>
+          <div id="labelArchive" class="label-grid"></div>
         </section>
 
         <section class="music-resources-band reveal-block" id="resources" data-pages="home resources" aria-label="音乐资源池">
@@ -324,6 +354,6 @@
       <a href="#archive">Archive</a>
     </nav>
 
-    <script src="./script.js?v=20260620-story-atlas"></script>
+    <script src="./script.js?v=20260620-living-museum"></script>
   </body>
 </html>

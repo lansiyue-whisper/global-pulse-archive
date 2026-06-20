@@ -221,7 +221,7 @@ main {
   aspect-ratio: 1 / 1.25;
   background:
     linear-gradient(180deg, rgba(17, 17, 15, 0.02), rgba(17, 17, 15, 0.22)),
-    url("https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=900&q=80") center / cover;
+    url("https://f4.bcbits.com/img/a1640063585_10.jpg") center / cover;
   border: 1px solid var(--fg);
   border-radius: 999px 999px 26px 26px;
   filter: grayscale(0.35) saturate(0.8) contrast(1.06);
@@ -1430,16 +1430,16 @@ body::before {
 }
 
 .hero-slides span:nth-child(1) {
-  background-image: url("https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1000&q=82");
+  background-image: url("https://f4.bcbits.com/img/a1640063585_10.jpg");
 }
 
 .hero-slides span:nth-child(2) {
-  background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=82");
+  background-image: url("https://f4.bcbits.com/img/a2639495140_10.jpg");
   animation-delay: 7s;
 }
 
 .hero-slides span:nth-child(3) {
-  background-image: url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1000&q=82");
+  background-image: url("https://f4.bcbits.com/img/a0206727659_10.jpg");
   animation-delay: 14s;
 }
 
@@ -1800,15 +1800,15 @@ dialog {
 
 /* Narrative structure upgrade */
 .hero-slides span:nth-child(1) {
-  background-image: url("https://images.unsplash.com/photo-1458560871784-56d23406c091?auto=format&fit=crop&w=1000&q=82");
+  background-image: url("https://f4.bcbits.com/img/a1640063585_10.jpg");
 }
 
 .hero-slides span:nth-child(2) {
-  background-image: url("https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=1000&q=82");
+  background-image: url("https://f4.bcbits.com/img/a2639495140_10.jpg");
 }
 
 .hero-slides span:nth-child(3) {
-  background-image: url("https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1000&q=82");
+  background-image: url("https://f4.bcbits.com/img/a0206727659_10.jpg");
 }
 
 body.is-routed [data-page],
@@ -1832,14 +1832,20 @@ body.is-routed .atlas-layout.is-active {
 
 .featured-stories-band,
 .journeys-band,
+.timeline-band,
+.artists-band,
 .sound-atlas-band,
-.instrument-atlas-band {
+.instrument-atlas-band,
+.labels-band {
   margin-top: clamp(38px, 7vw, 104px);
 }
 
 .featured-stories,
 .journey-grid,
-.instrument-grid {
+.timeline-grid,
+.artist-grid,
+.instrument-grid,
+.label-grid {
   margin-top: 22px;
 }
 
@@ -1891,7 +1897,10 @@ body.is-routed .atlas-layout.is-active {
 
 .story-card h3,
 .journey-card h3,
-.instrument-card h3 {
+.instrument-card h3,
+.artist-card h3,
+.label-card h3,
+.timeline-card h3 {
   margin: 8px 0 10px;
   font-family: ui-serif, Georgia, serif;
   font-size: clamp(2rem, 4vw, 4rem);
@@ -1901,9 +1910,49 @@ body.is-routed .atlas-layout.is-active {
 
 .story-card p,
 .journey-card p,
-.instrument-card p {
+.instrument-card p,
+.artist-card p,
+.label-card p,
+.timeline-card p {
   max-width: 520px;
   color: var(--muted);
+}
+
+.story-meta,
+.artist-card dl,
+.label-card dl {
+  display: grid;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.story-meta div,
+.artist-card dl div,
+.label-card dl div {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 12px;
+  border-top: 1px solid var(--line);
+  padding-top: 8px;
+}
+
+.story-meta dt,
+.artist-card dt,
+.label-card dt {
+  color: var(--muted);
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.story-meta dd,
+.artist-card dd,
+.label-card dd {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.45;
 }
 
 .journey-grid {
@@ -1950,6 +1999,69 @@ body.is-routed .atlas-layout.is-active {
 
 .journey-card li:last-child::after {
   content: "";
+}
+
+.timeline-grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(220px, 1fr);
+  overflow-x: auto;
+  border-top: 1px solid var(--line-strong);
+  padding-bottom: 16px;
+}
+
+.timeline-card {
+  min-height: 300px;
+  position: relative;
+  padding: 22px 18px;
+  border-right: 1px solid var(--line);
+}
+
+.timeline-card::after {
+  content: "↓";
+  position: absolute;
+  right: 16px;
+  top: 20px;
+  color: var(--muted);
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+
+.timeline-card time {
+  display: block;
+  color: var(--fg);
+  font-family: ui-serif, Georgia, serif;
+  font-size: clamp(2.4rem, 5vw, 5rem);
+  line-height: 0.9;
+}
+
+.timeline-card span,
+.artist-card > span,
+.label-card > span {
+  color: var(--muted);
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.artist-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  border-top: 1px solid var(--line-strong);
+}
+
+.artist-card,
+.label-card {
+  padding: 20px 18px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.artist-card:nth-child(3n),
+.label-card:nth-child(2n) {
+  border-right: 0;
 }
 
 .atlas-layout {
@@ -2060,6 +2172,13 @@ body.is-routed .atlas-layout.is-active {
   line-height: 1.55;
 }
 
+.region-card em {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-style: normal;
+  line-height: 1.45;
+}
+
 .region-card:hover {
   background: rgba(255, 255, 255, 0.48);
   transform: translateY(-4px);
@@ -2080,6 +2199,32 @@ body.is-routed .atlas-layout.is-active {
   aspect-ratio: 1 / 1.15;
   border-radius: 18px;
   mix-blend-mode: multiply;
+}
+
+.instrument-artifact {
+  display: grid;
+  align-content: space-between;
+  padding: 16px;
+  background:
+    linear-gradient(135deg, rgba(17, 17, 15, 0.08), transparent 36%),
+    repeating-linear-gradient(90deg, rgba(17, 17, 15, 0.08) 0 1px, transparent 1px 18px);
+  border: 1px solid var(--line-strong);
+}
+
+.instrument-artifact strong {
+  font-family: ui-serif, Georgia, serif;
+  font-size: clamp(3.5rem, 7vw, 7rem);
+  font-weight: 500;
+  line-height: 0.82;
+}
+
+.instrument-artifact small {
+  color: var(--muted);
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .instrument-card h3 {
@@ -2122,6 +2267,18 @@ body.is-routed .atlas-layout.is-active {
   gap: 12px;
 }
 
+.album-kicker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: var(--muted);
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .album-hover {
   max-width: 760px;
   max-height: 0;
@@ -2153,6 +2310,13 @@ body.is-routed .atlas-layout.is-active {
   opacity: 0.92;
 }
 
+.label-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  border-top: 1px solid var(--line-strong);
+}
+
 .source-band,
 .submit-band,
 .events-band {
@@ -2161,6 +2325,8 @@ body.is-routed .atlas-layout.is-active {
 
 @media (max-width: 1100px) {
   .journey-grid,
+  .artist-grid,
+  .label-grid,
   .instrument-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2182,12 +2348,16 @@ body.is-routed .atlas-layout.is-active {
   }
 
   .journey-grid,
+  .artist-grid,
+  .label-grid,
   .instrument-grid,
   .region-list {
     grid-template-columns: 1fr;
   }
 
   .journey-card,
+  .artist-card,
+  .label-card,
   .region-card {
     border-right: 0;
   }

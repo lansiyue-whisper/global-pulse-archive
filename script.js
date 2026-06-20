@@ -5,7 +5,7 @@ const albums = [
     region: "Kampala / Jinja, Uganda",
     year: "2015-now",
     genres: ["afro techno", "singeli", "gqom", "experimental club"],
-    cover: "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=900&q=82",
+    cover: "https://f4.bcbits.com/img/a1640063585_10.jpg",
     summary: "东非电子与泛非 underground club 的重要入口，连接 singeli、gqom、amapiano、kuduro、传统音乐与实验电子。",
     culture:
       "Nyege Nyege 从 Kampala 的地下聚会和艺术网络发展成音乐节、厂牌和孵化平台。整理这类条目时，应该记录艺人所在城市、语言、舞蹈场景、现场系统和发行网络，而不是只贴一个‘非洲电子’标签。",
@@ -18,7 +18,7 @@ const albums = [
     region: "Dar es Salaam, Tanzania",
     year: "2022",
     genres: ["singeli", "experimental club"],
-    cover: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=82",
+    cover: "https://f4.bcbits.com/img/a1640063585_10.jpg",
     summary: "高速 singeli 结构与数字鼓机的疾速碰撞，是东非电子舞曲进入全球实验俱乐部语境的代表线索。",
     culture:
       "Singeli 来自坦桑尼亚城市街区和婚礼/街头派对生态，速度极快但并不只是‘快’：MC、社区扩音、舞蹈和本地制作软件同样构成它的文化语法。",
@@ -31,7 +31,7 @@ const albums = [
     region: "Uganda / United Kingdom",
     year: "2020",
     genres: ["afro techno", "experimental club", "percussion"],
-    cover: "https://images.unsplash.com/photo-1473773508845-188df298d2d1?auto=format&fit=crop&w=900&q=82",
+    cover: "https://f4.bcbits.com/img/a2639495140_10.jpg",
     summary: "Bugandan 鼓乐、低频 techno 与现场打击乐能量结合，适合作为传统节奏与俱乐部系统融合的档案条目。",
     culture:
       "这类音乐的关键不是把传统鼓声放进电子节拍，而是让现场乐手、节奏体系和俱乐部声压共同决定作品结构。档案页应记录合作关系与演出语境。",
@@ -44,7 +44,7 @@ const albums = [
     region: "Durban, South Africa",
     year: "2022",
     genres: ["gqom", "afro techno", "club"],
-    cover: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=82",
+    cover: "https://f4.bcbits.com/img/a2639495140_10.jpg",
     summary: "Gqom 的暗色低频、切分鼓组与南非舞池能量，是 afro techno 分类旁边必须独立标出的场景。",
     culture:
       "Gqom 与 Durban 的出租车、手机传播、街区舞蹈和 DIY 发布方式紧密相关。网站可把它放在南部非洲 club 节点，而非泛化成 house 或 techno。",
@@ -57,7 +57,7 @@ const albums = [
     region: "South Africa",
     year: "2021",
     genres: ["afro house", "deep house"],
-    cover: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=82",
+    cover: "https://f4.bcbits.com/img/a0206727659_10.jpg",
     summary: "南非 afro house 进入全球主流舞台的代表性入口，适合连接 vocal house、deep house 与非洲鼓组叙事。",
     culture:
       "Afro house 不只是打击乐纹理，也包含南非 house 长期积累的电台、俱乐部、制作人和歌手生态。档案页可按城市、厂牌、DJ 网络继续拆分。",
@@ -70,7 +70,7 @@ const albums = [
     region: "Tunisia / India",
     year: "2020",
     genres: ["global bass", "ethnic", "experimental club"],
-    cover: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=900&q=82",
+    cover: "https://f4.bcbits.com/img/a0206727659_10.jpg",
     summary: "北非制作人与南印度 Carnatic 声音相遇，电子低频、街头戏剧感和传统声乐形成强烈混合体。",
     culture:
       "Glitterbeat 将这类作品放在‘当代全球声音’的语境里：不是民俗标本，而是传统、地点录音与未来主义节奏共同发声。",
@@ -83,7 +83,7 @@ const albums = [
     region: "Argentina / Qom community",
     year: "2024",
     genres: ["organic downtempo", "folktronica", "ethnic"],
-    cover: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=82",
+    cover: "https://f4.bcbits.com/img/a2438671191_10.jpg",
     summary: "Qom 合唱传统与 Lagartijeando 的 organic electronic 制作连接，是社群合作型专辑档案的好样本。",
     culture:
       "这类作品需要特别记录合作方式、社群署名、语言和收益关系。它更接近共同创作档案，而不是制作人单方面采样。",
@@ -96,7 +96,7 @@ const albums = [
     region: "Latin America / global",
     year: "2015-now",
     genres: ["organic downtempo", "folktronica", "field recording"],
-    cover: "https://images.unsplash.com/photo-1476231682828-37e571bc172f?auto=format&fit=crop&w=900&q=82",
+    cover: "https://f4.bcbits.com/img/a4282425468_10.jpg",
     summary: "Shika Shika 以全球民间根源、有机声音、电子音乐和生态行动为核心，适合建立‘音乐 + 环境’专题。",
     culture:
       "它的资料结构可以把音乐、鸟类/生态议题、非营利项目、艺术家国家与收益分配放在同一页面，形成更完整的文化说明。",
@@ -109,7 +109,7 @@ const albums = [
     region: "Brooklyn / global",
     year: "2000s-now",
     genres: ["global bass", "organic house", "downtempo"],
-    cover: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=82",
+    cover: "https://f4.bcbits.com/img/a4068706317_10.jpg",
     summary: "Nickodemus 相关的厂牌网络，聚合 tropical、Latin、dub、house 和全球舞池声音。",
     culture:
       "Wonderwheel 适合做‘城市舞池中的全球声音’分类：一边记录 DJ/club 传播，一边记录拉丁、美洲、非洲与加勒比节奏如何进入当代制作。",
@@ -122,7 +122,7 @@ const albums = [
     region: "Arab world / Berlin",
     year: "2015-now",
     genres: ["arab funk", "reissue", "ethnic"],
-    cover: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=82",
+    cover: "https://f4.bcbits.com/img/a0206727659_10.jpg",
     summary: "阿拉伯世界 funk、jazz、soul 与电影配乐再版的重要入口，可作为历史资料与当代舞池之间的桥。",
     culture:
       "再版条目要记录原始年代、地区、母带/授权来源、封面与 liner notes。它提醒网站不要只追新音乐，也要整理被忽略的历史声音。",
@@ -135,7 +135,7 @@ const albums = [
     region: "Africa / diaspora archives",
     year: "2006-now",
     genres: ["cassette archive", "reissue", "ethnic"],
-    cover: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=82",
+    cover: "https://f4.bcbits.com/img/a0933768371_10.jpg",
     summary: "从 cassette blog 发展成再版厂牌，适合建立磁带文化、街头发行与授权再版专题。",
     culture:
       "这类档案应把‘发现’和‘再流通’分开：原始磁带、市场渠道、艺术家授权、再版说明和当代 DJ 使用场景都很重要。",
@@ -148,7 +148,7 @@ const albums = [
     region: "West African Sahel",
     year: "2009-now",
     genres: ["sahel guitar", "field recording", "ethnic"],
-    cover: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=82",
+    cover: "https://f4.bcbits.com/img/a0933768371_10.jpg",
     summary: "西非 Sahel 地区的现场录音、电影、厂牌与艺术组织线索，适合连接沙漠吉他、手机音乐与田野记录。",
     culture:
       "Sahel Sounds 的价值在于把声音、影像、写作和艺术家关系放在一起。网站后续可以为每个地区建立‘录音方式 / 语言 / 乐器 / 发行渠道’字段。",
@@ -161,7 +161,7 @@ const albums = [
     region: "Turkey",
     year: "2021",
     genres: ["downtempo", "psychill"],
-    cover: "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=900&q=82",
+    cover: "https://f4.bcbits.com/img/a4282425468_10.jpg",
     summary: "中东弦乐旋法、慢速断拍与宽阔空间效果，适合归入夜间 downtempo 与 psychill 交叉。",
     culture:
       "跨文化电子作品可以同时记录 makam、民间旋律、现代合成器与移民社群经验，让风格分类服务于理解而非框住音乐。",
@@ -174,7 +174,7 @@ const albums = [
     region: "Ecuador / Peru",
     year: "2010s-now",
     genres: ["organic downtempo", "global bass", "folktronica"],
-    cover: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=82",
+    cover: "https://f4.bcbits.com/img/a2438671191_10.jpg",
     summary: "安第斯旋律、cumbia、低频和慢速电子的交叉入口，适合做拉美 organic electronic 专题。",
     culture:
       "此类条目可以拆出 charango、quena、cumbia、ritual ambient、club edit 等子标签，并记录制作人与本地传统之间的真实关系。",
@@ -187,7 +187,7 @@ const albums = [
     region: "Europe / festival circuits",
     year: "1990s-now",
     genres: ["psychill", "psybient", "downtempo"],
-    cover: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=900&q=82",
+    cover: "https://f4.bcbits.com/img/a4068706317_10.jpg",
     summary: "Psytrance 周边的慢速、空间化电子路线，常与自然录音、民族乐器纹理和冥想式编曲相连。",
     culture:
       "网站可把 psychill 与 psybient 分开：前者更接近 chillout 舞台和旅行文化，后者偏环境、科幻和深听。两者都需要避免把文化声音变成无出处采样。",
@@ -200,7 +200,7 @@ const albums = [
     region: "South Africa",
     year: "2010s-now",
     genres: ["amapiano", "afro house", "deep house"],
-    cover: "https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=900&q=82",
+    cover: "https://f4.bcbits.com/img/a0206727659_10.jpg",
     summary: "Amapiano 以 log drum、柔软键盘和长段 groove 构成南非流行与舞池的重要当代路径。",
     culture:
       "它和 townships、舞蹈挑战、taxi/街区传播、vocal collaboration 关系很强。整理时适合把 dance、producer tag、歌手和城市网络放在同一档案里。",
@@ -213,7 +213,7 @@ const albums = [
     region: "Luanda / Lisbon",
     year: "1990s-now",
     genres: ["kuduro", "global bass", "experimental club"],
-    cover: "https://images.unsplash.com/photo-1511300636408-a63a89df3482?auto=format&fit=crop&w=900&q=82",
+    cover: "https://f4.bcbits.com/img/a1640063585_10.jpg",
     summary: "Kuduro 从安哥拉街区舞蹈与电子鼓机能量发展出高冲击 club 语法，也影响了 Lisbon bass 场景。",
     culture:
       "它的身体性很重要：舞步、MC、派对系统和移民社区共同构成声音。网站可以把它放在葡语非洲与欧洲地下 club 的交叉节点。",
@@ -226,7 +226,7 @@ const albums = [
     region: "Argentina / Latin America",
     year: "2000s-now",
     genres: ["cumbia digital", "global bass", "organic downtempo"],
-    cover: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=82",
+    cover: "https://f4.bcbits.com/img/a2438671191_10.jpg",
     summary: "Digital cumbia 把拉美 cumbia、低频、dub、电子制作和安第斯/亚马逊线索连接成新的舞池语言。",
     culture:
       "这类内容适合按地区节奏、传统乐器、舞池速度和社群合作方式继续拆分，避免把拉美声音做成单一热带标签。",
@@ -239,7 +239,7 @@ const albums = [
     region: "Morocco / Maghreb",
     year: "2010s-now",
     genres: ["gnawa electronic", "ethnic", "downtempo"],
-    cover: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=82",
+    cover: "https://f4.bcbits.com/img/a0206727659_10.jpg",
     summary: "Gnawa 的 guembri、qraqeb、呼应式声乐和 trance 结构，与 dub、downtempo、house 相遇后很适合深听和夜场过渡。",
     culture:
       "整理此类作品要尊重 Gnawa 的疗愈/仪式背景，记录乐手、乐器和合作关系，而不是只把 qraqeb 当成异域打击乐音色。",
@@ -252,7 +252,7 @@ const albums = [
     region: "Syria / Lebanon / Levant diaspora",
     year: "2000s-now",
     genres: ["dabke", "global bass", "experimental club"],
-    cover: "https://images.unsplash.com/photo-1482192505345-5655af888cc4?auto=format&fit=crop&w=900&q=82",
+    cover: "https://f4.bcbits.com/img/a0206727659_10.jpg",
     summary: "Dabke 的婚礼键盘、mijwez、快速手鼓和合成器旋律进入电子舞池后，形成强烈的 Levant club 线索。",
     culture:
       "这类档案要保留婚礼、移民社群、语言和区域政治背景，不要只把它当作快节奏 club edit。它也能连接 Arab funk 和当代中东电子。",
@@ -265,7 +265,7 @@ const albums = [
     region: "Turkey / diaspora",
     year: "1960s-now",
     genres: ["anatolian psych", "reissue", "ethnic"],
-    cover: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=82",
+    cover: "https://f4.bcbits.com/img/a4282425468_10.jpg",
     summary: "Anatolian psych 连接土耳其民间旋律、电吉他、迷幻摇滚和当代 edit / downtempo 场景。",
     culture:
       "它适合建立历史线：民歌旋律、70 年代摇滚、移民社群唱片、再版厂牌和当代 DJ edit 如何互相影响。",
@@ -278,7 +278,7 @@ const albums = [
     region: "Reunion Island / Indian Ocean",
     year: "2010s-now",
     genres: ["maloya electronic", "ethnic", "experimental club"],
-    cover: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=82",
+    cover: "https://f4.bcbits.com/img/a0205422707_10.jpg",
     summary: "Maloya 的 call-and-response、kayamb、rouler 鼓和岛屿历史，与 bass、dub、house 结合后形成很特别的印度洋电子线索。",
     culture:
       "这个方向需要记录克里奥尔语言、劳动/抵抗历史和岛屿社群，而不是只用‘tribal’描述节奏。适合放进本土文化感更强的专题页。",
@@ -291,7 +291,7 @@ const albums = [
     region: "Ethiopia / diaspora",
     year: "1960s-now",
     genres: ["ethio-jazz", "reissue", "ethnic"],
-    cover: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=900&q=82",
+    cover: "https://f4.bcbits.com/img/a0206727659_10.jpg",
     summary: "Ethio-jazz 的五声音阶、铜管、funk bassline 和爵士编制，是世界音乐再版与 downtempo DJ set 的重要历史入口。",
     culture:
       "它能帮助网站从当代电子往回连接历史唱片、国家电台、电影配乐和 diaspora 演出网络，是很适合做深档案的方向。",
@@ -304,7 +304,7 @@ const albums = [
     region: "Ghana / Nigeria / West Africa",
     year: "1970s-now",
     genres: ["highlife", "afro disco", "reissue"],
-    cover: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=82",
+    cover: "https://f4.bcbits.com/img/a0933768371_10.jpg",
     summary: "Highlife、Afro disco 和城市乐队录音常被当代 DJ 用作 warm-up、edit 和全球舞池资料。",
     culture:
       "再版资料应记录乐队、原唱片公司、录音城市、授权状态和 liner notes。它能让网站的音乐资源从新歌扩展到历史乐队生态。",
@@ -317,7 +317,7 @@ const albums = [
     region: "Mediterranean / global",
     year: "1980s-now",
     genres: ["downtempo", "balearic", "reissue"],
-    cover: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=82",
+    cover: "https://f4.bcbits.com/img/a4068706317_10.jpg",
     summary: "Balearic 不是单一节拍，而是一种开放的 sunset listening 方式：dub、ambient、folk、new age、soft percussion 都可以共存。",
     culture:
       "这个条目适合连接海岛 club、慢速 DJ、再版文化和当代 chillout。它也能作为 psychill 之外更轻盈的慢速入口。",
@@ -387,62 +387,86 @@ const events = [
 
 const featuredStories = [
   {
-    title: "From Sahara to the Dancefloor",
-    region: "Sahel / West Africa",
-    image: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=82",
-    description: "Sahel guitar, cassette circulation and bass-driven club edits as one long desert-to-speaker route."
+    title: "FROM SAHARA TO THE DANCEFLOOR",
+    period: "1968 — 2026",
+    countries: "Mali · Niger · Ghana · Nigeria",
+    artists: ["Tinariwen", "Bombino", "Mdou Moctar"],
+    labels: ["Sahel Sounds", "Awesome Tapes", "Analog Africa"],
+    albums: ["Field archive", "Cassette reissues", "Desert guitar"],
+    image: "https://f4.bcbits.com/img/a0933768371_10.jpg",
+    description: "Desert guitar, cassette circulation, highlife memory and DJ digging routes."
   },
   {
-    title: "East African Underground Electronics",
-    region: "Uganda / Tanzania / Kenya",
-    image: "https://images.unsplash.com/photo-1473773508845-188df298d2d1?auto=format&fit=crop&w=900&q=82",
-    description: "Singeli, Nyege Nyege, percussion systems and experimental club music shaped by local dance floors."
+    title: "EAST AFRICAN UNDERGROUND ELECTRONICS",
+    period: "2015 — 2026",
+    countries: "Uganda · Tanzania · Kenya",
+    artists: ["DJ Travella", "Nihiloxica", "Slikback"],
+    labels: ["Nyege Nyege Tapes", "Hakuna Kulala"],
+    albums: ["Mr Mixondo", "Kaloli", "Club experiments"],
+    image: "https://f4.bcbits.com/img/a1640063585_10.jpg",
+    description: "Singeli, Kampala sound systems, Bugandan percussion and experimental club networks."
   },
   {
-    title: "Indian Ocean Rhythm Routes",
-    region: "Reunion / Madagascar / Islands",
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=82",
-    description: "Maloya, island percussion, creole memory and electronic bass as a coastal research path."
+    title: "INDIAN OCEAN RHYTHM ROUTES",
+    period: "1970 — 2026",
+    countries: "Reunion · Madagascar · Comoros",
+    artists: ["Lindigo", "Danyel Waro", "Ostinato archives"],
+    labels: ["Ostinato", "Bongo Joe", "Local archives"],
+    albums: ["Maloya studies", "Island reissues", "Creole rhythm"],
+    image: "https://f4.bcbits.com/img/a0205422707_10.jpg",
+    description: "Creole memory, percussion, island circulation and Indian Ocean record histories."
   },
   {
-    title: "Modern Gnawa",
-    region: "Morocco / Maghreb",
-    image: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=82",
-    description: "Guembri pulse, qraqeb metal, healing trance and contemporary downtempo or house fusion."
+    title: "MODERN GNAWA",
+    period: "1982 — 2026",
+    countries: "Morocco · Algeria · France",
+    artists: ["Maleem Mahmoud Gania", "Ammar 808", "Acid Arab"],
+    labels: ["Hive Mind", "Glitterbeat", "Independent"],
+    albums: ["Guembri pulse", "Qraqeb cycles", "Fusion recordings"],
+    image: "https://f4.bcbits.com/img/a0206727659_10.jpg",
+    description: "Healing trance, guembri bass, metal percussion and modern club translation."
   },
   {
-    title: "Digital Cumbia",
-    region: "Latin America",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=82",
-    description: "Cumbia, dub, low-end electronics and Andean melodic memory moving through modern sound systems."
+    title: "DIGITAL CUMBIA",
+    period: "2008 — 2026",
+    countries: "Argentina · Peru · Colombia · Ecuador",
+    artists: ["Chancha Via Circuito", "Dengue Dengue Dengue", "Nicola Cruz"],
+    labels: ["ZZK", "Galletas Calientes", "Shika Shika"],
+    albums: ["Andean electronics", "Amazonian cumbia", "Global bass"],
+    image: "https://f4.bcbits.com/img/a2438671191_10.jpg",
+    description: "Cumbia, dub, low-end systems and indigenous melodic memory in contemporary dance music."
   },
   {
-    title: "Anatolian Psych",
-    region: "Turkey / diaspora",
-    image: "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=900&q=82",
-    description: "Folk modes, electric guitar, archival reissues and modern edits for slow psychedelic digging."
+    title: "ANATOLIAN PSYCH",
+    period: "1968 — 2026",
+    countries: "Turkey · Germany · Netherlands",
+    artists: ["Selda Bagcan", "Altin Gun", "Baris Manco"],
+    labels: ["Bongo Joe", "Glitterbeat", "Reissue labels"],
+    albums: ["Anatolian rock", "Psychedelic folk", "Modern edits"],
+    image: "https://f4.bcbits.com/img/a4282425468_10.jpg",
+    description: "Folk modes, electric guitar, diaspora recordings and psychedelic reissue culture."
   }
 ];
 
 const listeningJourneys = [
   {
     title: "Andean Roots",
-    route: ["Bonobo", "Nicola Cruz", "Lagartijeando", "Qom Choir", "Traditional Qom Music"],
+    route: ["Bonobo", "Nicola Cruz", "Andean Electronics", "Charango", "Quechua / Qom Culture", "Traditional Andean Music"],
     note: "Start from familiar downtempo, then move toward community collaboration and indigenous vocal memory."
   },
   {
     title: "Durban Pressure",
-    route: ["DJ Lag", "Gqom", "Durban", "Township Culture", "DIY Club Networks"],
+    route: ["DJ Lag", "Gqom", "Durban", "Taxi Sound Systems", "Township Dance", "DIY Club Networks"],
     note: "Follow the low-end from club tracks into dance, taxis, mobile sharing and neighborhood systems."
   },
   {
     title: "Gnawa Deep Trance",
-    route: ["Acid Arab", "Modern Gnawa Fusion", "Guembri", "Qraqeb", "Lila Ceremony"],
+    route: ["Acid Arab", "Modern Gnawa Fusion", "Guembri", "Qraqeb", "Lila Ceremony", "Gnawa Healing Context"],
     note: "Move from electronic entry points toward instruments, call-and-response and healing contexts."
   },
   {
     title: "Cumbia Digital Lineage",
-    route: ["Dengue Dengue Dengue", "ZZK", "Digital Cumbia", "Amazonian Cumbia", "Local Dance Bands"],
+    route: ["Dengue Dengue Dengue", "ZZK", "Digital Cumbia", "Amazonian Cumbia", "Migration Routes", "Local Dance Bands"],
     note: "Use global bass as a doorway into regional rhythm, migration and local party histories."
   }
 ];
@@ -451,50 +475,183 @@ const instrumentAtlas = [
   {
     name: "Kora",
     region: "West Africa",
-    image: "https://images.unsplash.com/photo-1514119412350-e174d90d280e?auto=format&fit=crop&w=700&q=82",
+    artifact: "21 strings · harp-lute",
     description: "A harp-lute associated with Manding griot traditions; bright strings often appear in contemporary roots fusion."
   },
   {
     name: "Balafon",
     region: "West Africa",
-    image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=700&q=82",
+    artifact: "wood keys · gourd resonators",
     description: "Wooden keyed percussion with resonant gourds, useful for tracing melody, rhythm and ceremony together."
   },
   {
     name: "Guembri",
     region: "Morocco",
-    image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=700&q=82",
+    artifact: "3 strings · bass lute",
     description: "A three-string bass lute central to Gnawa trance music, often carrying the deepest pulse in fusion recordings."
   },
   {
     name: "Qraqeb",
     region: "Maghreb",
-    image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=700&q=82",
+    artifact: "metal castanets · cyclic pulse",
     description: "Metal castanets whose interlocking patterns create the sharp, cyclical texture of Gnawa ensembles."
   },
   {
     name: "Charango",
     region: "Andes",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=700&q=82",
+    artifact: "small lute · high strings",
     description: "A small Andean string instrument that often bridges folk melody and organic electronic production."
   },
   {
     name: "Quena",
     region: "Andes",
-    image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=700&q=82",
+    artifact: "end-blown flute · breath tone",
     description: "An end-blown flute with a breathy tone, frequently heard in Andean ritual, folk and downtempo contexts."
   },
   {
     name: "Kayamb",
     region: "Reunion Island",
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=700&q=82",
+    artifact: "flat rattle · maloya rhythm",
     description: "A flat rattle used in Maloya, connecting rhythm, labor history and Indian Ocean creole identity."
   },
   {
     name: "Mijwez",
     region: "Levant",
-    image: "https://images.unsplash.com/photo-1482192505345-5655af888cc4?auto=format&fit=crop&w=700&q=82",
+    artifact: "double reed · dabke energy",
     description: "A double reed pipe associated with Levantine dance music, weddings and fast dabke energy."
+  }
+];
+
+const timelineEntries = [
+  { year: "1950s", title: "Highlife", region: "Ghana / Nigeria", note: "Urban dance bands, guitar lines and brass arrangements shape West African popular music." },
+  { year: "1968", title: "Ethio Jazz", region: "Addis Ababa", note: "Mulatu Astatke connects Ethiopian scales, jazz orchestration and funk rhythm." },
+  { year: "1973", title: "Anatolian Psych", region: "Turkey", note: "Folk modes, electric guitar and psychedelic arrangements create a reissue-rich lineage." },
+  { year: "1982", title: "Gnawa Fusion", region: "Morocco / diaspora", note: "Guembri, qraqeb and trance structures enter jazz, rock and later electronic collaboration." },
+  { year: "2008", title: "Digital Cumbia", region: "Buenos Aires / Andes", note: "Cumbia, dub and laptop production become a global bass pathway." },
+  { year: "2015", title: "Nyege Nyege", region: "Uganda / East Africa", note: "A festival and label ecosystem amplifies singeli, percussion, rap and experimental club music." },
+  { year: "2020s", title: "Organic Downtempo", region: "Global", note: "Field recordings, indigenous collaboration and slow electronic forms become a new research frontier." }
+];
+
+const essentialArtists = [
+  {
+    name: "Mulatu Astatke",
+    region: "Ethiopia",
+    albums: "Ethio-jazz recordings",
+    labels: "Ethiopiques / reissue networks",
+    scenes: "Ethio-jazz · Addis groove",
+    instruments: "Vibraphone · brass · piano",
+    stories: "Ethio-Jazz Reissue"
+  },
+  {
+    name: "Omar Souleyman",
+    region: "Syria / Levant",
+    albums: "Dabke wedding recordings",
+    labels: "Sublime Frequencies / independent",
+    scenes: "Dabke · Levant club",
+    instruments: "Mijwez · keyboard",
+    stories: "Dabke Club"
+  },
+  {
+    name: "DJ Lag",
+    region: "Durban, South Africa",
+    albums: "Meeting With The King",
+    labels: "Black Major / independent",
+    scenes: "Gqom · Durban club",
+    instruments: "Low-end drums · vocal chops",
+    stories: "Durban Pressure"
+  },
+  {
+    name: "Nicola Cruz",
+    region: "Ecuador",
+    albums: "Andean electronic path",
+    labels: "ZZK / independent",
+    scenes: "Organic downtempo · Andean electronics",
+    instruments: "Charango · quena · percussion",
+    stories: "Andean Roots"
+  },
+  {
+    name: "Ammar 808",
+    region: "Tunisia / global",
+    albums: "Global Control / Invisible Invasion",
+    labels: "Glitterbeat",
+    scenes: "Maghreb bass · global electronic",
+    instruments: "808 · voice · regional modes",
+    stories: "Modern Gnawa"
+  },
+  {
+    name: "Altin Gun",
+    region: "Turkey / Netherlands",
+    albums: "Anatolian psych references",
+    labels: "Bongo Joe / Glitterbeat",
+    scenes: "Anatolian psych · modern reissue culture",
+    instruments: "Saz · guitar · synth",
+    stories: "Anatolian Psych"
+  }
+];
+
+const labelArchive = [
+  {
+    name: "Nyege Nyege Tapes",
+    location: "Kampala / Jinja",
+    founded: "2010s",
+    philosophy: "East African underground electronics, traditional experiments and high-intensity club forms.",
+    artists: "DJ Travella · Nihiloxica · Slikback",
+    releases: "Mr Mixondo · Kaloli · scene compilations",
+    significance: "A key bridge between local East African scenes and global experimental club circuits."
+  },
+  {
+    name: "Habibi Funk",
+    location: "Berlin / Arab world",
+    founded: "2015",
+    philosophy: "Licensed reissues of funk, jazz, soul and soundtrack recordings from the Arab world.",
+    artists: "Ahmed Malek · Ferkat Al Ard · Rogér Fakhr",
+    releases: "Habibi Funk series",
+    significance: "Makes liner notes, licensing and historical context central to dancefloor rediscovery."
+  },
+  {
+    name: "Sahel Sounds",
+    location: "Portland / West African Sahel",
+    founded: "2009",
+    philosophy: "Field recordings, artist partnerships, Sahel guitar, film and regional music documentation.",
+    artists: "Mdou Moctar · Les Filles de Illighadad",
+    releases: "Music from Saharan WhatsApp · field archives",
+    significance: "Shows how research, recording practice and artist relationships can shape a label."
+  },
+  {
+    name: "ZZK Records",
+    location: "Buenos Aires",
+    founded: "2008",
+    philosophy: "Latin American electronic music, digital cumbia and contemporary folklore experiments.",
+    artists: "Chancha Via Circuito · Nicola Cruz · La Yegros",
+    releases: "Digital cumbia and Andean electronic catalogues",
+    significance: "A major gateway from global bass toward deeper Latin American rhythm histories."
+  },
+  {
+    name: "Shika Shika",
+    location: "Global / Latin America",
+    founded: "2015",
+    philosophy: "Organic electronic music, folklore, ecology and collaborative cultural projects.",
+    artists: "Lagartijeando · El Búho · Qom Choir",
+    releases: "A Guide to the Birdsong · Campo del Cielo",
+    significance: "Connects music discovery with ecological awareness and community collaboration."
+  },
+  {
+    name: "Music From Memory",
+    location: "Amsterdam",
+    founded: "2013",
+    philosophy: "Archival listening across ambient, balearic, experimental pop and overlooked recordings.",
+    artists: "Gigi Masin · Gaussian Curve · reissue artists",
+    releases: "Selected reissues and leftfield archival projects",
+    significance: "A model for slow listening, context-led reissue culture and non-obvious dancefloor memory."
+  },
+  {
+    name: "Wonderwheel",
+    location: "Brooklyn / global",
+    founded: "2000s",
+    philosophy: "Global dancefloor music connecting Latin, dub, house, tropical and downtempo currents.",
+    artists: "Nickodemus · Chancha Via Circuito · label family",
+    releases: "Global dancefloor catalogue",
+    significance: "Shows how DJ culture can connect city nightlife with transregional rhythm research."
   }
 ];
 
@@ -1207,6 +1364,24 @@ function albumMatches(album) {
   return filterMatch && (!query || haystack.includes(query));
 }
 
+function getAlbumLabel(album) {
+  if (album.source.includes("Nyege")) return "Nyege Nyege Tapes";
+  if (album.source.includes("Shika")) return "Shika Shika";
+  if (album.source.includes("Wonderwheel")) return "Wonderwheel";
+  if (album.source.includes("Habibi")) return "Habibi Funk";
+  if (album.source.includes("Sahel")) return "Sahel Sounds";
+  if (album.source.includes("Glitterbeat")) return "Glitterbeat";
+  if (album.sourceUrl.includes("zzk")) return "ZZK";
+  if (album.sourceUrl.includes("principediscos")) return "Príncipe";
+  if (album.sourceUrl.includes("music-from-memory")) return "Music From Memory";
+  if (album.sourceUrl.includes("analogafrica")) return "Analog Africa";
+  return album.source.split(" / ")[0];
+}
+
+function getAlbumScene(album) {
+  return album.genres.slice(0, 2).join(" / ");
+}
+
 function renderAlbums() {
   const visibleAlbums = albums.filter(albumMatches);
 
@@ -1217,16 +1392,21 @@ function renderAlbums() {
             <article class="album-card">
               <div class="album-cover" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.08), rgba(0,0,0,0.32)), url('${album.cover}')"></div>
               <div class="album-body">
-                <h3>${album.title}</h3>
-                <p>${album.region}</p>
-                <div class="album-meta">
+                <div class="album-kicker">
+                  <span>${album.region}</span>
                   <span>${album.year}</span>
-                  <span>${album.artist}</span>
+                </div>
+                <h3>${album.title}</h3>
+                <p>${album.artist}</p>
+                <div class="album-meta">
+                  <span>${getAlbumScene(album)}</span>
+                  <span>${getAlbumLabel(album)}</span>
                 </div>
                 <div class="album-hover">
                   <div class="tag-row">
                     ${album.genres.map((genre) => `<span class="tag ${genre.includes("afro") ? "coral" : "teal"}">${genre}</span>`).join("")}
                   </div>
+                  <p>${album.summary}</p>
                   <p>${album.culture}</p>
                 </div>
               </div>
@@ -1240,18 +1420,27 @@ function renderAlbums() {
 
 function renderRegions() {
   const grouped = albums.reduce((acc, album) => {
-    acc[album.region] ||= new Set();
-    album.genres.forEach((genre) => acc[album.region].add(genre));
+    acc[album.region] ||= { genres: new Set(), artists: new Set(), labels: new Set(), stories: new Set(), albums: 0 };
+    acc[album.region].albums += 1;
+    acc[album.region].artists.add(album.artist);
+    acc[album.region].labels.add(getAlbumLabel(album));
+    album.genres.forEach((genre) => acc[album.region].genres.add(genre));
+    featuredStories.forEach((story) => {
+      if (story.countries.toLowerCase().split(" · ").some((place) => album.region.toLowerCase().includes(place))) {
+        acc[album.region].stories.add(story.title);
+      }
+    });
     return acc;
   }, {});
 
   regionList.innerHTML = Object.entries(grouped)
     .map(
-      ([region, genres], index) => `
+      ([region, meta], index) => `
         <button class="region-card" type="button" data-region="${region}" style="--atlas-index:${index}">
           <small>${String(index + 1).padStart(2, "0")}</small>
           <strong>${region}</strong>
-          <span>${Array.from(genres).join(" · ")}</span>
+          <span>${meta.albums} Albums · ${meta.artists.size} Artists · ${meta.labels.size} Labels · ${Math.max(meta.stories.size, 1)} Stories</span>
+          <em>${Array.from(meta.genres).slice(0, 4).join(" · ")}</em>
         </button>
       `
     )
@@ -1270,8 +1459,14 @@ function renderFeaturedStories() {
         <article class="story-card">
           <div class="story-image" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0.35)), url('${story.image}')"></div>
           <div>
-            <span>${story.region}</span>
+            <span>${story.period}</span>
             <h3>${story.title}</h3>
+            <dl class="story-meta">
+              <div><dt>Countries</dt><dd>${story.countries}</dd></div>
+              <div><dt>Artists</dt><dd>${story.artists.join(" · ")}</dd></div>
+              <div><dt>Labels</dt><dd>${story.labels.join(" · ")}</dd></div>
+              <div><dt>Albums</dt><dd>${story.albums.join(" · ")}</dd></div>
+            </dl>
             <p>${story.description}</p>
           </div>
         </article>
@@ -1305,12 +1500,75 @@ function renderInstrumentAtlas() {
     .map(
       (instrument) => `
         <article class="instrument-card">
-          <div class="instrument-image" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.24)), url('${instrument.image}')"></div>
+          <div class="instrument-image instrument-artifact">
+            <strong>${instrument.name.slice(0, 2).toUpperCase()}</strong>
+            <small>${instrument.artifact}</small>
+          </div>
           <div>
             <span>${instrument.region}</span>
             <h3>${instrument.name}</h3>
             <p>${instrument.description}</p>
           </div>
+        </article>
+      `
+    )
+    .join("");
+}
+
+function renderTimeline() {
+  const target = document.querySelector("#timelineGrid");
+  if (!target) return;
+  target.innerHTML = timelineEntries
+    .map(
+      (entry) => `
+        <article class="timeline-card">
+          <time>${entry.year}</time>
+          <h3>${entry.title}</h3>
+          <span>${entry.region}</span>
+          <p>${entry.note}</p>
+        </article>
+      `
+    )
+    .join("");
+}
+
+function renderEssentialArtists() {
+  const target = document.querySelector("#artistGrid");
+  if (!target) return;
+  target.innerHTML = essentialArtists
+    .map(
+      (artist) => `
+        <article class="artist-card">
+          <span>${artist.region}</span>
+          <h3>${artist.name}</h3>
+          <dl>
+            <div><dt>Albums</dt><dd>${artist.albums}</dd></div>
+            <div><dt>Labels</dt><dd>${artist.labels}</dd></div>
+            <div><dt>Scenes</dt><dd>${artist.scenes}</dd></div>
+            <div><dt>Instruments</dt><dd>${artist.instruments}</dd></div>
+            <div><dt>Stories</dt><dd>${artist.stories}</dd></div>
+          </dl>
+        </article>
+      `
+    )
+    .join("");
+}
+
+function renderLabelArchive() {
+  const target = document.querySelector("#labelArchive");
+  if (!target) return;
+  target.innerHTML = labelArchive
+    .map(
+      (label) => `
+        <article class="label-card">
+          <span>${label.location} · founded ${label.founded}</span>
+          <h3>${label.name}</h3>
+          <p>${label.philosophy}</p>
+          <dl>
+            <div><dt>Artists</dt><dd>${label.artists}</dd></div>
+            <div><dt>Key releases</dt><dd>${label.releases}</dd></div>
+            <div><dt>Why it matters</dt><dd>${label.significance}</dd></div>
+          </dl>
         </article>
       `
     )
@@ -1714,6 +1972,9 @@ buildAnalysis();
 renderFeaturedStories();
 renderListeningJourneys();
 renderInstrumentAtlas();
+renderTimeline();
+renderEssentialArtists();
+renderLabelArchive();
 renderResources();
 setupMotion();
 renderRegions();
