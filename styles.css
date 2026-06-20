@@ -1798,6 +1798,113 @@ dialog {
   }
 }
 
+/* Final typography corrections */
+.section-heading h2 {
+  line-height: 1.04;
+  overflow-wrap: anywhere;
+}
+
+.story-card h3,
+.journey-card h3,
+.instrument-card h3,
+.artist-card h3,
+.label-card h3,
+.timeline-card h3,
+.region-card strong,
+.album-body h3,
+.resource-card strong {
+  line-height: 1.08;
+  overflow-wrap: anywhere;
+}
+
+.zh-sub {
+  display: block;
+  grid-column: 2;
+  margin-top: 8px;
+  color: var(--muted);
+  font-family: "Noto Sans SC", "PingFang SC", system-ui, sans-serif;
+  font-size: clamp(0.72rem, 1vw, 0.92rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+  text-transform: none;
+}
+
+.card-sub {
+  grid-column: auto;
+  margin: -2px 0 12px;
+  font-size: 0.78rem;
+}
+
+.journey-card > span + .card-sub {
+  margin-top: 6px;
+}
+
+.hero-copy h1 {
+  line-height: 0.82;
+}
+
+@media (max-width: 900px) {
+  .zh-sub {
+    grid-column: 1;
+  }
+}
+
+/* Typography readability pass */
+.section-heading h2 {
+  line-height: 1.02;
+  overflow-wrap: anywhere;
+}
+
+.row-heading > div h2 {
+  align-self: end;
+}
+
+.zh-sub {
+  display: block;
+  grid-column: 2;
+  margin-top: 8px;
+  color: var(--muted);
+  font-family: "Noto Sans SC", "PingFang SC", system-ui, sans-serif;
+  font-size: clamp(0.72rem, 1vw, 0.92rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+  text-transform: none;
+}
+
+.card-sub {
+  grid-column: auto;
+  margin: -2px 0 12px;
+  font-size: 0.78rem;
+}
+
+.story-card h3,
+.journey-card h3,
+.instrument-card h3,
+.artist-card h3,
+.label-card h3,
+.timeline-card h3,
+.region-card strong,
+.album-body h3 {
+  line-height: 1.06;
+  overflow-wrap: anywhere;
+}
+
+.journey-card > span + .card-sub {
+  margin-top: 6px;
+}
+
+.hero-copy h1 {
+  line-height: 0.82;
+}
+
+@media (max-width: 900px) {
+  .zh-sub {
+    grid-column: 1;
+  }
+}
+
 /* Narrative structure upgrade */
 .hero-slides span:nth-child(1) {
   background-image: url("https://f4.bcbits.com/img/a1640063585_10.jpg");
@@ -2368,5 +2475,53 @@ body.is-routed .atlas-layout.is-active {
 
   .album-card::before {
     display: none;
+  }
+}
+
+/* End-of-file type safety: keep long headings readable. */
+body .section-heading h2 {
+  line-height: 1.04;
+  overflow-wrap: anywhere;
+}
+
+body .story-card h3,
+body .journey-card h3,
+body .instrument-card h3,
+body .artist-card h3,
+body .label-card h3,
+body .timeline-card h3,
+body .region-card strong,
+body .album-body h3,
+body .resource-card strong {
+  line-height: 1.08;
+  overflow-wrap: anywhere;
+}
+
+body .zh-sub {
+  display: block;
+  grid-column: 2;
+  margin-top: 8px;
+  color: var(--muted);
+  font-family: "Noto Sans SC", "PingFang SC", system-ui, sans-serif;
+  font-size: clamp(0.72rem, 1vw, 0.92rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+  text-transform: none;
+}
+
+body .card-sub {
+  grid-column: auto;
+  margin: -2px 0 12px;
+  font-size: 0.78rem;
+}
+
+body .hero-copy h1 {
+  line-height: 0.82;
+}
+
+@media (max-width: 900px) {
+  body .zh-sub {
+    grid-column: 1;
   }
 }

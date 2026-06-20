@@ -388,6 +388,7 @@ const events = [
 const featuredStories = [
   {
     title: "FROM SAHARA TO THE DANCEFLOOR",
+    zh: "从撒哈拉到舞池",
     period: "1968 — 2026",
     countries: "Mali · Niger · Ghana · Nigeria",
     artists: ["Tinariwen", "Bombino", "Mdou Moctar"],
@@ -398,6 +399,7 @@ const featuredStories = [
   },
   {
     title: "EAST AFRICAN UNDERGROUND ELECTRONICS",
+    zh: "东非地下电子",
     period: "2015 — 2026",
     countries: "Uganda · Tanzania · Kenya",
     artists: ["DJ Travella", "Nihiloxica", "Slikback"],
@@ -408,6 +410,7 @@ const featuredStories = [
   },
   {
     title: "INDIAN OCEAN RHYTHM ROUTES",
+    zh: "印度洋节奏路线",
     period: "1970 — 2026",
     countries: "Reunion · Madagascar · Comoros",
     artists: ["Lindigo", "Danyel Waro", "Ostinato archives"],
@@ -418,6 +421,7 @@ const featuredStories = [
   },
   {
     title: "MODERN GNAWA",
+    zh: "当代 Gnawa",
     period: "1982 — 2026",
     countries: "Morocco · Algeria · France",
     artists: ["Maleem Mahmoud Gania", "Ammar 808", "Acid Arab"],
@@ -428,6 +432,7 @@ const featuredStories = [
   },
   {
     title: "DIGITAL CUMBIA",
+    zh: "数字 Cumbia",
     period: "2008 — 2026",
     countries: "Argentina · Peru · Colombia · Ecuador",
     artists: ["Chancha Via Circuito", "Dengue Dengue Dengue", "Nicola Cruz"],
@@ -438,6 +443,7 @@ const featuredStories = [
   },
   {
     title: "ANATOLIAN PSYCH",
+    zh: "安纳托利亚迷幻",
     period: "1968 — 2026",
     countries: "Turkey · Germany · Netherlands",
     artists: ["Selda Bagcan", "Altin Gun", "Baris Manco"],
@@ -451,21 +457,25 @@ const featuredStories = [
 const listeningJourneys = [
   {
     title: "Andean Roots",
+    zh: "安第斯根源",
     route: ["Bonobo", "Nicola Cruz", "Andean Electronics", "Charango", "Quechua / Qom Culture", "Traditional Andean Music"],
     note: "Start from familiar downtempo, then move toward community collaboration and indigenous vocal memory."
   },
   {
     title: "Durban Pressure",
+    zh: "德班低频压力",
     route: ["DJ Lag", "Gqom", "Durban", "Taxi Sound Systems", "Township Dance", "DIY Club Networks"],
     note: "Follow the low-end from club tracks into dance, taxis, mobile sharing and neighborhood systems."
   },
   {
     title: "Gnawa Deep Trance",
+    zh: "Gnawa 深层出神",
     route: ["Acid Arab", "Modern Gnawa Fusion", "Guembri", "Qraqeb", "Lila Ceremony", "Gnawa Healing Context"],
     note: "Move from electronic entry points toward instruments, call-and-response and healing contexts."
   },
   {
     title: "Cumbia Digital Lineage",
+    zh: "数字 Cumbia 谱系",
     route: ["Dengue Dengue Dengue", "ZZK", "Digital Cumbia", "Amazonian Cumbia", "Migration Routes", "Local Dance Bands"],
     note: "Use global bass as a doorway into regional rhythm, migration and local party histories."
   }
@@ -474,48 +484,56 @@ const listeningJourneys = [
 const instrumentAtlas = [
   {
     name: "Kora",
+    zh: "科拉琴",
     region: "West Africa",
     artifact: "21 strings · harp-lute",
     description: "A harp-lute associated with Manding griot traditions; bright strings often appear in contemporary roots fusion."
   },
   {
     name: "Balafon",
+    zh: "巴拉风木琴",
     region: "West Africa",
     artifact: "wood keys · gourd resonators",
     description: "Wooden keyed percussion with resonant gourds, useful for tracing melody, rhythm and ceremony together."
   },
   {
     name: "Guembri",
+    zh: "冈布里琴",
     region: "Morocco",
     artifact: "3 strings · bass lute",
     description: "A three-string bass lute central to Gnawa trance music, often carrying the deepest pulse in fusion recordings."
   },
   {
     name: "Qraqeb",
+    zh: "金属响板",
     region: "Maghreb",
     artifact: "metal castanets · cyclic pulse",
     description: "Metal castanets whose interlocking patterns create the sharp, cyclical texture of Gnawa ensembles."
   },
   {
     name: "Charango",
+    zh: "查朗戈",
     region: "Andes",
     artifact: "small lute · high strings",
     description: "A small Andean string instrument that often bridges folk melody and organic electronic production."
   },
   {
     name: "Quena",
+    zh: "克纳笛",
     region: "Andes",
     artifact: "end-blown flute · breath tone",
     description: "An end-blown flute with a breathy tone, frequently heard in Andean ritual, folk and downtempo contexts."
   },
   {
     name: "Kayamb",
+    zh: "卡扬布",
     region: "Reunion Island",
     artifact: "flat rattle · maloya rhythm",
     description: "A flat rattle used in Maloya, connecting rhythm, labor history and Indian Ocean creole identity."
   },
   {
     name: "Mijwez",
+    zh: "米杰维兹双簧管",
     region: "Levant",
     artifact: "double reed · dabke energy",
     description: "A double reed pipe associated with Levantine dance music, weddings and fast dabke energy."
@@ -1461,6 +1479,7 @@ function renderFeaturedStories() {
           <div>
             <span>${story.period}</span>
             <h3>${story.title}</h3>
+            <small class="zh-sub card-sub">${story.zh}</small>
             <dl class="story-meta">
               <div><dt>Countries</dt><dd>${story.countries}</dd></div>
               <div><dt>Artists</dt><dd>${story.artists.join(" · ")}</dd></div>
@@ -1483,6 +1502,7 @@ function renderListeningJourneys() {
       (journey) => `
         <article class="journey-card">
           <span>${journey.title}</span>
+          <small class="zh-sub card-sub">${journey.zh}</small>
           <ol>
             ${journey.route.map((step) => `<li>${step}</li>`).join("")}
           </ol>
@@ -1507,6 +1527,7 @@ function renderInstrumentAtlas() {
           <div>
             <span>${instrument.region}</span>
             <h3>${instrument.name}</h3>
+            <small class="zh-sub card-sub">${instrument.zh}</small>
             <p>${instrument.description}</p>
           </div>
         </article>
