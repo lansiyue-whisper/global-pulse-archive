@@ -5,7 +5,7 @@ const albums = [
     region: "Kampala / Jinja, Uganda",
     year: "2015-now",
     genres: ["afro techno", "singeli", "gqom", "experimental club"],
-    cover: "https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=900&q=80",
+    cover: "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=900&q=82",
     summary: "东非电子与泛非 underground club 的重要入口，连接 singeli、gqom、amapiano、kuduro、传统音乐与实验电子。",
     culture:
       "Nyege Nyege 从 Kampala 的地下聚会和艺术网络发展成音乐节、厂牌和孵化平台。整理这类条目时，应该记录艺人所在城市、语言、舞蹈场景、现场系统和发行网络，而不是只贴一个‘非洲电子’标签。",
@@ -18,7 +18,7 @@ const albums = [
     region: "Dar es Salaam, Tanzania",
     year: "2022",
     genres: ["singeli", "experimental club"],
-    cover: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=900&q=80",
+    cover: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=82",
     summary: "高速 singeli 结构与数字鼓机的疾速碰撞，是东非电子舞曲进入全球实验俱乐部语境的代表线索。",
     culture:
       "Singeli 来自坦桑尼亚城市街区和婚礼/街头派对生态，速度极快但并不只是‘快’：MC、社区扩音、舞蹈和本地制作软件同样构成它的文化语法。",
@@ -31,7 +31,7 @@ const albums = [
     region: "Uganda / United Kingdom",
     year: "2020",
     genres: ["afro techno", "experimental club", "percussion"],
-    cover: "https://images.unsplash.com/photo-1519683109079-d5f539e1542f?auto=format&fit=crop&w=900&q=80",
+    cover: "https://images.unsplash.com/photo-1473773508845-188df298d2d1?auto=format&fit=crop&w=900&q=82",
     summary: "Bugandan 鼓乐、低频 techno 与现场打击乐能量结合，适合作为传统节奏与俱乐部系统融合的档案条目。",
     culture:
       "这类音乐的关键不是把传统鼓声放进电子节拍，而是让现场乐手、节奏体系和俱乐部声压共同决定作品结构。档案页应记录合作关系与演出语境。",
@@ -44,7 +44,7 @@ const albums = [
     region: "Durban, South Africa",
     year: "2022",
     genres: ["gqom", "afro techno", "club"],
-    cover: "https://images.unsplash.com/photo-1508973379184-7517410fb0bc?auto=format&fit=crop&w=900&q=80",
+    cover: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=82",
     summary: "Gqom 的暗色低频、切分鼓组与南非舞池能量，是 afro techno 分类旁边必须独立标出的场景。",
     culture:
       "Gqom 与 Durban 的出租车、手机传播、街区舞蹈和 DIY 发布方式紧密相关。网站可把它放在南部非洲 club 节点，而非泛化成 house 或 techno。",
@@ -57,7 +57,7 @@ const albums = [
     region: "South Africa",
     year: "2021",
     genres: ["afro house", "deep house"],
-    cover: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=900&q=80",
+    cover: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=82",
     summary: "南非 afro house 进入全球主流舞台的代表性入口，适合连接 vocal house、deep house 与非洲鼓组叙事。",
     culture:
       "Afro house 不只是打击乐纹理，也包含南非 house 长期积累的电台、俱乐部、制作人和歌手生态。档案页可按城市、厂牌、DJ 网络继续拆分。",
@@ -70,7 +70,7 @@ const albums = [
     region: "Tunisia / India",
     year: "2020",
     genres: ["global bass", "ethnic", "experimental club"],
-    cover: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=900&q=80",
+    cover: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=900&q=82",
     summary: "北非制作人与南印度 Carnatic 声音相遇，电子低频、街头戏剧感和传统声乐形成强烈混合体。",
     culture:
       "Glitterbeat 将这类作品放在‘当代全球声音’的语境里：不是民俗标本，而是传统、地点录音与未来主义节奏共同发声。",
@@ -83,7 +83,7 @@ const albums = [
     region: "Argentina / Qom community",
     year: "2024",
     genres: ["organic downtempo", "folktronica", "ethnic"],
-    cover: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=900&q=80",
+    cover: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=82",
     summary: "Qom 合唱传统与 Lagartijeando 的 organic electronic 制作连接，是社群合作型专辑档案的好样本。",
     culture:
       "这类作品需要特别记录合作方式、社群署名、语言和收益关系。它更接近共同创作档案，而不是制作人单方面采样。",
@@ -96,7 +96,7 @@ const albums = [
     region: "Latin America / global",
     year: "2015-now",
     genres: ["organic downtempo", "folktronica", "field recording"],
-    cover: "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=900&q=80",
+    cover: "https://images.unsplash.com/photo-1476231682828-37e571bc172f?auto=format&fit=crop&w=900&q=82",
     summary: "Shika Shika 以全球民间根源、有机声音、电子音乐和生态行动为核心，适合建立‘音乐 + 环境’专题。",
     culture:
       "它的资料结构可以把音乐、鸟类/生态议题、非营利项目、艺术家国家与收益分配放在同一页面，形成更完整的文化说明。",
@@ -109,7 +109,7 @@ const albums = [
     region: "Brooklyn / global",
     year: "2000s-now",
     genres: ["global bass", "organic house", "downtempo"],
-    cover: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=900&q=80",
+    cover: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=82",
     summary: "Nickodemus 相关的厂牌网络，聚合 tropical、Latin、dub、house 和全球舞池声音。",
     culture:
       "Wonderwheel 适合做‘城市舞池中的全球声音’分类：一边记录 DJ/club 传播，一边记录拉丁、美洲、非洲与加勒比节奏如何进入当代制作。",
@@ -122,7 +122,7 @@ const albums = [
     region: "Arab world / Berlin",
     year: "2015-now",
     genres: ["arab funk", "reissue", "ethnic"],
-    cover: "https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=900&q=80",
+    cover: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=82",
     summary: "阿拉伯世界 funk、jazz、soul 与电影配乐再版的重要入口，可作为历史资料与当代舞池之间的桥。",
     culture:
       "再版条目要记录原始年代、地区、母带/授权来源、封面与 liner notes。它提醒网站不要只追新音乐，也要整理被忽略的历史声音。",
@@ -135,7 +135,7 @@ const albums = [
     region: "Africa / diaspora archives",
     year: "2006-now",
     genres: ["cassette archive", "reissue", "ethnic"],
-    cover: "https://images.unsplash.com/photo-1494232410401-ad00d5433cfa?auto=format&fit=crop&w=900&q=80",
+    cover: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=82",
     summary: "从 cassette blog 发展成再版厂牌，适合建立磁带文化、街头发行与授权再版专题。",
     culture:
       "这类档案应把‘发现’和‘再流通’分开：原始磁带、市场渠道、艺术家授权、再版说明和当代 DJ 使用场景都很重要。",
@@ -148,7 +148,7 @@ const albums = [
     region: "West African Sahel",
     year: "2009-now",
     genres: ["sahel guitar", "field recording", "ethnic"],
-    cover: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80",
+    cover: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=82",
     summary: "西非 Sahel 地区的现场录音、电影、厂牌与艺术组织线索，适合连接沙漠吉他、手机音乐与田野记录。",
     culture:
       "Sahel Sounds 的价值在于把声音、影像、写作和艺术家关系放在一起。网站后续可以为每个地区建立‘录音方式 / 语言 / 乐器 / 发行渠道’字段。",
@@ -161,7 +161,7 @@ const albums = [
     region: "Turkey",
     year: "2021",
     genres: ["downtempo", "psychill"],
-    cover: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=900&q=80",
+    cover: "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=900&q=82",
     summary: "中东弦乐旋法、慢速断拍与宽阔空间效果，适合归入夜间 downtempo 与 psychill 交叉。",
     culture:
       "跨文化电子作品可以同时记录 makam、民间旋律、现代合成器与移民社群经验，让风格分类服务于理解而非框住音乐。",
@@ -174,7 +174,7 @@ const albums = [
     region: "Ecuador / Peru",
     year: "2010s-now",
     genres: ["organic downtempo", "global bass", "folktronica"],
-    cover: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=80",
+    cover: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=82",
     summary: "安第斯旋律、cumbia、低频和慢速电子的交叉入口，适合做拉美 organic electronic 专题。",
     culture:
       "此类条目可以拆出 charango、quena、cumbia、ritual ambient、club edit 等子标签，并记录制作人与本地传统之间的真实关系。",
@@ -187,7 +187,7 @@ const albums = [
     region: "Europe / festival circuits",
     year: "1990s-now",
     genres: ["psychill", "psybient", "downtempo"],
-    cover: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=900&q=80",
+    cover: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=900&q=82",
     summary: "Psytrance 周边的慢速、空间化电子路线，常与自然录音、民族乐器纹理和冥想式编曲相连。",
     culture:
       "网站可把 psychill 与 psybient 分开：前者更接近 chillout 舞台和旅行文化，后者偏环境、科幻和深听。两者都需要避免把文化声音变成无出处采样。",
@@ -200,7 +200,7 @@ const albums = [
     region: "South Africa",
     year: "2010s-now",
     genres: ["amapiano", "afro house", "deep house"],
-    cover: "https://images.unsplash.com/photo-1508973379184-7517410fb0bc?auto=format&fit=crop&w=900&q=80",
+    cover: "https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=900&q=82",
     summary: "Amapiano 以 log drum、柔软键盘和长段 groove 构成南非流行与舞池的重要当代路径。",
     culture:
       "它和 townships、舞蹈挑战、taxi/街区传播、vocal collaboration 关系很强。整理时适合把 dance、producer tag、歌手和城市网络放在同一档案里。",
@@ -213,7 +213,7 @@ const albums = [
     region: "Luanda / Lisbon",
     year: "1990s-now",
     genres: ["kuduro", "global bass", "experimental club"],
-    cover: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=900&q=80",
+    cover: "https://images.unsplash.com/photo-1511300636408-a63a89df3482?auto=format&fit=crop&w=900&q=82",
     summary: "Kuduro 从安哥拉街区舞蹈与电子鼓机能量发展出高冲击 club 语法，也影响了 Lisbon bass 场景。",
     culture:
       "它的身体性很重要：舞步、MC、派对系统和移民社区共同构成声音。网站可以把它放在葡语非洲与欧洲地下 club 的交叉节点。",
@@ -226,7 +226,7 @@ const albums = [
     region: "Argentina / Latin America",
     year: "2000s-now",
     genres: ["cumbia digital", "global bass", "organic downtempo"],
-    cover: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=80",
+    cover: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=82",
     summary: "Digital cumbia 把拉美 cumbia、低频、dub、电子制作和安第斯/亚马逊线索连接成新的舞池语言。",
     culture:
       "这类内容适合按地区节奏、传统乐器、舞池速度和社群合作方式继续拆分，避免把拉美声音做成单一热带标签。",
@@ -239,7 +239,7 @@ const albums = [
     region: "Morocco / Maghreb",
     year: "2010s-now",
     genres: ["gnawa electronic", "ethnic", "downtempo"],
-    cover: "https://images.unsplash.com/photo-1528657249085-c569d3d8609d?auto=format&fit=crop&w=900&q=80",
+    cover: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=82",
     summary: "Gnawa 的 guembri、qraqeb、呼应式声乐和 trance 结构，与 dub、downtempo、house 相遇后很适合深听和夜场过渡。",
     culture:
       "整理此类作品要尊重 Gnawa 的疗愈/仪式背景，记录乐手、乐器和合作关系，而不是只把 qraqeb 当成异域打击乐音色。",
@@ -252,7 +252,7 @@ const albums = [
     region: "Syria / Lebanon / Levant diaspora",
     year: "2000s-now",
     genres: ["dabke", "global bass", "experimental club"],
-    cover: "https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=900&q=80",
+    cover: "https://images.unsplash.com/photo-1482192505345-5655af888cc4?auto=format&fit=crop&w=900&q=82",
     summary: "Dabke 的婚礼键盘、mijwez、快速手鼓和合成器旋律进入电子舞池后，形成强烈的 Levant club 线索。",
     culture:
       "这类档案要保留婚礼、移民社群、语言和区域政治背景，不要只把它当作快节奏 club edit。它也能连接 Arab funk 和当代中东电子。",
@@ -265,7 +265,7 @@ const albums = [
     region: "Turkey / diaspora",
     year: "1960s-now",
     genres: ["anatolian psych", "reissue", "ethnic"],
-    cover: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=900&q=80",
+    cover: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=82",
     summary: "Anatolian psych 连接土耳其民间旋律、电吉他、迷幻摇滚和当代 edit / downtempo 场景。",
     culture:
       "它适合建立历史线：民歌旋律、70 年代摇滚、移民社群唱片、再版厂牌和当代 DJ edit 如何互相影响。",
@@ -278,7 +278,7 @@ const albums = [
     region: "Reunion Island / Indian Ocean",
     year: "2010s-now",
     genres: ["maloya electronic", "ethnic", "experimental club"],
-    cover: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80",
+    cover: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=82",
     summary: "Maloya 的 call-and-response、kayamb、rouler 鼓和岛屿历史，与 bass、dub、house 结合后形成很特别的印度洋电子线索。",
     culture:
       "这个方向需要记录克里奥尔语言、劳动/抵抗历史和岛屿社群，而不是只用‘tribal’描述节奏。适合放进本土文化感更强的专题页。",
@@ -291,7 +291,7 @@ const albums = [
     region: "Ethiopia / diaspora",
     year: "1960s-now",
     genres: ["ethio-jazz", "reissue", "ethnic"],
-    cover: "https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=900&q=80",
+    cover: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=900&q=82",
     summary: "Ethio-jazz 的五声音阶、铜管、funk bassline 和爵士编制，是世界音乐再版与 downtempo DJ set 的重要历史入口。",
     culture:
       "它能帮助网站从当代电子往回连接历史唱片、国家电台、电影配乐和 diaspora 演出网络，是很适合做深档案的方向。",
@@ -304,7 +304,7 @@ const albums = [
     region: "Ghana / Nigeria / West Africa",
     year: "1970s-now",
     genres: ["highlife", "afro disco", "reissue"],
-    cover: "https://images.unsplash.com/photo-1494232410401-ad00d5433cfa?auto=format&fit=crop&w=900&q=80",
+    cover: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=82",
     summary: "Highlife、Afro disco 和城市乐队录音常被当代 DJ 用作 warm-up、edit 和全球舞池资料。",
     culture:
       "再版资料应记录乐队、原唱片公司、录音城市、授权状态和 liner notes。它能让网站的音乐资源从新歌扩展到历史乐队生态。",
@@ -317,7 +317,7 @@ const albums = [
     region: "Mediterranean / global",
     year: "1980s-now",
     genres: ["downtempo", "balearic", "reissue"],
-    cover: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=80",
+    cover: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=82",
     summary: "Balearic 不是单一节拍，而是一种开放的 sunset listening 方式：dub、ambient、folk、new age、soft percussion 都可以共存。",
     culture:
       "这个条目适合连接海岛 club、慢速 DJ、再版文化和当代 chillout。它也能作为 psychill 之外更轻盈的慢速入口。",
