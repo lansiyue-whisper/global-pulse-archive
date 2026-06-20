@@ -1797,3 +1797,406 @@ dialog {
     transform: none;
   }
 }
+
+/* Narrative structure upgrade */
+.hero-slides span:nth-child(1) {
+  background-image: url("https://images.unsplash.com/photo-1458560871784-56d23406c091?auto=format&fit=crop&w=1000&q=82");
+}
+
+.hero-slides span:nth-child(2) {
+  background-image: url("https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=1000&q=82");
+}
+
+.hero-slides span:nth-child(3) {
+  background-image: url("https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1000&q=82");
+}
+
+body.is-routed [data-page],
+body.is-routed [data-pages] {
+  display: none !important;
+}
+
+body.is-routed [data-page].is-active,
+body.is-routed [data-pages].is-active {
+  display: block !important;
+}
+
+body.is-routed .hero-panel.is-active,
+body.is-routed .app-shell.is-active,
+body.is-routed .control-band.is-active,
+body.is-routed .content-grid.is-active,
+body.is-routed .tool-grid.is-active,
+body.is-routed .atlas-layout.is-active {
+  display: grid !important;
+}
+
+.featured-stories-band,
+.journeys-band,
+.sound-atlas-band,
+.instrument-atlas-band {
+  margin-top: clamp(38px, 7vw, 104px);
+}
+
+.featured-stories,
+.journey-grid,
+.instrument-grid {
+  margin-top: 22px;
+}
+
+.featured-stories {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(280px, 34vw);
+  gap: 18px;
+  overflow-x: auto;
+  padding-bottom: 16px;
+  scroll-snap-type: x proximity;
+}
+
+.story-card {
+  min-height: 460px;
+  display: grid;
+  grid-template-rows: minmax(260px, 1fr) auto;
+  border-top: 1px solid var(--line-strong);
+  padding-top: 18px;
+  scroll-snap-align: start;
+}
+
+.story-image,
+.instrument-image {
+  background-position: center;
+  background-size: cover;
+  filter: saturate(0.86) contrast(1.04);
+}
+
+.story-image {
+  min-height: 260px;
+  border-radius: 999px 999px 24px 24px;
+  mix-blend-mode: multiply;
+}
+
+.story-card span,
+.journey-card > span,
+.instrument-card span,
+.region-card small {
+  display: inline-block;
+  margin-top: 16px;
+  color: var(--muted);
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.story-card h3,
+.journey-card h3,
+.instrument-card h3 {
+  margin: 8px 0 10px;
+  font-family: ui-serif, Georgia, serif;
+  font-size: clamp(2rem, 4vw, 4rem);
+  font-weight: 500;
+  line-height: 0.92;
+}
+
+.story-card p,
+.journey-card p,
+.instrument-card p {
+  max-width: 520px;
+  color: var(--muted);
+}
+
+.journey-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(220px, 1fr));
+  gap: 0;
+  border-top: 1px solid var(--line-strong);
+}
+
+.journey-card {
+  padding: 20px 18px 22px;
+  border-right: 1px solid var(--line);
+}
+
+.journey-card:last-child {
+  border-right: 0;
+}
+
+.journey-card ol {
+  display: grid;
+  gap: 10px;
+  margin: 20px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.journey-card li {
+  position: relative;
+  padding-bottom: 18px;
+  font-family: ui-serif, Georgia, serif;
+  font-size: clamp(1.35rem, 2.2vw, 2.25rem);
+  line-height: 0.95;
+}
+
+.journey-card li::after {
+  content: "↓";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  color: var(--muted);
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 0.9rem;
+}
+
+.journey-card li:last-child::after {
+  content: "";
+}
+
+.atlas-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.42fr) minmax(0, 0.58fr);
+  gap: clamp(22px, 4vw, 56px);
+  margin-top: 22px;
+  align-items: start;
+}
+
+.atlas-map {
+  position: sticky;
+  top: 110px;
+  min-height: 430px;
+  border-top: 1px solid var(--line-strong);
+  border-bottom: 1px solid var(--line);
+  background:
+    radial-gradient(ellipse at 28% 38%, rgba(17, 17, 15, 0.12) 0 12%, transparent 13%),
+    radial-gradient(ellipse at 50% 44%, rgba(17, 17, 15, 0.16) 0 15%, transparent 16%),
+    radial-gradient(ellipse at 68% 34%, rgba(17, 17, 15, 0.1) 0 10%, transparent 11%),
+    radial-gradient(ellipse at 76% 62%, rgba(17, 17, 15, 0.08) 0 8%, transparent 9%),
+    linear-gradient(90deg, transparent 0 23%, rgba(17, 17, 15, 0.08) 23% 23.4%, transparent 23.4% 100%),
+    linear-gradient(0deg, transparent 0 48%, rgba(17, 17, 15, 0.08) 48% 48.4%, transparent 48.4% 100%);
+}
+
+.atlas-map::before {
+  content: "SOUND ATLAS / FIELD NOTES / REGIONS";
+  position: absolute;
+  top: 18px;
+  left: 0;
+  max-width: 220px;
+  color: var(--muted);
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.map-dot {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: var(--acid);
+  border: 1px solid var(--fg);
+  border-radius: 999px;
+  box-shadow: 0 0 0 10px rgba(215, 255, 47, 0.18);
+}
+
+.dot-africa {
+  left: 50%;
+  top: 45%;
+}
+
+.dot-latin {
+  left: 28%;
+  top: 58%;
+  background: #f2b35d;
+}
+
+.dot-mena {
+  left: 56%;
+  top: 36%;
+  background: #7fc7a4;
+}
+
+.dot-europe {
+  left: 48%;
+  top: 28%;
+  background: #9fb7ff;
+}
+
+.dot-ocean {
+  left: 72%;
+  top: 62%;
+  background: #f2b35d;
+}
+
+.region-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  border-top: 1px solid var(--line-strong);
+}
+
+.region-card {
+  min-height: 180px;
+  display: grid;
+  align-content: space-between;
+  border-right: 1px solid var(--line);
+  padding: 18px;
+  transition: background 220ms ease, transform 220ms ease;
+}
+
+.region-card:nth-child(2n) {
+  border-right: 0;
+}
+
+.region-card strong {
+  font-family: ui-serif, Georgia, serif;
+  font-size: clamp(1.45rem, 2.6vw, 2.75rem);
+  font-weight: 500;
+  line-height: 0.95;
+}
+
+.region-card span {
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+.region-card:hover {
+  background: rgba(255, 255, 255, 0.48);
+  transform: translateY(-4px);
+}
+
+.instrument-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.instrument-card {
+  border-top: 1px solid var(--line-strong);
+  padding-top: 16px;
+}
+
+.instrument-image {
+  aspect-ratio: 1 / 1.15;
+  border-radius: 18px;
+  mix-blend-mode: multiply;
+}
+
+.instrument-card h3 {
+  font-size: clamp(1.8rem, 3vw, 3.2rem);
+}
+
+.content-grid {
+  grid-template-columns: 1fr;
+}
+
+.album-card {
+  min-height: 260px;
+  grid-template-columns: minmax(190px, 280px) minmax(0, 1fr) auto;
+  position: relative;
+}
+
+.album-card::before {
+  content: "";
+  position: absolute;
+  inset: 18px auto 18px 18px;
+  width: min(220px, 24vw);
+  border: 1px solid rgba(17, 17, 15, 0.18);
+  border-radius: 999px;
+  transform: translateX(22px);
+  opacity: 0.22;
+  pointer-events: none;
+}
+
+.album-cover {
+  aspect-ratio: 1 / 1;
+  min-height: 0;
+  border-radius: 16px;
+  filter: saturate(0.9) contrast(1.04);
+  mix-blend-mode: multiply;
+}
+
+.album-body {
+  display: grid;
+  align-content: center;
+  gap: 12px;
+}
+
+.album-hover {
+  max-width: 760px;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 240ms ease, transform 240ms ease, max-height 240ms ease;
+}
+
+.album-hover p {
+  margin-top: 10px;
+  color: var(--muted);
+}
+
+.album-card:hover .album-hover,
+.album-card:focus-within .album-hover {
+  max-height: 220px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.album-meta {
+  justify-content: flex-start;
+  gap: 18px;
+}
+
+.app-shell,
+.ai-tools {
+  opacity: 0.92;
+}
+
+.source-band,
+.submit-band,
+.events-band {
+  margin-top: clamp(38px, 7vw, 104px);
+}
+
+@media (max-width: 1100px) {
+  .journey-grid,
+  .instrument-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .atlas-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .atlas-map {
+    position: relative;
+    top: auto;
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 720px) {
+  .featured-stories {
+    grid-auto-columns: minmax(260px, 82vw);
+  }
+
+  .journey-grid,
+  .instrument-grid,
+  .region-list {
+    grid-template-columns: 1fr;
+  }
+
+  .journey-card,
+  .region-card {
+    border-right: 0;
+  }
+
+  .album-card {
+    grid-template-columns: 1fr;
+  }
+
+  .album-card::before {
+    display: none;
+  }
+}

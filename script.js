@@ -385,6 +385,119 @@ const events = [
   }
 ];
 
+const featuredStories = [
+  {
+    title: "From Sahara to the Dancefloor",
+    region: "Sahel / West Africa",
+    image: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=82",
+    description: "Sahel guitar, cassette circulation and bass-driven club edits as one long desert-to-speaker route."
+  },
+  {
+    title: "East African Underground Electronics",
+    region: "Uganda / Tanzania / Kenya",
+    image: "https://images.unsplash.com/photo-1473773508845-188df298d2d1?auto=format&fit=crop&w=900&q=82",
+    description: "Singeli, Nyege Nyege, percussion systems and experimental club music shaped by local dance floors."
+  },
+  {
+    title: "Indian Ocean Rhythm Routes",
+    region: "Reunion / Madagascar / Islands",
+    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=82",
+    description: "Maloya, island percussion, creole memory and electronic bass as a coastal research path."
+  },
+  {
+    title: "Modern Gnawa",
+    region: "Morocco / Maghreb",
+    image: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=82",
+    description: "Guembri pulse, qraqeb metal, healing trance and contemporary downtempo or house fusion."
+  },
+  {
+    title: "Digital Cumbia",
+    region: "Latin America",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=82",
+    description: "Cumbia, dub, low-end electronics and Andean melodic memory moving through modern sound systems."
+  },
+  {
+    title: "Anatolian Psych",
+    region: "Turkey / diaspora",
+    image: "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=900&q=82",
+    description: "Folk modes, electric guitar, archival reissues and modern edits for slow psychedelic digging."
+  }
+];
+
+const listeningJourneys = [
+  {
+    title: "Andean Roots",
+    route: ["Bonobo", "Nicola Cruz", "Lagartijeando", "Qom Choir", "Traditional Qom Music"],
+    note: "Start from familiar downtempo, then move toward community collaboration and indigenous vocal memory."
+  },
+  {
+    title: "Durban Pressure",
+    route: ["DJ Lag", "Gqom", "Durban", "Township Culture", "DIY Club Networks"],
+    note: "Follow the low-end from club tracks into dance, taxis, mobile sharing and neighborhood systems."
+  },
+  {
+    title: "Gnawa Deep Trance",
+    route: ["Acid Arab", "Modern Gnawa Fusion", "Guembri", "Qraqeb", "Lila Ceremony"],
+    note: "Move from electronic entry points toward instruments, call-and-response and healing contexts."
+  },
+  {
+    title: "Cumbia Digital Lineage",
+    route: ["Dengue Dengue Dengue", "ZZK", "Digital Cumbia", "Amazonian Cumbia", "Local Dance Bands"],
+    note: "Use global bass as a doorway into regional rhythm, migration and local party histories."
+  }
+];
+
+const instrumentAtlas = [
+  {
+    name: "Kora",
+    region: "West Africa",
+    image: "https://images.unsplash.com/photo-1514119412350-e174d90d280e?auto=format&fit=crop&w=700&q=82",
+    description: "A harp-lute associated with Manding griot traditions; bright strings often appear in contemporary roots fusion."
+  },
+  {
+    name: "Balafon",
+    region: "West Africa",
+    image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=700&q=82",
+    description: "Wooden keyed percussion with resonant gourds, useful for tracing melody, rhythm and ceremony together."
+  },
+  {
+    name: "Guembri",
+    region: "Morocco",
+    image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=700&q=82",
+    description: "A three-string bass lute central to Gnawa trance music, often carrying the deepest pulse in fusion recordings."
+  },
+  {
+    name: "Qraqeb",
+    region: "Maghreb",
+    image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=700&q=82",
+    description: "Metal castanets whose interlocking patterns create the sharp, cyclical texture of Gnawa ensembles."
+  },
+  {
+    name: "Charango",
+    region: "Andes",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=700&q=82",
+    description: "A small Andean string instrument that often bridges folk melody and organic electronic production."
+  },
+  {
+    name: "Quena",
+    region: "Andes",
+    image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=700&q=82",
+    description: "An end-blown flute with a breathy tone, frequently heard in Andean ritual, folk and downtempo contexts."
+  },
+  {
+    name: "Kayamb",
+    region: "Reunion Island",
+    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=700&q=82",
+    description: "A flat rattle used in Maloya, connecting rhythm, labor history and Indian Ocean creole identity."
+  },
+  {
+    name: "Mijwez",
+    region: "Levant",
+    image: "https://images.unsplash.com/photo-1482192505345-5655af888cc4?auto=format&fit=crop&w=700&q=82",
+    description: "A double reed pipe associated with Levantine dance music, weddings and fast dabke energy."
+  }
+];
+
 const listeningSources = {
   "Nyege Nyege / Hakuna Kulala Scene Dossier": {
     url: "https://nyegenyegetapes.bandcamp.com/",
@@ -982,7 +1095,7 @@ const aiSearchInput = document.querySelector("#aiSearchInput");
 const analysisOutput = document.querySelector("#analysisOutput");
 const runAnalysis = document.querySelector("#runAnalysis");
 const resourceGrid = document.querySelector("#resourceGrid");
-const pageViews = document.querySelectorAll("[data-page]");
+const pageViews = document.querySelectorAll("[data-page], [data-pages]");
 
 const getStored = (key, fallback) => {
   try {
@@ -998,6 +1111,10 @@ const routeAliases = {
   "": "home",
   home: "home",
   library: "home",
+  stories: "home",
+  journeys: "home",
+  atlas: "home",
+  instruments: "home",
   pulse: "pulse",
   "ai-tools": "ai",
   ai: "ai",
@@ -1010,14 +1127,22 @@ const routeAliases = {
 };
 
 function showPage(route = "home") {
-  const page = routeAliases[route.replace("#", "")] || "home";
+  const rawRoute = route.replace("#", "");
+  const page = routeAliases[rawRoute] || "home";
+  const targetSection = rawRoute ? document.getElementById(rawRoute) : null;
   document.body.classList.add("is-routed");
   pageViews.forEach((view) => {
-    view.classList.toggle("is-active", view.dataset.page === page);
-    if (view.dataset.page === page) view.classList.add("is-visible");
+    const pages = [view.dataset.page, ...(view.dataset.pages || "").split(/\s+/)].filter(Boolean);
+    const isActive = pages.includes(page);
+    view.classList.toggle("is-active", isActive);
+    if (isActive) view.classList.add("is-visible");
   });
   document.body.dataset.page = page;
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  if (targetSection && page === "home") {
+    requestAnimationFrame(() => targetSection.scrollIntoView({ behavior: "smooth", block: "start" }));
+  } else {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
 }
 
 let sources = getStored("globalPulseSourcesV2", [
@@ -1092,14 +1217,17 @@ function renderAlbums() {
             <article class="album-card">
               <div class="album-cover" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.08), rgba(0,0,0,0.32)), url('${album.cover}')"></div>
               <div class="album-body">
-                <div class="tag-row">
-                  ${album.genres.map((genre) => `<span class="tag ${genre.includes("afro") ? "coral" : "teal"}">${genre}</span>`).join("")}
-                </div>
                 <h3>${album.title}</h3>
-                <p>${album.artist} · ${album.region}</p>
+                <p>${album.region}</p>
                 <div class="album-meta">
                   <span>${album.year}</span>
-                  <span>${album.source}</span>
+                  <span>${album.artist}</span>
+                </div>
+                <div class="album-hover">
+                  <div class="tag-row">
+                    ${album.genres.map((genre) => `<span class="tag ${genre.includes("afro") ? "coral" : "teal"}">${genre}</span>`).join("")}
+                  </div>
+                  <p>${album.culture}</p>
                 </div>
               </div>
               <button type="button" data-album-index="${index}">打开档案</button>
@@ -1119,8 +1247,9 @@ function renderRegions() {
 
   regionList.innerHTML = Object.entries(grouped)
     .map(
-      ([region, genres]) => `
-        <button class="region-card" type="button" data-region="${region}">
+      ([region, genres], index) => `
+        <button class="region-card" type="button" data-region="${region}" style="--atlas-index:${index}">
+          <small>${String(index + 1).padStart(2, "0")}</small>
           <strong>${region}</strong>
           <span>${Array.from(genres).join(" · ")}</span>
         </button>
@@ -1130,6 +1259,62 @@ function renderRegions() {
 
   statAlbums.textContent = albums.length;
   statRegions.textContent = Object.keys(grouped).length;
+}
+
+function renderFeaturedStories() {
+  const target = document.querySelector("#featuredStories");
+  if (!target) return;
+  target.innerHTML = featuredStories
+    .map(
+      (story) => `
+        <article class="story-card">
+          <div class="story-image" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0.35)), url('${story.image}')"></div>
+          <div>
+            <span>${story.region}</span>
+            <h3>${story.title}</h3>
+            <p>${story.description}</p>
+          </div>
+        </article>
+      `
+    )
+    .join("");
+}
+
+function renderListeningJourneys() {
+  const target = document.querySelector("#listeningJourneys");
+  if (!target) return;
+  target.innerHTML = listeningJourneys
+    .map(
+      (journey) => `
+        <article class="journey-card">
+          <span>${journey.title}</span>
+          <ol>
+            ${journey.route.map((step) => `<li>${step}</li>`).join("")}
+          </ol>
+          <p>${journey.note}</p>
+        </article>
+      `
+    )
+    .join("");
+}
+
+function renderInstrumentAtlas() {
+  const target = document.querySelector("#instrumentAtlas");
+  if (!target) return;
+  target.innerHTML = instrumentAtlas
+    .map(
+      (instrument) => `
+        <article class="instrument-card">
+          <div class="instrument-image" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.24)), url('${instrument.image}')"></div>
+          <div>
+            <span>${instrument.region}</span>
+            <h3>${instrument.name}</h3>
+            <p>${instrument.description}</p>
+          </div>
+        </article>
+      `
+    )
+    .join("");
 }
 
 function renderSources() {
@@ -1526,6 +1711,9 @@ window.addEventListener("hashchange", () => showPage(location.hash.slice(1)));
 
 renderPulseApp();
 buildAnalysis();
+renderFeaturedStories();
+renderListeningJourneys();
+renderInstrumentAtlas();
 renderResources();
 setupMotion();
 renderRegions();
@@ -1533,5 +1721,6 @@ renderAlbums();
 renderSources();
 renderDemos();
 renderEvents();
+showPage(location.hash.slice(1) || "home");
 showPage(location.hash.slice(1));
 document.body.classList.add("is-ready");
