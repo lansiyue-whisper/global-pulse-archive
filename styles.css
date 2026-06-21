@@ -2520,8 +2520,151 @@ body .hero-copy h1 {
   line-height: 0.82;
 }
 
+.entity-chip,
+.entity-link {
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  border: 1px solid var(--line-strong);
+  background: rgba(255, 255, 255, 0.34);
+  color: var(--fg);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font: inherit;
+  font-size: 0.76rem;
+  line-height: 1.2;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+}
+
+.entity-link {
+  border-radius: 0;
+  border-width: 0 0 1px;
+  padding: 0 0 2px;
+  background: transparent;
+  font-family: ui-serif, Georgia, serif;
+  font-size: inherit;
+}
+
+.entity-chip:hover,
+.entity-link:hover {
+  transform: translateY(-2px);
+  background: var(--acid);
+  border-color: var(--fg);
+}
+
+.relation-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.story-open {
+  margin-top: 12px;
+}
+
+.relation-panel {
+  display: grid;
+  gap: 18px;
+  margin: 24px 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--line-strong);
+}
+
+.relation-heading {
+  display: grid;
+  grid-template-columns: minmax(120px, 0.28fr) 1fr;
+  gap: 16px;
+  align-items: baseline;
+}
+
+.relation-heading span,
+.relation-section h3 {
+  color: var(--muted);
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.relation-heading strong {
+  font-family: ui-serif, Georgia, serif;
+  font-size: clamp(1.4rem, 2.8vw, 2.8rem);
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.relation-section {
+  display: grid;
+  grid-template-columns: minmax(120px, 0.22fr) 1fr;
+  gap: 14px;
+  align-items: start;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.relation-section h3 {
+  margin: 0;
+}
+
+.related-albums {
+  display: grid;
+  gap: 8px;
+}
+
+.related-albums button {
+  display: grid;
+  grid-template-columns: minmax(120px, 0.25fr) 1fr minmax(120px, 0.25fr);
+  gap: 12px;
+  width: 100%;
+  padding: 10px 0;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  color: var(--fg);
+  text-align: left;
+  cursor: pointer;
+}
+
+.related-albums button:hover {
+  background: rgba(255, 255, 255, 0.44);
+}
+
+.related-albums span,
+.related-albums em {
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-style: normal;
+}
+
+.related-albums strong {
+  font-family: ui-serif, Georgia, serif;
+  font-size: clamp(1.1rem, 2vw, 1.8rem);
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.relation-hero {
+  display: grid;
+  min-height: 260px;
+  align-items: end;
+  background:
+    linear-gradient(135deg, rgba(17, 17, 15, 0.08), transparent 34%),
+    repeating-linear-gradient(90deg, rgba(17, 17, 15, 0.08) 0 1px, transparent 1px 18px);
+}
+
 @media (max-width: 900px) {
   body .zh-sub {
     grid-column: 1;
+  }
+
+  .relation-heading,
+  .relation-section,
+  .related-albums button {
+    grid-template-columns: 1fr;
   }
 }

@@ -1722,6 +1722,132 @@ function getAlbumScene(album) {
   return album.genres.slice(0, 2).join(" / ");
 }
 
+const normalizeEntity = (value = "") =>
+  String(value)
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9\u4e00-\u9fff]+/g, " ")
+    .trim();
+
+const splitEntityList = (value = "") =>
+  Array.isArray(value)
+    ? value
+    : String(value)
+        .split(/·|,|\/|;|\band\b|\+|\|/i)
+        .map((item) => item.trim())
+        .filter(Boolean);
+
+const uniqueItems = (items) => [...new Set(items.filter(Boolean))];
+
+function entityButton(type, name, className = "entity-chip") {
+  if (!name) return "";
+  return `<button class="${className}" type="button" data-entity-type="${type}" data-entity-name="${encodeURIComponent(name)}">${name}</button>`;
+}
+
+function entityList(type, items, className = "relation-chips") {
+  const values = uniqueItems(items).slice(0, 14);
+  return values.length ? `<div class="${className}">${values.map((item) => entityButton(type, item)).join("")}</div>` : "";
+}
+
+function albumMatchesEntity(album, type, name) {
+  const key = normalizeEntity(name);
+  const label = getAlbumLabel(album);
+  const haystack = [
+    album.title,
+    album.artist,
+    album.region,
+    album.country,
+    album.year,
+    label,
+    album.summary,
+    album.culture,
+    album.culturalNotes,
+    album.listeningContext,
+    ...(album.genres || []),
+    ...(album.relatedArtists || []),
+    ...(album.relatedInstruments || [])
+  ]
+    .map(normalizeEntity)
+    .join(" ");
+
+  if (type === "album") return normalizeEntity(album.title) === key;
+  if (type === "artist") return splitEntityList(album.artist).some((artist) => normalizeEntity(artist) === key) || (album.relatedArtists || []).some((artist) => normalizeEntity(artist) === key);
+  if (type === "label") return normalizeEntity(label) === key || normalizeEntity(album.source).includes(key);
+  if (type === "instrument") return (album.relatedInstruments || []).some((instrument) => normalizeEntity(instrument) === key) || haystack.includes(key);
+  if (type === "region") return normalizeEntity(album.region).includes(key) || normalizeEntity(album.country).includes(key) || key.includes(normalizeEntity(album.country));
+  if (type === "story") {
+    const story = featuredStories.find((item) => normalizeEntity(item.title) === key);
+    if (!story) return haystack.includes(key);
+    return [...story.artists, ...story.labels, ...story.albums, ...(story.instruments || [])].some((item) => haystack.includes(normalizeEntity(item))) || story.countries.split(" · ").some((place) => haystack.includes(normalizeEntity(place)));
+  }
+  return haystack.includes(key);
+}
+
+function getRelatedAlbums(type, name, limit = 12) {
+  return albums.filter((album) => albumMatchesEntity(album, type, name)).slice(0, limit);
+}
+
+function buildEntityProfile(type, name) {
+  const relatedAlbums = getRelatedAlbums(type, name, 18);
+  const story = featuredStories.find((item) => normalizeEntity(item.title) === normalizeEntity(name));
+  const artist = essentialArtists.find((item) => normalizeEntity(item.name) === normalizeEntity(name));
+  const label = labelArchive.find((item) => normalizeEntity(item.name) === normalizeEntity(name));
+  const instrument = instrumentAtlas.find((item) => normalizeEntity(item.name) === normalizeEntity(name));
+  const regionAlbums = type === "region" ? getRelatedAlbums("region", name, 30) : relatedAlbums;
+  const baseAlbums = relatedAlbums.length ? relatedAlbums : regionAlbums;
+
+  const relatedArtists = uniqueItems([
+    ...(story?.artists || []),
+    ...splitEntityList(label?.artists),
+    ...baseAlbums.flatMap((album) => [album.artist, ...(album.relatedArtists || [])])
+  ]);
+  const relatedLabels = uniqueItems([
+    ...(story?.labels || []),
+    artist?.labels,
+    ...baseAlbums.map(getAlbumLabel)
+  ].flatMap(splitEntityList));
+  const relatedInstruments = uniqueItems([
+    ...(story?.instruments || []),
+    instrument?.name,
+    artist?.instruments,
+    ...baseAlbums.flatMap((album) => album.relatedInstruments || [])
+  ].flatMap(splitEntityList));
+  const relatedStories = uniqueItems([
+    ...(artist?.stories ? splitEntityList(artist.stories) : []),
+    ...(story ? [story.title] : []),
+    ...featuredStories
+      .filter((item) => [...item.artists, ...item.labels, ...item.albums, ...(item.instruments || [])].some((entry) => normalizeEntity(name).includes(normalizeEntity(entry)) || normalizeEntity(entry).includes(normalizeEntity(name))))
+      .map((item) => item.title)
+  ]);
+  const relatedRegions = uniqueItems([
+    story?.countries,
+    artist?.region,
+    instrument?.region,
+    label?.location,
+    ...baseAlbums.map((album) => album.region)
+  ].flatMap(splitEntityList));
+
+  const description =
+    story?.historicalContext ||
+    label?.philosophy ||
+    instrument?.description ||
+    artist?.scenes ||
+    baseAlbums[0]?.culturalNotes ||
+    baseAlbums[0]?.culture ||
+    "A relational archive node generated from shared albums, regions, labels, instruments and stories.";
+
+  return { relatedAlbums: baseAlbums, relatedArtists, relatedLabels, relatedInstruments, relatedStories, relatedRegions, description };
+}
+
+function relationSection(title, html) {
+  return html ? `<section class="relation-section"><h3>${title}</h3>${html}</section>` : "";
+}
+
+function showArchiveDialog() {
+  if (!albumDialog.open) albumDialog.showModal();
+}
+
 function renderAlbums() {
   const visibleAlbums = albums.filter(albumMatches);
 
@@ -1804,12 +1930,13 @@ function renderFeaturedStories() {
             <small class="zh-sub card-sub">${story.zh}</small>
             <dl class="story-meta">
               <div><dt>Countries</dt><dd>${story.countries}</dd></div>
-              <div><dt>Artists</dt><dd>${story.artists.join(" · ")}</dd></div>
-              <div><dt>Labels</dt><dd>${story.labels.join(" · ")}</dd></div>
+              <div><dt>Artists</dt><dd>${entityList("artist", story.artists)}</dd></div>
+              <div><dt>Labels</dt><dd>${entityList("label", story.labels)}</dd></div>
               <div><dt>Albums</dt><dd>${story.albums.join(" · ")}</dd></div>
-              ${story.instruments ? `<div><dt>Instruments</dt><dd>${story.instruments.join(" · ")}</dd></div>` : ""}
+              ${story.instruments ? `<div><dt>Instruments</dt><dd>${entityList("instrument", story.instruments)}</dd></div>` : ""}
             </dl>
             <p>${story.historicalContext || story.description}</p>
+            ${entityButton("story", story.title, "entity-chip story-open")}
           </div>
         </article>
       `
@@ -1827,7 +1954,7 @@ function renderListeningJourneys() {
           <span>${journey.title}</span>
           <small class="zh-sub card-sub">${journey.zh}</small>
           <ol>
-            ${journey.route.map((step) => `<li>${step}</li>`).join("")}
+            ${journey.route.map((step) => `<li>${entityButton("search", step, "entity-link")}</li>`).join("")}
           </ol>
           <p>${journey.note}</p>
         </article>
@@ -1852,6 +1979,7 @@ function renderInstrumentAtlas() {
             <h3>${instrument.name}</h3>
             <small class="zh-sub card-sub">${instrument.zh}</small>
             <p>${instrument.description}</p>
+            ${entityButton("instrument", instrument.name, "entity-chip story-open")}
           </div>
         </article>
       `
@@ -1887,11 +2015,12 @@ function renderEssentialArtists() {
           <h3>${artist.name}</h3>
           <dl>
             <div><dt>Albums</dt><dd>${artist.albums}</dd></div>
-            <div><dt>Labels</dt><dd>${artist.labels}</dd></div>
+            <div><dt>Labels</dt><dd>${entityList("label", splitEntityList(artist.labels))}</dd></div>
             <div><dt>Scenes</dt><dd>${artist.scenes}</dd></div>
-            <div><dt>Instruments</dt><dd>${artist.instruments}</dd></div>
-            <div><dt>Stories</dt><dd>${artist.stories}</dd></div>
+            <div><dt>Instruments</dt><dd>${entityList("instrument", splitEntityList(artist.instruments))}</dd></div>
+            <div><dt>Stories</dt><dd>${entityList("story", splitEntityList(artist.stories))}</dd></div>
           </dl>
+          ${entityButton("artist", artist.name, "entity-chip story-open")}
         </article>
       `
     )
@@ -1909,10 +2038,11 @@ function renderLabelArchive() {
           <h3>${label.name}</h3>
           <p>${label.philosophy}</p>
           <dl>
-            <div><dt>Artists</dt><dd>${label.artists}</dd></div>
+            <div><dt>Artists</dt><dd>${entityList("artist", splitEntityList(label.artists))}</dd></div>
             <div><dt>Key releases</dt><dd>${label.releases}</dd></div>
             <div><dt>Why it matters</dt><dd>${label.significance}</dd></div>
           </dl>
+          ${entityButton("label", label.name, "entity-chip story-open")}
         </article>
       `
     )
@@ -2120,8 +2250,44 @@ function playerMarkup(album) {
   `;
 }
 
-function openAlbum(indexFromVisible) {
-  const album = albums.filter(albumMatches)[Number(indexFromVisible)];
+function renderRelatedAlbums(albumsToRender) {
+  return albumsToRender.length
+    ? `<div class="related-albums">${albumsToRender
+        .map(
+          (album) => `
+            <button type="button" data-open-album="${encodeURIComponent(album.title)}">
+              <span>${album.region} · ${album.year}</span>
+              <strong>${album.title}</strong>
+              <em>${album.artist}</em>
+            </button>
+          `
+        )
+        .join("")}</div>`
+    : "";
+}
+
+function albumRelationsMarkup(album) {
+  const label = getAlbumLabel(album);
+  const storyLinks = featuredStories
+    .filter((story) => albumMatchesEntity(album, "story", story.title))
+    .map((story) => story.title);
+  return `
+    <section class="relation-panel" aria-label="关系网络">
+      <div class="relation-heading">
+        <span>RELATIONAL ARCHIVE</span>
+        <strong>继续探索</strong>
+      </div>
+      ${relationSection("Artist", entityList("artist", [album.artist, ...(album.relatedArtists || [])]))}
+      ${relationSection("Label", entityList("label", [label]))}
+      ${relationSection("Instruments", entityList("instrument", album.relatedInstruments || []))}
+      ${relationSection("Stories", entityList("story", storyLinks))}
+      ${relationSection("Region", entityList("region", [album.region, album.country]))}
+      ${relationSection("Nearby Records", renderRelatedAlbums(getRelatedAlbums("region", album.region, 6).filter((item) => item.title !== album.title)))}
+    </section>
+  `;
+}
+
+function renderAlbumDialog(album) {
   if (!album) return;
 
   dialogContent.innerHTML = `
@@ -2136,11 +2302,62 @@ function openAlbum(indexFromVisible) {
       <p>${album.summary}</p>
       <p>${album.culture}</p>
       ${playerMarkup(album)}
+      ${albumRelationsMarkup(album)}
       <p>来源线索：${album.source}</p>
       <p><a class="source-link" href="${album.sourceUrl}" target="_blank" rel="noreferrer">打开原始来源</a></p>
     </div>
   `;
-  albumDialog.showModal();
+  showArchiveDialog();
+}
+
+function openAlbum(indexFromVisible) {
+  renderAlbumDialog(albums.filter(albumMatches)[Number(indexFromVisible)]);
+}
+
+function openAlbumByTitle(title) {
+  renderAlbumDialog(albums.find((album) => album.title === title));
+}
+
+function openEntity(type, rawName) {
+  const name = decodeURIComponent(rawName || "");
+  if (!name) return;
+  if (type === "search") {
+    searchInput.value = name;
+    renderAlbums();
+    showPage("archive");
+    return;
+  }
+
+  const profile = buildEntityProfile(type, name);
+  const typeLabel = {
+    artist: "ARTIST",
+    label: "LABEL",
+    instrument: "INSTRUMENT",
+    story: "STORY",
+    region: "REGION"
+  }[type] || "ENTITY";
+
+  dialogContent.innerHTML = `
+    <div class="dialog-hero relation-hero">
+      <h2>${name}</h2>
+    </div>
+    <div class="dialog-body">
+      <div class="relation-heading">
+        <span>${typeLabel} NODE</span>
+        <strong>Wikipedia × Discogs × NTS style relation map</strong>
+      </div>
+      <p>${profile.description}</p>
+      <section class="relation-panel">
+        ${relationSection("Related Records", renderRelatedAlbums(profile.relatedAlbums))}
+        ${relationSection("Artists", entityList("artist", profile.relatedArtists))}
+        ${relationSection("Labels", entityList("label", profile.relatedLabels))}
+        ${relationSection("Instruments", entityList("instrument", profile.relatedInstruments))}
+        ${relationSection("Stories", entityList("story", profile.relatedStories))}
+        ${relationSection("Regions", entityList("region", profile.relatedRegions))}
+      </section>
+    </div>
+  `;
+  showArchiveDialog();
 }
 
 filterButtons.forEach((button) => {
@@ -2161,7 +2378,7 @@ regionList.addEventListener("click", (event) => {
   if (!button) return;
   searchInput.value = button.dataset.region;
   renderAlbums();
-  document.querySelector("#albums").scrollIntoView({ behavior: "smooth", block: "start" });
+  openEntity("region", encodeURIComponent(button.dataset.region));
 });
 
 searchInput.addEventListener("input", renderAlbums);
@@ -2174,6 +2391,23 @@ resetFilters.addEventListener("click", () => {
 });
 
 closeDialog.addEventListener("click", () => albumDialog.close());
+
+document.addEventListener("click", (event) => {
+  const entity = event.target.closest("[data-entity-type][data-entity-name]");
+  if (entity) {
+    event.preventDefault();
+    event.stopPropagation();
+    openEntity(entity.dataset.entityType, entity.dataset.entityName);
+    return;
+  }
+
+  const albumButton = event.target.closest("[data-open-album]");
+  if (albumButton) {
+    event.preventDefault();
+    event.stopPropagation();
+    openAlbumByTitle(decodeURIComponent(albumButton.dataset.openAlbum));
+  }
+});
 
 sourceForm.addEventListener("submit", (event) => {
   event.preventDefault();
