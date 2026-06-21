@@ -3056,3 +3056,525 @@ body .journey-route-full li:last-child::after {
     grid-template-columns: 1fr;
   }
 }
+
+/* Experience upgrade: sound map, record wall, daily discovery */
+body .weekly-discovery-band,
+body .daily-journey-band,
+body .field-notes-band {
+  margin-top: clamp(34px, 6vw, 86px);
+}
+
+body .weekly-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0;
+  border-top: 1px solid var(--line-strong);
+  border-left: 1px solid var(--line-strong);
+}
+
+body .weekly-card {
+  min-height: 230px;
+  display: grid;
+  align-content: space-between;
+  gap: 16px;
+  padding: 18px;
+  color: var(--fg);
+  text-align: left;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.62), rgba(255, 255, 255, 0.22)),
+    repeating-linear-gradient(90deg, rgba(17, 17, 15, 0.05) 0 1px, transparent 1px 20px);
+  border: 0;
+  border-right: 1px solid var(--line-strong);
+  border-bottom: 1px solid var(--line-strong);
+  cursor: pointer;
+}
+
+body .weekly-card:hover {
+  background-color: #fff;
+}
+
+body .weekly-card span,
+body .weekly-card em,
+body .weekly-card small {
+  color: var(--muted);
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 0.68rem;
+  font-style: normal;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+body .weekly-card strong {
+  font-family: ui-serif, Georgia, serif;
+  font-size: clamp(1.6rem, 2.6vw, 3.1rem);
+  font-weight: 500;
+  line-height: 0.92;
+}
+
+body .today-journey {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.6fr) auto;
+  gap: 18px;
+  align-items: stretch;
+  padding: 18px;
+  background:
+    radial-gradient(circle at 8% 20%, rgba(0, 240, 200, 0.13), transparent 28%),
+    rgba(255, 255, 255, 0.48);
+  border-top: 1px solid var(--line-strong);
+  border-bottom: 1px solid var(--line-strong);
+}
+
+body .daily-route-mark {
+  display: grid;
+  align-content: space-between;
+  gap: 18px;
+  min-height: 230px;
+  padding: 16px;
+  border: 1px solid var(--line-strong);
+  background: rgba(255, 255, 255, 0.58);
+}
+
+body .daily-route-mark span {
+  color: var(--blue);
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+body .daily-route-mark strong {
+  font-family: ui-serif, Georgia, serif;
+  font-size: clamp(2.1rem, 4vw, 4.6rem);
+  font-weight: 500;
+  line-height: 0.9;
+}
+
+body .today-journey ol {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+body .today-journey li {
+  min-height: 104px;
+  display: grid;
+  align-content: space-between;
+  gap: 14px;
+  padding: 14px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  font-family: ui-serif, Georgia, serif;
+  font-size: clamp(1.2rem, 1.7vw, 1.85rem);
+  line-height: 1;
+}
+
+body .today-journey li b {
+  color: var(--muted);
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 0.68rem;
+}
+
+body .today-journey > .journey-start {
+  align-self: end;
+  min-width: 180px;
+}
+
+body .sound-map {
+  position: relative;
+  min-height: clamp(420px, 54vw, 700px);
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  border-radius: 0;
+  background:
+    radial-gradient(circle at 48% 46%, rgba(17, 17, 15, 0.13), transparent 8%),
+    radial-gradient(circle at 57% 47%, rgba(17, 17, 15, 0.13), transparent 6%),
+    radial-gradient(circle at 72% 55%, rgba(17, 17, 15, 0.12), transparent 12%),
+    radial-gradient(circle at 31% 65%, rgba(17, 17, 15, 0.12), transparent 12%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.04));
+}
+
+body .sound-map::before {
+  content: "SOUND MAP";
+  position: absolute;
+  left: 24px;
+  bottom: 18px;
+  color: rgba(17, 17, 15, 0.055);
+  font-family: ui-serif, Georgia, serif;
+  font-size: clamp(4rem, 12vw, 12rem);
+  line-height: 0.78;
+}
+
+body .map-grid {
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(0deg, transparent 0 47px, rgba(17, 17, 15, 0.06) 47px 48px),
+    repeating-linear-gradient(90deg, transparent 0 47px, rgba(17, 17, 15, 0.06) 47px 48px);
+  mask-image: radial-gradient(circle at center, #000, transparent 86%);
+}
+
+body .sound-map-node {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  z-index: 1;
+  width: min(168px, 26vw);
+  min-height: 86px;
+  display: grid;
+  gap: 4px;
+  padding: 12px;
+  color: var(--fg);
+  text-align: left;
+  background: rgba(246, 241, 229, 0.86);
+  border: 1px solid var(--line-strong);
+  border-radius: 999px 999px 999px 8px;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: transform 220ms ease, background 220ms ease, box-shadow 220ms ease;
+}
+
+body .sound-map-node::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -9px;
+  width: 11px;
+  height: 11px;
+  background: var(--blue);
+  border: 1px solid var(--fg);
+  border-radius: 999px;
+  transform: translateX(-50%);
+}
+
+body .sound-map-node:hover {
+  z-index: 3;
+  background: #fff;
+  box-shadow: 0 18px 45px rgba(17, 17, 15, 0.16);
+  transform: translate(-50%, -54%);
+}
+
+body .sound-map-node span,
+body .sound-map-node em {
+  color: var(--muted);
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 0.62rem;
+  font-style: normal;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+body .sound-map-node strong {
+  font-family: ui-serif, Georgia, serif;
+  font-size: clamp(1.1rem, 1.8vw, 1.9rem);
+  font-weight: 500;
+  line-height: 0.95;
+}
+
+body .record-card {
+  min-height: auto;
+  aspect-ratio: 1 / 1.28;
+  display: block;
+  padding: 0;
+  background: transparent;
+  border-radius: 3px;
+  border-color: rgba(17, 17, 15, 0.26);
+}
+
+body .record-card::before {
+  inset: 10px;
+  width: auto;
+  border-radius: 999px;
+  transform: none;
+  opacity: 0.18;
+}
+
+body .record-card .album-cover {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  filter: saturate(0.92) contrast(1.06);
+  mix-blend-mode: normal;
+}
+
+body .record-card .album-body {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: grid;
+  align-content: space-between;
+  padding: 12px;
+  color: #fff;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.16) 45%, rgba(0, 0, 0, 0.82));
+}
+
+body .record-card .album-kicker {
+  justify-content: space-between;
+  color: #fff;
+}
+
+body .record-card .album-kicker span {
+  padding: 5px 8px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.26);
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  border-radius: 999px;
+}
+
+body .record-card .album-hover {
+  max-height: none;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+body .record-card:hover .album-hover,
+body .record-card:focus-within .album-hover {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+body .record-card .record-artist {
+  margin: 0 0 6px;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 0.78rem;
+}
+
+body .record-card h3 {
+  margin: 0 0 10px;
+  color: #fff;
+  font-family: ui-serif, Georgia, serif;
+  font-size: clamp(1.45rem, 2.6vw, 2.75rem);
+  font-weight: 500;
+  line-height: 0.92;
+}
+
+body .record-card .album-meta,
+body .record-card .album-meta span {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.68rem;
+}
+
+body .record-card > button {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  color: transparent;
+  background: transparent;
+  border: 0;
+  border-radius: 3px;
+}
+
+body .record-card > button:hover {
+  background: transparent;
+}
+
+body .story-exhibition-hero,
+body .map-region-hero,
+body .field-note-hero {
+  min-height: min(560px, 66vh);
+  display: grid;
+  align-content: end;
+  gap: 12px;
+}
+
+body .story-exhibition-hero span,
+body .map-region-hero span,
+body .field-note-hero span {
+  width: fit-content;
+  padding: 7px 10px;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.54);
+  border-radius: 999px;
+}
+
+body .exhibition-body {
+  gap: 24px;
+}
+
+body .exhibition-overview {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
+  gap: 18px;
+}
+
+body .exhibition-stats {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  color: var(--fg);
+}
+
+body .exhibition-stats span {
+  color: var(--muted);
+  border-color: var(--line-strong);
+}
+
+body .exhibition-stats strong {
+  color: var(--fg);
+}
+
+body .exhibition-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+body .mini-timeline {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body .mini-timeline li {
+  display: grid;
+  gap: 4px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
+
+body .mini-timeline time,
+body .resource-mini span {
+  color: var(--blue);
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 0.68rem;
+  font-weight: 900;
+}
+
+body .resource-mini {
+  display: grid;
+  gap: 6px;
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
+}
+
+body .field-note-grid,
+body .extended-resource-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin-top: 18px;
+  border-top: 1px solid var(--line-strong);
+  border-left: 1px solid var(--line-strong);
+}
+
+body .field-note-card,
+body .extended-resource-card {
+  min-height: 320px;
+  display: grid;
+  align-content: space-between;
+  gap: 12px;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.38);
+  border-right: 1px solid var(--line-strong);
+  border-bottom: 1px solid var(--line-strong);
+}
+
+body .field-note-card span,
+body .field-note-card small,
+body .extended-resource-card span,
+body .extended-resource-card small {
+  color: var(--muted);
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+body .field-note-card h3,
+body .extended-resource-card h3 {
+  margin: 0;
+  font-family: ui-serif, Georgia, serif;
+  font-size: clamp(1.7rem, 2.7vw, 3.2rem);
+  font-weight: 500;
+  line-height: 0.92;
+}
+
+body .field-note-card p,
+body .extended-resource-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+body .field-note-card dl {
+  margin: 0;
+}
+
+body .field-note-card dt {
+  color: var(--blue);
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 0.65rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+body .field-note-card dd {
+  margin: 4px 0 10px;
+  color: var(--muted);
+}
+
+body .field-note-card .story-open {
+  min-height: 40px;
+  color: var(--fg);
+  background: transparent;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  font-weight: 900;
+}
+
+body .resource-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+body .resource-links .entity-chip {
+  font-size: 0.68rem;
+}
+
+@media (max-width: 1100px) {
+  body .weekly-grid,
+  body .field-note-grid,
+  body .extended-resource-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body .today-journey {
+    grid-template-columns: 1fr;
+  }
+
+  body .today-journey ol {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  body .weekly-grid,
+  body .field-note-grid,
+  body .extended-resource-grid,
+  body .exhibition-grid,
+  body .exhibition-overview {
+    grid-template-columns: 1fr;
+  }
+
+  body .today-journey ol {
+    grid-template-columns: 1fr;
+  }
+
+  body .sound-map {
+    min-height: 740px;
+  }
+
+  body .sound-map-node {
+    width: 178px;
+  }
+}

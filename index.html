@@ -9,7 +9,7 @@
     <title>Global Pulse Archive</title>
     <link rel="manifest" href="./manifest.json" />
     <link rel="icon" href="./app-icon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="./styles.css?v=20260621-journey-posters" />
+    <link rel="stylesheet" href="./styles.css?v=20260621-experience-map" />
   </head>
   <body>
     <div class="page-loader" aria-hidden="true">
@@ -22,7 +22,7 @@
         <span class="brand-mark">GP</span>
         <span>Global Pulse Archive</span>
       </a>
-      <span class="version-pill">JOURNEY POSTERS · 06.21</span>
+      <span class="version-pill">EXPLORATION MAP · 06.21</span>
       <nav class="nav-links" aria-label="主要导航">
         <a href="#stories">Stories</a>
         <a href="#atlas">Atlas</a>
@@ -85,6 +85,28 @@
           </div>
         </div>
 
+        <section class="weekly-discovery-band reveal-block" id="weekly" data-pages="home" aria-label="Weekly Discovery">
+          <div class="section-heading row-heading">
+            <div>
+              <p>return signal</p>
+              <h2>WEEKLY DISCOVERY</h2>
+              <small class="zh-sub">每周发现</small>
+            </div>
+          </div>
+          <div id="weeklyDiscovery" class="weekly-grid"></div>
+        </section>
+
+        <section class="daily-journey-band reveal-block" id="daily" data-pages="home" aria-label="Today's Journey">
+          <div class="section-heading row-heading">
+            <div>
+              <p>daily route</p>
+              <h2>TODAY'S JOURNEY</h2>
+              <small class="zh-sub">今日聆听路径</small>
+            </div>
+          </div>
+          <div id="todayJourney" class="today-journey"></div>
+        </section>
+
         <section class="featured-stories-band reveal-block" id="stories" data-pages="home" aria-label="Featured Stories">
           <div class="section-heading row-heading">
             <div>
@@ -138,12 +160,8 @@
             </div>
           </div>
           <div class="atlas-layout">
-            <div class="atlas-map" aria-hidden="true">
-              <span class="map-dot dot-africa"></span>
-              <span class="map-dot dot-latin"></span>
-              <span class="map-dot dot-mena"></span>
-              <span class="map-dot dot-europe"></span>
-              <span class="map-dot dot-ocean"></span>
+            <div id="soundMap" class="atlas-map sound-map" aria-label="Interactive Sound Map">
+              <div class="map-grid" aria-hidden="true"></div>
             </div>
             <div id="regionList" class="region-list"></div>
           </div>
@@ -212,6 +230,17 @@
           <div id="labelArchive" class="label-grid"></div>
         </section>
 
+        <section class="field-notes-band reveal-block" id="field-notes" data-pages="home resources archive" aria-label="Field Notes Archive">
+          <div class="section-heading row-heading">
+            <div>
+              <p>site observations</p>
+              <h2>FIELD NOTES</h2>
+              <small class="zh-sub">田野笔记档案</small>
+            </div>
+          </div>
+          <div id="fieldNotesArchive" class="field-note-grid"></div>
+        </section>
+
         <section class="music-resources-band reveal-block" id="resources" data-pages="home resources" aria-label="音乐资源池">
           <div class="section-heading row-heading">
             <div>
@@ -222,6 +251,7 @@
             <span class="resource-note">只保存官方链接、搜索页和可嵌入来源，不下载音频文件</span>
           </div>
           <div id="resourceGrid" class="resource-grid"></div>
+          <div id="extendedResources" class="extended-resource-grid"></div>
         </section>
 
         <section class="app-shell reveal-block" id="pulse" data-pages="home pulse ai" aria-label="Pulse App 功能">
@@ -365,6 +395,6 @@
       <a href="#archive">Archive</a>
     </nav>
 
-    <script src="./script.js?v=20260621-journey-posters"></script>
+    <script src="./script.js?v=20260621-experience-map"></script>
   </body>
 </html>

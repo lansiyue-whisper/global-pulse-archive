@@ -1579,11 +1579,49 @@ timelineEntries.push(
   ].map(([year, title, region, note]) => ({ year, title, region, note }))
 );
 
+const soundMapRegions = [
+  { name: "West Africa", zh: "西非", x: 37, y: 54, keywords: ["West Africa", "Mali", "Niger", "Senegal", "Ghana", "Gambia", "Sahel", "Manding"], featured: "FROM SAHARA TO THE DANCEFLOOR" },
+  { name: "East Africa", zh: "东非", x: 58, y: 58, keywords: ["East Africa", "Uganda", "Kenya", "Tanzania", "Ethiopia", "Somalia", "Kampala", "Addis"], featured: "EAST AFRICAN UNDERGROUND ELECTRONICS" },
+  { name: "Maghreb", zh: "马格里布", x: 44, y: 35, keywords: ["Morocco", "Algeria", "Tunisia", "Maghreb", "Gnawa", "Sahara"], featured: "MODERN GNAWA" },
+  { name: "Middle East", zh: "中东", x: 64, y: 42, keywords: ["Middle East", "Levant", "Syria", "Iran", "Iraq", "Arabic", "Persian", "Dabke"], featured: "DABKE BEYOND WEDDINGS" },
+  { name: "Andes", zh: "安第斯", x: 22, y: 66, keywords: ["Andes", "Peru", "Bolivia", "Ecuador", "Quechua", "Andean"], featured: "DIGITAL CUMBIA" },
+  { name: "Amazon", zh: "亚马逊", x: 35, y: 72, keywords: ["Amazon", "Peru", "Colombia", "Brazil", "Shipibo", "Amazonian"], featured: "AMAZONIAN RITUAL MUSIC" },
+  { name: "South Asia", zh: "南亚", x: 69, y: 52, keywords: ["India", "Pakistan", "Bangladesh", "Rajasthan", "Carnatic", "Qawwali", "South Asia"], featured: "SOUTH ASIAN DEVOTIONAL ROUTES" },
+  { name: "Southeast Asia", zh: "东南亚", x: 83, y: 63, keywords: ["Thailand", "Laos", "Vietnam", "Indonesia", "Philippines", "Cambodia", "Southeast Asia", "Gamelan"], featured: "GAMELAN AND MODERN ELECTRONICS" },
+  { name: "Southwest China", zh: "中国西南", x: 80, y: 43, keywords: ["China", "Yunnan", "Guizhou", "Sichuan", "Dong", "Hani", "Yi", "Southwest"], featured: "CHINESE SOUTHWEST TRADITIONS" },
+  { name: "Mediterranean", zh: "地中海", x: 52, y: 27, keywords: ["Mediterranean", "Turkey", "Greece", "Ibiza", "Anatolian", "Balearic"], featured: "ANATOLIAN PSYCH" }
+];
+
+const fieldNotesArchive = [
+  { title: "Gnawa Ceremony Notes", location: "Essaouira / Morocco", photos: "guembri · qraqeb · night ceremony", audio: "Gnawa maalem recordings / Hive Mind references", context: "Trance, healing lineages and festival-stage translation.", traditions: ["gnawa", "sufi ritual", "moroccan trance"], instruments: ["guembri", "qraqeb"] },
+  { title: "Kampala Sound Systems", location: "Kampala / Uganda", photos: "club flyers · sound systems · festival documentation", audio: "Nyege Nyege / Hakuna Kulala catalogues", context: "Experimental club networks, DIY infrastructure and East African bass futures.", traditions: ["singeli", "acholitronix", "experimental club"], instruments: ["drum machine", "synthesizer"] },
+  { title: "Yunnan Village Ritual Music", location: "Yunnan / China", photos: "lusheng circles · village festivals · minority archives", audio: "regional field recordings / Kink Gong-style references", context: "Mountain ritual calendars, reed pipes and polyphonic local memory.", traditions: ["minority music", "ritual music", "polyphony"], instruments: ["lusheng", "bawu", "hulusi"] },
+  { title: "Sahel Market Recordings", location: "Mali / Niger / Mauritania", photos: "cassette stalls · phone files · desert guitar sessions", audio: "Sahel Sounds / local cassette archives", context: "Markets, phones and informal circulation as music infrastructure.", traditions: ["sahel guitar", "tishoumaren", "cassette culture"], instruments: ["electric guitar", "tende", "tehardent"] },
+  { title: "Amazonian Community Music", location: "Peru / Colombia / Brazil", photos: "community gatherings · forest ceremonies · chicha sleeves", audio: "field recordings / Infopesa references", context: "Healing song, cumbia guitar and the ethics of listening to community archives.", traditions: ["amazonian ritual", "chicha", "shipibo song"], instruments: ["maracas", "voice", "electric guitar"] },
+  { title: "Reunion Island Maloya Gatherings", location: "Reunion Island", photos: "kayamb hands · Creole percussion · gathering circles", audio: "Danyel Waro / Lindigo / Bongo Joe references", context: "Creole memory, labor history and percussion as resistance archive.", traditions: ["maloya", "creole rhythm", "work song"], instruments: ["kayamb", "rouler", "pikèr"] }
+];
+
+const extendedResourceTypes = [
+  { type: "Book", title: "Ocean of Sound", region: "Global listening", note: "A listening-oriented route through ambient, dub, sampling and world sound culture.", connects: ["dub", "ambient", "field recording"] },
+  { type: "Book", title: "The Songlines", region: "Australia / travel writing", note: "Useful as a starting point for thinking about land, route and song, with critical distance.", connects: ["indigenous music", "land", "oral tradition"] },
+  { type: "Film", title: "I Bring What I Love", region: "Senegal / diaspora", note: "Youssou N'Dour, faith, public culture and global African pop.", connects: ["mbalax", "Senegal", "diaspora"] },
+  { type: "Documentary", title: "A Story of Sahel Sounds", region: "Sahel", note: "Field recording, consent, mobile phones and local-global circulation.", connects: ["sahel guitar", "field recording", "Sahel Sounds"] },
+  { type: "Radio Show", title: "NTS: Global Roots / Diggers Streams", region: "Global", note: "A practical listening source for reissue, cassette, dub and experimental routes.", connects: ["NTS", "reissue", "radio archive"] },
+  { type: "Podcast", title: "Afropop Worldwide", region: "Africa / diaspora", note: "Long-running episodes connecting artists, scenes, migration and history.", connects: ["afrobeat", "highlife", "diaspora"] },
+  { type: "Field Recording", title: "Smithsonian Folkways Archive", region: "Global", note: "Educational catalogue for traditional, folk and ethnographic recordings.", connects: ["field recordings", "instrument atlas", "traditional music"] },
+  { type: "Academic Reference", title: "Ethnomusicology Review Paths", region: "Global", note: "Use as a research doorway for citation trails and cultural context.", connects: ["ethnomusicology", "field notes", "regional archives"] }
+];
+
 let activeFilter = "all";
 let showFieldNotes = true;
 
 const albumGrid = document.querySelector("#albumGrid");
 const regionList = document.querySelector("#regionList");
+const soundMap = document.querySelector("#soundMap");
+const weeklyDiscovery = document.querySelector("#weeklyDiscovery");
+const todayJourney = document.querySelector("#todayJourney");
+const fieldNotesGrid = document.querySelector("#fieldNotesArchive");
+const extendedResourcesGrid = document.querySelector("#extendedResources");
 const searchInput = document.querySelector("#searchInput");
 const filterButtons = document.querySelectorAll("[data-filter]");
 const resetFilters = document.querySelector("#resetFilters");
@@ -1737,6 +1775,38 @@ function getAlbumScene(album) {
   return album.genres.slice(0, 2).join(" / ");
 }
 
+function matchesAnyKeyword(text, keywords) {
+  const value = normalizeEntity(text);
+  return keywords.some((keyword) => value.includes(normalizeEntity(keyword)));
+}
+
+function albumMatchesMapRegion(album, region) {
+  return matchesAnyKeyword([album.region, album.country, album.summary, album.culture, album.culturalNotes, album.listeningContext, album.genres.join(" "), getAlbumLabel(album)].join(" "), region.keywords);
+}
+
+function storyMatchesMapRegion(story, region) {
+  return matchesAnyKeyword([story.title, story.countries, story.historicalContext, story.artists.join(" "), story.labels.join(" "), story.albums.join(" "), (story.instruments || []).join(" ")].join(" "), region.keywords) || normalizeEntity(story.title) === normalizeEntity(region.featured);
+}
+
+function getMapRegionProfile(region) {
+  const regionAlbums = albums.filter((album) => albumMatchesMapRegion(album, region));
+  const regionStories = featuredStories.filter((story) => storyMatchesMapRegion(story, region));
+  const artists = uniqueItems(regionAlbums.flatMap((album) => [album.artist, ...(album.relatedArtists || [])]).flatMap(splitEntityList));
+  const labels = uniqueItems(regionAlbums.map(getAlbumLabel));
+  const instruments = uniqueItems(regionAlbums.flatMap((album) => album.relatedInstruments || []));
+  const featuredStory = regionStories.find((story) => normalizeEntity(story.title) === normalizeEntity(region.featured)) || regionStories[0] || featuredStories[0];
+  return { ...region, albums: regionAlbums, stories: regionStories, artists, labels, instruments, featuredStory };
+}
+
+function dateIndex(length, mode = "day") {
+  if (!length) return 0;
+  const now = new Date();
+  const start = new Date(now.getFullYear(), 0, 1);
+  const day = Math.floor((now - start) / 86400000);
+  const seed = mode === "week" ? Math.floor(day / 7) + now.getFullYear() * 53 : day + now.getFullYear() * 366;
+  return seed % length;
+}
+
 const normalizeEntity = (value = "") =>
   String(value)
     .toLowerCase()
@@ -1870,25 +1940,23 @@ function renderAlbums() {
     ? visibleAlbums
         .map(
           (album, index) => `
-            <article class="album-card">
+            <article class="album-card record-card">
               <div class="album-cover" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.08), rgba(0,0,0,0.32)), url('${album.cover}')"></div>
               <div class="album-body">
                 <div class="album-kicker">
-                  <span>${album.region}</span>
+                  <span>${album.country || album.region}</span>
                   <span>${album.year}</span>
                 </div>
-                <h3>${album.title}</h3>
-                <p>${album.artist}</p>
-                <div class="album-meta">
-                  <span>${getAlbumScene(album)}</span>
-                  <span>${getAlbumLabel(album)}</span>
-                </div>
                 <div class="album-hover">
+                  <p class="record-artist">${album.artist}</p>
+                  <h3>${album.title}</h3>
                   <div class="tag-row">
                     ${album.genres.map((genre) => `<span class="tag ${genre.includes("afro") ? "coral" : "teal"}">${genre}</span>`).join("")}
                   </div>
-                  <p>${album.summary}</p>
-                  <p>${album.culture}</p>
+                  <div class="album-meta">
+                    <span>${getAlbumScene(album)}</span>
+                    <span>${getAlbumLabel(album)}</span>
+                  </div>
                 </div>
               </div>
               <button type="button" data-album-index="${index}">打开档案</button>
@@ -1900,35 +1968,45 @@ function renderAlbums() {
 }
 
 function renderRegions() {
-  const grouped = albums.reduce((acc, album) => {
-    acc[album.region] ||= { genres: new Set(), artists: new Set(), labels: new Set(), stories: new Set(), albums: 0 };
-    acc[album.region].albums += 1;
-    acc[album.region].artists.add(album.artist);
-    acc[album.region].labels.add(getAlbumLabel(album));
-    album.genres.forEach((genre) => acc[album.region].genres.add(genre));
-    featuredStories.forEach((story) => {
-      if (story.countries.toLowerCase().split(" · ").some((place) => album.region.toLowerCase().includes(place))) {
-        acc[album.region].stories.add(story.title);
-      }
-    });
-    return acc;
-  }, {});
+  const profiles = soundMapRegions.map(getMapRegionProfile);
 
-  regionList.innerHTML = Object.entries(grouped)
+  if (soundMap) {
+    soundMap.innerHTML = `
+      <div class="map-grid" aria-hidden="true"></div>
+      ${profiles
+        .map(
+          (profile, index) => `
+            <button
+              class="sound-map-node"
+              type="button"
+              data-region="${profile.name}"
+              style="--x:${profile.x}%; --y:${profile.y}%; --node-index:${index}"
+              aria-label="${profile.name}, ${profile.albums.length} albums, ${profile.artists.length} artists">
+              <span>${profile.zh}</span>
+              <strong>${profile.name}</strong>
+              <em>${profile.albums.length} albums · ${profile.artists.length} artists · ${profile.labels.length} labels</em>
+            </button>
+          `
+        )
+        .join("")}
+    `;
+  }
+
+  regionList.innerHTML = profiles
     .map(
-      ([region, meta], index) => `
-        <button class="region-card" type="button" data-region="${region}" style="--atlas-index:${index}">
+      (profile, index) => `
+        <button class="region-card" type="button" data-region="${profile.name}" style="--atlas-index:${index}">
           <small>${String(index + 1).padStart(2, "0")}</small>
-          <strong>${region}</strong>
-          <span>${meta.albums} Albums · ${meta.artists.size} Artists · ${meta.labels.size} Labels · ${Math.max(meta.stories.size, 1)} Stories</span>
-          <em>${Array.from(meta.genres).slice(0, 4).join(" · ")}</em>
+          <strong>${profile.name}</strong>
+          <span>${profile.albums.length} Albums · ${profile.artists.length} Artists · ${profile.labels.length} Labels · ${Math.max(profile.stories.length, 1)} Stories</span>
+          <em>${profile.featuredStory?.title || profile.featured}</em>
         </button>
       `
     )
     .join("");
 
   statAlbums.textContent = albums.length;
-  statRegions.textContent = Object.keys(grouped).length;
+  statRegions.textContent = profiles.length;
 }
 
 function renderFeaturedStories() {
@@ -2143,6 +2221,91 @@ function renderResources() {
     .join("");
 }
 
+function renderExtendedResources() {
+  if (!extendedResourcesGrid) return;
+  extendedResourcesGrid.innerHTML = extendedResourceTypes
+    .map(
+      (resource) => `
+        <article class="extended-resource-card">
+          <span>${resource.type}</span>
+          <h3>${resource.title}</h3>
+          <small>${resource.region}</small>
+          <p>${resource.note}</p>
+          ${entityList("search", resource.connects, "resource-links")}
+        </article>
+      `
+    )
+    .join("");
+}
+
+function renderWeeklyDiscovery() {
+  if (!weeklyDiscovery) return;
+  const weekIndex = dateIndex(albums.length, "week");
+  const picks = [
+    { label: "Album of the Week", zh: "本周专辑", value: albums[weekIndex], type: "album" },
+    { label: "Artist of the Week", zh: "本周音乐人", value: essentialArtists[dateIndex(essentialArtists.length, "week")], type: "artist" },
+    { label: "Label of the Week", zh: "本周厂牌", value: labelArchive[dateIndex(labelArchive.length, "week")], type: "label" },
+    { label: "Region of the Week", zh: "本周地区", value: soundMapRegions[dateIndex(soundMapRegions.length, "week")], type: "region" },
+    { label: "Instrument of the Week", zh: "本周乐器", value: instrumentAtlas[dateIndex(instrumentAtlas.length, "week")], type: "instrument" }
+  ];
+
+  weeklyDiscovery.innerHTML = picks
+    .map((pick) => {
+      const title = pick.value.title || pick.value.name;
+      const subtitle = pick.value.artist || pick.value.region || pick.value.location || pick.value.zh || "";
+      const meta = pick.value.year || pick.value.founded || pick.value.country || pick.value.type || "archive node";
+      const entityType = pick.type === "album" ? "album" : pick.type;
+      return `
+        <button class="weekly-card" type="button" data-weekly-type="${entityType}" data-weekly-name="${encodeURIComponent(title)}">
+          <span>${pick.label}</span>
+          <small class="zh-sub">${pick.zh}</small>
+          <strong>${title}</strong>
+          <em>${subtitle} · ${meta}</em>
+        </button>
+      `;
+    })
+    .join("");
+}
+
+function renderTodayJourney() {
+  if (!todayJourney) return;
+  const index = dateIndex(listeningJourneys.length, "day");
+  const journey = listeningJourneys[index];
+  todayJourney.innerHTML = `
+    <div class="daily-route-mark">
+      <span>${new Date().toLocaleDateString("zh-CN", { month: "2-digit", day: "2-digit" })}</span>
+      <strong>${journey.title}</strong>
+      <small class="zh-sub">${journey.zh}</small>
+    </div>
+    <ol>
+      ${journey.route.map((step, stepIndex) => `<li><b>${String(stepIndex + 1).padStart(2, "0")}</b>${step}</li>`).join("")}
+    </ol>
+    <button class="journey-start" type="button" data-journey-index="${index}">Start Today's Journey</button>
+  `;
+}
+
+function renderFieldNotesArchive() {
+  if (!fieldNotesGrid) return;
+  fieldNotesGrid.innerHTML = fieldNotesArchive
+    .map(
+      (note, index) => `
+        <article class="field-note-card">
+          <span>${note.location}</span>
+          <h3>${note.title}</h3>
+          <small>${note.photos}</small>
+          <p>${note.context}</p>
+          <dl>
+            <div><dt>Audio References</dt><dd>${note.audio}</dd></div>
+            <div><dt>Traditions</dt><dd>${entityList("search", note.traditions)}</dd></div>
+            <div><dt>Instruments</dt><dd>${entityList("instrument", note.instruments)}</dd></div>
+          </dl>
+          <button class="story-open" type="button" data-field-note="${index}">Open Field Note</button>
+        </article>
+      `
+    )
+    .join("");
+}
+
 function renderPulseApp() {
   pulseModesGrid.innerHTML = pulseModes
     .map(
@@ -2337,6 +2500,140 @@ function openAlbumByTitle(title) {
   renderAlbumDialog(albums.find((album) => album.title === title));
 }
 
+function storyExhibitionMarkup(story) {
+  const relatedAlbums = getRelatedAlbums("story", story.title, 10);
+  const timeline = timelineEntries
+    .filter((entry) => story.period.includes(entry.year) || storyMatchesMapRegion(story, { keywords: [entry.region], featured: story.title }))
+    .slice(0, 5);
+  const journey = listeningJourneys.find((item) => item.route.some((step) => story.artists.some((artist) => normalizeEntity(step).includes(normalizeEntity(artist))))) || listeningJourneys[dateIndex(listeningJourneys.length, "day")];
+  const regions = soundMapRegions.filter((region) => storyMatchesMapRegion(story, region)).map((region) => region.name);
+  const resources = extendedResourceTypes.filter((resource) => resource.connects.some((item) => normalizeEntity(story.historicalContext + " " + story.title + " " + story.countries).includes(normalizeEntity(item)))).slice(0, 3);
+
+  return `
+    <div class="dialog-hero story-exhibition-hero" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0.72)), url('${story.image}')">
+      <span>${story.period}</span>
+      <h2>${story.title}</h2>
+    </div>
+    <div class="dialog-body exhibition-body">
+      <div class="relation-heading">
+        <span>MICRO MUSEUM</span>
+        <strong>${story.zh}</strong>
+      </div>
+      <section class="exhibition-overview">
+        <p>${story.historicalContext}</p>
+        <div class="story-stats exhibition-stats">
+          <span><strong>${story.albums.length}</strong> albums</span>
+          <span><strong>${story.artists.length}</strong> artists</span>
+          <span><strong>${splitEntityList(story.countries).length}</strong> countries</span>
+        </div>
+      </section>
+      <section class="exhibition-grid">
+        ${relationSection("Timeline", timeline.length ? `<ol class="mini-timeline">${timeline.map((entry) => `<li><time>${entry.year}</time><strong>${entry.title}</strong><p>${entry.note}</p></li>`).join("")}</ol>` : `<p>${story.period}</p>`)}
+        ${relationSection("Artists", entityList("artist", story.artists))}
+        ${relationSection("Albums", entityList("album", story.albums))}
+        ${relationSection("Labels", entityList("label", story.labels))}
+        ${relationSection("Instruments", entityList("instrument", story.instruments || []))}
+        ${relationSection("Related Regions", entityList("region", regions.length ? regions : splitEntityList(story.countries)))}
+        ${relationSection("Listening Journey", `<button class="journey-start" type="button" data-journey-index="${listeningJourneys.indexOf(journey)}">${journey.title}</button><p>${journey.route.join(" → ")}</p>`)}
+        ${relationSection("Recommended Reading", resources.length ? resources.map((resource) => `<article class="resource-mini"><span>${resource.type}</span><strong>${resource.title}</strong><p>${resource.note}</p></article>`).join("") : `<p>Use label catalogues, artist interviews and field recording notes as the next research path.</p>`)}
+        ${relationSection("Field Notes", fieldNotesArchive.filter((note) => storyMatchesMapRegion(story, { keywords: [note.location, ...note.traditions], featured: story.title })).slice(0, 2).map((note) => `<article class="resource-mini"><span>${note.location}</span><strong>${note.title}</strong><p>${note.context}</p></article>`).join("") || `<p>No formal field note attached yet. This exhibition can be expanded with local documentation.</p>`)}
+      </section>
+      ${relationSection("Records in This Exhibition", renderRelatedAlbums(relatedAlbums))}
+    </div>
+  `;
+}
+
+function openStoryExhibition(name) {
+  const story = featuredStories.find((item) => normalizeEntity(item.title) === normalizeEntity(name));
+  if (!story) {
+    const profile = buildEntityProfile("story", name);
+    dialogContent.innerHTML = `
+      <div class="dialog-hero relation-hero">
+        <h2>${name}</h2>
+      </div>
+      <div class="dialog-body">
+        <div class="relation-heading">
+          <span>STORY NODE</span>
+          <strong>Relational archive entry</strong>
+        </div>
+        <p>${profile.description}</p>
+        <section class="relation-panel">
+          ${relationSection("Related Records", renderRelatedAlbums(profile.relatedAlbums))}
+          ${relationSection("Artists", entityList("artist", profile.relatedArtists))}
+          ${relationSection("Labels", entityList("label", profile.relatedLabels))}
+          ${relationSection("Instruments", entityList("instrument", profile.relatedInstruments))}
+          ${relationSection("Regions", entityList("region", profile.relatedRegions))}
+        </section>
+      </div>
+    `;
+    showArchiveDialog();
+    return;
+  }
+  dialogContent.innerHTML = storyExhibitionMarkup(story);
+  showArchiveDialog();
+}
+
+function openRegionProfile(name) {
+  const region = soundMapRegions.find((item) => normalizeEntity(item.name) === normalizeEntity(name));
+  if (!region) {
+    openEntity("region", encodeURIComponent(name));
+    return;
+  }
+  const profile = getMapRegionProfile(region);
+  dialogContent.innerHTML = `
+    <div class="dialog-hero relation-hero map-region-hero">
+      <span>${profile.zh}</span>
+      <h2>${profile.name}</h2>
+    </div>
+    <div class="dialog-body">
+      <div class="relation-heading">
+        <span>SOUND MAP TERRITORY</span>
+        <strong>${profile.featuredStory?.title || profile.featured}</strong>
+      </div>
+      <section class="story-stats exhibition-stats">
+        <span><strong>${profile.albums.length}</strong> albums</span>
+        <span><strong>${profile.artists.length}</strong> artists</span>
+        <span><strong>${profile.labels.length}</strong> labels</span>
+        <span><strong>${Math.max(profile.stories.length, 1)}</strong> stories</span>
+      </section>
+      <section class="relation-panel">
+        ${relationSection("Featured Story", profile.featuredStory ? entityButton("story", profile.featuredStory.title) : "")}
+        ${relationSection("Artists", entityList("artist", profile.artists.slice(0, 18)))}
+        ${relationSection("Labels", entityList("label", profile.labels.slice(0, 14)))}
+        ${relationSection("Instruments", entityList("instrument", profile.instruments.slice(0, 14)))}
+        ${relationSection("Records", renderRelatedAlbums(profile.albums.slice(0, 10)))}
+        ${relationSection("Field Notes", fieldNotesArchive.filter((note) => matchesAnyKeyword(note.location + " " + note.traditions.join(" "), profile.keywords)).map((note) => `<article class="resource-mini"><span>${note.location}</span><strong>${note.title}</strong><p>${note.context}</p></article>`).join(""))}
+      </section>
+    </div>
+  `;
+  showArchiveDialog();
+}
+
+function openFieldNote(index) {
+  const note = fieldNotesArchive[Number(index)];
+  if (!note) return;
+  dialogContent.innerHTML = `
+    <div class="dialog-hero relation-hero field-note-hero">
+      <span>${note.location}</span>
+      <h2>${note.title}</h2>
+    </div>
+    <div class="dialog-body">
+      <div class="relation-heading">
+        <span>FIELD NOTE</span>
+        <strong>${note.photos}</strong>
+      </div>
+      <p>${note.context}</p>
+      <section class="relation-panel">
+        ${relationSection("Audio References", `<p>${note.audio}</p>`)}
+        ${relationSection("Related Traditions", entityList("search", note.traditions))}
+        ${relationSection("Related Instruments", entityList("instrument", note.instruments))}
+        ${relationSection("Related Records", renderRelatedAlbums(albums.filter((album) => note.traditions.some((tradition) => albumMatchesEntity(album, "search", tradition)) || note.instruments.some((instrument) => albumMatchesEntity(album, "instrument", instrument))).slice(0, 8)))}
+      </section>
+    </div>
+  `;
+  showArchiveDialog();
+}
+
 function openEntity(type, rawName) {
   const name = decodeURIComponent(rawName || "");
   if (!name) return;
@@ -2344,6 +2641,18 @@ function openEntity(type, rawName) {
     searchInput.value = name;
     renderAlbums();
     showPage("archive");
+    return;
+  }
+  if (type === "album") {
+    openAlbumByTitle(name);
+    return;
+  }
+  if (type === "story") {
+    openStoryExhibition(name);
+    return;
+  }
+  if (type === "region" && soundMapRegions.some((region) => normalizeEntity(region.name) === normalizeEntity(name))) {
+    openRegionProfile(name);
     return;
   }
 
@@ -2416,9 +2725,13 @@ albumGrid.addEventListener("click", (event) => {
 regionList.addEventListener("click", (event) => {
   const button = event.target.closest("[data-region]");
   if (!button) return;
-  searchInput.value = button.dataset.region;
-  renderAlbums();
-  openEntity("region", encodeURIComponent(button.dataset.region));
+  openRegionProfile(button.dataset.region);
+});
+
+soundMap?.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-region]");
+  if (!button) return;
+  openRegionProfile(button.dataset.region);
 });
 
 searchInput.addEventListener("input", renderAlbums);
@@ -2454,6 +2767,22 @@ document.addEventListener("click", (event) => {
     event.preventDefault();
     event.stopPropagation();
     openJourney(journeyButton.dataset.journeyIndex);
+    return;
+  }
+
+  const fieldNoteButton = event.target.closest("[data-field-note]");
+  if (fieldNoteButton) {
+    event.preventDefault();
+    event.stopPropagation();
+    openFieldNote(fieldNoteButton.dataset.fieldNote);
+    return;
+  }
+
+  const weeklyButton = event.target.closest("[data-weekly-type][data-weekly-name]");
+  if (weeklyButton) {
+    event.preventDefault();
+    event.stopPropagation();
+    openEntity(weeklyButton.dataset.weeklyType, weeklyButton.dataset.weeklyName);
   }
 });
 
@@ -2596,12 +2925,16 @@ window.addEventListener("hashchange", () => showPage(location.hash.slice(1)));
 renderPulseApp();
 buildAnalysis();
 renderFeaturedStories();
+renderWeeklyDiscovery();
+renderTodayJourney();
 renderListeningJourneys();
 renderInstrumentAtlas();
 renderTimeline();
 renderEssentialArtists();
 renderLabelArchive();
 renderResources();
+renderExtendedResources();
+renderFieldNotesArchive();
 setupMotion();
 renderRegions();
 renderAlbums();
