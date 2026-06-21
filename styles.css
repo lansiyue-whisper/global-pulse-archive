@@ -2668,3 +2668,139 @@ body .hero-copy h1 {
     grid-template-columns: 1fr;
   }
 }
+
+/* Featured Stories poster layout fix */
+body .featured-stories {
+  grid-auto-columns: clamp(300px, 32vw, 420px);
+  align-items: stretch;
+}
+
+body .story-card {
+  height: clamp(650px, 72vh, 750px);
+  min-height: 650px;
+  display: grid;
+  grid-template-rows: 285px minmax(0, 1fr);
+  gap: 18px;
+  overflow: hidden;
+  border-top: 1px solid var(--line-strong);
+  padding-top: 18px;
+}
+
+body .story-image {
+  min-height: 0;
+  height: 285px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  mix-blend-mode: multiply;
+  background:
+    linear-gradient(135deg, rgba(17, 17, 15, 0.08), transparent 34%),
+    repeating-linear-gradient(90deg, rgba(17, 17, 15, 0.08) 0 1px, transparent 1px 18px),
+    var(--paper, rgba(255, 255, 255, 0.35));
+}
+
+body .story-card:nth-child(6n + 1) .story-image {
+  --paper: rgba(242, 179, 93, 0.24);
+}
+
+body .story-card:nth-child(6n + 2) .story-image {
+  --paper: rgba(127, 199, 164, 0.24);
+}
+
+body .story-card:nth-child(6n + 3) .story-image {
+  --paper: rgba(159, 183, 255, 0.24);
+}
+
+body .story-card:nth-child(6n + 4) .story-image {
+  --paper: rgba(215, 255, 47, 0.16);
+}
+
+body .story-card:nth-child(6n + 5) .story-image {
+  --paper: rgba(255, 255, 255, 0.48);
+}
+
+body .story-card:nth-child(6n) .story-image {
+  --paper: rgba(17, 17, 15, 0.08);
+}
+
+body .story-image::after {
+  content: attr(data-watermark);
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 14px;
+  color: var(--fg);
+  font-family: ui-serif, Georgia, serif;
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 500;
+  line-height: 0.9;
+  opacity: 0.055;
+  pointer-events: none;
+}
+
+body .story-card > div:last-child {
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto auto auto minmax(0, 1fr) auto;
+  align-content: start;
+  overflow: hidden;
+}
+
+body .story-card span {
+  margin-top: 0;
+}
+
+body .story-card h3 {
+  min-height: 4.25em;
+  max-height: 4.25em;
+  margin: 10px 0 2px;
+  font-size: clamp(1.95rem, 2.8vw, 3.2rem);
+  line-height: 1.05;
+  overflow: hidden;
+}
+
+body .story-card .card-sub {
+  margin: 4px 0 12px;
+}
+
+body .story-meta {
+  min-height: 0;
+  gap: 6px;
+  margin: 0;
+  overflow: hidden;
+}
+
+body .story-meta div {
+  grid-template-columns: 82px 1fr;
+  gap: 10px;
+  padding-top: 7px;
+}
+
+body .story-meta div:nth-child(n + 4) {
+  display: none;
+}
+
+body .story-meta dd {
+  max-height: 3.4em;
+  overflow: hidden;
+}
+
+body .story-meta .relation-chips {
+  max-height: 4.5em;
+  overflow: hidden;
+}
+
+body .story-open {
+  align-self: end;
+  margin-top: 12px;
+}
+
+@media (max-width: 720px) {
+  body .featured-stories {
+    grid-auto-columns: minmax(280px, 84vw);
+  }
+
+  body .story-card {
+    height: 690px;
+  }
+}

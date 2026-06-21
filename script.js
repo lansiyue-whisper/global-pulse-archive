@@ -389,6 +389,7 @@ const featuredStories = [
   {
     title: "FROM SAHARA TO THE DANCEFLOOR",
     zh: "从撒哈拉到舞池",
+    visual: "SAHARA / CASSETTE",
     period: "1968 — 2026",
     countries: "Mali · Niger · Ghana · Nigeria",
     artists: ["Tinariwen", "Bombino", "Mdou Moctar"],
@@ -400,6 +401,7 @@ const featuredStories = [
   {
     title: "EAST AFRICAN UNDERGROUND ELECTRONICS",
     zh: "东非地下电子",
+    visual: "KAMPALA / SYSTEM",
     period: "2015 — 2026",
     countries: "Uganda · Tanzania · Kenya",
     artists: ["DJ Travella", "Nihiloxica", "Slikback"],
@@ -411,6 +413,7 @@ const featuredStories = [
   {
     title: "INDIAN OCEAN RHYTHM ROUTES",
     zh: "印度洋节奏路线",
+    visual: "INDIAN OCEAN / MALOYA",
     period: "1970 — 2026",
     countries: "Reunion · Madagascar · Comoros",
     artists: ["Lindigo", "Danyel Waro", "Ostinato archives"],
@@ -422,6 +425,7 @@ const featuredStories = [
   {
     title: "MODERN GNAWA",
     zh: "当代 Gnawa",
+    visual: "GNAWA / GUEMBRI",
     period: "1982 — 2026",
     countries: "Morocco · Algeria · France",
     artists: ["Maleem Mahmoud Gania", "Ammar 808", "Acid Arab"],
@@ -433,6 +437,7 @@ const featuredStories = [
   {
     title: "DIGITAL CUMBIA",
     zh: "数字 Cumbia",
+    visual: "CUMBIA / DUB",
     period: "2008 — 2026",
     countries: "Argentina · Peru · Colombia · Ecuador",
     artists: ["Chancha Via Circuito", "Dengue Dengue Dengue", "Nicola Cruz"],
@@ -444,6 +449,7 @@ const featuredStories = [
   {
     title: "ANATOLIAN PSYCH",
     zh: "安纳托利亚迷幻",
+    visual: "ANATOLIA / PSYCH",
     period: "1968 — 2026",
     countries: "Turkey · Germany · Netherlands",
     artists: ["Selda Bagcan", "Altin Gun", "Baris Manco"],
@@ -1366,6 +1372,7 @@ featuredStories.push(
     ["CARIBBEAN CARNIVAL AND SOUNDSYSTEM", "1950 — now", "Jamaica · Trinidad · Haiti", ["Mighty Sparrow", "King Tubby", "Chouk Bwa"], ["VP", "Pressure Sounds", "Ostinato"], ["Calypso", "dub", "vodou jazz"], ["steelpan", "bass", "tanbou"], "Migration, carnival, recording studios and sound system technologies."]
   ].map(([title, period, countries, artists, labels, albums, instruments, historicalContext]) => ({
     title,
+    visual: title.split(" ").slice(0, 3).join(" / "),
     zh: title
       .replace("THE ", "")
       .replace(" AND ", " 与 ")
@@ -1377,7 +1384,7 @@ featuredStories.push(
     labels,
     albums,
     instruments,
-    image: "https://f4.bcbits.com/img/a0206727659_10.jpg",
+    image: "",
     description: historicalContext,
     historicalContext
   }))
@@ -1923,7 +1930,7 @@ function renderFeaturedStories() {
     .map(
       (story) => `
         <article class="story-card">
-          <div class="story-image" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0.35)), url('${story.image}')"></div>
+          <div class="story-image ${story.image ? "" : "is-generated"}" data-watermark="${story.visual || story.title}" style="${story.image ? `background-image: linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0.35)), url('${story.image}')` : ""}"></div>
           <div>
             <span>${story.period}</span>
             <h3>${story.title}</h3>
@@ -1932,10 +1939,8 @@ function renderFeaturedStories() {
               <div><dt>Countries</dt><dd>${story.countries}</dd></div>
               <div><dt>Artists</dt><dd>${entityList("artist", story.artists)}</dd></div>
               <div><dt>Labels</dt><dd>${entityList("label", story.labels)}</dd></div>
-              <div><dt>Albums</dt><dd>${story.albums.join(" · ")}</dd></div>
               ${story.instruments ? `<div><dt>Instruments</dt><dd>${entityList("instrument", story.instruments)}</dd></div>` : ""}
             </dl>
-            <p>${story.historicalContext || story.description}</p>
             ${entityButton("story", story.title, "entity-chip story-open")}
           </div>
         </article>
