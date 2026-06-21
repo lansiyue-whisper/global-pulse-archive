@@ -1384,7 +1384,15 @@ featuredStories.push(
     labels,
     albums,
     instruments,
-    image: "",
+    image: [
+      "https://f4.bcbits.com/img/a0933768371_10.jpg",
+      "https://f4.bcbits.com/img/a1640063585_10.jpg",
+      "https://f4.bcbits.com/img/a0205422707_10.jpg",
+      "https://f4.bcbits.com/img/a0206727659_10.jpg",
+      "https://f4.bcbits.com/img/a2438671191_10.jpg",
+      "https://f4.bcbits.com/img/a4282425468_10.jpg",
+      "https://f4.bcbits.com/img/a4068706317_10.jpg"
+    ][title.length % 7],
     description: historicalContext,
     historicalContext
   }))
@@ -1927,25 +1935,29 @@ function renderFeaturedStories() {
   const target = document.querySelector("#featuredStories");
   if (!target) return;
   target.innerHTML = featuredStories
-    .map(
-      (story) => `
-        <article class="story-card">
-          <div class="story-image ${story.image ? "" : "is-generated"}" data-watermark="${story.visual || story.title}" style="${story.image ? `background-image: linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0.35)), url('${story.image}')` : ""}"></div>
-          <div>
-            <span>${story.period}</span>
+    .map((story) => {
+      const countryCount = splitEntityList(story.countries).length;
+      return `
+        <article class="story-card" style="background-image: linear-gradient(180deg, rgba(12,12,10,0.12), rgba(12,12,10,0.78)), url('${story.image}')">
+          <div class="story-poster-content">
+            <span class="story-period">${story.period}</span>
             <h3>${story.title}</h3>
             <small class="zh-sub card-sub">${story.zh}</small>
+            <div class="story-stats" aria-label="story statistics">
+              <span><strong>${story.albums.length}</strong> albums</span>
+              <span><strong>${story.artists.length}</strong> artists</span>
+              <span><strong>${countryCount}</strong> countries</span>
+            </div>
             <dl class="story-meta">
               <div><dt>Countries</dt><dd>${story.countries}</dd></div>
-              <div><dt>Artists</dt><dd>${entityList("artist", story.artists)}</dd></div>
-              <div><dt>Labels</dt><dd>${entityList("label", story.labels)}</dd></div>
-              ${story.instruments ? `<div><dt>Instruments</dt><dd>${entityList("instrument", story.instruments)}</dd></div>` : ""}
+              <div><dt>Artists</dt><dd>${entityList("artist", story.artists.slice(0, 3))}</dd></div>
+              <div><dt>Labels</dt><dd>${entityList("label", story.labels.slice(0, 3))}</dd></div>
             </dl>
-            ${entityButton("story", story.title, "entity-chip story-open")}
+            <button class="story-arrow" type="button" data-entity-type="story" data-entity-name="${encodeURIComponent(story.title)}" aria-label="Open ${story.title}">↗</button>
           </div>
         </article>
       `
-    )
+    })
     .join("");
 }
 
@@ -1954,14 +1966,16 @@ function renderListeningJourneys() {
   if (!target) return;
   target.innerHTML = listeningJourneys
     .map(
-      (journey) => `
+      (journey, index) => `
         <article class="journey-card">
+          <div class="journey-image" data-initial="${journey.title.slice(0, 2).toUpperCase()}"></div>
           <span>${journey.title}</span>
           <small class="zh-sub card-sub">${journey.zh}</small>
-          <ol>
-            ${journey.route.map((step) => `<li>${entityButton("search", step, "entity-link")}</li>`).join("")}
+          <ol class="journey-preview">
+            ${journey.route.slice(0, 3).map((step, stepIndex) => `<li><b>${String(stepIndex + 1).padStart(2, "0")}</b>${step}</li>`).join("")}
           </ol>
           <p>${journey.note}</p>
+          <button class="journey-start" type="button" data-journey-index="${index}">Start Journey</button>
         </article>
       `
     )
@@ -2365,6 +2379,27 @@ function openEntity(type, rawName) {
   showArchiveDialog();
 }
 
+function openJourney(index) {
+  const journey = listeningJourneys[Number(index)];
+  if (!journey) return;
+  dialogContent.innerHTML = `
+    <div class="dialog-hero relation-hero journey-hero">
+      <h2>${journey.title}</h2>
+    </div>
+    <div class="dialog-body">
+      <div class="relation-heading">
+        <span>LISTENING JOURNEY</span>
+        <strong>${journey.zh}</strong>
+      </div>
+      <p>${journey.note}</p>
+      <ol class="journey-route-full">
+        ${journey.route.map((step) => `<li>${entityButton("search", step, "entity-link")}</li>`).join("")}
+      </ol>
+    </div>
+  `;
+  showArchiveDialog();
+}
+
 filterButtons.forEach((button) => {
   button.addEventListener("click", () => {
     activeFilter = button.dataset.filter;
@@ -2411,6 +2446,14 @@ document.addEventListener("click", (event) => {
     event.preventDefault();
     event.stopPropagation();
     openAlbumByTitle(decodeURIComponent(albumButton.dataset.openAlbum));
+    return;
+  }
+
+  const journeyButton = event.target.closest("[data-journey-index]");
+  if (journeyButton) {
+    event.preventDefault();
+    event.stopPropagation();
+    openJourney(journeyButton.dataset.journeyIndex);
   }
 });
 

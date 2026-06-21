@@ -1,4 +1,4 @@
-const CACHE_NAME = "global-pulse-v17-20260621-story-posters";
+const CACHE_NAME = "global-pulse-v18-20260621-journey-posters";
 const CORE_ASSETS = [
   "./",
   "./index.html",
