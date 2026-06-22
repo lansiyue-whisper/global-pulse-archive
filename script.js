@@ -1807,6 +1807,74 @@ function dateIndex(length, mode = "day") {
   return seed % length;
 }
 
+const visualPalettes = [
+  ["#f6f1e5", "#11110f", "#00a996", "#e35d42", "#f2b35d"],
+  ["#f3ead8", "#171411", "#315c75", "#b94735", "#d9a441"],
+  ["#eee7dc", "#101113", "#7a4f9d", "#1f8f7a", "#e1b75a"],
+  ["#f7f0df", "#15110d", "#a84434", "#2f6c62", "#d7c16b"],
+  ["#efe8d8", "#101010", "#2b6580", "#c2543f", "#d49b4d"]
+];
+
+function simpleHash(value = "") {
+  return [...String(value)].reduce((sum, char) => sum + char.charCodeAt(0), 0);
+}
+
+function escapeSvgText(value = "") {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .slice(0, 42);
+}
+
+function artifactImage(title, subtitle = "", type = "ARCHIVE", index = 0) {
+  const palette = visualPalettes[(simpleHash(title) + index) % visualPalettes.length];
+  const [paper, ink, teal, red, gold] = palette;
+  const shortTitle = escapeSvgText(title);
+  const shortSubtitle = escapeSvgText(subtitle);
+  const shortType = escapeSvgText(type);
+  const seed = simpleHash(`${title}${subtitle}${type}`);
+  const cx = 170 + (seed % 90);
+  const cy = 170 + (seed % 70);
+  const svg = `
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 820">
+      <defs>
+        <filter id="grain">
+          <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+          <feColorMatrix type="saturate" values="0"/>
+          <feComponentTransfer><feFuncA type="table" tableValues="0 0.15"/></feComponentTransfer>
+          <feBlend mode="multiply" in2="SourceGraphic"/>
+        </filter>
+        <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse">
+          <path d="M42 0H0v42" fill="none" stroke="${ink}" stroke-opacity=".08" stroke-width="1"/>
+        </pattern>
+      </defs>
+      <rect width="640" height="820" fill="${paper}"/>
+      <rect width="640" height="820" fill="url(#grid)"/>
+      <path d="M-30 ${520 + (seed % 80)} C120 ${420 + (seed % 70)} 210 ${650 - (seed % 90)} 380 ${520 + (seed % 50)} S620 ${430 + (seed % 80)} 700 ${580 - (seed % 40)}" fill="none" stroke="${ink}" stroke-opacity=".32" stroke-width="2"/>
+      <circle cx="${cx}" cy="${cy}" r="138" fill="none" stroke="${ink}" stroke-opacity=".34" stroke-width="2"/>
+      <circle cx="${cx}" cy="${cy}" r="92" fill="none" stroke="${teal}" stroke-opacity=".8" stroke-width="16"/>
+      <circle cx="${cx}" cy="${cy}" r="24" fill="${ink}" fill-opacity=".72"/>
+      <path d="M72 112h190M72 132h120M72 680h420M72 704h280" stroke="${ink}" stroke-opacity=".22" stroke-width="3"/>
+      <rect x="420" y="82" width="112" height="112" fill="${red}" fill-opacity=".82"/>
+      <circle cx="516" cy="178" r="58" fill="${gold}" fill-opacity=".78"/>
+      <text x="70" y="74" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" font-weight="800" fill="${ink}" fill-opacity=".64" letter-spacing="3">${shortType}</text>
+      <text x="70" y="590" font-family="Georgia, serif" font-size="56" font-weight="500" fill="${ink}">
+        ${shortTitle.split(" ").slice(0, 3).join(" ")}
+      </text>
+      <text x="70" y="640" font-family="Georgia, serif" font-size="34" font-weight="500" fill="${ink}" fill-opacity=".82">
+        ${shortTitle.split(" ").slice(3, 7).join(" ")}
+      </text>
+      <text x="70" y="748" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" font-weight="800" fill="${ink}" fill-opacity=".64">${shortSubtitle}</text>
+      <rect width="640" height="820" filter="url(#grain)" opacity=".7"/>
+    </svg>`;
+  return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
+}
+
+function layeredImage(primary, fallback, overlay = "linear-gradient(180deg, rgba(0,0,0,0.08), rgba(0,0,0,0.38))") {
+  return `${overlay}, url('${primary}'), url('${fallback}')`;
+}
+
 const normalizeEntity = (value = "") =>
   String(value)
     .toLowerCase()
@@ -1939,9 +2007,11 @@ function renderAlbums() {
   albumGrid.innerHTML = visibleAlbums.length
     ? visibleAlbums
         .map(
-          (album, index) => `
+          (album, index) => {
+            const fallback = artifactImage(album.title, `${album.country || album.region} · ${album.year}`, "RECORD", index);
+            return `
             <article class="album-card record-card">
-              <div class="album-cover" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.08), rgba(0,0,0,0.32)), url('${album.cover}')"></div>
+              <div class="album-cover" style="background-image: ${layeredImage(album.cover, fallback)}"></div>
               <div class="album-body">
                 <div class="album-kicker">
                   <span>${album.country || album.region}</span>
@@ -1961,7 +2031,7 @@ function renderAlbums() {
               </div>
               <button type="button" data-album-index="${index}">打开档案</button>
             </article>
-          `
+          `}
         )
         .join("")
     : `<div class="empty-state">没有匹配结果，可以换一个地区、风格或音乐人关键词。</div>`;
@@ -2013,10 +2083,11 @@ function renderFeaturedStories() {
   const target = document.querySelector("#featuredStories");
   if (!target) return;
   target.innerHTML = featuredStories
-    .map((story) => {
+    .map((story, index) => {
       const countryCount = splitEntityList(story.countries).length;
+      const fallback = artifactImage(story.title, story.countries, "EXHIBITION", index);
       return `
-        <article class="story-card" style="background-image: linear-gradient(180deg, rgba(12,12,10,0.12), rgba(12,12,10,0.78)), url('${story.image}')">
+        <article class="story-card" style="background-image: ${layeredImage(story.image, fallback, "linear-gradient(180deg, rgba(12,12,10,0.12), rgba(12,12,10,0.78))")}">
           <div class="story-poster-content">
             <span class="story-period">${story.period}</span>
             <h3>${story.title}</h3>
@@ -2046,7 +2117,7 @@ function renderListeningJourneys() {
     .map(
       (journey, index) => `
         <article class="journey-card">
-          <div class="journey-image" data-initial="${journey.title.slice(0, 2).toUpperCase()}"></div>
+          <div class="journey-image" data-initial="${journey.title.slice(0, 2).toUpperCase()}" style="background-image: url('${artifactImage(journey.title, journey.route.slice(0, 3).join(" / "), "ROUTE", index)}')"></div>
           <span>${journey.title}</span>
           <small class="zh-sub card-sub">${journey.zh}</small>
           <ol class="journey-preview">
@@ -2065,9 +2136,9 @@ function renderInstrumentAtlas() {
   if (!target) return;
   target.innerHTML = instrumentAtlas
     .map(
-      (instrument) => `
+      (instrument, index) => `
         <article class="instrument-card">
-          <div class="instrument-image instrument-artifact">
+          <div class="instrument-image instrument-artifact" style="background-image: url('${artifactImage(instrument.name, instrument.region, "INSTRUMENT", index)}')">
             <strong>${instrument.name.slice(0, 2).toUpperCase()}</strong>
             <small>${instrument.artifact}</small>
           </div>
@@ -2255,8 +2326,10 @@ function renderWeeklyDiscovery() {
       const subtitle = pick.value.artist || pick.value.region || pick.value.location || pick.value.zh || "";
       const meta = pick.value.year || pick.value.founded || pick.value.country || pick.value.type || "archive node";
       const entityType = pick.type === "album" ? "album" : pick.type;
+      const visual = artifactImage(title, subtitle, pick.label, simpleHash(pick.label));
       return `
         <button class="weekly-card" type="button" data-weekly-type="${entityType}" data-weekly-name="${encodeURIComponent(title)}">
+          <div class="weekly-image" style="background-image: url('${visual}')"></div>
           <span>${pick.label}</span>
           <small class="zh-sub">${pick.zh}</small>
           <strong>${title}</strong>
@@ -2290,6 +2363,7 @@ function renderFieldNotesArchive() {
     .map(
       (note, index) => `
         <article class="field-note-card">
+          <div class="field-note-image" style="background-image: url('${artifactImage(note.title, note.location, "FIELD NOTE", index)}')"></div>
           <span>${note.location}</span>
           <h3>${note.title}</h3>
           <small>${note.photos}</small>
@@ -2471,9 +2545,10 @@ function albumRelationsMarkup(album) {
 
 function renderAlbumDialog(album) {
   if (!album) return;
+  const fallback = artifactImage(album.title, `${album.country || album.region} · ${album.year}`, "RECORD DETAIL", simpleHash(album.title));
 
   dialogContent.innerHTML = `
-    <div class="dialog-hero" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.1), rgba(0,0,0,0.64)), url('${album.cover}')">
+    <div class="dialog-hero" style="background-image: ${layeredImage(album.cover, fallback, "linear-gradient(180deg, rgba(0,0,0,0.1), rgba(0,0,0,0.64))")}">
       <h2>${album.title}</h2>
     </div>
     <div class="dialog-body">
@@ -2508,9 +2583,10 @@ function storyExhibitionMarkup(story) {
   const journey = listeningJourneys.find((item) => item.route.some((step) => story.artists.some((artist) => normalizeEntity(step).includes(normalizeEntity(artist))))) || listeningJourneys[dateIndex(listeningJourneys.length, "day")];
   const regions = soundMapRegions.filter((region) => storyMatchesMapRegion(story, region)).map((region) => region.name);
   const resources = extendedResourceTypes.filter((resource) => resource.connects.some((item) => normalizeEntity(story.historicalContext + " " + story.title + " " + story.countries).includes(normalizeEntity(item)))).slice(0, 3);
+  const fallback = artifactImage(story.title, story.countries, "MICRO MUSEUM", simpleHash(story.title));
 
   return `
-    <div class="dialog-hero story-exhibition-hero" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0.72)), url('${story.image}')">
+    <div class="dialog-hero story-exhibition-hero" style="background-image: ${layeredImage(story.image, fallback, "linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0.72))")}">
       <span>${story.period}</span>
       <h2>${story.title}</h2>
     </div>
@@ -2613,7 +2689,7 @@ function openFieldNote(index) {
   const note = fieldNotesArchive[Number(index)];
   if (!note) return;
   dialogContent.innerHTML = `
-    <div class="dialog-hero relation-hero field-note-hero">
+    <div class="dialog-hero relation-hero field-note-hero" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.1), rgba(0,0,0,0.66)), url('${artifactImage(note.title, note.location, "FIELD NOTE", Number(index))}')">
       <span>${note.location}</span>
       <h2>${note.title}</h2>
     </div>

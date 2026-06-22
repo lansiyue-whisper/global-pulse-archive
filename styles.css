@@ -3578,3 +3578,88 @@ body .resource-links .entity-chip {
     width: 178px;
   }
 }
+
+/* Local visual fallbacks: prevent empty image modules when remote art is unavailable */
+body .hero-slides span:nth-child(1) {
+  background-image:
+    radial-gradient(circle at 32% 34%, rgba(0, 240, 200, 0.35), transparent 19%),
+    radial-gradient(circle at 66% 44%, rgba(227, 93, 66, 0.3), transparent 17%),
+    repeating-linear-gradient(90deg, rgba(17, 17, 15, 0.16) 0 1px, transparent 1px 24px),
+    linear-gradient(135deg, #e8dec9, #94826b 48%, #171411);
+}
+
+body .hero-slides span:nth-child(2) {
+  background-image:
+    radial-gradient(circle at 42% 42%, rgba(242, 179, 93, 0.38), transparent 20%),
+    radial-gradient(circle at 68% 58%, rgba(49, 92, 117, 0.42), transparent 22%),
+    repeating-linear-gradient(0deg, rgba(17, 17, 15, 0.13) 0 1px, transparent 1px 18px),
+    linear-gradient(140deg, #f1e8d7, #8f6e56 50%, #12100d);
+}
+
+body .hero-slides span:nth-child(3) {
+  background-image:
+    radial-gradient(circle at 48% 28%, rgba(122, 79, 157, 0.34), transparent 18%),
+    radial-gradient(circle at 36% 64%, rgba(31, 143, 122, 0.4), transparent 20%),
+    repeating-linear-gradient(45deg, rgba(17, 17, 15, 0.12) 0 1px, transparent 1px 20px),
+    linear-gradient(150deg, #efe8d8, #6f7765 46%, #11110f);
+}
+
+body .weekly-card {
+  grid-template-rows: 132px auto auto 1fr auto;
+  min-height: 360px;
+}
+
+body .weekly-image,
+body .field-note-image {
+  min-height: 132px;
+  background-position: center;
+  background-size: cover;
+  border: 1px solid var(--line-strong);
+  filter: saturate(0.95) contrast(1.05);
+  mix-blend-mode: multiply;
+}
+
+body .weekly-image {
+  margin: -4px -4px 0;
+  border-radius: 2px;
+}
+
+body .field-note-image {
+  min-height: 180px;
+  margin-bottom: 4px;
+}
+
+body .journey-image,
+body .instrument-image {
+  background-position: center;
+  background-size: cover;
+}
+
+body .instrument-artifact {
+  min-height: 260px;
+  background-blend-mode: multiply;
+}
+
+body .instrument-artifact strong,
+body .instrument-artifact small {
+  position: relative;
+  z-index: 1;
+  color: var(--fg);
+  text-shadow: 0 1px 0 rgba(246, 241, 229, 0.38);
+}
+
+body .record-card .album-cover,
+body .story-card,
+body .dialog-hero {
+  background-color: #d8cbb5;
+}
+
+body .field-note-card {
+  min-height: 480px;
+}
+
+@media (max-width: 760px) {
+  body .weekly-card {
+    min-height: 330px;
+  }
+}
