@@ -3658,6 +3658,50 @@ body .field-note-card {
   min-height: 480px;
 }
 
+body .artifact-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  object-fit: cover;
+}
+
+body .album-cover,
+body .weekly-image,
+body .field-note-image,
+body .journey-image,
+body .instrument-image,
+body .artist-image {
+  overflow: hidden;
+  background: #d8cbb5;
+}
+
+body .album-cover .artifact-svg,
+body .weekly-image .artifact-svg,
+body .field-note-image .artifact-svg,
+body .journey-image .artifact-svg,
+body .instrument-image .artifact-svg,
+body .artist-image .artifact-svg {
+  min-height: 100%;
+}
+
+body .story-visual {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background: #d8cbb5;
+}
+
+body .story-visual .artifact-svg {
+  min-height: 100%;
+  filter: saturate(0.95) contrast(1.05);
+}
+
+body .story-card::before {
+  z-index: 1;
+}
+
 @media (max-width: 760px) {
   body .weekly-card {
     min-height: 330px;

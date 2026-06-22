@@ -1875,6 +1875,36 @@ function layeredImage(primary, fallback, overlay = "linear-gradient(180deg, rgba
   return `${overlay}, url('${primary}'), url('${fallback}')`;
 }
 
+function artifactSvg(title, subtitle = "", type = "ARCHIVE", index = 0) {
+  const palette = visualPalettes[(simpleHash(title) + index) % visualPalettes.length];
+  const [paper, ink, teal, red, gold] = palette;
+  const shortTitle = escapeSvgText(title);
+  const shortSubtitle = escapeSvgText(subtitle);
+  const shortType = escapeSvgText(type);
+  const seed = simpleHash(`${title}${subtitle}${type}`);
+  const cx = 170 + (seed % 90);
+  const cy = 170 + (seed % 70);
+  return `
+    <svg class="artifact-svg" viewBox="0 0 640 820" aria-hidden="true" focusable="false">
+      <rect width="640" height="820" fill="${paper}"></rect>
+      <g opacity=".22" stroke="${ink}" stroke-width="1">
+        ${Array.from({ length: 16 }, (_, line) => `<path d="M${line * 42} 0V820"></path>`).join("")}
+        ${Array.from({ length: 20 }, (_, line) => `<path d="M0 ${line * 42}H640"></path>`).join("")}
+      </g>
+      <path d="M-30 ${520 + (seed % 80)} C120 ${420 + (seed % 70)} 210 ${650 - (seed % 90)} 380 ${520 + (seed % 50)} S620 ${430 + (seed % 80)} 700 ${580 - (seed % 40)}" fill="none" stroke="${ink}" stroke-opacity=".34" stroke-width="3"></path>
+      <circle cx="${cx}" cy="${cy}" r="138" fill="none" stroke="${ink}" stroke-opacity=".34" stroke-width="2"></circle>
+      <circle cx="${cx}" cy="${cy}" r="92" fill="none" stroke="${teal}" stroke-opacity=".82" stroke-width="18"></circle>
+      <circle cx="${cx}" cy="${cy}" r="24" fill="${ink}" fill-opacity=".72"></circle>
+      <rect x="420" y="82" width="112" height="112" fill="${red}" fill-opacity=".84"></rect>
+      <circle cx="516" cy="178" r="58" fill="${gold}" fill-opacity=".78"></circle>
+      <path d="M72 112h190M72 132h120M72 680h420M72 704h280" stroke="${ink}" stroke-opacity=".26" stroke-width="4"></path>
+      <text x="70" y="74" font-family="monospace" font-size="18" font-weight="800" fill="${ink}" fill-opacity=".66" letter-spacing="3">${shortType}</text>
+      <text x="70" y="590" font-family="Georgia, serif" font-size="56" font-weight="500" fill="${ink}">${shortTitle.split(" ").slice(0, 3).join(" ")}</text>
+      <text x="70" y="640" font-family="Georgia, serif" font-size="34" font-weight="500" fill="${ink}" fill-opacity=".84">${shortTitle.split(" ").slice(3, 7).join(" ")}</text>
+      <text x="70" y="748" font-family="monospace" font-size="18" font-weight="800" fill="${ink}" fill-opacity=".66">${shortSubtitle}</text>
+    </svg>`;
+}
+
 const normalizeEntity = (value = "") =>
   String(value)
     .toLowerCase()
@@ -2008,10 +2038,10 @@ function renderAlbums() {
     ? visibleAlbums
         .map(
           (album, index) => {
-            const fallback = artifactImage(album.title, `${album.country || album.region} · ${album.year}`, "RECORD", index);
+            const fallbackSvg = artifactSvg(album.title, `${album.country || album.region} · ${album.year}`, "RECORD", index);
             return `
             <article class="album-card record-card">
-              <div class="album-cover" style="background-image: ${layeredImage(album.cover, fallback)}"></div>
+              <div class="album-cover">${fallbackSvg}</div>
               <div class="album-body">
                 <div class="album-kicker">
                   <span>${album.country || album.region}</span>
@@ -2085,9 +2115,10 @@ function renderFeaturedStories() {
   target.innerHTML = featuredStories
     .map((story, index) => {
       const countryCount = splitEntityList(story.countries).length;
-      const fallback = artifactImage(story.title, story.countries, "EXHIBITION", index);
+      const fallbackSvg = artifactSvg(story.title, story.countries, "EXHIBITION", index);
       return `
-        <article class="story-card" style="background-image: linear-gradient(180deg, rgba(12,12,10,0.04), rgba(12,12,10,0.72)), url('${fallback}')">
+        <article class="story-card">
+          <div class="story-visual">${fallbackSvg}</div>
           <div class="story-poster-content">
             <span class="story-period">${story.period}</span>
             <h3>${story.title}</h3>
@@ -2117,7 +2148,7 @@ function renderListeningJourneys() {
     .map(
       (journey, index) => `
         <article class="journey-card">
-          <div class="journey-image" data-initial="${journey.title.slice(0, 2).toUpperCase()}" style="background-image: url('${artifactImage(journey.title, journey.route.slice(0, 3).join(" / "), "ROUTE", index)}')"></div>
+          <div class="journey-image" data-initial="${journey.title.slice(0, 2).toUpperCase()}">${artifactSvg(journey.title, journey.route.slice(0, 3).join(" / "), "ROUTE", index)}</div>
           <span>${journey.title}</span>
           <small class="zh-sub card-sub">${journey.zh}</small>
           <ol class="journey-preview">
@@ -2138,7 +2169,8 @@ function renderInstrumentAtlas() {
     .map(
       (instrument, index) => `
         <article class="instrument-card">
-          <div class="instrument-image instrument-artifact" style="background-image: url('${artifactImage(instrument.name, instrument.region, "INSTRUMENT", index)}')">
+          <div class="instrument-image instrument-artifact">
+            ${artifactSvg(instrument.name, instrument.region, "INSTRUMENT", index)}
             <strong>${instrument.name.slice(0, 2).toUpperCase()}</strong>
             <small>${instrument.artifact}</small>
           </div>
@@ -2179,7 +2211,7 @@ function renderEssentialArtists() {
     .map(
       (artist, index) => `
         <article class="artist-card">
-          <div class="artist-image" style="background-image: url('${artifactImage(artist.name, artist.region, "PORTRAIT", index)}')"></div>
+          <div class="artist-image">${artifactSvg(artist.name, artist.region, "PORTRAIT", index)}</div>
           <div class="artist-face">
             <span>${artist.region}</span>
             <h3>${artist.name}</h3>
@@ -2331,10 +2363,10 @@ function renderWeeklyDiscovery() {
       const subtitle = pick.value.artist || pick.value.region || pick.value.location || pick.value.zh || "";
       const meta = pick.value.year || pick.value.founded || pick.value.country || pick.value.type || "archive node";
       const entityType = pick.type === "album" ? "album" : pick.type;
-      const visual = artifactImage(title, subtitle, pick.label, simpleHash(pick.label));
+      const visual = artifactSvg(title, subtitle, pick.label, simpleHash(pick.label));
       return `
         <button class="weekly-card" type="button" data-weekly-type="${entityType}" data-weekly-name="${encodeURIComponent(title)}">
-          <div class="weekly-image" style="background-image: url('${visual}')"></div>
+          <div class="weekly-image">${visual}</div>
           <span>${pick.label}</span>
           <small class="zh-sub">${pick.zh}</small>
           <strong>${title}</strong>
@@ -2368,7 +2400,7 @@ function renderFieldNotesArchive() {
     .map(
       (note, index) => `
         <article class="field-note-card">
-          <div class="field-note-image" style="background-image: url('${artifactImage(note.title, note.location, "FIELD NOTE", index)}')"></div>
+          <div class="field-note-image">${artifactSvg(note.title, note.location, "FIELD NOTE", index)}</div>
           <span>${note.location}</span>
           <h3>${note.title}</h3>
           <small>${note.photos}</small>
