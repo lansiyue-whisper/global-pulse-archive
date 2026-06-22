@@ -3663,3 +3663,298 @@ body .field-note-card {
     min-height: 330px;
   }
 }
+
+/* Image-first catalogue pass */
+body .workspace {
+  display: flex;
+  flex-direction: column;
+}
+
+body #home {
+  order: 0;
+}
+
+body #weekly {
+  order: 1;
+}
+
+body #daily {
+  order: 2;
+}
+
+body #stories {
+  order: 3;
+}
+
+body #artists {
+  order: 4;
+}
+
+body #atlas {
+  order: 5;
+}
+
+body .control-band {
+  order: 6;
+}
+
+body #archive {
+  order: 7;
+}
+
+body #instruments {
+  order: 8;
+}
+
+body #journeys {
+  order: 9;
+}
+
+body #timeline {
+  order: 10;
+}
+
+body #labels {
+  order: 11;
+}
+
+body #field-notes {
+  order: 12;
+}
+
+body #resources {
+  order: 13;
+}
+
+body #pulse,
+body #ai-tools,
+body #submit,
+body #events,
+body .source-band,
+body .submit-band,
+body .events-band {
+  order: 20;
+}
+
+body .featured-stories {
+  grid-template-columns: repeat(3, minmax(280px, 1fr));
+  align-items: stretch;
+}
+
+body .story-card {
+  height: clamp(680px, 78vh, 820px);
+  min-height: 680px;
+  background-position: center;
+  background-size: cover;
+}
+
+body .story-poster-content {
+  grid-template-rows: auto 1fr auto auto auto;
+}
+
+body .story-card h3 {
+  max-height: none;
+  font-size: clamp(2.4rem, 4.2vw, 5.2rem);
+}
+
+body .story-meta {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 220ms ease, transform 220ms ease, max-height 220ms ease;
+}
+
+body .story-card:hover .story-meta,
+body .story-card:focus-within .story-meta {
+  max-height: 240px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+body .weekly-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+body .weekly-card {
+  min-height: 420px;
+  grid-template-rows: minmax(230px, 62%) auto auto auto;
+}
+
+body .weekly-image {
+  min-height: 230px;
+  margin: -8px -8px 0;
+}
+
+body .weekly-card em {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 220ms ease, opacity 220ms ease;
+}
+
+body .weekly-card:hover em,
+body .weekly-card:focus-visible em {
+  max-height: 4em;
+  opacity: 1;
+}
+
+body .artist-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+body .artist-card {
+  position: relative;
+  min-height: 520px;
+  display: grid;
+  grid-template-rows: minmax(310px, 66%) auto;
+  gap: 12px;
+  overflow: hidden;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.34);
+}
+
+body .artist-image {
+  min-height: 310px;
+  background-position: center;
+  background-size: cover;
+  border: 1px solid var(--line-strong);
+  filter: grayscale(0.18) saturate(0.92) contrast(1.08);
+  mix-blend-mode: multiply;
+}
+
+body .artist-face {
+  display: grid;
+  gap: 8px;
+  align-content: end;
+}
+
+body .artist-face span {
+  color: var(--muted);
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 0.66rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+body .artist-card h3 {
+  margin: 0;
+  font-size: clamp(1.85rem, 3vw, 3.8rem);
+}
+
+body .artist-reveal {
+  position: absolute;
+  inset: auto 12px 12px;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 12px;
+  opacity: 0;
+  background: rgba(246, 241, 229, 0.94);
+  border: 1px solid var(--line-strong);
+  transition: max-height 260ms ease, opacity 220ms ease, padding 220ms ease;
+}
+
+body .artist-card:hover .artist-reveal,
+body .artist-card:focus-within .artist-reveal {
+  max-height: 360px;
+  padding: 12px;
+  opacity: 1;
+}
+
+body .instrument-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+body .instrument-card {
+  position: relative;
+  min-height: 520px;
+  display: grid;
+  grid-template-rows: minmax(340px, 70%) auto;
+  gap: 12px;
+}
+
+body .instrument-artifact {
+  min-height: 340px;
+}
+
+body .instrument-card p,
+body .instrument-card .story-open {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  margin: 0;
+  transition: max-height 220ms ease, opacity 220ms ease, margin 220ms ease;
+}
+
+body .instrument-card:hover p,
+body .instrument-card:hover .story-open,
+body .instrument-card:focus-within p,
+body .instrument-card:focus-within .story-open {
+  max-height: 120px;
+  opacity: 1;
+  margin-top: 8px;
+}
+
+body .album-grid {
+  grid-template-columns: repeat(5, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+body .record-card {
+  aspect-ratio: 1 / 1.35;
+}
+
+body .record-card .album-cover {
+  height: 100%;
+}
+
+body .record-card .album-body {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.08) 52%, rgba(0, 0, 0, 0.74));
+}
+
+body .record-card .album-hover {
+  max-height: 58%;
+}
+
+body .field-note-card dl,
+body .field-note-card p,
+body .extended-resource-card p {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 220ms ease, opacity 220ms ease;
+}
+
+body .field-note-card:hover dl,
+body .field-note-card:hover p,
+body .extended-resource-card:hover p {
+  max-height: 240px;
+  opacity: 1;
+}
+
+@media (max-width: 1180px) {
+  body .weekly-grid,
+  body .artist-grid,
+  body .instrument-grid,
+  body .album-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body .featured-stories {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  body .featured-stories,
+  body .weekly-grid,
+  body .artist-grid,
+  body .instrument-grid,
+  body .album-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body .story-card {
+    min-height: 620px;
+  }
+}

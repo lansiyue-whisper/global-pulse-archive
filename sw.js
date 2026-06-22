@@ -1,4 +1,4 @@
-const CACHE_NAME = "global-pulse-v20-20260622-image-fallbacks";
+const CACHE_NAME = "global-pulse-v21-20260623-image-first";
 const CORE_ASSETS = [
   "./",
   "./index.html",

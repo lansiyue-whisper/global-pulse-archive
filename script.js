@@ -2087,7 +2087,7 @@ function renderFeaturedStories() {
       const countryCount = splitEntityList(story.countries).length;
       const fallback = artifactImage(story.title, story.countries, "EXHIBITION", index);
       return `
-        <article class="story-card" style="background-image: ${layeredImage(story.image, fallback, "linear-gradient(180deg, rgba(12,12,10,0.12), rgba(12,12,10,0.78))")}">
+        <article class="story-card" style="background-image: linear-gradient(180deg, rgba(12,12,10,0.04), rgba(12,12,10,0.72)), url('${fallback}')">
           <div class="story-poster-content">
             <span class="story-period">${story.period}</span>
             <h3>${story.title}</h3>
@@ -2177,18 +2177,23 @@ function renderEssentialArtists() {
   if (!target) return;
   target.innerHTML = essentialArtists
     .map(
-      (artist) => `
+      (artist, index) => `
         <article class="artist-card">
-          <span>${artist.region}</span>
-          <h3>${artist.name}</h3>
-          <dl>
-            <div><dt>Albums</dt><dd>${artist.albums}</dd></div>
-            <div><dt>Labels</dt><dd>${entityList("label", splitEntityList(artist.labels))}</dd></div>
-            <div><dt>Scenes</dt><dd>${artist.scenes}</dd></div>
-            <div><dt>Instruments</dt><dd>${entityList("instrument", splitEntityList(artist.instruments))}</dd></div>
-            <div><dt>Stories</dt><dd>${entityList("story", splitEntityList(artist.stories))}</dd></div>
-          </dl>
-          ${entityButton("artist", artist.name, "entity-chip story-open")}
+          <div class="artist-image" style="background-image: url('${artifactImage(artist.name, artist.region, "PORTRAIT", index)}')"></div>
+          <div class="artist-face">
+            <span>${artist.region}</span>
+            <h3>${artist.name}</h3>
+          </div>
+          <div class="artist-reveal">
+            <dl>
+              <div><dt>Albums</dt><dd>${artist.albums}</dd></div>
+              <div><dt>Labels</dt><dd>${entityList("label", splitEntityList(artist.labels))}</dd></div>
+              <div><dt>Scenes</dt><dd>${artist.scenes}</dd></div>
+              <div><dt>Instruments</dt><dd>${entityList("instrument", splitEntityList(artist.instruments))}</dd></div>
+              <div><dt>Stories</dt><dd>${entityList("story", splitEntityList(artist.stories))}</dd></div>
+            </dl>
+            ${entityButton("artist", artist.name, "entity-chip story-open")}
+          </div>
         </article>
       `
     )
