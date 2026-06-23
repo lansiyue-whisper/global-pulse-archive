@@ -1879,6 +1879,18 @@ function artifactTitle(value = "") {
   return escapeSvgText(value).replace(/"/g, "&quot;");
 }
 
+const localVisuals = {
+  archive: "./assets/images/archive-desk.png",
+  artist: "./assets/images/artist-portrait.png",
+  instrument: "./assets/images/instrument-collection.png",
+  story: "./assets/images/story-poster.png"
+};
+
+function photoMarkup(kind, title = "") {
+  const src = localVisuals[kind] || localVisuals.archive;
+  return `<img class="real-photo" src="${src}" alt="${artifactTitle(title)}" loading="lazy" decoding="async" />`;
+}
+
 function artifactSvg(title, subtitle = "", type = "ARCHIVE", index = 0) {
   const palette = visualPalettes[(simpleHash(title) + index) % visualPalettes.length];
   const [paper, ink, teal, red, gold] = palette;
@@ -2045,7 +2057,7 @@ function renderAlbums() {
             const fallbackSvg = artifactSvg(album.title, `${album.country || album.region} · ${album.year}`, "RECORD", index);
             return `
             <article class="album-card record-card">
-              <div class="album-cover visual-tile" data-artifact="RECORD" data-title="${artifactTitle(album.title)}">${fallbackSvg}</div>
+              <div class="album-cover visual-tile" data-artifact="RECORD" data-title="${artifactTitle(album.title)}">${photoMarkup("archive", album.title)}${fallbackSvg}</div>
               <div class="album-body">
                 <div class="album-kicker">
                   <span>${album.country || album.region}</span>
@@ -2122,7 +2134,7 @@ function renderFeaturedStories() {
       const fallbackSvg = artifactSvg(story.title, story.countries, "EXHIBITION", index);
       return `
         <article class="story-card">
-          <div class="story-visual visual-tile" data-artifact="EXHIBITION" data-title="${artifactTitle(story.title)}">${fallbackSvg}</div>
+          <div class="story-visual visual-tile" data-artifact="EXHIBITION" data-title="${artifactTitle(story.title)}">${photoMarkup("story", story.title)}${fallbackSvg}</div>
           <div class="story-poster-content">
             <span class="story-period">${story.period}</span>
             <h3>${story.title}</h3>
@@ -2152,7 +2164,7 @@ function renderListeningJourneys() {
     .map(
       (journey, index) => `
         <article class="journey-card">
-          <div class="journey-image visual-tile" data-initial="${journey.title.slice(0, 2).toUpperCase()}" data-artifact="ROUTE" data-title="${artifactTitle(journey.title)}">${artifactSvg(journey.title, journey.route.slice(0, 3).join(" / "), "ROUTE", index)}</div>
+          <div class="journey-image visual-tile" data-initial="${journey.title.slice(0, 2).toUpperCase()}" data-artifact="ROUTE" data-title="${artifactTitle(journey.title)}">${photoMarkup(index % 2 ? "artist" : "archive", journey.title)}${artifactSvg(journey.title, journey.route.slice(0, 3).join(" / "), "ROUTE", index)}</div>
           <span>${journey.title}</span>
           <small class="zh-sub card-sub">${journey.zh}</small>
           <ol class="journey-preview">
@@ -2174,6 +2186,7 @@ function renderInstrumentAtlas() {
       (instrument, index) => `
         <article class="instrument-card">
           <div class="instrument-image instrument-artifact visual-tile" data-artifact="INSTRUMENT" data-title="${artifactTitle(instrument.name)}">
+            ${photoMarkup("instrument", instrument.name)}
             ${artifactSvg(instrument.name, instrument.region, "INSTRUMENT", index)}
             <strong>${instrument.name.slice(0, 2).toUpperCase()}</strong>
             <small>${instrument.artifact}</small>
@@ -2215,7 +2228,7 @@ function renderEssentialArtists() {
     .map(
       (artist, index) => `
         <article class="artist-card">
-          <div class="artist-image visual-tile" data-artifact="PORTRAIT" data-title="${artifactTitle(artist.name)}">${artifactSvg(artist.name, artist.region, "PORTRAIT", index)}</div>
+          <div class="artist-image visual-tile" data-artifact="PORTRAIT" data-title="${artifactTitle(artist.name)}">${photoMarkup("artist", artist.name)}${artifactSvg(artist.name, artist.region, "PORTRAIT", index)}</div>
           <div class="artist-face">
             <span>${artist.region}</span>
             <h3>${artist.name}</h3>
@@ -2370,7 +2383,7 @@ function renderWeeklyDiscovery() {
       const visual = artifactSvg(title, subtitle, pick.label, simpleHash(pick.label));
       return `
         <button class="weekly-card" type="button" data-weekly-type="${entityType}" data-weekly-name="${encodeURIComponent(title)}">
-          <div class="weekly-image visual-tile" data-artifact="${artifactTitle(pick.label)}" data-title="${artifactTitle(title)}">${visual}</div>
+          <div class="weekly-image visual-tile" data-artifact="${artifactTitle(pick.label)}" data-title="${artifactTitle(title)}">${photoMarkup(pick.type === "artist" ? "artist" : pick.type === "instrument" ? "instrument" : pick.type === "region" ? "story" : "archive", title)}${visual}</div>
           <span>${pick.label}</span>
           <small class="zh-sub">${pick.zh}</small>
           <strong>${title}</strong>
@@ -2404,7 +2417,7 @@ function renderFieldNotesArchive() {
     .map(
       (note, index) => `
         <article class="field-note-card">
-          <div class="field-note-image visual-tile" data-artifact="FIELD NOTE" data-title="${artifactTitle(note.title)}">${artifactSvg(note.title, note.location, "FIELD NOTE", index)}</div>
+          <div class="field-note-image visual-tile" data-artifact="FIELD NOTE" data-title="${artifactTitle(note.title)}">${photoMarkup(index % 2 ? "story" : "archive", note.title)}${artifactSvg(note.title, note.location, "FIELD NOTE", index)}</div>
           <span>${note.location}</span>
           <h3>${note.title}</h3>
           <small>${note.photos}</small>

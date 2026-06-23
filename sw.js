@@ -1,4 +1,4 @@
-const CACHE_NAME = "global-pulse-v23-20260623-hard-visuals";
+const CACHE_NAME = "global-pulse-v24-20260623-real-photos";
 const CORE_ASSETS = [
   "./",
   "./index.html",
@@ -7,7 +7,11 @@ const CORE_ASSETS = [
   "./manifest.json",
   "./app-icon.svg",
   "./icon-192.png",
-  "./icon-512.png"
+  "./icon-512.png",
+  "./assets/images/archive-desk.png",
+  "./assets/images/artist-portrait.png",
+  "./assets/images/instrument-collection.png",
+  "./assets/images/story-poster.png"
 ];
 
 self.addEventListener("install", (event) => {
