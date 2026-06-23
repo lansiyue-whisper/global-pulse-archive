@@ -3702,6 +3702,78 @@ body .story-card::before {
   z-index: 1;
 }
 
+body .visual-tile {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 36% 32%, rgba(0, 240, 200, 0.36), transparent 17%),
+    radial-gradient(circle at 66% 28%, rgba(227, 93, 66, 0.32), transparent 15%),
+    radial-gradient(circle at 54% 58%, rgba(242, 179, 93, 0.42), transparent 22%),
+    repeating-linear-gradient(90deg, rgba(17, 17, 15, 0.11) 0 1px, transparent 1px 24px),
+    linear-gradient(135deg, #f6f1e5, #c9b996 54%, #71624f);
+}
+
+body .visual-tile::before {
+  content: "";
+  position: absolute;
+  inset: 12%;
+  z-index: 1;
+  border: 2px solid rgba(17, 17, 15, 0.34);
+  border-radius: 999px;
+  box-shadow:
+    inset 0 0 0 34px rgba(0, 240, 200, 0.18),
+    inset 0 0 0 68px rgba(246, 241, 229, 0.18);
+  pointer-events: none;
+}
+
+body .visual-tile::after {
+  content: attr(data-artifact) "\A" attr(data-title);
+  white-space: pre-line;
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 3;
+  color: rgba(17, 17, 15, 0.88);
+  font-family: ui-serif, Georgia, serif;
+  font-size: clamp(1.25rem, 2.6vw, 2.65rem);
+  font-weight: 500;
+  line-height: 0.92;
+  text-shadow: 0 1px 0 rgba(246, 241, 229, 0.62);
+  pointer-events: none;
+}
+
+body .visual-tile .artifact-svg {
+  position: relative;
+  z-index: 2;
+  opacity: 0.96;
+}
+
+body .story-visual.visual-tile::after {
+  color: rgba(246, 241, 229, 0.92);
+  text-shadow: 0 1px 0 rgba(17, 17, 15, 0.42);
+}
+
+body .story-visual.visual-tile {
+  background:
+    radial-gradient(circle at 32% 28%, rgba(0, 240, 200, 0.32), transparent 18%),
+    radial-gradient(circle at 70% 34%, rgba(227, 93, 66, 0.3), transparent 18%),
+    repeating-linear-gradient(0deg, rgba(246, 241, 229, 0.12) 0 1px, transparent 1px 15px),
+    linear-gradient(145deg, #191510, #867153 48%, #0d0d0b);
+}
+
+body .artist-image.visual-tile::before {
+  inset: 10% 21% 24%;
+  border-radius: 999px 999px 42% 42%;
+}
+
+body .instrument-image.visual-tile::before {
+  inset: 11% 25% 18%;
+  border-radius: 42% 42% 999px 999px;
+  transform: rotate(-8deg);
+}
+
 @media (max-width: 760px) {
   body .weekly-card {
     min-height: 330px;
