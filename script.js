@@ -1894,10 +1894,49 @@ const localVisuals = {
   hero: ["./assets/images/archive-desk.png", "./assets/images/cassette-market.png", "./assets/images/field-recorder-map.png", "./assets/images/community-music.png"]
 };
 
+const artistImageMap = {
+  "mulatu astatke": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/MulatuAstatke.jpg/640px-MulatuAstatke.jpg",
+  "omar souleyman": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Omar_Souleyman_01A.jpg/640px-Omar_Souleyman_01A.jpg",
+  "altin gun": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Altin_G%C3%BCn.jpg/800px-Altin_G%C3%BCn.jpg",
+  "altın gün": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Altin_G%C3%BCn.jpg/800px-Altin_G%C3%BCn.jpg",
+  "dj lag": "https://f4.bcbits.com/img/a2639495140_10.jpg",
+  "nicola cruz": "https://f4.bcbits.com/img/a2438671191_10.jpg",
+  "ammar 808": "https://f4.bcbits.com/img/a0206727659_10.jpg"
+};
+
+const instrumentImageMap = {
+  kora: "https://commons.wikimedia.org/wiki/Special:FilePath/Kora%2C_Detail.jpg",
+  balafon: "https://commons.wikimedia.org/wiki/Special:FilePath/Balafon-from-Mali.jpg",
+  guembri: "https://commons.wikimedia.org/wiki/Special:FilePath/Guembri.JPG",
+  qraqeb: "https://commons.wikimedia.org/wiki/Special:FilePath/Instrument_gnawa.jpg",
+  charango: "https://commons.wikimedia.org/wiki/Special:FilePath/Charango.jpg",
+  quena: "https://commons.wikimedia.org/wiki/Special:FilePath/Quena_boliviana_cromatica.jpg",
+  kayamb: "https://commons.wikimedia.org/wiki/Special:FilePath/Kayamb.jpg",
+  mijwez: "https://commons.wikimedia.org/wiki/Special:FilePath/Mijwiz.jpg",
+  mijwiz: "https://commons.wikimedia.org/wiki/Special:FilePath/Mijwiz.jpg"
+};
+
+function visualKey(value = "") {
+  return normalizeEntity(value).replace(/ı/g, "i");
+}
+
+function imageMarkup(src, title = "") {
+  return src ? `<img class="real-photo" src="${src}" alt="${artifactTitle(title)}" loading="lazy" decoding="async" onerror="this.remove()" />` : "";
+}
+
+function mappedImage(kind, title = "") {
+  const key = visualKey(title);
+  const maps = {
+    artist: artistImageMap,
+    instrument: instrumentImageMap
+  };
+  return maps[kind]?.[key] || "";
+}
+
 function photoMarkup(kind, title = "") {
   const pool = localVisuals[kind] || localVisuals.archive;
   const src = pool[simpleHash(title) % pool.length];
-  return `<img class="real-photo" src="${src}" alt="${artifactTitle(title)}" loading="lazy" decoding="async" />`;
+  return imageMarkup(src, title);
 }
 
 function artifactSvg(title, subtitle = "", type = "ARCHIVE", index = 0) {
@@ -2066,7 +2105,7 @@ function renderAlbums() {
             const fallbackSvg = artifactSvg(album.title, `${album.country || album.region} · ${album.year}`, "RECORD", index);
             return `
             <article class="album-card record-card">
-              <div class="album-cover visual-tile" data-artifact="RECORD" data-title="${artifactTitle(album.title)}">${photoMarkup("archive", album.title)}${fallbackSvg}</div>
+              <div class="album-cover visual-tile" data-artifact="RECORD" data-title="${artifactTitle(album.title)}">${imageMarkup(album.cover, album.title)}${fallbackSvg}</div>
               <div class="album-body">
                 <div class="album-kicker">
                   <span>${album.country || album.region}</span>
@@ -2210,7 +2249,7 @@ function renderInstrumentAtlas() {
       (instrument, index) => `
         <article class="instrument-card">
           <div class="instrument-image instrument-artifact visual-tile" data-artifact="INSTRUMENT" data-title="${artifactTitle(instrument.name)}">
-            ${photoMarkup("instrument", instrument.name)}
+            ${imageMarkup(mappedImage("instrument", instrument.name), instrument.name) || photoMarkup("instrument", instrument.name)}
             ${artifactSvg(instrument.name, instrument.region, "INSTRUMENT", index)}
             <strong>${instrument.name.slice(0, 2).toUpperCase()}</strong>
             <small>${instrument.artifact}</small>
@@ -2252,7 +2291,7 @@ function renderEssentialArtists() {
     .map(
       (artist, index) => `
         <article class="artist-card">
-          <div class="artist-image visual-tile" data-artifact="PORTRAIT" data-title="${artifactTitle(artist.name)}">${photoMarkup("artist", artist.name)}${artifactSvg(artist.name, artist.region, "PORTRAIT", index)}</div>
+          <div class="artist-image visual-tile" data-artifact="PORTRAIT" data-title="${artifactTitle(artist.name)}">${imageMarkup(mappedImage("artist", artist.name), artist.name) || photoMarkup("artist", artist.name)}${artifactSvg(artist.name, artist.region, "PORTRAIT", index)}</div>
           <div class="artist-face">
             <span>${artist.region}</span>
             <h3>${artist.name}</h3>
@@ -2458,8 +2497,9 @@ function renderFieldNotesArchive() {
     .join("");
 }
 
-function museumImage(kind, title, label, index = 0) {
-  return `${photoMarkup(kind, title)}${artifactSvg(title, label, "GLOBAL PULSE", index)}`;
+function museumImage(kind, title, label, index = 0, primary = "") {
+  const mapped = mappedImage(kind, title);
+  return `${imageMarkup(primary || mapped, title)}${!primary && !mapped ? photoMarkup(kind, title) : ""}${artifactSvg(title, label, "GLOBAL PULSE", index)}`;
 }
 
 function renderMuseumTodayRoute() {
@@ -2556,7 +2596,7 @@ function renderMuseumRecordWall() {
     .map(
       (album, index) => `
         <button class="record-tile" type="button" data-open-album="${encodeURIComponent(album.title)}" aria-label="${album.artist} ${album.title}">
-          <div class="record-cover visual-tile">${museumImage("archive", album.title, album.artist, index)}</div>
+          <div class="record-cover visual-tile">${museumImage("archive", album.title, album.artist, index, album.cover)}</div>
           <span>${album.country || album.region}</span>
           <strong>${album.title}</strong>
           <em>${album.artist} · ${album.year} · ${getAlbumLabel(album)}</em>
