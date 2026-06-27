@@ -9,9 +9,9 @@
     <title>Global Pulse Archive</title>
     <link rel="manifest" href="./manifest.json" />
     <link rel="icon" href="./app-icon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="./styles.css?v=20260623-real-photos" />
+    <link rel="stylesheet" href="./styles.css?v=20260627-museum-v1" />
   </head>
-  <body>
+  <body class="museum-edition">
     <div class="page-loader" aria-hidden="true">
       <span>Global Pulse</span>
       <strong>00</strong>
@@ -22,7 +22,7 @@
         <span class="brand-mark">GP</span>
         <span>Global Pulse Archive</span>
       </a>
-      <span class="version-pill">REAL PHOTOS · 06.23</span>
+      <span class="version-pill">MUSEUM EDITION V1.0 · 06.27</span>
       <nav class="nav-links" aria-label="主要导航">
         <a href="#stories">Stories</a>
         <a href="#atlas">Atlas</a>
@@ -37,15 +37,15 @@
       <section class="workspace" id="library">
         <div class="hero-panel is-active" id="home" data-page="home" data-parallax>
           <div class="hero-copy">
-            <p class="eyebrow">world music · ethnic music · global electronic</p>
+            <p class="eyebrow">An Atlas of Sound Culture</p>
             <h1>
               <span>Global</span>
               <span>Pulse</span>
             </h1>
             <p>
-              收集世界音乐、民族音乐与全球电子声音，也为 DJ、制作人和 digger 提供智能搜歌、
-              场景排歌、曲库分析、Demo 上传和活动线索。
+              Exploring how sound travels, changes, disappears and returns.
             </p>
+            <a class="enter-archive" href="#museum-route">Enter the Archive</a>
             <div class="home-gateway" aria-label="主要入口">
               <a href="#stories">
                 <span>01</span>
@@ -78,12 +78,84 @@
             <span></span>
             <span></span>
           </div>
+          <div class="museum-locations" aria-hidden="true">
+            <span style="--x:48%;--y:52%">Kampala</span>
+            <span style="--x:42%;--y:43%">Marrakesh</span>
+            <span style="--x:50%;--y:48%">Addis Ababa</span>
+            <span style="--x:55%;--y:38%">Istanbul</span>
+            <span style="--x:72%;--y:50%">Yunnan</span>
+          </div>
           <div class="quick-stats" aria-label="资料概览">
             <span><strong id="statAlbums">0</strong>专辑</span>
             <span><strong id="statRegions">0</strong>地区</span>
             <span><strong id="statDemos">0</strong>Demo</span>
           </div>
         </div>
+
+        <section class="museum-experience reveal-block" id="museumExperience" data-pages="home" aria-label="Global Pulse Museum Edition">
+          <section class="museum-room route-room" id="museum-route" aria-label="Today's Route">
+            <div class="museum-room-label">
+              <span>Room 02</span>
+              <strong>Today's Route</strong>
+              <small>今日声音路径</small>
+            </div>
+            <div id="museumTodayRoute" class="museum-route"></div>
+          </section>
+
+          <section class="museum-room map-room" id="museum-map" aria-label="World Map">
+            <div class="museum-room-label">
+              <span>Room 03</span>
+              <strong>World Map</strong>
+              <small>声音地图</small>
+            </div>
+            <div id="museumSoundMap" class="museum-sound-map"></div>
+          </section>
+
+          <section class="museum-room exhibition-room" id="museum-exhibition" aria-label="Exhibition">
+            <div class="museum-room-label">
+              <span>Room 04</span>
+              <strong>Exhibition</strong>
+              <small>主题展览</small>
+            </div>
+            <div id="museumExhibition" class="museum-exhibition-panel"></div>
+          </section>
+
+          <section class="museum-room voices-room" id="museum-voices" aria-label="Voices">
+            <div class="museum-room-label">
+              <span>Room 05</span>
+              <strong>Voices</strong>
+              <small>人物墙</small>
+            </div>
+            <div id="museumPortraitWall" class="portrait-wall"></div>
+          </section>
+
+          <section class="museum-room record-room" id="museum-records" aria-label="Record Wall">
+            <div class="museum-room-label">
+              <span>Room 06</span>
+              <strong>Record Wall</strong>
+              <small>唱片挖掘室</small>
+            </div>
+            <div id="museumRecordWall" class="record-wall"></div>
+          </section>
+
+          <section class="museum-room collection-room" id="museum-collection" aria-label="Museum Collection">
+            <div class="museum-room-label">
+              <span>Room 07</span>
+              <strong>Museum Collection</strong>
+              <small>乐器藏品</small>
+            </div>
+            <div id="museumObjects" class="object-display"></div>
+          </section>
+
+          <section class="museum-room notes-room" id="museum-notes" aria-label="Field Notes">
+            <div class="museum-room-label">
+              <span>Room 08</span>
+              <strong>Field Notes</strong>
+              <small>田野笔记</small>
+            </div>
+            <div id="museumFieldNotes" class="field-note-panels"></div>
+          </section>
+        </section>
 
         <section class="weekly-discovery-band reveal-block" id="weekly" data-pages="home" aria-label="Weekly Discovery">
           <div class="section-heading row-heading">
@@ -395,6 +467,6 @@
       <a href="#archive">Archive</a>
     </nav>
 
-    <script src="./script.js?v=20260623-real-photos"></script>
+    <script src="./script.js?v=20260627-museum-v1"></script>
   </body>
 </html>

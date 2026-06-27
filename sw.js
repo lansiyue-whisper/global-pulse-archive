@@ -1,4 +1,4 @@
-const CACHE_NAME = "global-pulse-v24-20260623-real-photos";
+const CACHE_NAME = "global-pulse-v27-20260627-museum-v1";
 const CORE_ASSETS = [
   "./",
   "./index.html",
@@ -11,7 +11,11 @@ const CORE_ASSETS = [
   "./assets/images/archive-desk.png",
   "./assets/images/artist-portrait.png",
   "./assets/images/instrument-collection.png",
-  "./assets/images/story-poster.png"
+  "./assets/images/story-poster.png",
+  "./assets/images/cassette-market.png",
+  "./assets/images/field-recorder-map.png",
+  "./assets/images/record-crate.png",
+  "./assets/images/community-music.png"
 ];
 
 self.addEventListener("install", (event) => {
