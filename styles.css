@@ -221,7 +221,7 @@ main {
   aspect-ratio: 1 / 1.25;
   background:
     linear-gradient(180deg, rgba(17, 17, 15, 0.02), rgba(17, 17, 15, 0.22)),
-    url("https://f4.bcbits.com/img/a1640063585_10.jpg") center / cover;
+    url("./public/images/textures/community-music.png") center / cover;
   border: 1px solid var(--fg);
   border-radius: 999px 999px 26px 26px;
   filter: grayscale(0.35) saturate(0.8) contrast(1.06);
@@ -1430,16 +1430,16 @@ body::before {
 }
 
 .hero-slides span:nth-child(1) {
-  background-image: url("https://f4.bcbits.com/img/a1640063585_10.jpg");
+  background-image: url("./public/images/textures/community-music.png");
 }
 
 .hero-slides span:nth-child(2) {
-  background-image: url("https://f4.bcbits.com/img/a2639495140_10.jpg");
+  background-image: url("./public/images/textures/record-crate.png");
   animation-delay: 7s;
 }
 
 .hero-slides span:nth-child(3) {
-  background-image: url("https://f4.bcbits.com/img/a0206727659_10.jpg");
+  background-image: url("./public/images/textures/instrument-collection.png");
   animation-delay: 14s;
 }
 
@@ -1907,15 +1907,15 @@ dialog {
 
 /* Narrative structure upgrade */
 .hero-slides span:nth-child(1) {
-  background-image: url("https://f4.bcbits.com/img/a1640063585_10.jpg");
+  background-image: url("./public/images/textures/community-music.png");
 }
 
 .hero-slides span:nth-child(2) {
-  background-image: url("https://f4.bcbits.com/img/a2639495140_10.jpg");
+  background-image: url("./public/images/textures/record-crate.png");
 }
 
 .hero-slides span:nth-child(3) {
-  background-image: url("https://f4.bcbits.com/img/a0206727659_10.jpg");
+  background-image: url("./public/images/textures/instrument-collection.png");
 }
 
 body.is-routed [data-page],
@@ -3581,15 +3581,15 @@ body .resource-links .entity-chip {
 
 /* Local visual fallbacks: prevent empty image modules when remote art is unavailable */
 body .hero-slides span:nth-child(1) {
-  background-image: url("./assets/images/archive-desk.png");
+  background-image: url("./public/images/textures/archive-desk.png");
 }
 
 body .hero-slides span:nth-child(2) {
-  background-image: url("./assets/images/cassette-market.png");
+  background-image: url("./public/images/textures/cassette-market.png");
 }
 
 body .hero-slides span:nth-child(3) {
-  background-image: url("./assets/images/field-recorder-map.png");
+  background-image: url("./public/images/textures/field-recorder-map.png");
 }
 
 body .weekly-card {
@@ -5633,5 +5633,88 @@ body.museum-edition .record-cover .artifact-svg {
 
   body.museum-edition .object-photo {
     min-height: 300px;
+  }
+}
+
+/* Local Asset component */
+.asset-frame {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: #d9cfbc;
+}
+
+.asset-frame[style*="--asset-ratio"] {
+  aspect-ratio: var(--asset-ratio);
+}
+
+.asset-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    linear-gradient(90deg, rgba(10, 10, 8, 0.055) 1px, transparent 1px) 0 0 / 28px 100%,
+    linear-gradient(180deg, rgba(10, 10, 8, 0.045) 1px, transparent 1px) 0 0 / 100% 28px;
+  opacity: 0.75;
+}
+
+.asset-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+  transform: translateX(-100%);
+  animation: assetLoading 1.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.asset-frame.is-loaded::before,
+.asset-frame.is-loaded::after {
+  opacity: 0;
+  animation: none;
+}
+
+.asset-frame .asset-img,
+.asset-frame .real-photo {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  object-fit: var(--asset-fit, cover);
+  object-position: var(--asset-position, center);
+  display: block;
+}
+
+.asset-frame .artifact-svg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.asset-artist .artifact-svg,
+.asset-instrument .artifact-svg,
+.asset-story .artifact-svg,
+.asset-field .artifact-svg,
+.asset-region .artifact-svg,
+.asset-album .artifact-svg {
+  filter: saturate(0.72) contrast(0.96);
+}
+
+@keyframes assetLoading {
+  0% {
+    transform: translateX(-110%);
+  }
+  100% {
+    transform: translateX(110%);
   }
 }

@@ -1,4 +1,4 @@
-const CACHE_NAME = "global-pulse-v29-20260628-blankfix";
+const CACHE_NAME = "global-pulse-v31-20260628-museum-assets";
 const CORE_ASSETS = [
   "./",
   "./index.html",
@@ -8,14 +8,14 @@ const CORE_ASSETS = [
   "./app-icon.svg",
   "./icon-192.png",
   "./icon-512.png",
-  "./assets/images/archive-desk.png",
-  "./assets/images/artist-portrait.png",
-  "./assets/images/instrument-collection.png",
-  "./assets/images/story-poster.png",
-  "./assets/images/cassette-market.png",
-  "./assets/images/field-recorder-map.png",
-  "./assets/images/record-crate.png",
-  "./assets/images/community-music.png"
+  "./public/images/textures/archive-desk.png",
+  "./public/images/textures/artist-portrait.png",
+  "./public/images/textures/instrument-collection.png",
+  "./public/images/textures/story-poster.png",
+  "./public/images/textures/cassette-market.png",
+  "./public/images/textures/field-recorder-map.png",
+  "./public/images/textures/record-crate.png",
+  "./public/images/textures/community-music.png"
 ];
 
 self.addEventListener("install", (event) => {
