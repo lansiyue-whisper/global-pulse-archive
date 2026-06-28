@@ -1,4 +1,4 @@
-const CACHE_NAME = "global-pulse-v28-20260628-image-typefix";
+const CACHE_NAME = "global-pulse-v29-20260628-blankfix";
 const CORE_ASSETS = [
   "./",
   "./index.html",

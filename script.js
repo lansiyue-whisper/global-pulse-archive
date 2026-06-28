@@ -1755,7 +1755,7 @@ let sources = getStored("globalPulseSourcesV2", [
 let demos = getStored("globalPulseDemos", []);
 
 function albumMatches(album) {
-  const query = searchInput.value.trim().toLowerCase();
+  const query = (searchInput?.value || "").trim().toLowerCase();
   const haystack = [album.title, album.artist, album.region, album.year, album.summary, album.genres.join(" ")]
     .join(" ")
     .toLowerCase();
@@ -2014,8 +2014,6 @@ function hydrateImageFields() {
   });
 }
 
-hydrateImageFields();
-
 function artifactSvg(title, subtitle = "", type = "ARCHIVE", index = 0) {
   const palette = visualPalettes[(simpleHash(title) + index) % visualPalettes.length];
   const [paper, ink, teal, red, gold] = palette;
@@ -2063,6 +2061,8 @@ const splitEntityList = (value = "") =>
         .filter(Boolean);
 
 const uniqueItems = (items) => [...new Set(items.filter(Boolean))];
+
+hydrateImageFields();
 
 function entityButton(type, name, className = "entity-chip") {
   if (!name) return "";
