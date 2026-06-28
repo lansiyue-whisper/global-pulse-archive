@@ -1904,6 +1904,15 @@ const artistImageMap = {
   "ammar 808": "https://f4.bcbits.com/img/a0206727659_10.jpg"
 };
 
+const storyImageMap = {
+  "from sahara to the dancefloor": "./assets/images/cassette-market.png",
+  "east african underground electronics": "./assets/images/community-music.png",
+  "indian ocean rhythm routes": "./assets/images/instrument-collection.png",
+  "modern gnawa": "https://commons.wikimedia.org/wiki/Special:FilePath/Guembri.JPG",
+  "digital cumbia": "./assets/images/field-recorder-map.png",
+  "anatolian psych": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Altin_G%C3%BCn.jpg/800px-Altin_G%C3%BCn.jpg"
+};
+
 const instrumentImageMap = {
   kora: "https://commons.wikimedia.org/wiki/Special:FilePath/Kora%2C_Detail.jpg",
   balafon: "https://commons.wikimedia.org/wiki/Special:FilePath/Balafon-from-Mali.jpg",
@@ -1916,21 +1925,68 @@ const instrumentImageMap = {
   mijwiz: "https://commons.wikimedia.org/wiki/Special:FilePath/Mijwiz.jpg"
 };
 
+const fieldImageMap = {
+  "gnawa ceremony notes": "https://commons.wikimedia.org/wiki/Special:FilePath/Guembri.JPG",
+  "kampala sound systems": "./assets/images/community-music.png",
+  "yunnan village ritual music": "./assets/images/field-recorder-map.png",
+  "sahel market recordings": "./assets/images/cassette-market.png",
+  "amazonian community music": "./assets/images/archive-desk.png",
+  "reunion island maloya gatherings": "./assets/images/instrument-collection.png"
+};
+
+const regionImageMap = {
+  "west africa": "./assets/images/cassette-market.png",
+  "east africa": "./assets/images/community-music.png",
+  maghreb: "https://commons.wikimedia.org/wiki/Special:FilePath/Guembri.JPG",
+  "middle east": "./assets/images/field-recorder-map.png",
+  andes: "./assets/images/field-recorder-map.png",
+  amazon: "./assets/images/archive-desk.png",
+  "south asia": "./assets/images/instrument-collection.png",
+  "southeast asia": "./assets/images/community-music.png",
+  "southwest china": "./assets/images/field-recorder-map.png",
+  mediterranean: "./assets/images/record-crate.png"
+};
+
+const albumCoverCounts = albums.reduce((counts, album) => {
+  if (album.cover) counts[album.cover] = (counts[album.cover] || 0) + 1;
+  return counts;
+}, {});
+
+function reliableAlbumCover(album) {
+  if (album.albumCover) return album.albumCover;
+  if (!album.cover) return "";
+  return albumCoverCounts[album.cover] > 2 ? "" : album.cover;
+}
+
 function visualKey(value = "") {
   return normalizeEntity(value).replace(/ı/g, "i");
 }
 
-function imageMarkup(src, title = "") {
-  return src ? `<img class="real-photo" src="${src}" alt="${artifactTitle(title)}" loading="lazy" decoding="async" onerror="this.remove()" />` : "";
+function imageMarkup(src, title = "", imageClass = "") {
+  return src
+    ? `<img class="real-photo ${imageClass}" src="${src}" alt="${artifactTitle(title)}" loading="lazy" decoding="async" onerror="this.remove()" />`
+    : "";
 }
 
 function mappedImage(kind, title = "") {
   const key = visualKey(title);
   const maps = {
+    story: storyImageMap,
     artist: artistImageMap,
-    instrument: instrumentImageMap
+    instrument: instrumentImageMap,
+    field: fieldImageMap,
+    region: regionImageMap
   };
   return maps[kind]?.[key] || "";
+}
+
+function placeholderSvg(title, subtitle = "", type = "ARCHIVE", index = 0) {
+  return artifactSvg(title, subtitle, type, index);
+}
+
+function contentImage({ type, title, subtitle = "", src = "", index = 0, imageClass = "" }) {
+  const fallbackType = `${type || "archive"}`.toUpperCase();
+  return `${imageMarkup(src || mappedImage(type, title), title, imageClass)}${placeholderSvg(title, subtitle, fallbackType, index)}`;
 }
 
 function photoMarkup(kind, title = "") {
@@ -1938,6 +1994,27 @@ function photoMarkup(kind, title = "") {
   const src = pool[simpleHash(title) % pool.length];
   return imageMarkup(src, title);
 }
+
+function hydrateImageFields() {
+  featuredStories.forEach((story) => {
+    const legacyImage = story.image && !story.image.includes("f4.bcbits.com") ? story.image : "";
+    story.storyImage = story.storyImage || mappedImage("story", story.title) || legacyImage;
+  });
+  essentialArtists.forEach((artist) => {
+    artist.artistImage = artist.artistImage || mappedImage("artist", artist.name);
+  });
+  instrumentAtlas.forEach((instrument) => {
+    instrument.instrumentImage = instrument.instrumentImage || mappedImage("instrument", instrument.name);
+  });
+  fieldNotesArchive.forEach((note) => {
+    note.fieldImage = note.fieldImage || mappedImage("field", note.title);
+  });
+  albums.forEach((album) => {
+    album.albumCover = reliableAlbumCover(album);
+  });
+}
+
+hydrateImageFields();
 
 function artifactSvg(title, subtitle = "", type = "ARCHIVE", index = 0) {
   const palette = visualPalettes[(simpleHash(title) + index) % visualPalettes.length];
@@ -2105,7 +2182,7 @@ function renderAlbums() {
             const fallbackSvg = artifactSvg(album.title, `${album.country || album.region} · ${album.year}`, "RECORD", index);
             return `
             <article class="album-card record-card">
-              <div class="album-cover visual-tile" data-artifact="RECORD" data-title="${artifactTitle(album.title)}">${imageMarkup(album.cover, album.title)}${fallbackSvg}</div>
+              <div class="album-cover visual-tile" data-artifact="RECORD" data-title="${artifactTitle(album.title)}">${contentImage({ type: "album", title: album.title, subtitle: album.artist, src: album.albumCover, index, imageClass: "album-cover-image" })}</div>
               <div class="album-body">
                 <div class="album-kicker">
                   <span>${album.country || album.region}</span>
@@ -2179,10 +2256,9 @@ function renderFeaturedStories() {
   const story = featuredStories[dateIndex(featuredStories.length, "week")];
   const countryCount = splitEntityList(story.countries).length;
   const index = featuredStories.indexOf(story);
-  const fallbackSvg = artifactSvg(story.title, story.countries, "EXHIBITION", index);
   target.innerHTML = `
     <article class="story-card exhibition-stage">
-      <div class="story-visual visual-tile" data-artifact="EXHIBITION" data-title="${artifactTitle(story.title)}">${photoMarkup("story", story.title)}${fallbackSvg}</div>
+      <div class="story-visual visual-tile" data-artifact="EXHIBITION" data-title="${artifactTitle(story.title)}">${contentImage({ type: "story", title: story.title, subtitle: story.countries, src: story.storyImage, index, imageClass: "story-photo" })}</div>
       <div class="story-poster-content">
         <span class="story-period">${story.period}</span>
         <h3>${story.title}</h3>
@@ -2249,8 +2325,7 @@ function renderInstrumentAtlas() {
       (instrument, index) => `
         <article class="instrument-card">
           <div class="instrument-image instrument-artifact visual-tile" data-artifact="INSTRUMENT" data-title="${artifactTitle(instrument.name)}">
-            ${imageMarkup(mappedImage("instrument", instrument.name), instrument.name) || photoMarkup("instrument", instrument.name)}
-            ${artifactSvg(instrument.name, instrument.region, "INSTRUMENT", index)}
+            ${contentImage({ type: "instrument", title: instrument.name, subtitle: instrument.region, src: instrument.instrumentImage, index, imageClass: "instrument-photo" })}
             <strong>${instrument.name.slice(0, 2).toUpperCase()}</strong>
             <small>${instrument.artifact}</small>
           </div>
@@ -2291,7 +2366,7 @@ function renderEssentialArtists() {
     .map(
       (artist, index) => `
         <article class="artist-card">
-          <div class="artist-image visual-tile" data-artifact="PORTRAIT" data-title="${artifactTitle(artist.name)}">${imageMarkup(mappedImage("artist", artist.name), artist.name) || photoMarkup("artist", artist.name)}${artifactSvg(artist.name, artist.region, "PORTRAIT", index)}</div>
+          <div class="artist-image visual-tile" data-artifact="PORTRAIT" data-title="${artifactTitle(artist.name)}">${contentImage({ type: "artist", title: artist.name, subtitle: artist.region, src: artist.artistImage, index, imageClass: "portrait-photo" })}</div>
           <div class="artist-face">
             <span>${artist.region}</span>
             <h3>${artist.name}</h3>
@@ -2497,9 +2572,9 @@ function renderFieldNotesArchive() {
     .join("");
 }
 
-function museumImage(kind, title, label, index = 0, primary = "") {
-  const mapped = mappedImage(kind, title);
-  return `${imageMarkup(primary || mapped, title)}${!primary && !mapped ? photoMarkup(kind, title) : ""}${artifactSvg(title, label, "GLOBAL PULSE", index)}`;
+function museumImage(kind, title, label, index = 0, primary = "", imageClass = "") {
+  const type = kind === "archive" ? "album" : kind;
+  return contentImage({ type, title, subtitle: label, src: primary, index, imageClass });
 }
 
 function renderMuseumTodayRoute() {
@@ -2508,9 +2583,10 @@ function renderMuseumTodayRoute() {
   const journey = listeningJourneys[index];
   museumTodayRoute.innerHTML = `
     <div class="museum-route-intro">
-      <span>${new Date().toLocaleDateString("zh-CN", { month: "2-digit", day: "2-digit" })}</span>
+      <span>Daily Route · ${new Date().toLocaleDateString("zh-CN", { month: "2-digit", day: "2-digit" })}</span>
       <h2>${journey.title}</h2>
       <small>${journey.zh}</small>
+      <p>${journey.note}</p>
       <button class="journey-start" type="button" data-journey-index="${index}">Open Route</button>
     </div>
     <ol>
@@ -2547,17 +2623,20 @@ function renderMuseumSoundMap() {
 function renderMuseumExhibition() {
   if (!museumExhibition) return;
   const story = featuredStories[dateIndex(featuredStories.length, "week")];
+  const storyDescription = story.historicalContext || story.description || "";
+  const legacyStoryImage = story.image && !story.image.includes("f4.bcbits.com") ? story.image : "";
+  const storyPrimaryImage = story.storyImage || legacyStoryImage;
   const resources = extendedResourceTypes
-    .filter((resource) => resource.connects.some((item) => normalizeEntity(story.title + " " + story.countries + " " + story.historicalContext).includes(normalizeEntity(item))))
+    .filter((resource) => resource.connects.some((item) => normalizeEntity(story.title + " " + story.countries + " " + storyDescription).includes(normalizeEntity(item))))
     .slice(0, 3);
   museumExhibition.innerHTML = `
     <article class="museum-exhibition-hero">
-      <div class="museum-exhibition-image visual-tile">${museumImage("story", story.title, story.countries, simpleHash(story.title))}</div>
+      <div class="museum-exhibition-image visual-tile">${museumImage("story", story.title, story.countries, simpleHash(story.title), storyPrimaryImage, "story-photo")}</div>
       <div class="museum-exhibition-copy">
         <span>${story.period}</span>
         <h2>${story.title}</h2>
         <small>${story.zh}</small>
-        <p>${story.historicalContext}</p>
+        <p>${storyDescription}</p>
         <button class="story-arrow" type="button" data-entity-type="story" data-entity-name="${encodeURIComponent(story.title)}">Enter Exhibition</button>
       </div>
     </article>
@@ -2579,7 +2658,7 @@ function renderMuseumPortraitWall() {
     .map(
       (artist, index) => `
         <button class="portrait-tile" type="button" data-entity-type="artist" data-entity-name="${encodeURIComponent(artist.name)}">
-          <div class="portrait-image visual-tile">${museumImage("artist", artist.name, artist.region, index)}</div>
+          <div class="portrait-image visual-tile">${museumImage("artist", artist.name, artist.region, index, artist.artistImage, "portrait-photo")}</div>
           <span>${artist.region}</span>
           <strong>${artist.name}</strong>
           <em>${artist.scenes} · ${artist.labels}</em>
@@ -2596,7 +2675,7 @@ function renderMuseumRecordWall() {
     .map(
       (album, index) => `
         <button class="record-tile" type="button" data-open-album="${encodeURIComponent(album.title)}" aria-label="${album.artist} ${album.title}">
-          <div class="record-cover visual-tile">${museumImage("archive", album.title, album.artist, index, album.cover)}</div>
+          <div class="record-cover visual-tile">${museumImage("archive", album.title, album.artist, index, album.albumCover, "album-cover-image")}</div>
           <span>${album.country || album.region}</span>
           <strong>${album.title}</strong>
           <em>${album.artist} · ${album.year} · ${getAlbumLabel(album)}</em>
@@ -2613,7 +2692,7 @@ function renderMuseumObjects() {
     .map(
       (instrument, index) => `
         <button class="object-tile" type="button" data-entity-type="instrument" data-entity-name="${encodeURIComponent(instrument.name)}">
-          <div class="object-photo visual-tile">${museumImage("instrument", instrument.name, instrument.region, index)}</div>
+          <div class="object-photo visual-tile">${museumImage("instrument", instrument.name, instrument.region, index, instrument.instrumentImage, "instrument-photo")}</div>
           <span>${instrument.region}</span>
           <h3>${instrument.name}</h3>
           <small>${instrument.zh}</small>
@@ -2631,7 +2710,7 @@ function renderMuseumFieldNotes() {
     .map(
       (note, index) => `
         <article class="museum-field-note">
-          <div class="museum-note-image visual-tile">${museumImage(index % 2 ? "story" : "archive", note.title, note.location, index)}</div>
+          <div class="museum-note-image visual-tile">${museumImage("field", note.title, note.location, index, note.fieldImage, "field-photo")}</div>
           <span>${note.location}</span>
           <time>${note.date || "field note"}</time>
           <h3>${note.title}</h3>
@@ -2851,12 +2930,13 @@ function openAlbumByTitle(title) {
 
 function storyExhibitionMarkup(story) {
   const relatedAlbums = getRelatedAlbums("story", story.title, 10);
+  const storyContext = story.historicalContext || story.description || "This exhibition connects records, artists, labels, instruments and field notes into a cultural listening route.";
   const timeline = timelineEntries
     .filter((entry) => story.period.includes(entry.year) || storyMatchesMapRegion(story, { keywords: [entry.region], featured: story.title }))
     .slice(0, 5);
   const journey = listeningJourneys.find((item) => item.route.some((step) => story.artists.some((artist) => normalizeEntity(step).includes(normalizeEntity(artist))))) || listeningJourneys[dateIndex(listeningJourneys.length, "day")];
   const regions = soundMapRegions.filter((region) => storyMatchesMapRegion(story, region)).map((region) => region.name);
-  const resources = extendedResourceTypes.filter((resource) => resource.connects.some((item) => normalizeEntity(story.historicalContext + " " + story.title + " " + story.countries).includes(normalizeEntity(item)))).slice(0, 3);
+  const resources = extendedResourceTypes.filter((resource) => resource.connects.some((item) => normalizeEntity(storyContext + " " + story.title + " " + story.countries).includes(normalizeEntity(item)))).slice(0, 3);
   const fallback = artifactImage(story.title, story.countries, "MICRO MUSEUM", simpleHash(story.title));
 
   return `
@@ -2870,7 +2950,7 @@ function storyExhibitionMarkup(story) {
         <strong>${story.zh}</strong>
       </div>
       <section class="exhibition-overview">
-        <p>${story.historicalContext}</p>
+        <p>${storyContext}</p>
         <div class="story-stats exhibition-stats">
           <span><strong>${story.albums.length}</strong> albums</span>
           <span><strong>${story.artists.length}</strong> artists</span>
