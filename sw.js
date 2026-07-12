@@ -1,4 +1,4 @@
-const CACHE_NAME = "global-pulse-v31-20260628-museum-assets";
+const CACHE_NAME = "global-pulse-v35-20260712-local-assets";
 const CORE_ASSETS = [
   "./",
   "./index.html",

@@ -5398,6 +5398,11 @@ body.museum-edition .visual-tile {
   overflow: hidden;
 }
 
+body.museum-edition .visual-tile::before,
+body.museum-edition .visual-tile::after {
+  display: none;
+}
+
 body.museum-edition .real-photo {
   object-fit: cover;
   object-position: center;
@@ -5716,5 +5721,445 @@ body.museum-edition .record-cover .artifact-svg {
   }
   100% {
     transform: translateX(110%);
+  }
+}
+
+/* Museum walls before artworks arrive */
+body.museum-edition[data-page="home"] {
+  background:
+    linear-gradient(90deg, rgba(10, 10, 8, 0.035) 1px, transparent 1px) 0 0 / 7.5vw 100%,
+    linear-gradient(180deg, #f7f1e6 0%, #eee6d6 62%, #f9f5ea 100%);
+}
+
+body.museum-edition[data-page="home"] .topbar {
+  border-bottom: 1px solid rgba(11, 11, 9, 0.14);
+  background: rgba(247, 241, 230, 0.82);
+  color: #0b0b09;
+}
+
+body.museum-edition[data-page="home"] .brand,
+body.museum-edition[data-page="home"] .nav-links a {
+  color: #0b0b09;
+}
+
+body.museum-edition[data-page="home"] .version-pill {
+  border-color: rgba(11, 11, 9, 0.22);
+  color: rgba(11, 11, 9, 0.68);
+}
+
+body.museum-edition[data-page="home"] .hero-panel {
+  isolation: isolate;
+  border-top: 1px solid rgba(11, 11, 9, 0.16);
+  border-bottom: 1px solid rgba(11, 11, 9, 0.16);
+  min-height: 100svh;
+  padding-top: clamp(88px, 10vw, 150px);
+  padding-bottom: clamp(58px, 8vw, 120px);
+  color: #0b0b09;
+  background:
+    linear-gradient(90deg, rgba(11, 11, 9, 0.045) 1px, transparent 1px) 0 0 / 7.5vw 100%,
+    linear-gradient(180deg, rgba(11, 11, 9, 0.035) 1px, transparent 1px) 0 0 / 100% 10vh,
+    linear-gradient(180deg, #f7f1e6 0%, #f0eadc 58%, #f9f5ea 100%);
+}
+
+body.museum-edition[data-page="home"] .hero-panel::before {
+  content: "";
+  position: absolute;
+  inset: clamp(76px, 10vw, 132px) clamp(22px, 4vw, 76px) clamp(32px, 5vw, 86px);
+  border: 1px solid rgba(11, 11, 9, 0.16);
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1400 760'%3E%3Cg fill='none' stroke='%23111111' stroke-opacity='.18' stroke-width='2'%3E%3Cpath d='M205 330c72-96 205-115 333-72 117 39 199-29 303-12 96 16 151 102 257 87 58-8 103-43 156-69'/%3E%3Cpath d='M167 428c137-52 261-44 370 4 113 50 221 41 343-21 129-66 230-46 354 17'/%3E%3Cpath d='M346 245c69-35 147-32 229 13 92 50 169 39 247-17 91-66 188-63 289 8'/%3E%3Cpath d='M410 512c128 29 216 2 315-53 99-56 198-68 320-20'/%3E%3C/g%3E%3Cg fill='%23111111' fill-opacity='.045'%3E%3Cellipse cx='390' cy='390' rx='154' ry='92'/%3E%3Cellipse cx='610' cy='322' rx='122' ry='82'/%3E%3Cellipse cx='803' cy='386' rx='185' ry='110'/%3E%3Cellipse cx='1048' cy='384' rx='165' ry='98'/%3E%3C/g%3E%3C/svg%3E") center / 82% auto no-repeat,
+    radial-gradient(ellipse at 40% 50%, transparent 0 24%, rgba(11, 11, 9, 0.07) 24.3% 24.8%, transparent 25%),
+    radial-gradient(ellipse at 57% 49%, transparent 0 17%, rgba(11, 11, 9, 0.055) 17.2% 17.7%, transparent 18%),
+    linear-gradient(90deg, transparent 0 12%, rgba(11, 11, 9, 0.05) 12.1% 12.2%, transparent 12.3%),
+    linear-gradient(180deg, transparent 0 18%, rgba(11, 11, 9, 0.045) 18.1% 18.2%, transparent 18.3%);
+  opacity: 0.88;
+  animation: mapWake 10s ease-in-out infinite alternate;
+}
+
+body.museum-edition[data-page="home"] .hero-panel::after {
+  content: none;
+  position: absolute;
+  right: clamp(22px, 5vw, 72px);
+  bottom: clamp(22px, 5vw, 72px);
+  z-index: 4;
+  color: rgba(11, 11, 9, 0.42);
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  writing-mode: vertical-rl;
+  background: none;
+}
+
+body.museum-edition[data-page="home"] .hero-copy {
+  position: relative;
+  padding-left: clamp(0px, 2vw, 42px);
+}
+
+body.museum-edition[data-page="home"] .hero-copy::before {
+  content: "ROOM 01  /  ENTRANCE";
+  display: block;
+  width: fit-content;
+  margin-bottom: clamp(22px, 3vw, 44px);
+  padding: 8px 12px;
+  border: 1px solid rgba(11, 11, 9, 0.20);
+  color: rgba(11, 11, 9, 0.58);
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+}
+
+body.museum-edition[data-page="home"] .hero-copy h1 {
+  font-size: clamp(4.6rem, 15.5vw, 15.5rem);
+  line-height: 0.76;
+  margin: clamp(22px, 3vw, 48px) 0 clamp(18px, 3vw, 42px);
+  text-transform: uppercase;
+  text-shadow: 0 22px 80px rgba(11, 11, 9, 0.07);
+}
+
+body.museum-edition[data-page="home"] .hero-copy h1 span {
+  display: block;
+}
+
+body.museum-edition[data-page="home"] .hero-copy > p:last-of-type {
+  max-width: 690px;
+  font-size: clamp(1rem, 1.35vw, 1.32rem);
+}
+
+body.museum-edition[data-page="home"] .enter-archive {
+  position: relative;
+  overflow: hidden;
+  min-height: 54px;
+  margin-top: clamp(16px, 2vw, 24px);
+  color: #0b0b09;
+  border-color: rgba(11, 11, 9, 0.32);
+  background: rgba(255, 252, 243, 0.54);
+  box-shadow: 0 0 0 1px rgba(11, 11, 9, 0.04), 0 24px 90px rgba(11, 11, 9, 0.06);
+}
+
+body.museum-edition[data-page="home"] .enter-archive::after {
+  content: "";
+  width: 42px;
+  height: 1px;
+  margin: auto 0 auto 12px;
+  background: currentColor;
+  opacity: 0.55;
+}
+
+body.museum-edition[data-page="home"] .enter-archive::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(204, 255, 0, 0.28), transparent);
+  transform: translateX(-120%);
+  animation: entranceScan 4.8s ease-in-out infinite;
+}
+
+body.museum-edition[data-page="home"] .hero-slides {
+  display: block;
+  inset: auto clamp(22px, 6vw, 96px) clamp(34px, 8vw, 104px) auto;
+  width: min(34vw, 480px);
+  height: min(56vh, 620px);
+  opacity: 0.62;
+  mix-blend-mode: multiply;
+  filter: saturate(0.78) contrast(1.05);
+  box-shadow: 0 28px 90px rgba(11, 11, 9, 0.12);
+}
+
+body.museum-edition[data-page="home"] .hero-slides::after {
+  background: linear-gradient(180deg, rgba(247, 241, 230, 0.05), rgba(11, 11, 9, 0.18));
+}
+
+body.museum-edition[data-page="home"] .museum-locations::before {
+  content: none;
+}
+
+body.museum-edition[data-page="home"] .museum-locations span {
+  display: none;
+}
+
+body.museum-edition .museum-room {
+  background: #f4eddf;
+  color: #0b0b09;
+  box-shadow: inset 0 1px rgba(11, 11, 9, 0.08);
+}
+
+body.museum-edition .museum-room:nth-child(even),
+body.museum-edition .museum-room:nth-child(odd) {
+  background:
+    linear-gradient(90deg, rgba(11, 11, 9, 0.035) 1px, transparent 1px) 0 0 / 7.5vw 100%,
+    #f4eddf;
+  color: #0b0b09;
+}
+
+body.museum-edition .museum-room::before {
+  content: "";
+  position: absolute;
+  inset: clamp(20px, 3vw, 48px);
+  z-index: 0;
+  border: 1px solid currentColor;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+body.museum-edition .museum-room > * {
+  position: relative;
+  z-index: 2;
+}
+
+body.museum-edition .museum-room-label {
+  padding: 10px 12px;
+  border-left: 2px solid currentColor;
+  background: rgba(255, 252, 243, 0.54);
+}
+
+body.museum-edition .museum-room-label strong {
+  font-size: 0.82rem;
+}
+
+body.museum-edition .museum-room-label::after {
+  content: "";
+  display: block;
+  width: 54px;
+  height: 1px;
+  margin-top: 10px;
+  background: currentColor;
+  opacity: 0.36;
+}
+
+body.museum-edition .museum-route li span {
+  max-width: 18ch;
+}
+
+body.museum-edition .museum-route-intro small,
+body.museum-edition .museum-route li b {
+  color: rgba(11, 11, 9, 0.46);
+}
+
+body.museum-edition .museum-route li {
+  border-bottom-color: rgba(11, 11, 9, 0.16);
+}
+
+body.museum-edition .museum-sound-map {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 48% 52%, rgba(204, 255, 0, 0.20) 0 4px, transparent 6px),
+    radial-gradient(circle at 42% 43%, rgba(204, 255, 0, 0.14) 0 3px, transparent 5px),
+    radial-gradient(circle at 72% 50%, rgba(204, 255, 0, 0.12) 0 3px, transparent 5px),
+    radial-gradient(ellipse at 32% 51%, rgba(11, 11, 9, 0.2) 0 14%, transparent 14.4%),
+    radial-gradient(ellipse at 47% 44%, rgba(11, 11, 9, 0.19) 0 12%, transparent 12.5%),
+    radial-gradient(ellipse at 55% 53%, rgba(11, 11, 9, 0.17) 0 18%, transparent 18.6%),
+    radial-gradient(ellipse at 73% 55%, rgba(11, 11, 9, 0.13) 0 17%, transparent 17.6%),
+    linear-gradient(90deg, rgba(11, 11, 9, 0.045) 1px, transparent 1px) 0 0 / 8.33% 100%,
+    linear-gradient(180deg, rgba(11, 11, 9, 0.04) 1px, transparent 1px) 0 0 / 100% 12.5%;
+}
+
+body.museum-edition .exhibition-room .museum-room-label,
+body.museum-edition .museum-exhibition-copy,
+body.museum-edition .museum-exhibition-copy p,
+body.museum-edition .museum-exhibition-scroll p {
+  color: #0b0b09;
+}
+
+body.museum-edition .museum-exhibition-hero,
+body.museum-edition .museum-exhibition-scroll {
+  background: #f4eddf;
+}
+
+body.museum-edition .museum-exhibition-copy {
+  border-left-color: rgba(11, 11, 9, 0.12);
+}
+
+body.museum-edition .museum-exhibition-copy span,
+body.museum-edition .museum-exhibition-copy small,
+body.museum-edition .museum-exhibition-scroll span {
+  color: rgba(11, 11, 9, 0.5);
+}
+
+body.museum-edition .museum-exhibition-copy span::before {
+  color: rgba(11, 11, 9, 0.52);
+}
+
+body.museum-edition .museum-exhibition-scroll,
+body.museum-edition .museum-exhibition-scroll section {
+  border-color: rgba(11, 11, 9, 0.14);
+}
+
+body.museum-edition .museum-sound-map::after {
+  content: "GLOBAL SOUND COORDINATES";
+  position: absolute;
+  left: 28px;
+  bottom: 24px;
+  color: rgba(11, 11, 9, 0.38);
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: clamp(1.2rem, 4vw, 4.8rem);
+  font-weight: 900;
+  letter-spacing: 0.03em;
+}
+
+body.museum-edition .museum-exhibition-image,
+body.museum-edition .portrait-image,
+body.museum-edition .record-cover,
+body.museum-edition .object-photo,
+body.museum-edition .museum-note-image {
+  background: #d8cfbd;
+}
+
+body.museum-edition .museum-exhibition-copy {
+  border-left: 1px solid rgba(245, 237, 223, 0.12);
+}
+
+body.museum-edition .museum-exhibition-copy span::before {
+  content: "Current Exhibition";
+  display: block;
+  margin-bottom: 16px;
+  color: rgba(204, 255, 0, 0.72);
+}
+
+body.museum-edition .portrait-wall,
+body.museum-edition .record-wall {
+  border: 1px solid rgba(11, 11, 9, 0.18);
+}
+
+body.museum-edition .portrait-tile,
+body.museum-edition .record-tile {
+  outline: 1px solid rgba(245, 237, 223, 0.08);
+  outline-offset: -1px;
+}
+
+body.museum-edition .object-display {
+  border-top: 1px solid rgba(11, 11, 9, 0.18);
+  padding-top: clamp(24px, 4vw, 52px);
+}
+
+body.museum-edition .object-tile {
+  min-width: 0;
+}
+
+body.museum-edition .field-note-panels {
+  border-top: 1px solid rgba(245, 237, 223, 0.18);
+  padding-top: clamp(24px, 4vw, 52px);
+}
+
+.asset-frame.is-missing::after,
+.asset-frame.is-loaded::after {
+  display: none;
+}
+
+.asset-frame.is-missing::before {
+  opacity: 0.38;
+}
+
+.asset-frame.is-missing .museum-placeholder-svg {
+  opacity: 1;
+}
+
+.asset-frame.is-fallback .museum-placeholder-svg {
+  opacity: 0;
+}
+
+.asset-frame .museum-placeholder-svg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  opacity: 0.94;
+}
+
+.asset-frame .museum-placeholder-svg text {
+  paint-order: stroke;
+}
+
+.asset-frame .artifact-svg {
+  display: none;
+}
+
+.asset-frame .asset-img {
+  opacity: 0;
+  transition: opacity 260ms ease;
+}
+
+.asset-frame .fallback-photo {
+  opacity: 0.86;
+  filter: saturate(0.78) contrast(1.04);
+}
+
+.asset-frame .real-photo {
+  z-index: 2;
+}
+
+.asset-frame.is-loaded .real-photo {
+  opacity: 1;
+}
+
+.asset-frame.is-loaded .fallback-photo {
+  opacity: 0;
+}
+
+.asset-frame.is-fallback .asset-img {
+  opacity: 1;
+  filter: saturate(0.78) contrast(1.04);
+}
+
+.asset-frame.is-loaded .museum-placeholder-svg {
+  opacity: 0;
+}
+
+.asset-story .museum-placeholder-svg,
+.asset-fieldnote .museum-placeholder-svg {
+  filter: sepia(0.1) saturate(0.92);
+}
+
+.asset-album .museum-placeholder-svg {
+  filter: contrast(1.05);
+}
+
+.asset-artist .museum-placeholder-svg {
+  filter: grayscale(0.1);
+}
+
+@media (max-width: 760px) {
+  body.museum-edition[data-page="home"] .hero-panel {
+    min-height: calc(100svh - 68px);
+    padding: 92px 22px 110px;
+  }
+
+  body.museum-edition[data-page="home"] .hero-copy h1 {
+    font-size: clamp(3.9rem, 22vw, 7.2rem);
+    line-height: 0.82;
+    margin-top: 48px;
+  }
+
+  body.museum-edition[data-page="home"] .hero-copy h1 span:nth-child(2) {
+    margin-left: 12vw;
+  }
+
+  body.museum-edition[data-page="home"] .hero-slides {
+    right: 18px;
+    bottom: 96px;
+    width: 42vw;
+    height: 34vh;
+    opacity: 0.28;
+  }
+
+  body.museum-edition[data-page="home"] .hero-panel::after {
+    writing-mode: horizontal-tb;
+    right: 22px;
+  }
+
+  body.museum-edition .museum-room::before {
+    inset: 12px;
+  }
+}
+
+@keyframes entranceScan {
+  0%,
+  68% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(120%);
   }
 }

@@ -1893,8 +1893,27 @@ function assetSlug(value = "") {
 }
 
 function assetPath(type, title, extension = "jpg") {
-  const folder = assetFolders[type] || assetFolders.pattern;
+  const folder = assetFolders[type] || assetFolders.texture;
   return `./public/images/${folder}/${assetSlug(title)}.${extension}`;
+}
+
+const fallbackAssetPools = {
+  story: ["story-poster.png", "cassette-market.png", "community-music.png"],
+  artist: ["artist-portrait.png", "community-music.png"],
+  album: ["record-crate.png", "archive-desk.png"],
+  archive: ["record-crate.png", "archive-desk.png"],
+  instrument: ["instrument-collection.png"],
+  region: ["field-recorder-map.png", "community-music.png"],
+  fieldnote: ["field-recorder-map.png", "cassette-market.png"],
+  field: ["field-recorder-map.png", "cassette-market.png"],
+  label: ["archive-desk.png", "record-crate.png"],
+  texture: ["archive-desk.png"]
+};
+
+function fallbackAssetPath(type, index = 0) {
+  const pool = fallbackAssetPools[type] || fallbackAssetPools.texture;
+  const file = pool[Math.abs(index) % pool.length];
+  return `./public/images/textures/${file}`;
 }
 
 function museumPlaceholderSvg(title, subtitle = "", type = "ARCHIVE") {
@@ -1928,12 +1947,14 @@ function placeholderSvg(title, subtitle = "", type = "ARCHIVE") {
 function Asset({ type, title, subtitle = "", src = "", index = 0, imageClass = "", ratio = "", fit = "cover", position = "center" }) {
   const fallbackType = `${type || "archive"}`.toUpperCase();
   const localSrc = src || assetPath(type, title);
+  const fallbackSrc = fallbackAssetPath(type || "archive", index);
   const style = [`--asset-fit:${fit}`, `--asset-position:${position}`];
   if (ratio) style.push(`--asset-ratio:${ratio}`);
   return `
     <figure class="asset-frame asset-${type || "archive"} ${imageClass}" style="${style.join(";")}">
       ${placeholderSvg(title, subtitle, fallbackType, index)}
-      <img class="asset-img real-photo" src="${localSrc}" alt="${artifactTitle(title)}" loading="lazy" decoding="async" onload="this.closest('.asset-frame')?.classList.add('is-loaded')" onerror="this.remove()" />
+      <img class="asset-img fallback-photo" src="${fallbackSrc}" alt="" loading="lazy" decoding="async" aria-hidden="true" />
+      <img class="asset-img real-photo" src="${localSrc}" alt="${artifactTitle(title)}" loading="lazy" decoding="async" onload="this.closest('.asset-frame')?.classList.add('is-loaded')" onerror="this.closest('.asset-frame')?.classList.add('is-fallback'); this.remove()" />
     </figure>
   `;
 }
