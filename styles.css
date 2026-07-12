@@ -1937,6 +1937,170 @@ body.is-routed .atlas-layout.is-active {
   display: grid !important;
 }
 
+.archive-index-band,
+.home-preview-band {
+  margin-top: clamp(22px, 4vw, 56px);
+  padding: clamp(18px, 3.2vw, 42px) 0;
+  border-top: 1px solid var(--line-strong);
+}
+
+.archive-index-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 22px;
+  overflow: hidden;
+  background: var(--line-strong);
+  border: 1px solid var(--line-strong);
+}
+
+.archive-index-card {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto minmax(180px, 1fr) auto;
+  min-height: clamp(420px, 52vw, 680px);
+  padding: 18px;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(17, 17, 15, 0.055) 1px, transparent 1px) 0 0 / 28px 100%,
+    rgba(247, 243, 234, 0.94);
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+.archive-index-card:hover {
+  background:
+    linear-gradient(90deg, rgba(17, 17, 15, 0.075) 1px, transparent 1px) 0 0 / 28px 100%,
+    #fffaf0;
+}
+
+.archive-index-number {
+  color: var(--muted);
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.archive-index-visual,
+.home-preview-image {
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+  border: 1px solid rgba(17, 17, 15, 0.28);
+  background: #ded5c4;
+}
+
+.archive-index-visual {
+  align-self: stretch;
+  margin: 18px 0;
+}
+
+.archive-index-visual .asset-frame,
+.home-preview-image .asset-frame {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  border: 0;
+}
+
+.archive-index-copy {
+  display: grid;
+  gap: 7px;
+  align-content: end;
+  min-width: 0;
+}
+
+.archive-index-copy small,
+.home-preview-copy span {
+  color: var(--muted);
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.archive-index-copy h3 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 4.8vw, 4.9rem);
+  font-weight: 500;
+  line-height: 0.84;
+  overflow-wrap: anywhere;
+}
+
+.archive-index-copy em {
+  color: var(--muted);
+  font-style: normal;
+  font-weight: 900;
+}
+
+.archive-index-copy p,
+.home-preview-copy p {
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 750;
+  line-height: 1.55;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.archive-index-copy strong {
+  width: fit-content;
+  margin-top: 6px;
+  padding: 4px 9px;
+  color: var(--fg);
+  background: var(--acid);
+  border: 1px solid var(--fg);
+  border-radius: 999px;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 0.72rem;
+}
+
+.home-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 22px;
+  overflow: hidden;
+  background: var(--line-strong);
+  border: 1px solid var(--line-strong);
+}
+
+.home-preview-card {
+  display: grid;
+  grid-template-rows: minmax(220px, 42vh) auto;
+  min-width: 0;
+  background: rgba(247, 243, 234, 0.94);
+}
+
+.home-preview-image {
+  border: 0;
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.home-preview-copy {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+  padding: 18px;
+}
+
+.home-preview-copy h3 {
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.8rem, 3vw, 3.6rem);
+  font-weight: 500;
+  line-height: 0.9;
+  overflow-wrap: anywhere;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
 .featured-stories-band,
 .journeys-band,
 .timeline-band,
@@ -3503,6 +3667,51 @@ body .extended-resource-card p {
   margin: 0;
   color: var(--muted);
   line-height: 1.55;
+}
+
+.card-sub,
+.story-card p,
+.journey-card p,
+.instrument-card p,
+.artist-card dd,
+.label-card p,
+.label-card dd,
+.timeline-card p,
+.field-note-card p,
+.extended-resource-card p,
+.resource-card p,
+.demo-card p,
+.event-card p {
+  overflow-wrap: anywhere;
+}
+
+.story-card p,
+.journey-card p,
+.instrument-card p,
+.label-card p,
+.timeline-card p,
+.field-note-card p,
+.extended-resource-card p,
+.resource-card p,
+.demo-card p,
+.event-card p {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+body .extended-resource-card .resource-meta {
+  color: var(--muted);
+  text-transform: none;
+}
+
+body .extended-resource-card .resource-source-link {
+  color: var(--ink);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 body .field-note-card dl {
@@ -6121,6 +6330,19 @@ body.museum-edition .field-note-panels {
 }
 
 @media (max-width: 760px) {
+  .archive-index-grid,
+  .home-preview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .archive-index-card {
+    min-height: 480px;
+  }
+
+  .home-preview-card {
+    grid-template-rows: minmax(240px, 52vw) auto;
+  }
+
   body.museum-edition[data-page="home"] .hero-panel {
     min-height: calc(100svh - 68px);
     padding: 92px 22px 110px;

@@ -9,7 +9,7 @@
     <title>Global Pulse Archive</title>
     <link rel="manifest" href="./manifest.json" />
     <link rel="icon" href="./app-icon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="./styles.css?v=20260712-local-assets" />
+    <link rel="stylesheet" href="./styles.css?v=20260712-content-depth" />
   </head>
   <body class="museum-edition">
     <div class="page-loader" aria-hidden="true">
@@ -22,14 +22,17 @@
         <span class="brand-mark">GP</span>
         <span>Global Pulse Archive</span>
       </a>
-      <span class="version-pill">MUSEUM EDITION V1.4 · 07.12</span>
+      <span class="version-pill">ARCHIVE INDEX · 07.12</span>
       <nav class="nav-links" aria-label="主要导航">
+        <a href="#home">Home</a>
         <a href="#stories">Stories</a>
-        <a href="#atlas">Atlas</a>
-        <a href="#archive">Archive</a>
-        <a href="#resources">Resources</a>
-        <a href="#ai">Tools</a>
-        <a href="#submit">Submit</a>
+        <a href="#artists">Artists</a>
+        <a href="#albums">Albums</a>
+        <a href="#instruments">Instruments</a>
+        <a href="#regions">Regions</a>
+        <a href="#labels">Labels</a>
+        <a href="#fieldnotes">Fieldnotes</a>
+        <a href="#ai-tools">Tools</a>
       </nav>
     </header>
 
@@ -45,7 +48,7 @@
             <p>
               Exploring how sound travels, changes, disappears and returns.
             </p>
-            <a class="enter-archive" href="#museum-route">Enter the Archive</a>
+            <a class="enter-archive" href="#archive-index">Enter the Archive</a>
             <div class="home-gateway" aria-label="主要入口">
               <a href="#stories">
                 <span>01</span>
@@ -53,19 +56,19 @@
                 <strong>Stories</strong>
                 <em>展览索引</em>
               </a>
-              <a href="#atlas">
+              <a href="#regions">
                 <span>02</span>
                 <i aria-hidden="true">▰</i>
-                <strong>Atlas</strong>
+                <strong>Regions</strong>
                 <em>声音地理</em>
               </a>
-              <a href="#archive">
+              <a href="#albums">
                 <span>03</span>
                 <i aria-hidden="true">✶</i>
-                <strong>Archive</strong>
+                <strong>Albums</strong>
                 <em>专辑与文化档案</em>
               </a>
-              <a href="#ai">
+              <a href="#ai-tools">
                 <span>04</span>
                 <i aria-hidden="true">⌁</i>
                 <strong>Tools</strong>
@@ -92,7 +95,29 @@
           </div>
         </div>
 
-        <section class="museum-experience reveal-block" id="museumExperience" data-pages="home" aria-label="Global Pulse Museum Edition">
+        <section class="archive-index-band reveal-block" id="archive-index" data-page="home" aria-label="Archive Index">
+          <div class="section-heading row-heading">
+            <div>
+              <p>archive index</p>
+              <h2>ENTER BY MATERIAL</h2>
+              <small class="zh-sub">按资料类型进入</small>
+            </div>
+          </div>
+          <div id="archiveIndex" class="archive-index-grid"></div>
+        </section>
+
+        <section class="home-preview-band reveal-block" id="featured-preview" data-page="home" aria-label="Featured Preview">
+          <div class="section-heading row-heading">
+            <div>
+              <p>current selection</p>
+              <h2>FOUR ENTRY POINTS</h2>
+              <small class="zh-sub">本周四个入口</small>
+            </div>
+          </div>
+          <div id="homeFeaturedPreview" class="home-preview-grid"></div>
+        </section>
+
+        <section class="museum-experience reveal-block" id="museumExperience" data-pages="museum" aria-label="Global Pulse Museum Edition">
           <section class="museum-room route-room" id="museum-route" aria-label="Today's Route">
             <div class="museum-room-label">
               <span>Room 02</span>
@@ -157,7 +182,7 @@
           </section>
         </section>
 
-        <section class="weekly-discovery-band reveal-block" id="weekly" data-pages="home" aria-label="Weekly Discovery">
+        <section class="weekly-discovery-band reveal-block" id="weekly" data-pages="tools" aria-label="Weekly Discovery">
           <div class="section-heading row-heading">
             <div>
               <p>return signal</p>
@@ -168,7 +193,7 @@
           <div id="weeklyDiscovery" class="weekly-grid"></div>
         </section>
 
-        <section class="daily-journey-band reveal-block" id="daily" data-pages="home" aria-label="Today's Journey">
+        <section class="daily-journey-band reveal-block" id="daily" data-pages="stories" aria-label="Today's Journey">
           <div class="section-heading row-heading">
             <div>
               <p>daily route</p>
@@ -179,7 +204,7 @@
           <div id="todayJourney" class="today-journey"></div>
         </section>
 
-        <section class="featured-stories-band reveal-block" id="stories" data-pages="home" aria-label="Featured Stories">
+        <section class="featured-stories-band reveal-block" id="stories" data-pages="stories" aria-label="Featured Stories">
           <div class="section-heading row-heading">
             <div>
               <p>exhibition index</p>
@@ -190,7 +215,7 @@
           <div id="featuredStories" class="featured-stories"></div>
         </section>
 
-        <section class="journeys-band reveal-block" id="journeys" data-pages="home" aria-label="Listening Journeys">
+        <section class="journeys-band reveal-block" id="journeys" data-pages="stories" aria-label="Listening Journeys">
           <div class="section-heading row-heading">
             <div>
               <p>discovery routes</p>
@@ -201,7 +226,7 @@
           <div id="listeningJourneys" class="journey-grid"></div>
         </section>
 
-        <section class="timeline-band reveal-block" id="timeline" data-pages="home archive" aria-label="Historical Timeline">
+        <section class="timeline-band reveal-block" id="timeline" data-pages="stories albums regions" aria-label="Historical Timeline">
           <div class="section-heading row-heading">
             <div>
               <p>historical context</p>
@@ -212,7 +237,7 @@
           <div id="timelineGrid" class="timeline-grid"></div>
         </section>
 
-        <section class="artists-band reveal-block" id="artists" data-pages="home archive" aria-label="Essential Artists">
+        <section class="artists-band reveal-block" id="artists" data-pages="artists" aria-label="Essential Artists">
           <div class="section-heading row-heading">
             <div>
               <p>people first</p>
@@ -223,7 +248,7 @@
           <div id="artistGrid" class="artist-grid"></div>
         </section>
 
-        <section class="sound-atlas-band reveal-block" id="atlas" data-pages="home archive" aria-label="Sound Atlas">
+        <section class="sound-atlas-band reveal-block" id="regions" data-pages="regions" aria-label="Sound Atlas">
           <div class="section-heading row-heading">
             <div>
               <p>territories</p>
@@ -239,7 +264,7 @@
           </div>
         </section>
 
-        <section class="instrument-atlas-band reveal-block" id="instruments" data-pages="home" aria-label="Instrument Atlas">
+        <section class="instrument-atlas-band reveal-block" id="instruments" data-pages="instruments" aria-label="Instrument Atlas">
           <div class="section-heading row-heading">
             <div>
               <p>collection cards</p>
@@ -250,7 +275,7 @@
           <div id="instrumentAtlas" class="instrument-grid"></div>
         </section>
 
-        <section class="control-band reveal-block" data-pages="home archive" aria-label="资料库筛选">
+        <section class="control-band reveal-block" data-pages="albums" aria-label="资料库筛选">
           <label class="search-field">
             <span>搜索</span>
             <input id="searchInput" type="search" placeholder="专辑、音乐人、地区、风格" />
@@ -277,8 +302,8 @@
           </div>
         </section>
 
-        <section class="content-grid reveal-block" id="archive" data-pages="home archive">
-          <section class="library-panel" id="albums" aria-label="专辑档案">
+        <section class="content-grid reveal-block" id="albums" data-pages="albums">
+          <section class="library-panel" id="album-library" aria-label="专辑档案">
             <div class="section-heading row-heading">
               <div>
                 <p>archive</p>
@@ -291,7 +316,7 @@
           </section>
         </section>
 
-        <section class="labels-band reveal-block" id="labels" data-pages="home resources archive" aria-label="Label Archive">
+        <section class="labels-band reveal-block" id="labels" data-pages="labels" aria-label="Label Archive">
           <div class="section-heading row-heading">
             <div>
               <p>labels as cultural engines</p>
@@ -302,7 +327,7 @@
           <div id="labelArchive" class="label-grid"></div>
         </section>
 
-        <section class="field-notes-band reveal-block" id="field-notes" data-pages="home resources archive" aria-label="Field Notes Archive">
+        <section class="field-notes-band reveal-block" id="fieldnotes" data-pages="fieldnotes" aria-label="Field Notes Archive">
           <div class="section-heading row-heading">
             <div>
               <p>site observations</p>
@@ -313,7 +338,7 @@
           <div id="fieldNotesArchive" class="field-note-grid"></div>
         </section>
 
-        <section class="music-resources-band reveal-block" id="resources" data-pages="home resources" aria-label="音乐资源池">
+        <section class="music-resources-band reveal-block" id="resources" data-pages="tools resources" aria-label="音乐资源池">
           <div class="section-heading row-heading">
             <div>
               <p>legal listening pool</p>
@@ -326,7 +351,7 @@
           <div id="extendedResources" class="extended-resource-grid"></div>
         </section>
 
-        <section class="app-shell reveal-block" id="pulse" data-pages="home pulse ai" aria-label="Pulse App 功能">
+        <section class="app-shell reveal-block" id="pulse" data-pages="tools pulse ai" aria-label="Pulse App 功能">
           <div class="phone-preview">
             <div class="phone-status">
               <span>PULSE</span>
@@ -351,7 +376,7 @@
           </div>
         </section>
 
-        <section class="ai-tools reveal-block" id="ai-tools" data-pages="home ai" aria-label="AI 音乐工具">
+        <section class="ai-tools reveal-block" id="ai-tools" data-pages="tools ai" aria-label="AI 音乐工具">
           <div class="section-heading row-heading">
             <div>
               <p>sonic intelligence</p>
@@ -373,7 +398,7 @@
         </section>
       </section>
 
-      <section class="source-band reveal-block" data-pages="home sources submit" aria-label="外部来源采集">
+      <section class="source-band reveal-block" data-pages="tools sources submit" aria-label="外部来源采集">
         <div class="section-heading">
           <p>sources</p>
           <h2>外部音乐链接采集</h2>
@@ -401,7 +426,7 @@
         <div id="sourceQueue" class="source-queue"></div>
       </section>
 
-      <section class="submit-band reveal-block" id="submit" data-pages="home submit">
+      <section class="submit-band reveal-block" id="submit" data-pages="tools submit">
         <div class="section-heading">
           <p>community</p>
           <h2>音乐人 Demo 上传</h2>
@@ -443,7 +468,7 @@
         <div id="demoList" class="demo-list"></div>
       </section>
 
-      <section class="events-band reveal-block" id="events" data-pages="home events submit">
+      <section class="events-band reveal-block" id="events" data-pages="tools events submit">
         <div class="section-heading row-heading">
           <div>
             <p>calendar</p>
@@ -461,12 +486,12 @@
     </dialog>
 
     <nav class="bottom-app-nav" aria-label="App 底部导航">
-      <a href="#pulse">Pulse</a>
-      <a href="#ai">AI</a>
-      <a href="#resources">Dig</a>
-      <a href="#archive">Archive</a>
+      <a href="#home">Home</a>
+      <a href="#stories">Stories</a>
+      <a href="#albums">Albums</a>
+      <a href="#ai-tools">Tools</a>
     </nav>
 
-    <script src="./script.js?v=20260712-local-assets"></script>
+    <script src="./script.js?v=20260712-content-depth"></script>
   </body>
 </html>

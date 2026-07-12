@@ -387,76 +387,164 @@ const events = [
 
 const featuredStories = [
   {
-    title: "FROM SAHARA TO THE DANCEFLOOR",
+    title: "From Sahara to the Dancefloor",
     zh: "从撒哈拉到舞池",
     visual: "SAHARA / CASSETTE",
-    period: "1968 — 2026",
+    period: "1968 — present",
     countries: "Mali · Niger · Ghana · Nigeria",
     artists: ["Tinariwen", "Bombino", "Mdou Moctar"],
     labels: ["Sahel Sounds", "Awesome Tapes", "Analog Africa"],
-    albums: ["Field archive", "Cassette reissues", "Desert guitar"],
+    albums: ["Tassili", "Afelan", "Afel Bocoum"],
+    instruments: ["electric guitar", "tende", "calabash"],
+    historicalContext: "Desert guitar travelled through cassette markets, migration routes and later international reissue networks.",
+    fieldNotes: ["Kidal cassette circulation", "Agadez guitar sessions"],
+    resources: ["Sahel Sounds catalogue", "Awesome Tapes From Africa catalogue", "Analog Africa releases"],
     image: "",
     description: "Desert guitar, cassette circulation, highlife memory and DJ digging routes."
   },
   {
-    title: "EAST AFRICAN UNDERGROUND ELECTRONICS",
+    title: "East African Underground Electronics",
     zh: "东非地下电子",
     visual: "KAMPALA / SYSTEM",
-    period: "2015 — 2026",
+    period: "2015 — present",
     countries: "Uganda · Tanzania · Kenya",
     artists: ["DJ Travella", "Nihiloxica", "Slikback"],
     labels: ["Nyege Nyege Tapes", "Hakuna Kulala"],
     albums: ["Mr Mixondo", "Kaloli", "Club experiments"],
+    instruments: ["drum machine", "ngalabi", "synthesizer"],
+    historicalContext: "East African club producers reshape local dance rhythms through DIY studios, rapid digital exchange and touring sound-system communities.",
+    fieldNotes: ["Kampala warehouse nights", "Dar es Salaam singeli networks"],
+    resources: ["Nyege Nyege official pages", "Hakuna Kulala catalogue", "Public radio sessions"],
     image: "",
     description: "Singeli, Kampala sound systems, Bugandan percussion and experimental club networks."
   },
   {
-    title: "INDIAN OCEAN RHYTHM ROUTES",
+    title: "Indian Ocean Rhythm Routes",
     zh: "印度洋节奏路线",
     visual: "INDIAN OCEAN / MALOYA",
-    period: "1970 — 2026",
+    period: "1970 — present",
     countries: "Reunion · Madagascar · Comoros",
     artists: ["Lindigo", "Danyel Waro", "Ostinato archives"],
     labels: ["Ostinato", "Bongo Joe", "Local archives"],
     albums: ["Maloya studies", "Island reissues", "Creole rhythm"],
+    instruments: ["kayamb", "rouler", "marovany"],
+    historicalContext: "Island rhythms carry creole language, labor memory and long-running exchanges among ports, families and record collectors.",
+    fieldNotes: ["Reunion maloya gatherings", "Comorian wedding-song routes"],
+    resources: ["Ostinato catalogue", "Bongo Joe catalogue", "Indian Ocean public archives"],
     image: "",
     description: "Creole memory, percussion, island circulation and Indian Ocean record histories."
   },
   {
-    title: "MODERN GNAWA",
-    zh: "当代 Gnawa",
+    title: "Modern Gnawa",
+    zh: "当代格纳瓦",
     visual: "GNAWA / GUEMBRI",
-    period: "1982 — 2026",
+    period: "1950s — present",
     countries: "Morocco · Algeria · France",
-    artists: ["Maleem Mahmoud Gania", "Ammar 808", "Acid Arab"],
-    labels: ["Hive Mind", "Glitterbeat", "Independent"],
-    albums: ["Guembri pulse", "Qraqeb cycles", "Fusion recordings"],
+    artists: ["Maâlem Mahmoud Guinia", "Ammar 808", "Innov Gnawa"],
+    labels: ["Glitterbeat", "Hive Mind Records"],
+    albums: ["Aicha", "Maghreb United", "Gnawa Music of Essaouira"],
+    instruments: ["guembri", "qraqeb", "tbel"],
+    historicalContext: "Gnawa music links healing ceremony and trance rhythm to Moroccan diaspora circulation and contemporary electronic production.",
+    fieldNotes: ["Essaouira lila context", "Diaspora festival collaborations"],
+    resources: ["Glitterbeat catalogue", "Hive Mind Records", "Wikimedia instrument references"],
     image: "",
     description: "Healing trance, guembri bass, metal percussion and modern club translation."
   },
   {
-    title: "DIGITAL CUMBIA",
-    zh: "数字 Cumbia",
+    title: "Digital Cumbia",
+    zh: "数字坎比亚",
     visual: "CUMBIA / DUB",
-    period: "2008 — 2026",
+    period: "2008 — present",
     countries: "Argentina · Peru · Colombia · Ecuador",
     artists: ["Chancha Via Circuito", "Dengue Dengue Dengue", "Nicola Cruz"],
     labels: ["ZZK", "Galletas Calientes", "Shika Shika"],
     albums: ["Andean electronics", "Amazonian cumbia", "Global bass"],
+    instruments: ["guacharaca", "tambora", "synthesizer"],
+    historicalContext: "Digital cumbia joins regional dance-band lineages with bass-heavy software production, sampling and transnational club circulation.",
+    fieldNotes: ["Buenos Aires netlabel sessions", "Lima Amazonian-cumbia connections"],
+    resources: ["ZZK Records catalogue", "Shika Shika official pages", "Galletas Calientes catalogue"],
     image: "",
     description: "Cumbia, dub, low-end systems and indigenous melodic memory in contemporary dance music."
   },
   {
-    title: "ANATOLIAN PSYCH",
+    title: "Anatolian Psych",
     zh: "安纳托利亚迷幻",
     visual: "ANATOLIA / PSYCH",
-    period: "1968 — 2026",
+    period: "1968 — present",
     countries: "Turkey · Germany · Netherlands",
     artists: ["Selda Bagcan", "Altin Gun", "Baris Manco"],
     labels: ["Bongo Joe", "Glitterbeat", "Reissue labels"],
     albums: ["Anatolian rock", "Psychedelic folk", "Modern edits"],
+    instruments: ["bağlama", "electric guitar", "darbuka"],
+    historicalContext: "Anatolian psych amplifies folk modes through 1960s rock, diaspora ensembles and a continuing reissue conversation.",
+    fieldNotes: ["Istanbul folk-rock archives", "Amsterdam diaspora rehearsals"],
+    resources: ["Bongo Joe catalogue", "Glitterbeat catalogue", "Turkish public archive recordings"],
     image: "",
     description: "Folk modes, electric guitar, diaspora recordings and psychedelic reissue culture."
+  },
+  {
+    title: "Ethio Jazz",
+    zh: "埃塞俄比亚爵士",
+    visual: "ADDIS / VIBRAPHONE",
+    period: "1968 — present",
+    countries: "Ethiopia · United Kingdom · global diaspora",
+    artists: ["Mulatu Astatke", "Hailu Mergia", "Mahmoud Ahmed"],
+    labels: ["Ethiopiques", "Awesome Tapes From Africa"],
+    albums: ["Mulatu of Ethiopia", "Tche Belew", "Hailu Mergia & His Classical Instrument"],
+    instruments: ["vibraphone", "krar", "tenor saxophone"],
+    historicalContext: "Ethio jazz fused Addis Ababa's orchestral scene with Ethiopian modal melody and jazz arrangement during a decisive recording era.",
+    fieldNotes: ["Addis nightclub orchestras", "Diaspora cassette rediscovery"],
+    resources: ["Ethiopiques catalogue", "Awesome Tapes From Africa catalogue", "Public radio sessions"],
+    image: "",
+    description: "Ethiopian modal melody, jazz orchestration and a vital afterlife in reissues and diaspora listening."
+  },
+  {
+    title: "The Rise of Amapiano",
+    zh: "阿马皮亚诺的崛起",
+    visual: "SOWETO / LOG DRUM",
+    period: "2012 — present",
+    countries: "South Africa · United Kingdom · global diaspora",
+    artists: ["Kabza De Small", "DJ Maphorisa", "DBN Gogo"],
+    labels: ["Piano Hub", "New Money Gang"],
+    albums: ["I Am the King of Amapiano", "Scorpion Kings", "Whats Real"],
+    instruments: ["log drum", "piano", "drum machine"],
+    historicalContext: "Amapiano grew from township dance floors and online sharing into a flexible global club language centered on rolling log-drum patterns.",
+    fieldNotes: ["Soweto dance-video circulation", "Pretoria producer sessions"],
+    resources: ["Piano Hub official pages", "South African public radio sessions", "Artist official channels"],
+    image: "",
+    description: "South African piano chords and log-drum bass patterns reshaped contemporary dance music."
+  },
+  {
+    title: "Dabke Beyond Weddings",
+    zh: "婚礼之外的达布卡",
+    visual: "LEVANT / MIJWEZ",
+    period: "1980s — present",
+    countries: "Syria · Lebanon · Palestine",
+    artists: ["Omar Souleyman", "Rizan Said", "Hello Psychaleppo"],
+    labels: ["Sublime Frequencies", "Other Music"],
+    albums: ["Jazeera Nights", "To Syria, With Love", "Levant Club"],
+    instruments: ["mijwez", "keyboard", "tabla"],
+    historicalContext: "Dabke's communal line-dance pulse moves between wedding circuits, displaced communities and electronic reinterpretations across the Levant.",
+    fieldNotes: ["Wedding cassette culture", "Diaspora dance floors"],
+    resources: ["Sublime Frequencies catalogue", "Artist official pages", "Levant public radio archives"],
+    image: "",
+    description: "Levantine wedding rhythms travel through cassette culture, migration and electronic club edits."
+  },
+  {
+    title: "Chinese Southwest Traditions",
+    zh: "中国西南传统",
+    visual: "SOUTHWEST / REED PIPE",
+    period: "1900s — present",
+    countries: "China · Yunnan · Guizhou · Sichuan",
+    artists: ["Dong Grand Choir", "Hani singers", "Yi musicians"],
+    labels: ["China Record Corporation", "Regional field archives"],
+    albums: ["Dong Grand Song", "Yunnan Folk Music", "Southwest Field Recordings"],
+    instruments: ["lusheng", "bawu", "sanxian"],
+    historicalContext: "Southwest traditions sustain polyphony, reed-pipe dance and village ceremony through local transmission, staged presentation and archival recording.",
+    fieldNotes: ["Guizhou grand-song villages", "Yunnan reed-pipe festivals"],
+    resources: ["China Record Corporation catalogue", "Regional public archives", "Wikimedia instrument references"],
+    image: "",
+    description: "Polyphonic singing, reed pipes and community performance practices from Southwest China."
   }
 ];
 
@@ -1309,6 +1397,24 @@ const archiveRecordTypes = [
   ["Contemporary Bridge", "A modern entry showing how the tradition reappears in club culture, ambient music or electronic production."]
 ];
 
+const taskThreeAlbumStories = [
+  "From Sahara to the Dancefloor",
+  "From Sahara to the Dancefloor",
+  "From Sahara to the Dancefloor",
+  "Ethio Jazz",
+  "East African Underground Electronics",
+  "The Rise of Amapiano",
+  "Modern Gnawa",
+  "Modern Gnawa",
+  "Digital Cumbia",
+  "Dabke Beyond Weddings",
+  "Anatolian Psych",
+  "Dabke Beyond Weddings",
+  "East African Underground Electronics",
+  "Chinese Southwest Traditions",
+  "Indian Ocean Rhythm Routes"
+];
+
 const archiveExpansionRecords = archiveExpansionScenes.flatMap((scene, sceneIndex) =>
   archiveRecordTypes.map(([recordType, listeningContext], typeIndex) => {
     const [title, region, country, year, genres, label, artists, instruments] = scene;
@@ -1327,6 +1433,9 @@ const archiveExpansionRecords = archiveExpansionScenes.flatMap((scene, sceneInde
       listeningContext,
       relatedArtists: artists,
       relatedInstruments: instruments,
+      ...(sceneIndex < taskThreeAlbumStories.length
+        ? { relatedStory: taskThreeAlbumStories[sceneIndex] }
+        : {}),
       source: `${label} / archive research record`,
       sourceUrl: `https://bandcamp.com/search?q=${encodeURIComponent(title)}`
     };
@@ -1337,12 +1446,9 @@ albums.push(...archiveExpansionRecords);
 
 featuredStories.push(
   ...[
-    ["ETHIO JAZZ", "1968 — now", "Ethiopia", ["Mulatu Astatke", "Hailu Mergia", "Mahmoud Ahmed"], ["Ethiopiques", "Awesome Tapes"], ["Ethio-jazz recordings", "Addis groove"], ["vibraphone", "krar"], "Addis Ababa studio orchestras, jazz harmony and Ethiopian modal systems."],
     ["HIGHLIFE & AFRO DISCO", "1950 — 1985", "Ghana · Nigeria · Senegal", ["Ebo Taylor", "Pat Thomas", "Orchestra Baobab"], ["Soundway", "Analog Africa"], ["Highlife bands", "Afro disco reissues"], ["talking drum", "guitar"], "Urban dance bands, guitar modernism and post-independence nightlife."],
     ["CASSETTE CULTURES OF WEST AFRICA", "1970 — now", "Mali · Ghana · Senegal", ["Ata Kak", "Nahawa Doumbia", "market cassette artists"], ["Awesome Tapes", "Sahel Sounds"], ["Cassette archive", "market recordings"], ["voice", "drum machine"], "Cassettes as local media, informal distribution and later reissue practice."],
-    ["THE RISE OF AMAPIANO", "2012 — now", "South Africa", ["Kabza De Small", "DJ Maphorisa", "DBN Gogo"], ["PianoHub", "independent"], ["Log drum era", "vocal piano"], ["log drum", "keys"], "Township circulation, dance videos and the log drum as a global rhythmic sign."],
     ["KUDURO AND LISBON BASS", "1990 — now", "Angola · Portugal", ["DJ Marfox", "Nídia", "DJ Nigga Fox"], ["Príncipe", "independent"], ["Batida", "Lisbon bass"], ["drum machine", "vocal chop"], "Angolan dance energy, migration and Lisbon underground club networks."],
-    ["DABKE BEYOND WEDDINGS", "1980 — now", "Syria · Lebanon · Palestine", ["Omar Souleyman", "Rizan Said", "Hello Psychaleppo"], ["Sublime Frequencies", "independent"], ["Wedding tapes", "Levant club"], ["mijwez", "keyboard"], "Wedding performance, diaspora circulation and electronic reinterpretation."],
     ["REUNION ISLAND MALOYA", "1950 — now", "Reunion", ["Danyel Waro", "Lindigo", "Christine Salem"], ["Ostinato", "Bongo Joe"], ["Maloya studies", "Creole rhythm"], ["kayamb", "rouler"], "Creole memory, labor history and percussion as resistance archive."],
     ["THE STORY OF KORA", "1200 — now", "Mali · Gambia · Senegal", ["Toumani Diabate", "Ballake Sissoko", "Sona Jobarteh"], ["World Circuit", "field archive"], ["Griot recordings", "kora duets"], ["kora", "balafon"], "A griot instrument connecting genealogy, praise song and modern chamber recordings."],
     ["FIELD RECORDINGS OF THE SAHEL", "1900 — now", "Mali · Niger · Mauritania", ["Sahel Sounds artists", "Mdou Moctar", "Les Filles de Illighadad"], ["Sahel Sounds", "Ocora"], ["Field archive", "Saharan WhatsApp"], ["guitar", "tende"], "Recording as relationship: phones, field sessions, local markets and consent."],
@@ -1352,7 +1458,6 @@ featuredStories.push(
     ["AMAZONIAN RITUAL MUSIC", "1900 — now", "Peru · Colombia · Brazil", ["Shipibo singers", "Los Mirlos", "Juaneco y su Combo"], ["Infopesa", "field archive"], ["Ritual recordings", "Amazonian cumbia"], ["maracas", "voice"], "Healing songs, forest cosmologies and the ethics of listening beyond exoticism."],
     ["THE GLOBAL JOURNEY OF DUB", "1968 — now", "Jamaica · UK · global", ["King Tubby", "Lee Scratch Perry", "Scientist"], ["Pressure Sounds", "On-U Sound"], ["Dub plates", "soundsystem culture"], ["bass", "spring reverb"], "Studio-as-instrument practice that reshaped remix, club and electronic music."],
     ["MUSIC OF THE SILK ROAD", "1900 — now", "Uzbekistan · Tajikistan · Afghanistan", ["Munadjat Yulchieva", "Turgun Alimatov", "Homayun Sakhi"], ["Ocora", "Smithsonian"], ["Maqam archive", "rubab recordings"], ["dutar", "rabab"], "Modal systems, caravan histories and post-Soviet / diaspora recordings."],
-    ["CHINESE SOUTHWEST TRADITIONS", "1900 — now", "Yunnan · Guizhou · Sichuan", ["Dong chorus", "Hani singers", "Yi musicians"], ["field archive", "regional archives"], ["Minority music", "choral traditions"], ["lusheng", "bawu"], "Polyphony, reed pipes and mountain village performance ecologies."],
     ["MONGOLIAN THROAT SINGING", "1900 — now", "Mongolia · Tuva", ["Huun-Huur-Tu", "Yat-Kha", "Anda Union"], ["Jaro", "Smithsonian"], ["Overtone recordings", "folk rock"], ["morin khuur", "igil"], "Overtone technique, horsehead fiddle and steppe sound imagination."],
     ["GAMELAN AND MODERN ELECTRONICS", "1900 — now", "Indonesia", ["Senyawa", "Dewa Alit", "Gamelan Sekar Jaya"], ["Nonesuch", "field archive"], ["Gamelan archive", "experimental collaborations"], ["gamelan", "gong"], "Interlocking metallophones, ritual calendars and contemporary experimental composition."],
     ["BALEARIC LISTENING CULTURE", "1980 — now", "Mediterranean · Ibiza", ["Gigi Masin", "Gaussian Curve", "Mark Barrott"], ["Music From Memory", "International Feel"], ["Sunset listening", "ambient reissues"], ["synthesizer", "guitar"], "DJ selection as atmosphere, memory and open-genre listening practice."],
@@ -1477,8 +1582,10 @@ instrumentAtlas.push(
     description: `${artifact} used across ${genres}. Related artists or ensembles: ${artists}.`,
     history: `${name} is a useful entry point into ${region} performance history.`,
     audioCharacteristics: artifact,
+    sound: artifact,
     artists,
-    relatedGenres: genres
+    relatedGenres: genres,
+    genres
   }))
 );
 
@@ -1563,16 +1670,16 @@ timelineEntries.push(
 );
 
 const soundMapRegions = [
-  { name: "West Africa", zh: "西非", x: 37, y: 54, keywords: ["West Africa", "Mali", "Niger", "Senegal", "Ghana", "Gambia", "Sahel", "Manding"], featured: "FROM SAHARA TO THE DANCEFLOOR" },
-  { name: "East Africa", zh: "东非", x: 58, y: 58, keywords: ["East Africa", "Uganda", "Kenya", "Tanzania", "Ethiopia", "Somalia", "Kampala", "Addis"], featured: "EAST AFRICAN UNDERGROUND ELECTRONICS" },
-  { name: "Maghreb", zh: "马格里布", x: 44, y: 35, keywords: ["Morocco", "Algeria", "Tunisia", "Maghreb", "Gnawa", "Sahara"], featured: "MODERN GNAWA" },
-  { name: "Middle East", zh: "中东", x: 64, y: 42, keywords: ["Middle East", "Levant", "Syria", "Iran", "Iraq", "Arabic", "Persian", "Dabke"], featured: "DABKE BEYOND WEDDINGS" },
-  { name: "Andes", zh: "安第斯", x: 22, y: 66, keywords: ["Andes", "Peru", "Bolivia", "Ecuador", "Quechua", "Andean"], featured: "DIGITAL CUMBIA" },
-  { name: "Amazon", zh: "亚马逊", x: 35, y: 72, keywords: ["Amazon", "Peru", "Colombia", "Brazil", "Shipibo", "Amazonian"], featured: "AMAZONIAN RITUAL MUSIC" },
-  { name: "South Asia", zh: "南亚", x: 69, y: 52, keywords: ["India", "Pakistan", "Bangladesh", "Rajasthan", "Carnatic", "Qawwali", "South Asia"], featured: "SOUTH ASIAN DEVOTIONAL ROUTES" },
-  { name: "Southeast Asia", zh: "东南亚", x: 83, y: 63, keywords: ["Thailand", "Laos", "Vietnam", "Indonesia", "Philippines", "Cambodia", "Southeast Asia", "Gamelan"], featured: "GAMELAN AND MODERN ELECTRONICS" },
-  { name: "Southwest China", zh: "中国西南", x: 80, y: 43, keywords: ["China", "Yunnan", "Guizhou", "Sichuan", "Dong", "Hani", "Yi", "Southwest"], featured: "CHINESE SOUTHWEST TRADITIONS" },
-  { name: "Mediterranean", zh: "地中海", x: 52, y: 27, keywords: ["Mediterranean", "Turkey", "Greece", "Ibiza", "Anatolian", "Balearic"], featured: "ANATOLIAN PSYCH" }
+  { name: "West Africa", zh: "西非", x: 37, y: 54, keywords: ["West Africa", "Mali", "Niger", "Senegal", "Ghana", "Gambia", "Sahel", "Manding"], featured: "FROM SAHARA TO THE DANCEFLOOR", scenes: "Highlife, griot lineages, Sahel guitar and cassette culture", routes: "Mali, Niger, Senegal, Ghana, Gambia and diaspora reissue circuits" },
+  { name: "East Africa", zh: "东非", x: 58, y: 58, keywords: ["East Africa", "Uganda", "Kenya", "Tanzania", "Ethiopia", "Somalia", "Kampala", "Addis"], featured: "EAST AFRICAN UNDERGROUND ELECTRONICS", scenes: "Singeli, experimental club, Ethio-jazz and Somali disco", routes: "Uganda, Tanzania, Kenya, Ethiopia, Somalia and touring sound-system routes" },
+  { name: "Maghreb", zh: "马格里布", x: 44, y: 35, keywords: ["Morocco", "Algeria", "Tunisia", "Maghreb", "Gnawa", "Sahara"], featured: "MODERN GNAWA", scenes: "Gnawa, rai reissues, Arab funk and North African electronic hybrids", routes: "Morocco, Algeria, Tunisia, France and global festival circuits" },
+  { name: "Middle East", zh: "中东", x: 64, y: 42, keywords: ["Middle East", "Levant", "Syria", "Iran", "Iraq", "Arabic", "Persian", "Dabke"], featured: "DABKE BEYOND WEDDINGS", scenes: "Dabke, Persian experimental music, maqam and Arab funk archives", routes: "Levant, Iran, Iraq, diaspora cities and cassette networks" },
+  { name: "Andes", zh: "安第斯", x: 22, y: 66, keywords: ["Andes", "Peru", "Bolivia", "Ecuador", "Quechua", "Andean"], featured: "DIGITAL CUMBIA", scenes: "Andean folk, digital cumbia and organic downtempo", routes: "Ecuador, Peru, Bolivia, Buenos Aires and global bass clubs" },
+  { name: "Amazon", zh: "亚马逊", x: 35, y: 72, keywords: ["Amazon", "Peru", "Colombia", "Brazil", "Shipibo", "Amazonian"], featured: "AMAZONIAN RITUAL MUSIC", scenes: "Amazonian cumbia, ritual song and community archive projects", routes: "Peru, Colombia, Brazil, river communities and ethical listening networks" },
+  { name: "South Asia", zh: "南亚", x: 69, y: 52, keywords: ["India", "Pakistan", "Bangladesh", "Rajasthan", "Carnatic", "Qawwali", "South Asia"], featured: "INDIAN OCEAN RHYTHM ROUTES", scenes: "Qawwali, Carnatic music, Rajasthan folk and devotional recordings", routes: "India, Pakistan, Bangladesh, diaspora stages and field-recording archives" },
+  { name: "Southeast Asia", zh: "东南亚", x: 83, y: 63, keywords: ["Thailand", "Laos", "Vietnam", "Indonesia", "Philippines", "Cambodia", "Southeast Asia", "Gamelan"], featured: "GAMELAN AND MODERN ELECTRONICS", scenes: "Gamelan, molam, kulintang, Khmer rock and experimental roots", routes: "Indonesia, Thailand, Laos, Vietnam, Cambodia, Philippines and diaspora ensembles" },
+  { name: "Southwest China", zh: "中国西南", x: 80, y: 43, keywords: ["China", "Yunnan", "Guizhou", "Sichuan", "Dong", "Hani", "Yi", "Southwest"], featured: "CHINESE SOUTHWEST TRADITIONS", scenes: "Dong polyphony, Hani song, Yi traditions and regional field recordings", routes: "Yunnan, Guizhou, Sichuan, village festivals and community archives" },
+  { name: "Mediterranean", zh: "地中海", x: 52, y: 27, keywords: ["Mediterranean", "Turkey", "Greece", "Ibiza", "Anatolian", "Balearic"], featured: "ANATOLIAN PSYCH", scenes: "Anatolian psych, rebetiko, Balearic ambient and Turkish folk revival", routes: "Turkey, Greece, Ibiza, diaspora labels and reissue culture" }
 ];
 
 const fieldNotesArchive = [
@@ -1585,14 +1692,36 @@ const fieldNotesArchive = [
 ];
 
 const extendedResourceTypes = [
-  { type: "Book", title: "Ocean of Sound", region: "Global listening", note: "A listening-oriented route through ambient, dub, sampling and world sound culture.", connects: ["dub", "ambient", "field recording"] },
-  { type: "Book", title: "The Songlines", region: "Australia / travel writing", note: "Useful as a starting point for thinking about land, route and song, with critical distance.", connects: ["indigenous music", "land", "oral tradition"] },
-  { type: "Film", title: "I Bring What I Love", region: "Senegal / diaspora", note: "Youssou N'Dour, faith, public culture and global African pop.", connects: ["mbalax", "Senegal", "diaspora"] },
-  { type: "Documentary", title: "A Story of Sahel Sounds", region: "Sahel", note: "Field recording, consent, mobile phones and local-global circulation.", connects: ["sahel guitar", "field recording", "Sahel Sounds"] },
-  { type: "Radio Show", title: "NTS: Global Roots / Diggers Streams", region: "Global", note: "A practical listening source for reissue, cassette, dub and experimental routes.", connects: ["NTS", "reissue", "radio archive"] },
-  { type: "Podcast", title: "Afropop Worldwide", region: "Africa / diaspora", note: "Long-running episodes connecting artists, scenes, migration and history.", connects: ["afrobeat", "highlife", "diaspora"] },
-  { type: "Field Recording", title: "Smithsonian Folkways Archive", region: "Global", note: "Educational catalogue for traditional, folk and ethnographic recordings.", connects: ["field recordings", "instrument atlas", "traditional music"] },
-  { type: "Academic Reference", title: "Ethnomusicology Review Paths", region: "Global", note: "Use as a research doorway for citation trails and cultural context.", connects: ["ethnomusicology", "field notes", "regional archives"] }
+  { type: "Label Catalogue", title: "Sahel Sounds", publisher: "Sahel Sounds", year: "2009 - present", link: "https://sahelsounds.com/", region: "Sahel", note: "The label documents contemporary Saharan guitar alongside field-based release contexts.", connects: ["From Sahara to the Dancefloor", "Sahara Guitar", "West Africa"] },
+  { type: "Label Catalogue", title: "Awesome Tapes From Africa", publisher: "Awesome Tapes From Africa", year: "2006 - present", link: "https://www.awesometapes.com/", region: "West Africa / diaspora", note: "Its catalogue traces cassette-era recordings into a wider reissue listening culture.", connects: ["From Sahara to the Dancefloor", "cassette culture", "West Africa"] },
+  { type: "Artist Page", title: "Mdou Moctar", publisher: "Mdou Moctar", year: "2008 - present", link: "https://www.mdoumoctar.com/", region: "Niger / diaspora", note: "Moctar's official page situates electric guitar songwriting within Tuareg and global touring circuits.", connects: ["From Sahara to the Dancefloor", "Sahel guitar", "Niger"] },
+  { type: "Bandcamp Page", title: "Nyege Nyege Tapes", publisher: "Nyege Nyege Tapes", year: "2015 - present", link: "https://nyegenyegetapes.bandcamp.com/", region: "Uganda / East Africa", note: "The label page provides a direct catalogue route into Kampala-linked experimental club releases.", connects: ["East African Underground Electronics", "Kampala", "singeli"] },
+  { type: "Bandcamp Page", title: "Hakuna Kulala", publisher: "Hakuna Kulala", year: "2016 - present", link: "https://hakunakulala.bandcamp.com/", region: "Uganda / East Africa", note: "This companion imprint maps noisy club hybrids and producer-led East African exchanges.", connects: ["East African Underground Electronics", "Kampala", "experimental club"] },
+  { type: "Artist Page", title: "DJ Travella", publisher: "Nyege Nyege Tapes", year: "2017 - present", link: "https://nyegenyegetapes.bandcamp.com/artist/dj-travella", region: "Tanzania", note: "The artist catalogue page offers an accessible entry to high-speed singeli production.", connects: ["East African Underground Electronics", "singeli", "Tanzania"] },
+  { type: "Label Catalogue", title: "Ostinato Records", publisher: "Ostinato Records", year: "2016 - present", link: "https://ostinatorecords.com/", region: "Indian Ocean / global", note: "Ostinato's releases foreground regional popular music through carefully contextualized reissues.", connects: ["Indian Ocean Rhythm Routes", "maloya", "island reissues"] },
+  { type: "Bandcamp Page", title: "Bongo Joe Records", publisher: "Bongo Joe Records", year: "2015 - present", link: "https://bongojoe.bandcamp.com/", region: "Reunion / Switzerland", note: "The label's public catalogue connects Creole rhythms with contemporary independent distribution.", connects: ["Indian Ocean Rhythm Routes", "maloya", "Reunion"] },
+  { type: "Artist Page", title: "Danyel Waro", publisher: "Danyel Waro", year: "1970s - present", link: "https://www.danyelwaro.com/", region: "Reunion", note: "Waro's official site provides a primary reference for maloya performance and recording work.", connects: ["Indian Ocean Rhythm Routes", "maloya", "Reunion"] },
+  { type: "Label Catalogue", title: "Glitterbeat Records", publisher: "Glitterbeat Records", year: "2012 - present", link: "https://glitterbeat.com/", region: "Morocco / global", note: "The catalogue offers a label-side route into contemporary Gnawa recordings and collaborations.", connects: ["Modern Gnawa", "Gnawa", "Morocco"] },
+  { type: "Bandcamp Page", title: "Hive Mind Records", publisher: "Hive Mind Records", year: "2018 - present", link: "https://hivemindrecords.bandcamp.com/", region: "Morocco / diaspora", note: "This page collects releases that place North African rhythm in experimental electronic settings.", connects: ["Modern Gnawa", "Gnawa", "electronic music"] },
+  { type: "Article", title: "Gnawa music", publisher: "Wikimedia Foundation", year: "Reference article", link: "https://en.wikipedia.org/wiki/Gnawa_music", region: "Morocco", note: "The reference overview helps distinguish ceremonial practice from later commercial and festival contexts.", connects: ["Modern Gnawa", "Gnawa", "guembri"] },
+  { type: "Label Catalogue", title: "ZZK Records", publisher: "ZZK Records", year: "2008 - present", link: "https://zzkrecords.com/", region: "Argentina / Andes", note: "ZZK's catalogue documents an influential meeting point for cumbia, bass music and digital production.", connects: ["Digital Cumbia", "Buenos Aires", "cumbia"] },
+  { type: "Bandcamp Page", title: "Shika Shika", publisher: "Shika Shika", year: "2014 - present", link: "https://shikashika.bandcamp.com/", region: "Andes / global", note: "The label page links Andean-rooted projects with an international community of independent listeners.", connects: ["Digital Cumbia", "Andes", "organic downtempo"] },
+  { type: "Artist Page", title: "Nicola Cruz", publisher: "Nicola Cruz", year: "2013 - present", link: "https://www.nicolacruz.com/", region: "Ecuador", note: "Cruz's official page provides an artist-led bridge between Andean references and electronic composition.", connects: ["Digital Cumbia", "Andes", "Ecuador"] },
+  { type: "Article", title: "Baris Manco", publisher: "Wikimedia Foundation", year: "Reference article", link: "https://en.wikipedia.org/wiki/Bar%C4%B1%C5%9F_Man%C3%A7o", region: "Turkey", note: "This biographical reference gives useful context for a central figure in Turkish popular and psychedelic music.", connects: ["Anatolian Psych", "Turkey", "Anatolian rock"] },
+  { type: "Article", title: "Anatolian Rock Revival Project", publisher: "Anatolian Rock Revival Project", year: "2017 - present", link: "https://www.anatolianrockrevivalproject.com/", region: "Turkey / diaspora", note: "The public archive organizes visual and listening references around Turkish psychedelic and folk-rock records.", connects: ["Anatolian Psych", "Turkey", "reissue culture"] },
+  { type: "Bandcamp Page", title: "Bongo Joe Records: Anatolian releases", publisher: "Bongo Joe Records", year: "2015 - present", link: "https://bongojoe.bandcamp.com/", region: "Turkey / diaspora", note: "The label catalogue supplies a legal listening path for contemporary Anatolian-rooted releases.", connects: ["Anatolian Psych", "Anatolian rock", "diaspora"] },
+  { type: "Artist Page", title: "Mulatu Astatke", publisher: "Mulatu Astatke", year: "1950s - present", link: "https://mulatuastatke.com/", region: "Ethiopia / diaspora", note: "Astatke's official page anchors Ethio-jazz through the work of one of its defining composers.", connects: ["Ethio Jazz", "Addis Ababa", "Ethiopia"] },
+  { type: "Label Catalogue", title: "Ethiopiques", publisher: "Buda Musique", year: "1997 - present", link: "https://www.budamusique.com/en/catalogue/ethiopiques/", region: "Ethiopia", note: "The series catalogue is a useful label reference for recordings from Ethiopia's modern music history.", connects: ["Ethio Jazz", "Addis Ababa", "reissues"] },
+  { type: "Article", title: "Ethio-jazz", publisher: "Wikimedia Foundation", year: "Reference article", link: "https://en.wikipedia.org/wiki/Ethio-jazz", region: "Ethiopia", note: "The reference entry offers a concise orientation to the style's Ethiopian and jazz influences.", connects: ["Ethio Jazz", "Ethiopia", "jazz"] },
+  { type: "Article", title: "Amapiano", publisher: "Wikimedia Foundation", year: "Reference article", link: "https://en.wikipedia.org/wiki/Amapiano", region: "South Africa", note: "This overview provides a starting vocabulary for the genre's township, club and digital circulation.", connects: ["The Rise of Amapiano", "South Africa", "log drum"] },
+  { type: "Artist Page", title: "Kabza De Small", publisher: "Kabza De Small", year: "2010s - present", link: "https://www.kabzadesmall.com/", region: "South Africa", note: "The official artist page offers a primary route into a key amapiano producer's releases and appearances.", connects: ["The Rise of Amapiano", "amapiano", "South Africa"] },
+  { type: "Radio Archive", title: "YFM", publisher: "YFM", year: "1997 - present", link: "https://www.yfm.co.za/", region: "South Africa", note: "The station's public programming is a useful contemporary reference for South African youth music culture.", connects: ["The Rise of Amapiano", "South Africa", "radio"] },
+  { type: "Artist Page", title: "47SOUL", publisher: "47SOUL", year: "2013 - present", link: "https://www.47soul.com/", region: "Palestine / Jordan / diaspora", note: "The band's official page documents a contemporary meeting of dabke rhythms and electronic dance music.", connects: ["Dabke Beyond Weddings", "dabke", "Levant"] },
+  { type: "Radio Archive", title: "Radio Alhara", publisher: "Radio Alhara", year: "2020 - present", link: "https://radioalhara.net/", region: "Palestine / global", note: "This independent radio archive connects regional cultural programming with a global listener community.", connects: ["Dabke Beyond Weddings", "Levant", "diaspora"] },
+  { type: "Article", title: "Dabke", publisher: "Wikimedia Foundation", year: "Reference article", link: "https://en.wikipedia.org/wiki/Dabke", region: "Levant", note: "The reference page provides cultural background for the social dance traditions behind later club adaptations.", connects: ["Dabke Beyond Weddings", "dabke", "Levant"] },
+  { type: "Article", title: "Grand Song of the Dong ethnic group", publisher: "UNESCO Intangible Cultural Heritage", year: "2009 - present", link: "https://ich.unesco.org/en/RL/grand-song-of-the-dong-00120", region: "Guizhou / China", note: "UNESCO's entry gives a public reference point for Dong polyphony and its community setting.", connects: ["Chinese Southwest Traditions", "Dong polyphony", "Guizhou"] },
+  { type: "Label Catalogue", title: "Kink Gong Records", publisher: "Kink Gong", year: "2001 - present", link: "https://kinkgong.com/", region: "Yunnan / Southeast Asia", note: "The field-recording catalogue offers a route into regional ritual, village and instrument documentation.", connects: ["Chinese Southwest Traditions", "Yunnan", "field recording"] },
+  { type: "Article", title: "Lusheng", publisher: "Wikimedia Foundation", year: "Reference article", link: "https://en.wikipedia.org/wiki/Lusheng", region: "Southwest China", note: "This instrument reference helps identify the reed-pipe tradition heard across several southwest Chinese communities.", connects: ["Chinese Southwest Traditions", "lusheng", "Guizhou"] }
 ];
 
 let activeFilter = "all";
@@ -1627,6 +1756,8 @@ const aiSearchInput = document.querySelector("#aiSearchInput");
 const analysisOutput = document.querySelector("#analysisOutput");
 const runAnalysis = document.querySelector("#runAnalysis");
 const resourceGrid = document.querySelector("#resourceGrid");
+const archiveIndex = document.querySelector("#archiveIndex");
+const homeFeaturedPreview = document.querySelector("#homeFeaturedPreview");
 const museumTodayRoute = document.querySelector("#museumTodayRoute");
 const museumSoundMap = document.querySelector("#museumSoundMap");
 const museumExhibition = document.querySelector("#museumExhibition");
@@ -1650,19 +1781,26 @@ const routeAliases = {
   "": "home",
   home: "home",
   library: "home",
-  stories: "home",
-  journeys: "home",
-  atlas: "home",
-  instruments: "home",
+  "archive-index": "home",
+  stories: "stories",
+  journeys: "stories",
+  artists: "artists",
+  albums: "albums",
+  archive: "albums",
+  atlas: "regions",
+  regions: "regions",
+  instruments: "instruments",
+  labels: "labels",
+  fieldnotes: "fieldnotes",
+  "field-notes": "fieldnotes",
+  tools: "tools",
   pulse: "pulse",
-  "ai-tools": "ai",
-  ai: "ai",
-  resources: "resources",
-  albums: "archive",
-  archive: "archive",
+  "ai-tools": "tools",
+  ai: "tools",
+  resources: "tools",
   submit: "submit",
-  events: "events",
-  sources: "sources"
+  events: "tools",
+  sources: "tools"
 };
 
 function showPage(route = "home") {
@@ -1677,7 +1815,7 @@ function showPage(route = "home") {
     if (isActive) view.classList.add("is-visible");
   });
   document.body.dataset.page = page;
-  if (targetSection && page === "home") {
+  if (targetSection) {
     requestAnimationFrame(() => targetSection.scrollIntoView({ behavior: "smooth", block: "start" }));
   } else {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -1882,7 +2020,14 @@ const assetFolders = {
 };
 
 function visualKey(value = "") {
-  return normalizeEntity(value).replace(/ı/g, "i");
+  return String(value)
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/&/g, " ")
+    .replace(/[^a-z0-9\u4e00-\u9fff]+/g, " ")
+    .trim()
+    .replace(/ı/g, "i");
 }
 
 function assetSlug(value = "") {
@@ -2045,6 +2190,214 @@ function entityButton(type, name, className = "entity-chip") {
 function entityList(type, items, className = "relation-chips") {
   const values = uniqueItems(items).slice(0, 14);
   return values.length ? `<div class="${className}">${values.map((item) => entityButton(type, item)).join("")}</div>` : "";
+}
+
+function shortText(value = "", maxLength = 180) {
+  const text = String(value || "").replace(/\s+/g, " ").trim();
+  if (text.length <= maxLength) return text;
+  return `${text.slice(0, maxLength - 1).trim()}…`;
+}
+
+function ensureArray(value = []) {
+  if (Array.isArray(value)) return value.filter(Boolean);
+  return splitEntityList(value);
+}
+
+function entitySummary(type, name) {
+  const key = normalizeEntity(name);
+  if (!key) return null;
+  if (type === "story") return featuredStories.find((item) => normalizeEntity(item.title) === key) || null;
+  if (type === "artist") return essentialArtists.find((item) => normalizeEntity(item.name) === key) || null;
+  if (type === "label") return labelArchive.find((item) => normalizeEntity(item.name) === key) || null;
+  if (type === "instrument") return instrumentAtlas.find((item) => normalizeEntity(item.name) === key) || null;
+  if (type === "region") return soundMapRegions.find((item) => normalizeEntity(item.name) === key || normalizeEntity(item.zh || "") === key) || null;
+  if (type === "album") return albums.find((item) => normalizeEntity(item.title) === key) || null;
+  return null;
+}
+
+function renderArchiveIndex() {
+  if (!archiveIndex) return;
+  const story = featuredStories[dateIndex(featuredStories.length, "week")];
+  const artist = essentialArtists[dateIndex(essentialArtists.length, "week")];
+  const album = albums[dateIndex(albums.length, "week")];
+  const instrument = instrumentAtlas[dateIndex(instrumentAtlas.length, "week")];
+  const region = soundMapRegions[dateIndex(soundMapRegions.length, "week")];
+  const label = labelArchive[dateIndex(labelArchive.length, "week")];
+  const fieldnote = fieldNotesArchive[dateIndex(fieldNotesArchive.length, "week")];
+  const entries = [
+    {
+      href: "#stories",
+      type: "story",
+      title: "Stories",
+      zh: "展览故事",
+      count: featuredStories.length,
+      label: "curated exhibitions",
+      description: "主题展览、历史脉络与文化路线。",
+      imageTitle: story.title,
+      imageSubtitle: story.countries,
+      imageSrc: story.image
+    },
+    {
+      href: "#artists",
+      type: "artist",
+      title: "Artists",
+      zh: "艺人墙",
+      count: essentialArtists.length,
+      label: "artist profiles",
+      description: "从人进入场景，再连接专辑、厂牌与故事。",
+      imageTitle: artist.name,
+      imageSubtitle: artist.region,
+      imageSrc: artist.portrait
+    },
+    {
+      href: "#albums",
+      type: "album",
+      title: "Albums",
+      zh: "唱片墙",
+      count: albums.length,
+      label: "record entries",
+      description: "按国家、年份、厂牌和风格挖掘唱片。",
+      imageTitle: album.title,
+      imageSubtitle: album.country,
+      imageSrc: album.cover
+    },
+    {
+      href: "#instruments",
+      type: "instrument",
+      title: "Instruments",
+      zh: "乐器藏品",
+      count: instrumentAtlas.length,
+      label: "collection objects",
+      description: "以博物馆藏品方式理解声音材料。",
+      imageTitle: instrument.name,
+      imageSubtitle: instrument.region,
+      imageSrc: instrument.photo
+    },
+    {
+      href: "#regions",
+      type: "region",
+      title: "Regions",
+      zh: "地区档案",
+      count: soundMapRegions.length,
+      label: "sound territories",
+      description: "进入地域、城市、流动路线与场景。",
+      imageTitle: region.name,
+      imageSubtitle: region.featured,
+      imageSrc: region.hero
+    },
+    {
+      href: "#labels",
+      type: "label",
+      title: "Labels",
+      zh: "厂牌档案",
+      count: labelArchive.length,
+      label: "label archives",
+      description: "厂牌作为文化发动机和再发行线索。",
+      imageTitle: label.name,
+      imageSubtitle: label.location,
+      imageSrc: label.hero
+    },
+    {
+      href: "#fieldnotes",
+      type: "fieldnote",
+      title: "Fieldnotes",
+      zh: "田野笔记",
+      count: fieldNotesArchive.length,
+      label: "field observations",
+      description: "地点、现场、仪式、市场与录音线索。",
+      imageTitle: fieldnote.title,
+      imageSubtitle: fieldnote.location,
+      imageSrc: fieldnote.photo
+    }
+  ];
+
+  archiveIndex.innerHTML = entries
+    .map(
+      (entry, index) => `
+        <a class="archive-index-card" href="${entry.href}">
+          <span class="archive-index-number">${String(index + 1).padStart(2, "0")}</span>
+          <div class="archive-index-visual">
+            ${contentImage({ type: entry.type, title: entry.imageTitle, subtitle: entry.imageSubtitle, src: entry.imageSrc, index, imageClass: "archive-index-photo", ratio: entry.type === "album" ? "1 / 1" : "4 / 5", position: entry.type === "artist" ? "center top" : "center" })}
+          </div>
+          <div class="archive-index-copy">
+            <small>${entry.label}</small>
+            <h3>${entry.title}</h3>
+            <em>${entry.zh}</em>
+            <p>${entry.description}</p>
+            <strong>${entry.count}</strong>
+          </div>
+        </a>
+      `
+    )
+    .join("");
+}
+
+function renderHomeFeaturedPreview() {
+  if (!homeFeaturedPreview) return;
+  const story = featuredStories[dateIndex(featuredStories.length, "week")];
+  const artist = essentialArtists[dateIndex(essentialArtists.length, "day")];
+  const album = albums[dateIndex(albums.length, "day")];
+  const instrument = instrumentAtlas[dateIndex(instrumentAtlas.length, "day")];
+  const previews = [
+    {
+      href: "#stories",
+      type: "story",
+      eyebrow: "Exhibition",
+      title: story.title,
+      zh: story.zh,
+      meta: story.period,
+      subtitle: story.countries,
+      src: story.image
+    },
+    {
+      href: "#artists",
+      type: "artist",
+      eyebrow: "Voice",
+      title: artist.name,
+      zh: artist.region,
+      meta: artist.scenes,
+      subtitle: artist.region,
+      src: artist.portrait
+    },
+    {
+      href: "#albums",
+      type: "album",
+      eyebrow: "Record",
+      title: album.title,
+      zh: album.country,
+      meta: `${album.artist} · ${album.year}`,
+      subtitle: album.country,
+      src: album.cover
+    },
+    {
+      href: "#instruments",
+      type: "instrument",
+      eyebrow: "Object",
+      title: instrument.name,
+      zh: instrument.zh,
+      meta: instrument.region,
+      subtitle: instrument.region,
+      src: instrument.photo
+    }
+  ];
+
+  homeFeaturedPreview.innerHTML = previews
+    .map(
+      (item, index) => `
+        <a class="home-preview-card" href="${item.href}">
+          <div class="home-preview-image">
+            ${contentImage({ type: item.type, title: item.title, subtitle: item.subtitle, src: item.src, index, imageClass: "home-preview-photo", ratio: item.type === "album" ? "1 / 1" : "16 / 11", position: item.type === "artist" ? "center top" : "center" })}
+          </div>
+          <div class="home-preview-copy">
+            <span>${item.eyebrow}</span>
+            <h3>${item.title}</h3>
+            <small class="zh-sub card-sub">${item.zh}</small>
+            <p>${item.meta}</p>
+          </div>
+        </a>
+      `
+    )
+    .join("");
 }
 
 function albumMatchesEntity(album, type, name) {
@@ -2262,7 +2615,7 @@ function renderFeaturedStories() {
         </section>
         <section>
           <span>Field Notes</span>
-          <p>${story.historicalContext}</p>
+          <p>${shortText(story.historicalContext || story.description, 150)}</p>
         </section>
       </div>
     </article>
@@ -2282,7 +2635,7 @@ function renderListeningJourneys() {
           <ol class="journey-preview">
             ${journey.route.slice(0, 3).map((step, stepIndex) => `<li><b>${String(stepIndex + 1).padStart(2, "0")}</b>${step}</li>`).join("")}
           </ol>
-          <p>${journey.note}</p>
+          <p>${shortText(journey.note, 140)}</p>
           <button class="journey-start" type="button" data-journey-index="${index}">Start Journey</button>
         </article>
       `
@@ -2306,7 +2659,7 @@ function renderInstrumentAtlas() {
             <span>${instrument.region}</span>
             <h3>${instrument.name}</h3>
             <small class="zh-sub card-sub">${instrument.zh}</small>
-            <p>${instrument.description}</p>
+            <p>${shortText(instrument.description, 140)}</p>
             ${entityButton("instrument", instrument.name, "entity-chip story-open")}
           </div>
         </article>
@@ -2325,7 +2678,7 @@ function renderTimeline() {
           <time>${entry.year}</time>
           <h3>${entry.title}</h3>
           <span>${entry.region}</span>
-          <p>${entry.note}</p>
+          <p>${shortText(entry.note, 150)}</p>
         </article>
       `
     )
@@ -2346,9 +2699,9 @@ function renderEssentialArtists() {
           </div>
           <div class="artist-reveal">
             <dl>
-              <div><dt>Albums</dt><dd>${artist.albums}</dd></div>
+              <div><dt>Albums</dt><dd>${shortText(artist.albums, 120)}</dd></div>
               <div><dt>Labels</dt><dd>${entityList("label", splitEntityList(artist.labels))}</dd></div>
-              <div><dt>Scenes</dt><dd>${artist.scenes}</dd></div>
+              <div><dt>Scenes</dt><dd>${shortText(artist.scenes, 120)}</dd></div>
               <div><dt>Instruments</dt><dd>${entityList("instrument", splitEntityList(artist.instruments))}</dd></div>
               <div><dt>Stories</dt><dd>${entityList("story", splitEntityList(artist.stories))}</dd></div>
             </dl>
@@ -2369,11 +2722,11 @@ function renderLabelArchive() {
         <article class="label-card">
           <span>${label.location} · founded ${label.founded}</span>
           <h3>${label.name}</h3>
-          <p>${label.philosophy}</p>
+          <p>${shortText(label.philosophy, 150)}</p>
           <dl>
             <div><dt>Artists</dt><dd>${entityList("artist", splitEntityList(label.artists))}</dd></div>
-            <div><dt>Key releases</dt><dd>${label.releases}</dd></div>
-            <div><dt>Why it matters</dt><dd>${label.significance}</dd></div>
+            <div><dt>Key releases</dt><dd>${shortText(label.releases, 140)}</dd></div>
+            <div><dt>Why it matters</dt><dd>${shortText(label.significance, 150)}</dd></div>
           </dl>
           ${entityButton("label", label.name, "entity-chip story-open")}
         </article>
@@ -2412,7 +2765,7 @@ function renderDemos() {
               </div>
               <h3>${demo.title}</h3>
               <p>${demo.artist}</p>
-              <p>${demo.story || "等待补充文化背景。"}</p>
+              <p>${shortText(demo.story || "等待补充文化背景。", 150)}</p>
               <p><a href="${demo.link}" target="_blank" rel="noreferrer">试听链接</a></p>
             </article>
           `
@@ -2431,7 +2784,7 @@ function renderEvents() {
             ${event.tags.map((tag) => `<span class="tag ${tag === "club" ? "coral" : "teal"}">${tag}</span>`).join("")}
           </div>
           <h3>${event.title}</h3>
-          <p>${event.note}</p>
+          <p>${shortText(event.note, 150)}</p>
           <div class="event-meta">
             <span>${event.place}</span>
             <span>${event.date}</span>
@@ -2450,7 +2803,7 @@ function renderResources() {
           <span>${resource.platform}</span>
           <strong>${resource.title}</strong>
           <em>${resource.category}</em>
-          <p>${resource.note}</p>
+          <p>${shortText(resource.note, 140)}</p>
         </a>
       `
     )
@@ -2466,7 +2819,9 @@ function renderExtendedResources() {
           <span>${resource.type}</span>
           <h3>${resource.title}</h3>
           <small>${resource.region}</small>
-          <p>${resource.note}</p>
+          <small class="resource-meta">${[resource.publisher, resource.year].filter(Boolean).join(" · ")}</small>
+          <p>${shortText(resource.note, 150)}</p>
+          ${resource.link ? `<a class="resource-source-link" href="${resource.link}" target="_blank" rel="noopener noreferrer">Open source</a>` : ""}
           ${entityList("search", resource.connects, "resource-links")}
         </article>
       `
@@ -3051,7 +3406,7 @@ function openEntity(type, rawName) {
   if (type === "search") {
     searchInput.value = name;
     renderAlbums();
-    showPage("archive");
+    showPage("albums");
     return;
   }
   if (type === "album") {
@@ -3248,8 +3603,8 @@ pulseModesGrid.addEventListener("click", (event) => {
   filterButtons.forEach((filterButton) => filterButton.classList.toggle("active", filterButton.dataset.filter === mode.filter));
   renderAlbums();
   buildAnalysis(mode.prompt);
-  location.hash = "archive";
-  showPage("archive");
+  location.hash = "albums";
+  showPage("albums");
 });
 
 aiSearchForm.addEventListener("submit", (event) => {
@@ -3268,7 +3623,7 @@ analysisOutput.addEventListener("click", (event) => {
   activeFilter = "all";
   filterButtons.forEach((filterButton) => filterButton.classList.toggle("active", filterButton.dataset.filter === "all"));
   renderAlbums();
-  showPage("archive");
+  showPage("albums");
   openAlbum(albumIndex);
 });
 
@@ -3338,6 +3693,8 @@ buildAnalysis();
 renderFeaturedStories();
 renderWeeklyDiscovery();
 renderTodayJourney();
+renderArchiveIndex();
+renderHomeFeaturedPreview();
 renderMuseumHomepage();
 renderListeningJourneys();
 renderInstrumentAtlas();
